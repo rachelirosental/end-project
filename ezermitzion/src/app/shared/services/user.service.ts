@@ -22,8 +22,8 @@ export class UserService {
   create(user: user) {
     return this.httpClient.post(this.url + "/create", user);
   }
-  delete(id:number) {
-     return this.httpClient.delete(this.url + "/delete/"+ id);
+  delete(id:number)  {
+    return this.httpClient.delete(this.url + "/delete/" + id);
   }
   getusers() {
      return this.httpClient.get(this.url + "/getusers");
