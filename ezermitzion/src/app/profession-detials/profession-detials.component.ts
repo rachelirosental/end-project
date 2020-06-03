@@ -17,6 +17,7 @@ export class ProfessionDetialsComponent implements OnInit {
   constructor(public ProfessionService:ProfessionService,private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
+    console.log(this.profession)
   }
   getProfById(){
     const id = +this.route.snapshot.paramMap.get('id');
