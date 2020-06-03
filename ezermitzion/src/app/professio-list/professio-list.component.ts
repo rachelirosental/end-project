@@ -42,8 +42,8 @@ public profession:Profession;
       })
     }
 
-deleteprofession(index){
-  this.ProfessionService.delete(Number(this.inputdelete)).subscribe(res=>{
+deleteprofession(id:number){
+  this.ProfessionService.delete(id).subscribe(res=>{
     console.log(res)
   },err=>{
     alert("error")
