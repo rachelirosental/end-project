@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EzerMitzionModelStoreContainer" CdmEntityContainer="EzerMitzionEntities">
+    <EntitySetMapping Name="Dairy">
+      <EntityTypeMapping TypeName="EzerMitzionModel.Dairy">
+        <MappingFragment StoreEntitySet="Dairy">
+          <ScalarProperty Name="DairyId" ColumnName="DairyId" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="DuringTime" ColumnName="DuringTime" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeMeeting" ColumnName="TypeMeeting" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dictionary">
+      <EntityTypeMapping TypeName="EzerMitzionModel.Dictionary">
+        <MappingFragment StoreEntitySet="Dictionary">
+          <ScalarProperty Name="DictionaryId" ColumnName="DictionaryId" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="DuringTime" ColumnName="DuringTime" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeMeeting" ColumnName="TypeMeeting" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kupot1">
+      <EntityTypeMapping TypeName="EzerMitzionModel.Kupot1">
+        <MappingFragment StoreEntitySet="Kupot1">
+          <ScalarProperty Name="KupaId" ColumnName="KupaId" />
+          <ScalarProperty Name="KupaName" ColumnName="KupaName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Opinion">
+      <EntityTypeMapping TypeName="EzerMitzionModel.Opinion">
+        <MappingFragment StoreEntitySet="Opinion">
+          <ScalarProperty Name="OpinionId" ColumnName="OpinionId" />
+          <ScalarProperty Name="ProfPersonid" ColumnName="ProfPersonid" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Professions">
+      <EntityTypeMapping TypeName="EzerMitzionModel.Professions">
+        <MappingFragment StoreEntitySet="Professions">
+          <ScalarProperty Name="ProfId" ColumnName="ProfId" />
+          <ScalarProperty Name="ProfName" ColumnName="ProfName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Kupa" ColumnName="Kupa" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="AddTel" ColumnName="AddTel" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PrivateAddres" ColumnName="PrivateAddres" />
+          <ScalarProperty Name="ClinicAddres" ColumnName="ClinicAddres" />
+          <ScalarProperty Name="Subdomain" ColumnName="Subdomain" />
+          <ScalarProperty Name="PrivateOpinion" ColumnName="PrivateOpinion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reference">
+      <EntityTypeMapping TypeName="EzerMitzionModel.Reference">
+        <MappingFragment StoreEntitySet="Reference">
+          <ScalarProperty Name="RefId" ColumnName="RefId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="BornDate" ColumnName="BornDate" />
+          <ScalarProperty Name="IsCare" ColumnName="IsCare" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AttendantId" ColumnName="AttendantId" />
+          <ScalarProperty Name="ProfId" ColumnName="ProfId" />
+          <ScalarProperty Name="TypeRef" ColumnName="TypeRef" />
+          <ScalarProperty Name="recommendation" ColumnName="recommendation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="EzerMitzionModel.Rooms">
+        <MappingFragment StoreEntitySet="Rooms">
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subdomain">
+      <EntityTypeMapping TypeName="EzerMitzionModel.Subdomain">
+        <MappingFragment StoreEntitySet="Subdomain">
+          <ScalarProperty Name="Subdomainid" ColumnName="Subdomainid" />
+          <ScalarProperty Name="SubdomainName" ColumnName="SubdomainName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeMeeting">
+      <EntityTypeMapping TypeName="EzerMitzionModel.TypeMeeting">
+        <MappingFragment StoreEntitySet="TypeMeeting">
+          <ScalarProperty Name="MeetingId" ColumnName="MeetingId" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="typeProfessions">
+      <EntityTypeMapping TypeName="EzerMitzionModel.typeProfessions">
+        <MappingFragment StoreEntitySet="typeProfessions">
+          <ScalarProperty Name="ProfessionId" ColumnName="ProfessionId" />
+          <ScalarProperty Name="Nameprofession" ColumnName="Nameprofession" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeReference">
+      <EntityTypeMapping TypeName="EzerMitzionModel.TypeReference">
+        <MappingFragment StoreEntitySet="TypeReference">
+          <ScalarProperty Name="RefId" ColumnName="RefId" />
+          <ScalarProperty Name="refname" ColumnName="refname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeUser">
+      <EntityTypeMapping TypeName="EzerMitzionModel.TypeUser">
+        <MappingFragment StoreEntitySet="TypeUser">
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="EzerMitzionModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserFname" ColumnName="UserFname" />
+          <ScalarProperty Name="UserLname" ColumnName="UserLname" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="TypeUser" ColumnName="TypeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

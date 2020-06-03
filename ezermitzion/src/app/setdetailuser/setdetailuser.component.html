@@ -1,0 +1,20 @@
+<div>
+    
+  
+      <label for="lname" >שם פרטי</label>
+      <input type="text" id="lname" name="lname"  [(ngModel)]="user.userFname" >
+
+      <label for="fname" >שם משפחה</label>
+      <input type="text" id="fname" name="fname"  [(ngModel)]="user.userLname">
+
+      <label for="Tel" >טלפון</label>
+      <input type="text" id="tel" name="tel"  [(ngModel)]="user.tel">
+
+      <label for="mail" >כתובת מייל</label>
+      <input type="text" id="mail" name="mail"  [(ngModel)]="user.email">
+
+      <label for="tuser" >סוג משתמש</label>
+      <input type="text" id="lname" name="password"  [(ngModel)]="user.typeUser">
+
+      <input type="submit" value="אישור" (click)="updateuser()">
+  </div>

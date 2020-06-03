@@ -1,0 +1,25 @@
+<!-- <div>
+    <div *ngIf="user">
+        <h3>user by id:</h3>
+        {{user.UserId}},{{user.UserFname}},{{user.UserLname}},
+    {{user.Tel}},{{user.Email}},{{user.Password}},{{user.TypeUser}}
+    </div>
+</div> -->
+<div>
+    <input type="text" [(ngModel)]="inputText" (keyup)="search()">  
+
+<!-- <input type="text" [(ngModel)]="inputdelete">   -->
+<!-- <input type="button" value="למחיקה" (click)="deleteuser()"> -->
+    <h1>users:</h1>
+
+    <div *ngFor="let user of users">{{user.userId}},{{user.userFname}},{{user.userLname}},
+        {{user.tel}},{{user.email}},{{user.typeUser}}
+        <button type="button" (click)="deleteUser(user.userId)">מחיקת איש קשר</button>
+        <button type="button" (click)="next(user.userId)">עריכת פרטי איש קשר</button>
+    </div>
+
+</div>
+
+<!-- 
+
+<input type="button" value="מחיקת איש eשר" (click)="deleteUser()"> -->

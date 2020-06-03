@@ -1,0 +1,47 @@
+<!-- <div>
+    <form >
+      <label for="fname" >שם</label>
+      <input type="text" id="fname" name="name"  [(ngModel)]="name">
+  
+      <label for="lname" >סיסמא</label>
+      <input type="text" id="lname" name="password"  [(ngModel)]="password">
+    
+      <input type="submit" value="אישור" (click)="validation()">
+    </form>
+  </div> -->
+  <head><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/></head>
+<div class="container">
+	<div class="row">
+		 <h1><i class="fa fa-lock" aria-hidden="true"></i> Login</h1>
+       
+        </div><br /><br />
+         
+        
+                	<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+								</div>
+								<input type="text" name="" class="form-control"  [(ngModel)]="name" placeholder="username or email"/>
+							</div><br />
+         
+                	<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa fa-key icon"></i></span>
+								</div>
+									<input type="Password" name="" class="form-control" [(ngModel)]="password" placeholder="password"/>
+							</div><br />
+            <div class="checkbox">
+              <label><input type="checkbox" value=""/> Remember me</label>
+            </div><br />
+              <button type="submit" class="btn btn-success" (click)="validation()"><span class="glyphicon glyphicon-off"></span> Login</button>
+         
+
+               <br /> <div style="border:1px solid black;height:1px;width:300px;"></div><br />
+        <div class="footer">
+                  
+         
+        </div>
+ 
+	</div>
+
+  

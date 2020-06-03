@@ -1,0 +1,55 @@
+<!-- <p>professio-list works!</p>
+
+<input type="text" [(ngModel)]="inputText" (keyup)="search()">  
+<input type="button" value="לחיפוש" (click)=" getProfById()">
+<input type="text" [(ngModel)]="inputdelete">  
+<input type="button" value="למחיקה" (click)="deleteprofession()">
+
+
+<li *ngFor="let p of professions" routerLink="/detail/{{p.profId}}">
+
+  {{p.profName}}
+  </li>
+
+ <div   *ngIf="profession">
+  <h1> profession: </h1>
+ {{profession.profId}} -->
+ <div class="container">
+  <div class="table-wrapper">
+      <div class="table-title">
+          <div class="row">
+              <div class="col-sm-8"><h2>Employee <b>Details</b></h2></div>
+              <div class="col-sm-4">
+                  <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+              </div>
+          </div>
+      </div>
+      <table class="table table-bordered">
+          <thead>
+              <tr >
+                  <th>Name</th>
+                  <th>Department</th>
+                  <th>Phone</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let p of professions">
+                  <td>{{p.profName}}</td>
+                  <td>{{p.email}}</td>
+                  <td>{{p.tel}}</td>
+                  <td>
+        <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
+                      <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons" (click)="openModal(p)"> </i></a>
+                      <a class="delete" title="Delete" data-toggle="tooltip" (click)="deleteprofession(p.profId)"><i class="material-icons"></i></a>
+                  </td>
+              </tr>
+             -->
+          </tbody>
+      </table>
+  </div>
+</div>    
+
+
+ 
+
