@@ -28,7 +28,7 @@ inputText:any;
 
 deleteUser(id:number){
   this.userService.delete(id).subscribe(res=>{
-   
+   this.loadUsers();
     console.log(res)
   },err=>{
     alert("error")
