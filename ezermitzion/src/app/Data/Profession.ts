@@ -1,3 +1,4 @@
+import {typeProfessions } from 'src/app/Data/typeProfessions';
 export interface Profession {
     profId  : number;
     profName:string;
@@ -10,5 +11,7 @@ export interface Profession {
     clinicAddres:string;
     subdomain:number,
     privateOpinion:string,
+    typeProfession:typeProfessions 
+
     }
     
