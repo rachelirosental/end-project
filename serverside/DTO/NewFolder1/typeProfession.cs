@@ -21,9 +21,9 @@ namespace DTO.NewFolder1
             };
             return dto;
         }
-        public static typeProfession GetTypeMeeting(DTO.NewFolder1.typeProfession typeprofessiondto)
+        public static DAL.typeProfessions GetTypeMeeting(DTO.NewFolder1.typeProfession typeprofessiondto)
         {
-            typeProfession type = new typeProfession()
+          DAL.typeProfessions type =new DAL.typeProfessions()
             {
                 ProfessionId = typeprofessiondto.ProfessionId,
                 Nameprofession = typeprofessiondto.Nameprofession,

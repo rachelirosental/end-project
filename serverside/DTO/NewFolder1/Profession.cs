@@ -20,6 +20,7 @@ namespace DTO.NewFolder1
         public string ClinicAddres { get; set; }
         public   int Subdomain { get; set; }
         public string PrivateOpinion { get; set; }
+        public DTO.NewFolder1.typeProfession TypeProfessions { get; set; }
         public static Profession GetProfession1(DAL.Professions p)
         {
             Profession dto = new Profession()
@@ -35,6 +36,7 @@ namespace DTO.NewFolder1
                 ClinicAddres = p.ClinicAddres,
                 Subdomain=p.Subdomain.Value,
                 PrivateOpinion=p.PrivateOpinion,
+                TypeProfessions= NewFolder1.typeProfession.GetTypeProfession(p.typeProfessions)
 
             };
             return dto;
