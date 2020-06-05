@@ -1,6 +1,6 @@
 export interface typeProfessions {
-    ProfessionId: number;
-    Nameprofession :string;
+    professionId: number;
+    nameprofession :string
     
     }
    

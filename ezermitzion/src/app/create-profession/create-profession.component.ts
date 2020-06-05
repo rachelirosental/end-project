@@ -8,20 +8,22 @@ import {ProfessionService } from '../shared/services/profession.service';
   styleUrls: ['./create-profession.component.scss']
 })
 export class CreateProfessionComponent implements OnInit {
-public profession:Profession=  {
+public profession:Profession
+// =  
+// {
   
-  profId  :null,
-  profName:" ",
-  type:1 ,
-  kupa:1,
-  tel:"  ",
-  addTel:"",
-  email:" ",
-  privateAddres:" ",
-  clinicAddres:"",
-  subdomain:1,
-  privateOpinion:" ",
-};
+//   profId  :null,
+//   profName:" ",
+//   type:1 ,
+//   kupa:1,
+//   tel:"  ",
+//   addTel:"",
+//   email:" ",
+//   privateAddres:" ",
+//   clinicAddres:"",
+//   subdomain:1,
+//   privateOpinion:" ",
+// };
 
   constructor(public ProfessionService:ProfessionService) { }
 
