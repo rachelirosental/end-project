@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../shared/services/user.service';
 import { user } from '../Data/user';
 import { ActivatedRoute } from '@angular/router';
@@ -8,15 +8,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./setdetailuser.component.scss']
 })
 export class SetdetailuserComponent implements OnInit {
-  public user: user = {
-    userId:1,
-        userFname:" ", 
-        userLname:" ",
-        tel:" ",
-        email:" ", 
-        password :" ",
-        typeUser:1
-  };
+  // public user: user = {
+  //   userId:1,
+  //       userFname:" ", 
+  //       userLname:" ",
+  //       tel:" ",
+  //       email:" ", 
+  //       password :" ",
+  //       typeUser:
+  // };
+  @Input() public user:user;
   constructor(public userService:UserService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
