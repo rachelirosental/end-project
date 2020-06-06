@@ -1,4 +1,6 @@
-export interface user{
+import { TypeUser } from './TypeUser';
+
+export interface user extends TypeUser{
         userId:number;
         userFname:string; 
         userLname:string;
