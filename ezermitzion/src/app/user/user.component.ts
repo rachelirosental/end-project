@@ -5,6 +5,7 @@ import { UserService } from '../shared/services/user.service';
 import { user } from '../Data/user';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SetdetailuserComponent } from '../setdetailuser/setdetailuser.component';
+import { TypeUser } from '../Data/TypeUser';
 
 @Component({
   selector: 'app-user',
@@ -15,6 +16,10 @@ export class UserComponent implements OnInit {
 
 users:user[];
 user:any;
+type:TypeUser={
+  TypeId: 1,
+    TypeName :" "
+}
 inputText:any;
   inputdelete:any;
 
