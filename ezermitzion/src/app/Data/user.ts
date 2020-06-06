@@ -1,4 +1,4 @@
-import { TypeUser } from './TypeUser';
+import { TypeUser } from 'src/app/Data/TypeUser';
 
 export interface user extends TypeUser{
         userId:number;
@@ -8,4 +8,5 @@ export interface user extends TypeUser{
         email:string; 
         password :string;
         typeUser:TypeUser;
+       
 }
