@@ -39,7 +39,7 @@ deleteUser(id:number){
 }
 next(u:user){
   const modalRef = this.modalService.open(SetdetailuserComponent);
-  modalRef.componentInstance.profession = u;
+  modalRef.componentInstance.user = u;
 }
 
 

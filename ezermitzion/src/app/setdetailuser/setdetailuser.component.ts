@@ -17,7 +17,7 @@ export class SetdetailuserComponent implements OnInit {
   //       password :" ",
   //       typeUser:
   // };
-  @Input() public user:user;
+  @Input() public user1:user;
   constructor(public userService:UserService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -25,12 +25,12 @@ export class SetdetailuserComponent implements OnInit {
   }
   updateuser(){
 
-    this.userService.update(this.user).subscribe(res=>console.log(res))
+    this.userService.update(this.user1).subscribe(res=>console.log(res))
   }
   getUserById(){
     const id = +this.route.snapshot.paramMap.get('id');
     this.userService.getuserByid(id).subscribe(res=>{
-      this.user=res,console.log('user',this.user)
+      this.user1=res,console.log('user',this.user1)
     },err=>{
       alert("error")
     })
