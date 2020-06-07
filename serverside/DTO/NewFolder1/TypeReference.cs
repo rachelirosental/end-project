@@ -10,22 +10,26 @@ namespace DTO.NewFolder1
     {
         public int RefId { get; set; }
         public string refname { get; set; }
+        public ICollection<DTO.NewFolder1.Reference> Reference { get; set; }
         public static TypeReference GetTypeReference(DAL.TypeReference t)
         {
             TypeReference dto = new TypeReference()
             {
                 RefId = t.RefId,
                 refname = t.refname,
+                Reference = NewFolder1.Reference.GetListReferenceDTO(t.Reference),
 
             };
             return dto;
         }
-        public static TypeReference GetTypeMeeting(DTO.NewFolder1.TypeReference typereferencedto)
+        public static DAL.TypeReference GetTypeReference(DTO.NewFolder1.TypeReference typereferencedto)
         {
-            TypeReference type = new TypeReference()
+            DAL.TypeReference type = new DAL.TypeReference()
             {
                 RefId = typereferencedto.RefId,
                 refname = typereferencedto.refname,
+                
+                Reference = NewFolder1.Reference.GetListReferenceDAL(typereferencedto.Reference),
             };
             return type;
         }

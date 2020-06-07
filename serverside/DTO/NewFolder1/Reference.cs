@@ -38,9 +38,9 @@ namespace DTO.NewFolder1
             };
             return dto;
         }
-        public static Reference GetReference(DTO.NewFolder1.Reference referencedto)
+        public static DAL.Reference GetReference(DTO.NewFolder1.Reference referencedto)
         {
-            Reference reference = new Reference()
+            DAL.Reference reference = new DAL.Reference()
             {
                 RefId = referencedto.RefId,
                 Date = referencedto.Date,
@@ -54,6 +54,22 @@ namespace DTO.NewFolder1
                 recommendation=referencedto.recommendation,
             };
             return reference;
+        }
+
+        public static ICollection<Reference> GetListReferenceDTO(ICollection<DAL.Reference> Lreference)
+        {
+            List<Reference> l = new List<Reference>();
+            
+            (Lreference as List<DAL.Reference>).ForEach(r => l.Add(GetReference(r)));
+            return l;
+
+        }
+        public static ICollection<DAL.Reference> GetListReferenceDAL(ICollection<Reference> Lreference)
+        {
+            List<DAL.Reference> l = new List<DAL.Reference>();
+            (Lreference as List<Reference>).ForEach(r => l.Add(GetReference(r)));
+            return l;
+
         }
 
     }

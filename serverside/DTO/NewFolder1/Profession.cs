@@ -21,11 +21,15 @@ namespace DTO.NewFolder1
         public   int Subdomain { get; set; }
         public string PrivateOpinion { get; set; }
         public DTO.NewFolder1.typeProfession TypeProfessions { get; set; }
+        public DTO.NewFolder1.subDomain  Subdomain1 { get; set; }
+        public  ICollection<DTO.NewFolder1.Reference> Reference { get; set; }
+        public DTO.NewFolder1.Kupot Kupot { get; set; }
+        public  ICollection<DTO.NewFolder1.Opinion> Opinions { get; set; }
         public static Profession GetProfession1(DAL.Professions p)
         {
             Profession dto = new Profession()
             {
-               ProfId=p.ProfId,
+                ProfId = p.ProfId,
                 ProfName = p.ProfName,
                 Type = p.Type,
                 Kupa = p.Kupa,
@@ -34,9 +38,13 @@ namespace DTO.NewFolder1
                 Email = p.Email,
                 PrivateAddres = p.PrivateAddres,
                 ClinicAddres = p.ClinicAddres,
-                Subdomain=p.Subdomain.Value,
-                PrivateOpinion=p.PrivateOpinion,
-                TypeProfessions= NewFolder1.typeProfession.GetTypeProfession(p.typeProfessions)
+                Subdomain = p.Subdomain.Value,
+                PrivateOpinion = p.PrivateOpinion,
+                TypeProfessions = NewFolder1.typeProfession.GetTypeProfession(p.typeProfessions),
+                Subdomain1 = NewFolder1.subDomain.GetSubDomain(p.Subdomain1),
+                Kupot=NewFolder1.Kupot.GetKupot(p.Kupot1),
+                Reference=NewFolder1.Reference.GetListReferenceDTO(p.Reference),
+                Opinions=NewFolder1.Opinion.GetListOpinionDTO(p.Opinions)
 
             };
             return dto;
@@ -56,13 +64,25 @@ namespace DTO.NewFolder1
                 ClinicAddres = Professiondto.ClinicAddres,
                 Subdomain=Professiondto.Subdomain,
                 PrivateOpinion=Professiondto.PrivateOpinion,
-            };
+                typeProfessions = NewFolder1.typeProfession.GetTypeProfession(Professiondto.TypeProfessions),
+                Subdomain1 = NewFolder1.subDomain.GetSubDomain(Professiondto.Subdomain1),
+                Kupot1=NewFolder1.Kupot.GetKupot(Professiondto.Kupot),
+                Reference=NewFolder1.Reference.GetListReferenceDAL(Professiondto.Reference),
+                Opinions = NewFolder1.Opinion.GetListOpinionDAL(Professiondto.Opinions)
+          };
             return profession;
         }
+        //public static ICollection<Profession> GetListProfessinDTO(ICollection<DAL.Professions> Lprofession)
+        //{
+        //    List<Profession> l = new List<Profession>();
+        //    (Lprofession as List<DAL.Professions>).ForEach(p => l.Add(GetProfession1(p)));
+        //    return l;
+
+        //}
         public static List<Profession> GetListProfessinDTO(List<DAL.Professions> Lprofession)
         {
             List<Profession> l = new List<Profession>();
-            Lprofession.ForEach(p => l.Add(GetProfession1(p)));
+            Lprofession .ForEach(p => l.Add(GetProfession1(p)));
             return l;
 
         }

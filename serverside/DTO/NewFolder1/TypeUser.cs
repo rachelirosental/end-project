@@ -10,22 +10,25 @@ namespace DTO.NewFolder1
     {
         public int TypeId { get; set; }
         public string TypeName { get; set; }
+        public virtual ICollection<NewFolder1.user> users { get; set; }
         public static TypeUser GetUser(DAL.TypeUser t)
         {
             TypeUser dto = new TypeUser()
             {
                 TypeId = t.TypeId,
                 TypeName = t.TypeName,
+                users= NewFolder1.user.GetListUserDTO(t.users as List<DAL.users>)
 
             };
             return dto;
         }
-        public static TypeUser GetTypeMeeting(DTO.NewFolder1.TypeUser typeuserdto)
+        public static DAL.TypeUser GetTypeMeeting(DTO.NewFolder1.TypeUser typeuserdto)
         {
-            TypeUser type = new TypeUser()
+            DAL.TypeUser type = new DAL.TypeUser()
             {
                 TypeId = typeuserdto.TypeId,
                 TypeName = typeuserdto.TypeName,
+                users = NewFolder1.user.GetListUserDAL(typeuserdto.users as List<NewFolder1.user>)
             };
             return type;
         }

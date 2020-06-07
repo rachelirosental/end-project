@@ -21,9 +21,9 @@ namespace DTO.NewFolder1
             };
             return dto;
         }
-        public static subDomain GetSubDomain(DTO.NewFolder1.subDomain subDomaindto)
+        public static DAL.Subdomain GetSubDomain(DTO.NewFolder1.subDomain subDomaindto)
         {
-            subDomain sub = new subDomain()
+            DAL.Subdomain sub =new DAL.Subdomain()
             {
                 Subdomainid = subDomaindto.Subdomainid,
                 SubdomainName = subDomaindto.SubdomainName,
