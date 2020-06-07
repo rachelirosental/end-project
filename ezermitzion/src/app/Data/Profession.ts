@@ -11,6 +11,7 @@ export interface Profession extends typeProfessions {
     clinicAddres:string;
     subdomain:number;
     privateOpinion:string;
+    typeprofession:typeProfessions;
 
 
     }

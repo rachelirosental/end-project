@@ -16,20 +16,13 @@ export class ProfessioListComponent implements OnInit {
   inputdelete:any;
 public professions:Profession[]= [];
 public profession:Profession
-type:typeProfessions={
-  nameprofession:" ",
-  professionId:1,
-
-};
-
 
 
 
  constructor(public ProfessionService:ProfessionService,private modalService: NgbModal  ){ }
 
   ngOnInit(): void {
-    this.type.nameprofession="ggg"
-    console.log(this.type)
+   
     this.getProfList();
    }
    getProfList(){

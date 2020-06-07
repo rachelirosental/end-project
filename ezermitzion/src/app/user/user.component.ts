@@ -16,10 +16,7 @@ export class UserComponent implements OnInit {
 
 users:user[];
 user:any;
-type:TypeUser={
-  TypeId: 1,
-    TypeName :" "
-}
+
 inputText:any;
   inputdelete:any;
 
