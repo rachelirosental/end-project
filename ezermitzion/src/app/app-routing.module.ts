@@ -26,7 +26,7 @@ const routes: Routes = [
 {path:'createnew',component: CreateProfessionComponent},
 {path:'detail/:id',component: ProfessionDetialsComponent},
 {path:'setdetailuser/:id',component:SetdetailuserComponent},
-{path:'',component:LoginComponent},
+{path:'',component:LoginComponent },
 ];
 
 @NgModule({
