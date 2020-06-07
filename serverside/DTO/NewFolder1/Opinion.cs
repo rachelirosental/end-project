@@ -14,6 +14,7 @@ namespace DTO.NewFolder1
         public string description { get; set; }
         public System.DateTime Date { get; set; }
         public int Mark { get; set; }
+        public NewFolder1.Profession  Profession { get; set; }
         public static Opinion GetOpinion(DAL.Opinion o)
         {
             Opinion dto = new Opinion()
@@ -23,6 +24,7 @@ namespace DTO.NewFolder1
                 description = o.description,
                 Date = o.Date.Value,
                 Mark = Convert.ToInt32(o.Mark),
+                Profession=NewFolder1.Profession.GetProfession1(o.Profession)
 
 
 
@@ -38,6 +40,7 @@ namespace DTO.NewFolder1
                 description = Opiniondto.description,
                 Date = Opiniondto.Date,
                 Mark = Opiniondto.Mark,
+                Profession = NewFolder1.Profession.GetProfession1(Opiniondto.Profession)
             };
             return opinion;
         }

@@ -18,6 +18,9 @@ namespace DTO.NewFolder1
         public int ProfId { get; set; }
         public int TypeRef { get; set; }
         public string recommendation { get; set; }
+        public NewFolder1.Profession  Professions { get; set; }
+        public  NewFolder1.user users { get; set; }
+        public NewFolder1.TypeReference TypeReference  { get; set; }
         public static Reference GetReference(DAL.Reference r)
         {
             Reference dto = new Reference()
@@ -32,8 +35,9 @@ namespace DTO.NewFolder1
                 ProfId = r.ProfId.Value,
                 TypeRef = r.TypeRef.Value,
                 recommendation=r.recommendation,
-
-
+                Professions= NewFolder1.Profession.GetProfession1(r.Professions),
+                users = NewFolder1.user.GetUser(r.users),
+                TypeReference=NewFolder1.TypeReference.GetTypeReference(r.TypeReference) 
 
             };
             return dto;
@@ -52,6 +56,9 @@ namespace DTO.NewFolder1
                 ProfId = referencedto.ProfId,
                 TypeRef = referencedto.TypeRef,
                 recommendation=referencedto.recommendation,
+                Professions = NewFolder1.Profession.GetProfession1(referencedto.Professions),
+                users = NewFolder1.user.GetUser(referencedto.users),
+                TypeReference = NewFolder1.TypeReference.GetTypeReference(referencedto.TypeReference)
             };
             return reference;
         }

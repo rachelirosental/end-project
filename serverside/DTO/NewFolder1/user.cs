@@ -15,7 +15,8 @@ namespace DTO.NewFolder1
         public string Email { get; set; }
         public string Password { get; set; }
         public int TypeUser { get; set; }
-        public static  user GetUser1(users u)
+  
+        public static  user GetUser(DAL.users u)
         {
             user dto = new user()
             {
@@ -30,7 +31,7 @@ namespace DTO.NewFolder1
             };
             return dto;
         }
-        public static DAL.users GetUser(DTO.NewFolder1.user userdto)
+        public static DAL.users GetUser(user userdto)
         {
             DAL.users user = new DAL.users()
             {
@@ -54,7 +55,7 @@ namespace DTO.NewFolder1
         public static List<user> GetListUserDTO(List<DAL.users> Luser)
         {
             List<user> l = new List<user>();
-            Luser.ForEach(u => l.Add(GetUser1(u)));
+            Luser.ForEach(u => l.Add(GetUser(u)));
             return l;
 
         }

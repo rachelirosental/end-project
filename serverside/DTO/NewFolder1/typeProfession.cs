@@ -18,7 +18,7 @@ namespace DTO.NewFolder1
             {
                 ProfessionId = p.ProfessionId,
                 Nameprofession = p.Nameprofession,
-                Professions = NewFolder1.Profession.GetListProfessinDTO(k.Professions as List<DAL.Professions>)
+                Professions = NewFolder1.Profession.GetListProfessinDTO(p.Professions as List<DAL.Professions>)
 
             };
             return dto;
@@ -29,7 +29,8 @@ namespace DTO.NewFolder1
             {
                 ProfessionId = typeprofessiondto.ProfessionId,
                 Nameprofession = typeprofessiondto.Nameprofession,
-            };
+              Professions = NewFolder1.Profession.GetListProfessinDAL(typeprofessiondto.Professions as List<Profession>)
+          };
             return type;
         }
     }
