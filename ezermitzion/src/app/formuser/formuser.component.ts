@@ -10,15 +10,16 @@ import { user } from '../Data/user';
 export class FormuserComponent implements OnInit {
 
   
-  user: user = {
-    userId:1,
-        userFname:" ", 
-        userLname:" ",
-        tel:" ",
-        email:" ", 
-        password :" ",
-        typeUser:1
-  };
+  // user: user = {
+  //   userId:1,
+  //       userFname:" ", 
+  //       userLname:" ",
+  //       tel:" ",
+  //       email:" ", 
+  //       password :" ",
+  //       typeUser:" "
+  // };
+  public user:user;
   constructor(public router: Router,public userService:UserService) {
 
    }

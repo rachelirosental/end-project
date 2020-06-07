@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UserService } from '../shared/services/user.service';
 import { user } from '../Data/user';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SetdetailuserComponent } from '../setdetailuser/setdetailuser.component';
+import { TypeUser } from '../Data/TypeUser';
 
 @Component({
   selector: 'app-user',
@@ -13,10 +16,14 @@ export class UserComponent implements OnInit {
 
 users:user[];
 user:any;
+type:TypeUser={
+  TypeId: 1,
+    TypeName :" "
+}
 inputText:any;
   inputdelete:any;
 
-  constructor(private httpClient:HttpClient,public userService:UserService,private router: Router) { }
+  constructor(private httpClient:HttpClient,public userService:UserService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.loadUsers();
@@ -35,8 +42,9 @@ deleteUser(id:number){
   })
   
 }
-next(id:number){
-  this.router.navigateByUrl('/setdetailuser/'+id);
+next(u:user){
+  const modalRef = this.modalService.open(SetdetailuserComponent);
+  modalRef.componentInstance.user = u;
 }
 
 
