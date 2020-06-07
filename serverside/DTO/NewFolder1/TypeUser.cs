@@ -22,7 +22,7 @@ namespace DTO.NewFolder1
             };
             return dto;
         }
-        public static DAL.TypeUser GetTypeMeeting(DTO.NewFolder1.TypeUser typeuserdto)
+        public static DAL.TypeUser GetUser(DTO.NewFolder1.TypeUser typeuserdto)
         {
             DAL.TypeUser type = new DAL.TypeUser()
             {
