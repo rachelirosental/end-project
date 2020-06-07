@@ -4,7 +4,7 @@ import {ProfessionService } from '../shared/services/profession.service';
 import { Observable } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProfessionDetialsComponent } from '../profession-detials/profession-detials.component';
-import {TypeProfessions } from 'src/app/Data/TypeProfessions';
+import {typeProfessions } from 'src/app/Data/TypeProfessions';
 
 @Component({
   selector: 'app-professio-list',
