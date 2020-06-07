@@ -14,6 +14,8 @@
  <div   *ngIf="profession">
   <h1> profession: </h1>
  {{profession.profId}} -->
+ <input type="text" [(ngModel)]="inputText" >  
+ <input type="button" value="לחיפוש" (click)=" getProfById()">
  <div class="container">
   <div class="table-wrapper">
       <div class="table-title">
@@ -37,7 +39,7 @@
               <tr *ngFor="let p of professions">
                   <td>{{p.profName}}</td>
                   <td>{{p.email}}</td>
-                  <td>{{p.type}}</td>
+                  <td>{{p.addTel}}</td>
                   
                  <td>
         <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>

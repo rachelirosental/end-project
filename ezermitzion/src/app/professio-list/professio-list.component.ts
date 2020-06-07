@@ -4,7 +4,7 @@ import {ProfessionService } from '../shared/services/profession.service';
 import { Observable } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProfessionDetialsComponent } from '../profession-detials/profession-detials.component';
-import {typeProfessions } from 'src/app/Data/typeProfessions';
+import {TypeProfessions } from 'src/app/Data/TypeProfessions';
 
 @Component({
   selector: 'app-professio-list',
@@ -16,11 +16,7 @@ export class ProfessioListComponent implements OnInit {
   inputdelete:any;
 public professions:Profession[]= [];
 public profession:Profession
-type:typeProfessions={
-  nameprofession:" ",
-  professionId:1,
 
-};
 
 
 
@@ -28,8 +24,7 @@ type:typeProfessions={
  constructor(public ProfessionService:ProfessionService,private modalService: NgbModal  ){ }
 
   ngOnInit(): void {
-    this.type.nameprofession="ggg"
-    console.log(this.type)
+  
     this.getProfList();
    }
    getProfList(){
@@ -37,6 +32,7 @@ type:typeProfessions={
     this.ProfessionService.getProfList().subscribe(res=>{
       localStorage.setItem("professions",JSON.stringify(res)),
       this.professions=res,console.log('proffesions',this.professions)
+    
     },err=>{
       alert("error")
     })
@@ -44,7 +40,7 @@ type:typeProfessions={
     }
     getProfById(){
       this.ProfessionService.getProfById(Number(this.inputText)).subscribe(res=>{
-        this.profession=res,console.log('profession',this.profession)
+        this.profession=res,console.log('profession',this.profession.typeprofession.nameprofession)
       },err=>{
         alert("error")
       })
