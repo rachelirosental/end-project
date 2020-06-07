@@ -10,7 +10,7 @@ import {ProfessionService } from '../shared/services/profession.service';
 export class CreateProfessionComponent implements OnInit {
 public profession:Profession
 // =  
-// {
+// {/
   
 //   profId  :null,
 //   profName:" ",

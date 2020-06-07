@@ -1,5 +1,5 @@
- import {typeProfessions } from 'src/app/Data/typeProfessions';
-export interface Profession extends typeProfessions {
+ import {TypeProfessions } from 'src/app/Data/TypeProfessions';
+export interface Profession extends TypeProfessions {
     profId  : number;
     profName:string;
     type : number;
@@ -11,8 +11,11 @@ export interface Profession extends typeProfessions {
     clinicAddres:string;
     subdomain:number;
     privateOpinion:string;
+<<<<<<< HEAD
     typeprofession:typeProfessions;
+=======
+    typeprofession:TypeProfessions;
+    };
+>>>>>>> a21c3b023f96afa8fa62305318896ea990f75cb7
 
 
-    }
-    
