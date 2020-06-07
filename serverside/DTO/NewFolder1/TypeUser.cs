@@ -11,7 +11,7 @@ namespace DTO.NewFolder1
         public int TypeId { get; set; }
         public string TypeName { get; set; }
         public virtual ICollection<NewFolder1.user> users { get; set; }
-        public static TypeUser GetUser(DAL.TypeUser t)
+        public static TypeUser GetTypeUser(DAL.TypeUser t)
         {
             TypeUser dto = new TypeUser()
             {

@@ -15,7 +15,7 @@ namespace DTO.NewFolder1
         public string Email { get; set; }
         public string Password { get; set; }
         public int TypeUser { get; set; }
-  
+        public DTO.NewFolder1.TypeUser TypeUser1 { get; set; }
         public static  user GetUser(DAL.users u)
         {
             user dto = new user()
@@ -26,7 +26,8 @@ namespace DTO.NewFolder1
                 Tel = u.Tel,
                 Email = u.Email,
                 Password = u.Password,
-                TypeUser = u.TypeUser
+                TypeUser = u.TypeUser,
+                TypeUser1 = DTO.NewFolder1.TypeUser.GetTypeUser(u.TypeUser1),
 
             };
             return dto;
