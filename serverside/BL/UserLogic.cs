@@ -16,7 +16,7 @@ namespace BL
             var user = db.users.FirstOrDefault(p => p.Password == password && p.UserFname == username);
             if (user == null)
                 return null;
-            return DTO.NewFolder1.user.GetUser1(user);
+            return DTO.NewFolder1.user.GetUser(user);
 
         }
 
@@ -51,7 +51,7 @@ namespace BL
         public static user User(int id)
         {
             var q1 = db.users.FirstOrDefault(w => w.UserId == id);
-            return user.GetUser1(q1);
+            return user.GetUser(q1);
 
         }
         public static List<user> Allusers()
