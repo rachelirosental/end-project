@@ -1,4 +1,4 @@
- import {typeProfessions } from 'src/app/Data/TypeProfessions';
+ import {typeProfessions} from 'src/app/Data/TypeProfessions'
 export interface Profession extends typeProfessions {
     profId  : number;
     profName:string;
