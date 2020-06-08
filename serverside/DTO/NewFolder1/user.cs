@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DAL;
 namespace DTO.NewFolder1
 {
-   public class user
+    public class user
     {
         public int UserId { get; set; }
         public string UserFname { get; set; }
@@ -16,7 +16,9 @@ namespace DTO.NewFolder1
         public string Password { get; set; }
         public int TypeUser { get; set; }
         public DTO.NewFolder1.TypeUser TypeUser1 { get; set; }
-        public static  user GetUser(DAL.users u)
+        public virtual ICollection<NewFolder1.Dairy> Dairy { get; set; }
+        public virtual ICollection<NewFolder1.Reference> Reference { get; set; }
+        public static user GetUser(DAL.users u)
         {
             user dto = new user()
             {
@@ -28,6 +30,8 @@ namespace DTO.NewFolder1
                 Password = u.Password,
                 TypeUser = u.TypeUser,
                 TypeUser1 = DTO.NewFolder1.TypeUser.GetTypeUser(u.TypeUser1),
+                Dairy = NewFolder1.Dairy.GetListDairyDTO(u.Dairy as List<DAL.Dairy>),
+                Reference = NewFolder1.Reference.GetListReferenceDTO(u.Reference),
 
             };
             return dto;
@@ -42,7 +46,10 @@ namespace DTO.NewFolder1
                 Tel = userdto.Tel,
                 Email = userdto.Email,
                 Password = userdto.Password,
-                TypeUser = userdto.TypeUser
+                TypeUser = userdto.TypeUser,
+                TypeUser1 = DTO.NewFolder1.TypeUser.GetUser(userdto.TypeUser1),
+                Dairy = NewFolder1.Dairy.GetListDairyDAL(userdto.Dairy as List<Dairy>),
+                Reference = NewFolder1.Reference.GetListReferenceDAL(userdto.Reference),
             };
             return user;
         }
