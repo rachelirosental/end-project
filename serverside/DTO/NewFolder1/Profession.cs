@@ -27,7 +27,8 @@ namespace DTO.NewFolder1
         public  ICollection<DTO.NewFolder1.Opinion> Opinions { get; set; }
         public static Profession GetProfession1(DAL.Professions p)
         {
-            Profession dto = new Profession()
+            if (p == null)
+                return null; Profession dto = new Profession()
             {
                 ProfId = p.ProfId,
                 ProfName = p.ProfName,
@@ -51,7 +52,9 @@ namespace DTO.NewFolder1
         }
         public  static DAL.Professions GetProfession1(DTO.NewFolder1.Profession Professiondto)
         {
-          DAL.Professions profession = new DAL.Professions()
+            if (Professiondto == null)
+                return null;
+            DAL.Professions profession = new DAL.Professions()
             {
                ProfId = Professiondto.ProfId,
                 ProfName = Professiondto.ProfName,
@@ -81,6 +84,8 @@ namespace DTO.NewFolder1
         //}
         public static List<Profession> GetListProfessinDTO(List<DAL.Professions> Lprofession)
         {
+            if (Lprofession == null)
+                return null;
             List<Profession> l = new List<Profession>();
             Lprofession .ForEach(p => l.Add(GetProfession1(p)));
             return l;
@@ -88,6 +93,8 @@ namespace DTO.NewFolder1
         }
         public static List<DAL.Professions> GetListProfessinDAL(List<Profession> Lprofession)
         {
+            if (Lprofession == null)
+                return null;
             List<DAL.Professions> l = new List<DAL.Professions>();
             Lprofession.ForEach(p => l.Add(GetProfession1(p)));
             return l;

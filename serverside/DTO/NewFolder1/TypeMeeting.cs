@@ -13,6 +13,8 @@ namespace DTO.NewFolder1
         public ICollection<NewFolder1.Dairy> Dairy { get; set; }
         public static TypeMeeting GetTypeMeeting(DAL.TypeMeeting t)
         {
+            if (t == null)
+                return null;
             TypeMeeting dto = new TypeMeeting()
             {
                 MeetingId = t.MeetingId,
@@ -24,6 +26,8 @@ namespace DTO.NewFolder1
         }
         public static DAL.TypeMeeting GetTypeMeeting(DTO.NewFolder1.TypeMeeting typemeetingdto)
         {
+            if (typemeetingdto == null)
+                return null;
             DAL.TypeMeeting type = new DAL.TypeMeeting()
             {
                 MeetingId = typemeetingdto.MeetingId,

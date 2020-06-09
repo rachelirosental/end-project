@@ -13,7 +13,8 @@ namespace DTO.NewFolder1
         public string SubdomainName { get; set; }
         public  ICollection<NewFolder1.Profession> Professions { get; set; }
         public static subDomain GetSubDomain(DAL.Subdomain s)
-        {
+        {if (s == null)
+                return null;
             subDomain dto = new subDomain()
             {
                 Subdomainid = s.Subdomainid,
@@ -25,6 +26,8 @@ namespace DTO.NewFolder1
         }
         public static DAL.Subdomain GetSubDomain(DTO.NewFolder1.subDomain subDomaindto)
         {
+            if (subDomaindto == null)
+                return null;
             DAL.Subdomain sub =new DAL.Subdomain()
             {
                 Subdomainid = subDomaindto.Subdomainid,

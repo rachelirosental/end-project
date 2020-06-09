@@ -17,12 +17,15 @@ export class FormuserComponent implements OnInit {
 //         tel:" ",
 //         email:" ", 
 //         password :" ",
-//         typeUser:{
-//           TypeId:1,
-//           TypeName:" "
+//      typeUser :{
+//           typeId:1,
+//           typeName:" "
 //         }
+        
+
 //   };
-  public user:user;
+public user: user;
+ 
   constructor(public router: Router,public userService:UserService) {
 
    }

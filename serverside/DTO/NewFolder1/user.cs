@@ -20,6 +20,8 @@ namespace DTO.NewFolder1
         public virtual ICollection<NewFolder1.Reference> Reference { get; set; }
         public static user GetUser(DAL.users u)
         {
+            if (u == null)
+                return null;
             user dto = new user()
             {
                 UserId = u.UserId,
@@ -38,6 +40,8 @@ namespace DTO.NewFolder1
         }
         public static DAL.users GetUser(user userdto)
         {
+            if (userdto == null)
+                return null;
             DAL.users user = new DAL.users()
             {
                 UserId = userdto.UserId,
@@ -55,6 +59,8 @@ namespace DTO.NewFolder1
         }
         public static List<DAL.users> GetListUserDAL(List<user> Luser)
         {
+            if (Luser == null)
+                return null;
             List<DAL.users> l = new List<DAL.users>();
             Luser.ForEach(p => l.Add(GetUser(p)));
             return l;
@@ -62,6 +68,8 @@ namespace DTO.NewFolder1
         }
         public static List<user> GetListUserDTO(List<DAL.users> Luser)
         {
+            if (Luser == null)
+                return null;
             List<user> l = new List<user>();
             Luser.ForEach(u => l.Add(GetUser(u)));
             return l;

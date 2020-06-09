@@ -13,6 +13,8 @@ namespace DTO.NewFolder1
         public ICollection<DTO.NewFolder1.Reference> Reference { get; set; }
         public static TypeReference GetTypeReference(DAL.TypeReference t)
         {
+            if (t == null)
+                return null;
             TypeReference dto = new TypeReference()
             {
                 RefId = t.RefId,
@@ -24,6 +26,8 @@ namespace DTO.NewFolder1
         }
         public static DAL.TypeReference GetTypeReference(DTO.NewFolder1.TypeReference typereferencedto)
         {
+            if (typereferencedto == null)
+                return null;
             DAL.TypeReference type = new DAL.TypeReference()
             {
                 RefId = typereferencedto.RefId,

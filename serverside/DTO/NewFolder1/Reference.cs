@@ -23,6 +23,8 @@ namespace DTO.NewFolder1
         public NewFolder1.TypeReference TypeReference  { get; set; }
         public static Reference GetReference(DAL.Reference r)
         {
+            if (r == null)
+                return null;
             Reference dto = new Reference()
             {
                 RefId = r.RefId,
@@ -44,6 +46,8 @@ namespace DTO.NewFolder1
         }
         public static DAL.Reference GetReference(DTO.NewFolder1.Reference referencedto)
         {
+            if (referencedto == null)
+                return null;
             DAL.Reference reference = new DAL.Reference()
             {
                 RefId = referencedto.RefId,
@@ -65,6 +69,8 @@ namespace DTO.NewFolder1
 
         public static ICollection<Reference> GetListReferenceDTO(ICollection<DAL.Reference> Lreference)
         {
+            if (Lreference == null)
+                return null;
             List<Reference> l = new List<Reference>();
             
             (Lreference as List<DAL.Reference>).ForEach(r => l.Add(GetReference(r)));
@@ -73,6 +79,8 @@ namespace DTO.NewFolder1
         }
         public static ICollection<DAL.Reference> GetListReferenceDAL(ICollection<Reference> Lreference)
         {
+            if (Lreference == null)
+                return null;
             List<DAL.Reference> l = new List<DAL.Reference>();
             (Lreference as List<Reference>).ForEach(r => l.Add(GetReference(r)));
             return l;
