@@ -22,6 +22,8 @@ namespace DTO.NewFolder1
 
         public static Dairy GetDairy(DAL.Dairy d)
         {
+            if (d == null)
+                return null;
             Dairy dto = new Dairy()
             {
                 DairyId = d.DairyId,
@@ -39,6 +41,8 @@ namespace DTO.NewFolder1
         }
         public static DAL.Dairy GetDairy(DTO.NewFolder1.Dairy Dairydto)
         {
+            if (Dairydto == null)
+                return null;
             DAL.Dairy dairy = new DAL.Dairy()
             {
                 DairyId = Dairydto.DairyId,

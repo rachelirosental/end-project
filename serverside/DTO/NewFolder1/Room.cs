@@ -14,6 +14,8 @@ namespace DTO.NewFolder1
     
         public static Room GetRoom(DAL.Rooms r)
         {
+            if (r == null)
+                return null;
             Room dto = new Room()
             {
                 RoomId = r.RoomId,
@@ -24,6 +26,8 @@ namespace DTO.NewFolder1
         }
         public static DAL.Rooms GetRoom(DTO.NewFolder1.Room roomdto)
         {
+            if (roomdto == null)
+                return null;
             DAL.Rooms room = new DAL.Rooms()
             {
                 RoomId = roomdto.RoomId,

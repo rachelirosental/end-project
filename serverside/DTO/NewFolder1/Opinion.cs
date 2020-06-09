@@ -17,6 +17,8 @@ namespace DTO.NewFolder1
         public NewFolder1.Profession  Profession { get; set; }
         public static Opinion GetOpinion(DAL.Opinion o)
         {
+            if (o == null)
+                return null;
             Opinion dto = new Opinion()
             {
                 OpinionId = o.OpinionId,
@@ -33,6 +35,8 @@ namespace DTO.NewFolder1
         }
         public static DAL.Opinion GetOpinion(DTO.NewFolder1.Opinion Opiniondto)
         {
+            if (Opiniondto == null)
+                return null;
             DAL.Opinion opinion = new DAL.Opinion()
             {
                 OpinionId = Opiniondto.OpinionId,
@@ -46,6 +50,8 @@ namespace DTO.NewFolder1
         }
         public static ICollection<Opinion> GetListOpinionDTO(ICollection<DAL.Opinion> Lopinion)
         {
+            if (Lopinion == null)
+                return null;
             List<Opinion> l = new List<Opinion>();
 
             (Lopinion as List<DAL.Opinion>).ForEach(o => l.Add(GetOpinion(o)));
@@ -54,6 +60,8 @@ namespace DTO.NewFolder1
         }
         public static ICollection<DAL.Opinion> GetListOpinionDAL(ICollection<Opinion> Lopinion)
         {
+            if (Lopinion == null)
+                return null;
             List<DAL.Opinion> l = new List<DAL.Opinion>();
             (Lopinion as List<Opinion>).ForEach(o => l.Add(GetOpinion(o)));
             return l;

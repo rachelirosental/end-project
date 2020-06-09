@@ -14,6 +14,8 @@ namespace DTO.NewFolder1
         public  ICollection<NewFolder1.Profession> Professions { get; set; }
         public static Kupot GetKupot(DAL.Kupot1 k)
         {
+            if (k == null)
+                return null;
             Kupot dto = new Kupot()
             {
                 KupaId = k.KupaId,
@@ -25,6 +27,8 @@ namespace DTO.NewFolder1
         }
         public static DAL.Kupot1 GetKupot(DTO.NewFolder1.Kupot Kupotdto)
         {
+            if (Kupotdto == null)
+                return null;
             Kupot1 kupot = new Kupot1()
             {
                 KupaId = Kupotdto.KupaId,
@@ -36,6 +40,8 @@ namespace DTO.NewFolder1
         }
         public static ICollection<Kupot> GetListKupaDTO(ICollection<DAL.Kupot1> Lkupot)
         {
+            if (Lkupot == null)
+                return null;
             List<Kupot> l = new List<Kupot>();
 
             (Lkupot as List<DAL.Kupot1>).ForEach(k => l.Add(GetKupot(k)));
@@ -44,6 +50,8 @@ namespace DTO.NewFolder1
         }
         public static ICollection<DAL.Kupot1> GetListReferenceDAL(ICollection<Kupot> Lkupot)
         {
+            if (Lkupot== null)
+                return null;
             List<DAL.Kupot1> l = new List<DAL.Kupot1>();
             (Lkupot as List<Kupot>).ForEach(k => l.Add(GetKupot(k)));
             return l;
