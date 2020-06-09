@@ -48,22 +48,22 @@ namespace DTO.NewFolder1
             };
             return opinion;
         }
-        public static ICollection<Opinion> GetListOpinionDTO(ICollection<DAL.Opinion> Lopinion)
+        public static List<Opinion> GetListOpinionDTO(List<DAL.Opinion> Lopinion)
         {
             if (Lopinion == null)
                 return null;
             List<Opinion> l = new List<Opinion>();
 
-            (Lopinion as List<DAL.Opinion>).ForEach(o => l.Add(GetOpinion(o)));
+            Lopinion.ForEach(o => l.Add(GetOpinion(o)));
             return l;
 
         }
-        public static ICollection<DAL.Opinion> GetListOpinionDAL(ICollection<Opinion> Lopinion)
+        public static List<DAL.Opinion> GetListOpinionDAL(List<Opinion> Lopinion)
         {
             if (Lopinion == null)
                 return null;
             List<DAL.Opinion> l = new List<DAL.Opinion>();
-            (Lopinion as List<Opinion>).ForEach(o => l.Add(GetOpinion(o)));
+            Lopinion .ForEach(o => l.Add(GetOpinion(o)));
             return l;
 
         }

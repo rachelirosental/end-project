@@ -60,6 +60,8 @@ namespace DTO.NewFolder1
         }
         public static List<Dairy> GetListDairyDTO(List<DAL.Dairy> LDairy)
         {
+            if (LDairy == null)
+                return null;
             List<Dairy> l = new List<Dairy>();
             LDairy.ForEach(d => l.Add(GetDairy(d)));
             return l;
@@ -67,6 +69,8 @@ namespace DTO.NewFolder1
         }
         public static List<DAL.Dairy> GetListDairyDAL(List<Dairy> LDairy)
         {
+            if (LDairy == null)
+                return null;
             List<DAL.Dairy> l = new List<DAL.Dairy>();
             LDairy.ForEach(d => l.Add(GetDairy(d)));
             return l;

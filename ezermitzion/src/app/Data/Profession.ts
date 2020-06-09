@@ -16,10 +16,10 @@ export interface Profession extends typeProfessions {
     subdomain:number;
     privateOpinion:string;
      typeprofession:typeProfessions;
-     Subdomain1:SubDomain;
-     Reference :Reference[];
-     Kupot:Kupot;
-     Opinions:opinion[];
+     subdomain1:SubDomain;
+     reference :Reference[];
+     kupot:Kupot;
+     opinions:opinion[];
 
 
 }
