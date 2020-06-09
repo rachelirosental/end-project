@@ -1,6 +1,7 @@
+import {dairy} from 'src/app/Data/dairy'
 export interface Room {
-    RoomId : number;
-    RoomName :string;
+    roomId : number;
+   roomName :string;
+   dairy:dairy[];
     
     }
-   

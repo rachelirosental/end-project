@@ -1,4 +1,8 @@
  import {typeProfessions} from 'src/app/Data/TypeProfessions'
+ import {Reference} from 'src/app/Data/Reference'
+ import {SubDomain} from 'src/app/Data/SubDomain'
+ import {Kupot} from 'src/app/Data/Kupot'
+ import {opinion} from 'src/app/Data/Opinion'
 export interface Profession extends typeProfessions {
     profId  : number;
     profName:string;
@@ -11,6 +15,11 @@ export interface Profession extends typeProfessions {
     clinicAddres:string;
     subdomain:number;
     privateOpinion:string;
-    typeprofession:typeProfessions;
+     typeprofession:typeProfessions;
+     Subdomain1:SubDomain;
+     Reference :Reference[];
+     Kupot:Kupot;
+     Opinions:opinion[];
+
 
 }

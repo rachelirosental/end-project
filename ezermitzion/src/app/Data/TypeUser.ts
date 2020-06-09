@@ -1,7 +1,8 @@
+import {user} from 'src/app/Data/user'
 export interface TypeUser{
-    TypeId: number;
-    TypeName :string;
-   
+    typeId: number;
+    typeName :string;
+    users:user[];
     
     }
    

@@ -1,9 +1,15 @@
-export interface dairy {
-  DairyId: number;
-  DateTime: Date;
-  DuringTime:Date;
-  RoomId:number;
-  Description:string;
-  TypeMeeting:number;
-  UserId:number;
+import {Room} from 'src/app/Data/Room'
+import {TypeMeeting} from 'src/app/Data/TypeMeeting'
+import {user} from 'src/app/Data/user'
+export interface dairy extends Room,TypeMeeting,user {
+  dairyId: number;
+  dateTime: Date;
+  duringTime:Date;
+  roomId:number;
+  description:string;
+  typeMeeting:number;
+  rooms:Room;
+  typeMeeting1:TypeMeeting;
+  user:user;
+
   }

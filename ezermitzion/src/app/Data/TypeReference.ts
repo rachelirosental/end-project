@@ -1,7 +1,7 @@
+import {Reference} from 'src/app/Data/Reference'
 export interface  TypeReference{
-    RefId: number;
+    refId: number;
     refname :string;
-    
+    reference:Reference[];
     }
    
-  

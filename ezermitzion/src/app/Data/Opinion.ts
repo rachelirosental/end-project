@@ -1,8 +1,9 @@
-export interface dairy {
-    OpinionId  : number;
-    ProfPersonid : number;
+import {Profession} from 'src/app/Data/Profession'
+export interface opinion {
+    opinionId  : number;
+    profPersonid : number;
     description:string;
-    Date:Date;
-    Mark:number;
+    date:Date;
+    mark:number;
+    profession:Profession
     }
-   

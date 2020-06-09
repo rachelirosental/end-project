@@ -1,4 +1,6 @@
+import {Profession} from 'src/app/Data/Profession'
 export interface SubDomain{
-    Subdomainid :number;
-    SubdomainName:string; 
+    subdomainid :number;
+    subdomainName:string; 
+    professions:Profession[];
 }

@@ -1,6 +1,7 @@
+import {dairy} from 'src/app/Data/dairy'
 export interface TypeMeeting {
-    MeetingId : number;
+    meetingId : number;
     description :string;
+    dairy:dairy[];
     
     }
-   
