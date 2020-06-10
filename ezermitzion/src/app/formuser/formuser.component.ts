@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../shared/services/user.service';
 import { user } from '../Data/user';
+import {typeProfessions} from 'src/app/Data/TypeProfessions'
+
 @Component({
   selector: 'app-formuser',
   templateUrl: './formuser.component.html',
@@ -10,22 +12,21 @@ import { user } from '../Data/user';
 export class FormuserComponent implements OnInit {
 
   
-//  public user: user = {
+//  public user:<user>: {
 //     userId:1,
 //         userFname:" ", 
 //         userLname:" ",
 //         tel:" ",
 //         email:" ", 
 //         password :" ",
-//      typeUser :{
-//           typeId:1,
-//           typeName:" "
-//         }
+//          typeId:1,
+//          typeName:" "
+       
         
 
 //   };
-public user: user;
- 
+
+ public user:user;
   constructor(public router: Router,public userService:UserService) {
 
    }
