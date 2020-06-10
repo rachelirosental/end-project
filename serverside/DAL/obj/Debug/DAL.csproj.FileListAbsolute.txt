@@ -21,3 +21,15 @@ C:\Users\user1\Documents\GitHub\end-project\serverside\DAL\obj\Debug\DAL.csproj.
 C:\Users\user1\Documents\GitHub\end-project\serverside\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\user1\Documents\GitHub\end-project\serverside\DAL\obj\Debug\DAL.dll
 C:\Users\user1\Documents\GitHub\end-project\serverside\DAL\obj\Debug\DAL.pdb
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\DAL\bin\Debug\DAL.dll.config
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\DAL\bin\Debug\DAL.dll
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\DAL\bin\Debug\DAL.pdb
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\DAL\bin\Debug\EntityFramework.dll
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\DAL\bin\Debug\EntityFramework.xml
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\DAL\obj\Debug\DAL.dll
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\DAL\obj\Debug\DAL.pdb
