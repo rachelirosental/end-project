@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../shared/services/user.service';
 import { user } from '../Data/user';
-import {typeProfessions} from 'src/app/Data/TypeProfessions'
+import {TypeProfessions} from 'src/app/Data/TypeProfessions'
 
 @Component({
   selector: 'app-formuser',
