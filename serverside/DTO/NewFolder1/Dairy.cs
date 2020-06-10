@@ -22,6 +22,8 @@ namespace DTO.NewFolder1
 
         public static Dairy GetDairy(DAL.Dairy d)
         {
+            if (d == null)
+                return null;
             Dairy dto = new Dairy()
             {
                 DairyId = d.DairyId,
@@ -39,6 +41,8 @@ namespace DTO.NewFolder1
         }
         public static DAL.Dairy GetDairy(DTO.NewFolder1.Dairy Dairydto)
         {
+            if (Dairydto == null)
+                return null;
             DAL.Dairy dairy = new DAL.Dairy()
             {
                 DairyId = Dairydto.DairyId,
@@ -56,6 +60,8 @@ namespace DTO.NewFolder1
         }
         public static List<Dairy> GetListDairyDTO(List<DAL.Dairy> LDairy)
         {
+            if (LDairy == null)
+                return null;
             List<Dairy> l = new List<Dairy>();
             LDairy.ForEach(d => l.Add(GetDairy(d)));
             return l;
@@ -63,6 +69,8 @@ namespace DTO.NewFolder1
         }
         public static List<DAL.Dairy> GetListDairyDAL(List<Dairy> LDairy)
         {
+            if (LDairy == null)
+                return null;
             List<DAL.Dairy> l = new List<DAL.Dairy>();
             LDairy.ForEach(d => l.Add(GetDairy(d)));
             return l;

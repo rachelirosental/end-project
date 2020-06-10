@@ -20,6 +20,8 @@ namespace DTO.NewFolder1
         public virtual ICollection<NewFolder1.Reference> Reference { get; set; }
         public static user GetUser(DAL.users u)
         {
+            if (u == null)
+                return null;
             user dto = new user()
             {
                 UserId = u.UserId,
@@ -31,13 +33,15 @@ namespace DTO.NewFolder1
                 TypeUser = u.TypeUser,
                 TypeUser1 = DTO.NewFolder1.TypeUser.GetTypeUser(u.TypeUser1),
                 Dairy = NewFolder1.Dairy.GetListDairyDTO(u.Dairy as List<DAL.Dairy>),
-                Reference = NewFolder1.Reference.GetListReferenceDTO(u.Reference),
+                Reference = NewFolder1.Reference.GetListReferenceDTO(u.Reference as List<DAL.Reference>),
 
             };
             return dto;
         }
         public static DAL.users GetUser(user userdto)
         {
+            if (userdto == null)
+                return null;
             DAL.users user = new DAL.users()
             {
                 UserId = userdto.UserId,
@@ -49,12 +53,14 @@ namespace DTO.NewFolder1
                 TypeUser = userdto.TypeUser,
                 TypeUser1 = DTO.NewFolder1.TypeUser.GetUser(userdto.TypeUser1),
                 Dairy = NewFolder1.Dairy.GetListDairyDAL(userdto.Dairy as List<Dairy>),
-                Reference = NewFolder1.Reference.GetListReferenceDAL(userdto.Reference),
+                Reference = NewFolder1.Reference.GetListReferenceDAL(userdto.Reference as List<Reference>),
             };
             return user;
         }
         public static List<DAL.users> GetListUserDAL(List<user> Luser)
         {
+            if (Luser == null)
+                return null;
             List<DAL.users> l = new List<DAL.users>();
             Luser.ForEach(p => l.Add(GetUser(p)));
             return l;
@@ -62,6 +68,8 @@ namespace DTO.NewFolder1
         }
         public static List<user> GetListUserDTO(List<DAL.users> Luser)
         {
+            if (Luser == null)
+                return null;
             List<user> l = new List<user>();
             Luser.ForEach(u => l.Add(GetUser(u)));
             return l;

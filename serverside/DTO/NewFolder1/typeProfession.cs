@@ -14,6 +14,8 @@ namespace DTO.NewFolder1
         public ICollection<NewFolder1.Profession> Professions { get; set; }
         public static typeProfession GetTypeProfession(DAL.typeProfessions p)
         {
+            if (p == null)
+                return null;
             typeProfession dto = new typeProfession()
             {
                 ProfessionId = p.ProfessionId,
@@ -25,7 +27,9 @@ namespace DTO.NewFolder1
         }
         public static DAL.typeProfessions GetTypeProfession(DTO.NewFolder1.typeProfession typeprofessiondto)
         {
-          DAL.typeProfessions type =new DAL.typeProfessions()
+            if (typeprofessiondto == null)
+                return null;
+            DAL.typeProfessions type =new DAL.typeProfessions()
             {
                 ProfessionId = typeprofessiondto.ProfessionId,
                 Nameprofession = typeprofessiondto.Nameprofession,

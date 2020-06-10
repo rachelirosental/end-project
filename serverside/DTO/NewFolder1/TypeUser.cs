@@ -13,6 +13,8 @@ namespace DTO.NewFolder1
         public virtual ICollection<NewFolder1.user> users { get; set; }
         public static TypeUser GetTypeUser(DAL.TypeUser t)
         {
+            if (t == null)
+                return null;
             TypeUser dto = new TypeUser()
             {
                 TypeId = t.TypeId,
@@ -24,6 +26,8 @@ namespace DTO.NewFolder1
         }
         public static DAL.TypeUser GetUser(DTO.NewFolder1.TypeUser typeuserdto)
         {
+            if (typeuserdto == null)
+                return null;
             DAL.TypeUser type = new DAL.TypeUser()
             {
                 TypeId = typeuserdto.TypeId,
