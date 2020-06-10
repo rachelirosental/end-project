@@ -1,2 +1,24 @@
-<button type="button" (click)="next1()">רשימת אנשי קשר</button>
-<button type="button" (click)="next2()">הוספת איש קשר חדש</button>
+<!-- <button type="button" (click)="next1()">רשימת אנשי קשר</button>
+<button type="button" (click)="next2()">הוספת איש קשר חדש</button> -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+           
+            <!-- Indicates a successful or positive action -->
+            <button type="button" class="btn btn-success" (click)="next1()">רשימת אנשי קשר</button>
+
+            <!-- Contextual button for informational alert messages -->
+            <button type="button" class="btn btn-info" (click)="next2()">הוספת איש קשר</button>
+
+            <!-- Indicates caution should be taken with this action -->
+            <button type="button" class="btn btn-warning">חזרה לתפריט קודם</button>
+
+            <!-- Indicates a dangerous or potentially negative action -->
+            <button type="button" class="btn btn-danger">חזרה לעמוד כניסה</button>
+
+
+        </div>
+        
+    </div>
+</div>
