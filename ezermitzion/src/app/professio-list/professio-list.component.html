@@ -14,7 +14,7 @@
  <div   *ngIf="profession">
   <h1> profession: </h1>
  {{profession.profId}} -->
- <input type="text" [(ngModel)]="inputText" >  
+ <input type="text" [(ngModel)]="inputText" (keyup)="search()" >  
  <input type="button" value="לחיפוש" (click)=" getProfById()">
  <div class="container">
   <div class="table-wrapper">
@@ -32,7 +32,9 @@
                   <th>Name</th>
                   <th>Department</th>
                   <th>Kupa</th>
-                  <th>Actions</th>
+                  <th>privateAddres</th>
+                  <th>clinicAddres</th>
+                  <th>subdomain</th>
               </tr>
           </thead>
           <tbody>
@@ -40,7 +42,9 @@
                   <td>{{p.profName}}</td>
                   <td>{{p.email}}</td>
                   <td>{{p.kupot.kupaName}}</td>
-                  
+                  <td>{{p.privateAddres}}</td>
+                  <td>{{p.clinicAddres}}</td>
+                  <td>{{p.subdomain1.subdomainName}}</td>
                   
                  <td>
         <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
