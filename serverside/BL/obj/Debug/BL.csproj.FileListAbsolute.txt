@@ -32,3 +32,20 @@ C:\Users\user1\Documents\GitHub\end-project\serverside\BL\obj\Debug\BL.csproj.Co
 C:\Users\user1\Documents\GitHub\end-project\serverside\BL\obj\Debug\BL.csproj.CopyComplete
 C:\Users\user1\Documents\GitHub\end-project\serverside\BL\obj\Debug\BL.dll
 C:\Users\user1\Documents\GitHub\end-project\serverside\BL\obj\Debug\BL.pdb
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\bin\Debug\BL.dll.config
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\bin\Debug\BL.dll
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\bin\Debug\BL.pdb
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\bin\Debug\DAL.dll
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\bin\Debug\DTO.dll
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\bin\Debug\EntityFramework.dll
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\bin\Debug\DAL.pdb
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\bin\Debug\DAL.dll.config
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\bin\Debug\DTO.pdb
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\bin\Debug\EntityFramework.xml
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\obj\Debug\BL.dll
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\BL\obj\Debug\BL.pdb
