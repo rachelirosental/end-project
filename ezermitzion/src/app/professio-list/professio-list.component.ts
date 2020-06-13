@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProfessionDetialsComponent } from '../profession-detials/profession-detials.component';
 import {TypeProfessions } from 'src/app/Data/TypeProfessions';
+import { CreateProfessionComponent } from '../create-profession/create-profession.component';
+
 
 @Component({
   selector: 'app-professio-list',
@@ -19,7 +21,7 @@ public profession:Profession
 
 
 
- constructor(public ProfessionService:ProfessionService,private modalService: NgbModal  ){ }
+ constructor(public ProfessionService:ProfessionService, private modalService: NgbModal  ){ }
 
   ngOnInit(): void {
    
@@ -76,9 +78,16 @@ openModal(p:Profession) {
   const modalRef = this.modalService.open(ProfessionDetialsComponent);
   modalRef.componentInstance.profession = p;
   }
- 
+//  openmodalcreate(){
 
-}
+//     const modalRef = this.modalService.open(CreateProfessionComponent);
+//     modalRef.componentInstance.profession = this.profession;
+
+
+//   }
+ }
+
+
 
 
 

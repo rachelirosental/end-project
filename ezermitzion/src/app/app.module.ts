@@ -49,6 +49,9 @@ import { SetdetailuserComponent } from './setdetailuser/setdetailuser.component'
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ProfessionDetialsComponent]
+  entryComponents: [
+    ProfessionDetialsComponent,
+    CreateProfessionComponent
+  ]
 })
 export class AppModule { }

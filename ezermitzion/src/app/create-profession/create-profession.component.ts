@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Profession } from 'src/app/Data/Profession';
 import {ProfessionService } from '../shared/services/profession.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-profession',
@@ -8,7 +9,7 @@ import {ProfessionService } from '../shared/services/profession.service';
   styleUrls: ['./create-profession.component.scss']
 })
 export class CreateProfessionComponent implements OnInit {
-public profession:Profession
+@Input() public profession:Profession
 // =  
 // {/
   
@@ -25,7 +26,7 @@ public profession:Profession
 //   privateOpinion:" ",
 // };
 
-  constructor(public ProfessionService:ProfessionService) { }
+  constructor(public ProfessionService:ProfessionService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
