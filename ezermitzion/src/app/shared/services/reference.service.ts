@@ -7,7 +7,10 @@ import { Reference } from 'src/app/Data/Reference';
     providedIn: 'root'
   })
   export class referenceservice{
-
+    url: string;
+    constructor(public httpClient: HttpClient) {
+      this.url = environment.url + "Reference";
+    }
   }
 
   
