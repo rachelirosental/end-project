@@ -20,18 +20,18 @@ user:any;
 inputText:any;
   inputdelete:any;
 
-  constructor(private httpClient:HttpClient,public userService:UserService,private modalService: NgbModal) { }
+  constructor(private httpClient:HttpClient,public UserService:UserService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.loadUsers();
   }
   loadUsers(){
-    this.userService.getusers().subscribe((users:user[])=>{this.users=users;
+    this.UserService.getusers().subscribe((users:user[])=>{this.users=users;
     console.log(this.users)});
   }
 
 deleteUser(id:number){
-  this.userService.delete(id).subscribe(res=>{
+  this.UserService.delete(id).subscribe(res=>{
    this.loadUsers();
     console.log(res)
   },err=>{
@@ -46,7 +46,7 @@ next(u:user){
 
 
 getuserById(){
-  this.userService.getuserByid(Number(this.inputText)).subscribe(res=>{
+  this.UserService.getuserByid(Number(this.inputText)).subscribe(res=>{
     this.user=res,console.log('user',this.user)
   },err=>{
     alert("error")

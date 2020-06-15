@@ -27,7 +27,7 @@ export class FormuserComponent implements OnInit {
 //   };
 
  public user:user;
-  constructor(public router: Router,public userService:UserService) {
+  constructor(public router: Router,public UserService:UserService) {
 
    }
 
@@ -37,7 +37,7 @@ export class FormuserComponent implements OnInit {
  console.log(this.user);
 
 
-    this.userService.create(this.user).subscribe(res=>{
+    this.UserService.create(this.user).subscribe(res=>{
       localStorage.setItem("user",JSON.stringify(res));
       
     },err=>{

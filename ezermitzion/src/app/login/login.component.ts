@@ -12,27 +12,27 @@ import Swal from 'sweetalert2'
 export class LoginComponent implements OnInit {
 name:string;
 password:any;
+  public key='user'
   constructor(public router: Router,public userService:UserService) { }
 
   ngOnInit() {
    
   }
   validation(){
-    this.userService.login(this.password,this.name).subscribe(res=>{
+    this.userService.login(this.password,this.name,this.key).subscribe(res=>{
       if(res==null)
       {
         Swal.fire('Oops...', 'Something went wrong!', 'error');
         return;
       }
-      localStorage.setItem("user",JSON.stringify(res));
-      this.router.navigateByUrl('/secretary');
+      localStorage.setItem(this.key,JSON.stringify(res));
+      console.log(res.typeUser)
+       this.router.navigateByUrl('/entry'+res.typeUser);
     },err=>{
       Swal.fire('Oops...', 'Something went wrong!', 'error')
     })
     
   }
   
-
  
-  
 }

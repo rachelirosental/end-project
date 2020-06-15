@@ -13,8 +13,14 @@ import { ProfessioListComponent } from './professio-list/professio-list.componen
 import { CreateProfessionComponent } from './create-profession/create-profession.component';
 import { ProfessionDetialsComponent } from './profession-detials/profession-detials.component';
 import { SetdetailuserComponent } from './setdetailuser/setdetailuser.component';
+import { ManagerComponent } from './manager/manager.component';
+import{AuthGuard} from './auth.guard'
 const routes: Routes = [
-{path:'secretary',component:SecretaryComponent},
+{path:'entry2',component:SecretaryComponent ,canActivate:[AuthGuard]},
+{path:'entry1',component:ManagerComponent,canActivate:[AuthGuard]},
+
+{path:'login',component:LoginComponent,canActivate:[AuthGuard]},
+
 {path:'dairy',component:DairyComponent},
 {path:'rooms',component:RoomsComponent},
 {path:'reference',component:ReferenceComponent},
