@@ -13,6 +13,7 @@ import { ProfessioListComponent } from './professio-list/professio-list.componen
 import { CreateProfessionComponent } from './create-profession/create-profession.component';
 import { ProfessionDetialsComponent } from './profession-detials/profession-detials.component';
 import { SetdetailuserComponent } from './setdetailuser/setdetailuser.component';
+import { ReferencebuttonsComponent } from './referencebuttons/referencebuttons.component';
 const routes: Routes = [
 {path:'secretary',component:SecretaryComponent},
 {path:'dairy',component:DairyComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
 {path:'createnew',component: CreateProfessionComponent},
 {path:'detail/:id',component: ProfessionDetialsComponent},
 {path:'setdetailuser/:id',component:SetdetailuserComponent},
+{path:'referencebuttons',component:ReferencebuttonsComponent},
 {path:'',component:LoginComponent },
 ];
 

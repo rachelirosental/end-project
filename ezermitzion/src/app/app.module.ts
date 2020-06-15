@@ -20,6 +20,8 @@ import { CreateProfessionComponent } from './create-profession/create-profession
 import { ProfessionDetialsComponent } from './profession-detials/profession-detials.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SetdetailuserComponent } from './setdetailuser/setdetailuser.component';
+import { SetdetailreferenceComponent } from './setdetailreference/setdetailreference.component';
+import { ReferencebuttonsComponent } from './referencebuttons/referencebuttons.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { SetdetailuserComponent } from './setdetailuser/setdetailuser.component'
     ProfessioListComponent,
     CreateProfessionComponent,
     ProfessionDetialsComponent,
-    SetdetailuserComponent
+    SetdetailuserComponent,
+    SetdetailreferenceComponent,
+    ReferencebuttonsComponent
   ],
   imports: [
     BrowserModule,
