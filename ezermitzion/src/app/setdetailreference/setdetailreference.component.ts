@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ReferenceService } from '../shared/services/reference.service';
 import { Reference } from '../Data/reference';
 import { ActivatedRoute } from '@angular/router';
-import { runInThisContext } from 'vm';
+
 
 @Component({
   selector: 'app-setdetailreference',
