@@ -76,7 +76,12 @@
               </div>
               <div class="form-group">
                   <label>Kupa:</label>
-                  <input class="form-control" type="number" name="kupa" required placeholder="Enter Kupa" [(ngModel)]="profession.kupa"/>
+                  <select  class="form-control" type="text" name="kupot" required placeholder="Enter Kupa" [(ngModel)]="profession.kupot.kupaName">
+                      <option>כללית</option>
+                      <option>מכבי</option>
+                      <option>מאוחדת</option>
+                      <option>לאומית</option>
+                  </select>
                   <span class="Error"></span>
               </div>
               <div class="form-group">

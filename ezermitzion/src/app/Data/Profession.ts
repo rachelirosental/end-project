@@ -7,7 +7,7 @@ export interface Profession  {
     profId  : number;
     profName:string;
     type : number;
-    kupa:number;
+    kupot:Kupot;
     tel:string;
     addTel:string;
     email:string;
@@ -18,7 +18,7 @@ export interface Profession  {
      typeprofession:TypeProfessions;
      subdomain1:SubDomain;
      reference :Reference[];
-     kupot:Kupot;
+     
      opinions:opinion[];
 
 

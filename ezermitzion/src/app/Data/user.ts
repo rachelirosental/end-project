@@ -9,7 +9,12 @@ export interface user extends TypeUser{
         tel:string;
         email:string; 
         password :string;
+<<<<<<< HEAD
         typeUser:number;
+=======
+        typeuser:TypeUser;
+     
+>>>>>>> f19d4ca23c282d70c7cb1d1455cec64885ae8d6b
         // dairy:dairy[];
         // Reference:Reference[];
        
