@@ -14,6 +14,8 @@ import { CreateProfessionComponent } from './create-profession/create-profession
 import { ProfessionDetialsComponent } from './profession-detials/profession-detials.component';
 import { SetdetailuserComponent } from './setdetailuser/setdetailuser.component';
 import { ReferencebuttonsComponent } from './referencebuttons/referencebuttons.component';
+import { FormreferenceComponent } from './formreference/formreference.component';
+
 const routes: Routes = [
 {path:'secretary',component:SecretaryComponent},
 {path:'dairy',component:DairyComponent},
@@ -28,6 +30,7 @@ const routes: Routes = [
 {path:'detail/:id',component: ProfessionDetialsComponent},
 {path:'setdetailuser/:id',component:SetdetailuserComponent},
 {path:'referencebuttons',component:ReferencebuttonsComponent},
+{path:'formreference',component:FormreferenceComponent},
 {path:'',component:LoginComponent },
 ];
 

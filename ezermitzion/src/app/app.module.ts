@@ -22,6 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SetdetailuserComponent } from './setdetailuser/setdetailuser.component';
 import { SetdetailreferenceComponent } from './setdetailreference/setdetailreference.component';
 import { ReferencebuttonsComponent } from './referencebuttons/referencebuttons.component';
+import { FormreferenceComponent } from './formreference/formreference.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ReferencebuttonsComponent } from './referencebuttons/referencebuttons.c
     ProfessionDetialsComponent,
     SetdetailuserComponent,
     SetdetailreferenceComponent,
-    ReferencebuttonsComponent
+    ReferencebuttonsComponent,
+    FormreferenceComponent
   ],
   imports: [
     BrowserModule,

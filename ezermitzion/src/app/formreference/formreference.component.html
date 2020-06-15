@@ -1,0 +1,32 @@
+
+<div>
+      <label for="lname" >תאריך</label>
+      <input type="text" id="date" name="date"  [(ngModel)]="reference.date">
+
+      <label for="fname" >תיאור הפניה</label>
+      <input type="text" id="description" name="description"  [(ngModel)]="reference.description">
+
+      <label for="Tel" >תאריך לידה</label>
+      <input type="text" id="bornDate" name="bornDate"  [(ngModel)]="reference.bornDate">
+
+      <label for="mail" >האם טופל</label>
+      <input type="text" id="isCare" name="isCare"  [(ngModel)]="reference.isCare">
+
+      <label for="password" >סוג משתמש</label>
+      <input type="text" id="userName" name="userName"  [(ngModel)]="reference.userName">
+
+      <label for="tuser" >attendantId</label>
+      <input type="text" id="attendantId" name="attendantId"  [(ngModel)]="reference.attendantId">
+
+      <label for="tuser" >בעל מקצוע</label>
+      <input type="text" id="profId" name="profId"  [(ngModel)]="reference.profId">
+
+      <label for="tuser" >סוג פניה</label>
+      <input type="text" id="typeRef" name="typeRef"  [(ngModel)]="reference.typeRef">
+
+      <label for="tuser" >המלצות</label>
+      <input type="text" id="recommendation" name="recommendation"  [(ngModel)]="reference.recommendation">
+
+      <input type="submit" value="אישור" (click)="add()">
+    
+  </div>
