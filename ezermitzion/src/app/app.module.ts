@@ -23,6 +23,7 @@ import { SetdetailuserComponent } from './setdetailuser/setdetailuser.component'
 import { SetdetailreferenceComponent } from './setdetailreference/setdetailreference.component';
 import { ReferencebuttonsComponent } from './referencebuttons/referencebuttons.component';
 import { FormreferenceComponent } from './formreference/formreference.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [

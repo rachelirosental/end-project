@@ -6,7 +6,7 @@ import { user } from '../Data/user';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SetdetailuserComponent } from '../setdetailuser/setdetailuser.component';
 import { TypeUser } from '../Data/TypeUser';
-
+import { FormuserComponent } from '../formuser/formuser.component';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -42,6 +42,9 @@ deleteUser(id:number){
 next(u:user){
   const modalRef = this.modalService.open(SetdetailuserComponent);
   modalRef.componentInstance.user = u;
+}
+next1(){
+  const modalRef = this.modalService.open(FormuserComponent);
 }
 
 
