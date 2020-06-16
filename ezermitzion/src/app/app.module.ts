@@ -58,7 +58,8 @@ import { AuthGuard } from './auth.guard';
   bootstrap: [AppComponent],
   entryComponents: [
     ProfessionDetialsComponent,
-    CreateProfessionComponent
+    CreateProfessionComponent,
+
   ]
 })
 export class AppModule { }

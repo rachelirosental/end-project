@@ -19,8 +19,8 @@ import { ManagerComponent } from './manager/manager.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-{path:'entry2',component:SecretaryComponent ,canActivate:[AuthGuard]},
-{path:'entry1',component:ManagerComponent ,canActivate:[AuthGuard]},
+{path:'entry2',component:SecretaryComponent },
+{path:'entry1',component:ManagerComponent },
 {path:'login',component:LoginComponent },
 {path:'dairy',component:DairyComponent},
 {path:'rooms',component:RoomsComponent},

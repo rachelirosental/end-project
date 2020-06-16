@@ -42,7 +42,7 @@ public profession:Profession
     }
     getProfById(){
       this.ProfessionService.getProfById(Number(this.inputText)).subscribe(res=>{
-        this.profession=res,console.log('profession',this.profession.typeprofession.nameprofession)
+        this.profession=res,console.log('profession',this.profession.typeProfessions.nameprofession)
       },err=>{
         alert("error")
       })

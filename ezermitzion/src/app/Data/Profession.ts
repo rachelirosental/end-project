@@ -15,7 +15,7 @@ export interface Profession  {
     clinicAddres:string;
     subdomain:number;
     privateOpinion:string;
-     typeprofession:TypeProfessions;
+    typeProfessions:TypeProfessions;
      subdomain1:SubDomain;
      reference :Reference[];
      

@@ -34,6 +34,7 @@
                   <th>Kupa</th>
                   <th>privateAddres</th>
                   <th>clinicAddres</th>
+                  <th></th>
                   <th>subdomain</th>
               </tr>
           </thead>
@@ -43,7 +44,7 @@
                   <td>{{p.email}}</td>
                   <td>{{p.kupot.kupaName}}</td>
                   <td>{{p.privateAddres}}</td>
-                  <td>{{p.typeprofession.nameprofession}}</td>
+                  <td *ngIf="p.typeProfessions">{{p.typeProfessions.nameprofession}}</td>
                   <td>{{p.subdomain1.subdomainName}}</td>
                   
                  <td>
