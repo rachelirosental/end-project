@@ -273,3 +273,4 @@ C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\serversid
 C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\serverside\obj\Debug\serverside.csproj.CopyComplete
 C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\serverside\obj\Debug\serverside.dll
 C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\serverside\obj\Debug\serverside.pdb
+C:\Users\רחלי רוזנטל\Documents\GitHub\end-project\serverside\serverside\bin\serverside.dll.config
