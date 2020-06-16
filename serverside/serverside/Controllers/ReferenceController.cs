@@ -8,11 +8,11 @@ using BL;
 
 namespace API.Controllers
 {
-    [RoutePrefix("api/User")]
+    [RoutePrefix("api/Reference")]
     public class ReferenceController:ApiController
     {
-        // GET: api/User
-        
+        // GET: api/Reference
+
         [Route("getreference")]
         public List<Reference> Get()
         {
