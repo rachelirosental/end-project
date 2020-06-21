@@ -1,5 +1,5 @@
 import {user} from 'src/app/Data/user'
-export interface TypeUser{
+export class TypeUser{
     typeId: number;
     typeName :string;
     users:user[];

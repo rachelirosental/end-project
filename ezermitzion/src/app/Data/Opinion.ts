@@ -1,5 +1,5 @@
 import {Profession} from 'src/app/Data/Profession'
-export interface opinion {
+export class opinion {
     opinionId  : number;
     profPersonid : number;
     description:string;

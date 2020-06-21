@@ -1,5 +1,5 @@
 import {Profession} from 'src/app/Data/Profession'
-export interface TypeProfessions {
+export class TypeProfessions {
     professionId: number;
     nameprofession :string
     professions:Profession[]; 

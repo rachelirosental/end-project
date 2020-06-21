@@ -19,6 +19,7 @@ namespace DAL
         {
             this.Reference = new HashSet<Reference>();
             this.Opinions = new HashSet<Opinion>();
+            this.Kupot11 = new HashSet<Kupot1>();
         }
     
         public int ProfId { get; set; }
@@ -40,5 +41,7 @@ namespace DAL
         public virtual Kupot1 Kupot1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Opinion> Opinions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Kupot1> Kupot11 { get; set; }
     }
 }

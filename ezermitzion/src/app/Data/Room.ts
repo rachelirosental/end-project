@@ -1,5 +1,5 @@
 import {dairy} from 'src/app/Data/dairy'
-export interface Room {
+export class Room {
     roomId : number;
    roomName :string;
    dairy:dairy[];

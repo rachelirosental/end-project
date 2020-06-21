@@ -1,5 +1,5 @@
 import {Profession} from 'src/app/Data/Profession'
-export interface Kupot {
+export class Kupot {
     kupaId : number;
     kupaName:string;
     professions:Profession[];

@@ -1,7 +1,7 @@
 import {Room} from 'src/app/Data/Room'
 import {TypeMeeting} from 'src/app/Data/TypeMeeting'
 import {user} from 'src/app/Data/user'
-export interface dairy extends Room,TypeMeeting,user {
+export class dairy  {
   dairyId: number;
   dateTime: Date;
   duringTime:Date;
@@ -11,5 +11,4 @@ export interface dairy extends Room,TypeMeeting,user {
   rooms:Room;
   typeMeeting1:TypeMeeting;
   user:user;
-
   }

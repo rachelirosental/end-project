@@ -3,7 +3,7 @@
  import {SubDomain} from 'src/app/Data/SubDomain'
  import {Kupot} from 'src/app/Data/Kupot'
  import {opinion} from 'src/app/Data/Opinion'
-export interface Profession  {
+export class Profession  {
     profId  : number;
     profName:string;
     type : number;

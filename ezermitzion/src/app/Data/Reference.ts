@@ -1,7 +1,7 @@
 import {Profession} from 'src/app/Data/Profession'
 import {user} from 'src/app/Data/user'
 import {TypeReference} from 'src/app/Data/TypeReference'
-export interface Reference {
+export class Reference {
     refId : number;
     date:Date;
     description :string;

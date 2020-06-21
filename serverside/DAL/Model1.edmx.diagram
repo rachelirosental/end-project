@@ -33,6 +33,7 @@
         <AssociationConnector Association="EzerMitzionModel.FK__users__TypeUser__4CA06362" ManuallyRouted="false" />
         <AssociationConnector Association="EzerMitzionModel.FK__Profession__Kupa__4E88ABD41" />
         <AssociationConnector Association="EzerMitzionModel.FK_Opinion_Professions" />
+        <AssociationConnector Association="EzerMitzionModel.KupotToProf" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

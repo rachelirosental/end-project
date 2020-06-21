@@ -1,5 +1,5 @@
 import {dairy} from 'src/app/Data/dairy'
-export interface TypeMeeting {
+export class TypeMeeting {
     meetingId : number;
     description :string;
     dairy:dairy[];

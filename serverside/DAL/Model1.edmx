@@ -36,6 +36,14 @@
           <Property Name="KupaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="KupaName" Type="nvarchar" MaxLength="200" />
         </EntityType>
+        <EntityType Name="KupotToProf">
+          <Key>
+            <PropertyRef Name="ProfId" />
+            <PropertyRef Name="KupaId" />
+          </Key>
+          <Property Name="ProfId" Type="int" Nullable="false" />
+          <Property Name="KupaId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Opinion">
           <Key>
             <PropertyRef Name="OpinionId" />
@@ -72,7 +80,6 @@
           <Property Name="BornDate" Type="date" />
           <Property Name="IsCare" Type="bit" />
           <Property Name="UserName" Type="int" />
-          <Property Name="AttendantId" Type="int" />
           <Property Name="ProfId" Type="int" />
           <Property Name="TypeRef" Type="int" />
           <Property Name="recommendation" Type="nvarchar" MaxLength="200" />
@@ -227,18 +234,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reference__Atten__37A5467C">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
-          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Reference">
-              <PropertyRef Name="AttendantId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Reference__ProfI__4D94879B">
           <End Role="Professions" Type="Self.Professions" Multiplicity="0..1" />
           <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
@@ -287,6 +282,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_KupotToProf_Kupot1">
+          <End Role="Kupot1" Type="Self.Kupot1" Multiplicity="1" />
+          <End Role="KupotToProf" Type="Self.KupotToProf" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kupot1">
+              <PropertyRef Name="KupaId" />
+            </Principal>
+            <Dependent Role="KupotToProf">
+              <PropertyRef Name="KupaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KupotToProf_Professions">
+          <End Role="Professions" Type="Self.Professions" Multiplicity="1" />
+          <End Role="KupotToProf" Type="Self.KupotToProf" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Professions">
+              <PropertyRef Name="ProfId" />
+            </Principal>
+            <Dependent Role="KupotToProf">
+              <PropertyRef Name="ProfId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Opinion_Professions">
           <End Role="Professions" Type="Self.Professions" Multiplicity="0..1" />
           <End Role="Opinion" Type="Self.Opinion" Multiplicity="*" />
@@ -303,6 +322,7 @@
           <EntitySet Name="Dairy" EntityType="Self.Dairy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dictionary" EntityType="Self.Dictionary" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kupot1" EntityType="Self.Kupot1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KupotToProf" EntityType="Self.KupotToProf" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Opinion" EntityType="Self.Opinion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Professions" EntityType="Self.Professions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
@@ -345,10 +365,6 @@
             <End Role="typeProfessions" EntitySet="typeProfessions" />
             <End Role="Professions" EntitySet="Professions" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reference__Atten__37A5467C" Association="Self.FK__Reference__Atten__37A5467C">
-            <End Role="users" EntitySet="users" />
-            <End Role="Reference" EntitySet="Reference" />
-          </AssociationSet>
           <AssociationSet Name="FK__Reference__ProfI__4D94879B" Association="Self.FK__Reference__ProfI__4D94879B">
             <End Role="Professions" EntitySet="Professions" />
             <End Role="Reference" EntitySet="Reference" />
@@ -364,6 +380,14 @@
           <AssociationSet Name="FK__users__TypeUser__4CA06362" Association="Self.FK__users__TypeUser__4CA06362">
             <End Role="TypeUser" EntitySet="TypeUser" />
             <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KupotToProf_Kupot1" Association="Self.FK_KupotToProf_Kupot1">
+            <End Role="Kupot1" EntitySet="Kupot1" />
+            <End Role="KupotToProf" EntitySet="KupotToProf" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KupotToProf_Professions" Association="Self.FK_KupotToProf_Professions">
+            <End Role="Professions" EntitySet="Professions" />
+            <End Role="KupotToProf" EntitySet="KupotToProf" />
           </AssociationSet>
           <AssociationSet Name="FK_Opinion_Professions" Association="Self.FK_Opinion_Professions">
             <End Role="Professions" EntitySet="Professions" />
@@ -411,6 +435,7 @@
           <Property Name="KupaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="KupaName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Professions" Relationship="EzerMitzionModel.FK__Profession__Kupa__4E88ABD41" FromRole="Kupot1" ToRole="Professions" />
+          <NavigationProperty Name="Professions1" Relationship="EzerMitzionModel.KupotToProf" FromRole="Kupot1" ToRole="Professions" />
         </EntityType>
         <EntityType Name="Opinion">
           <Key>
@@ -443,6 +468,7 @@
           <NavigationProperty Name="Reference" Relationship="Self.FK__Reference__ProfI__4D94879B" FromRole="Professions" ToRole="Reference" />
           <NavigationProperty Name="Kupot1" Relationship="EzerMitzionModel.FK__Profession__Kupa__4E88ABD41" FromRole="Professions" ToRole="Kupot1" />
           <NavigationProperty Name="Opinions" Relationship="EzerMitzionModel.FK_Opinion_Professions" FromRole="Professions" ToRole="Opinion" />
+          <NavigationProperty Name="Kupot11" Relationship="EzerMitzionModel.KupotToProf" FromRole="Professions" ToRole="Kupot1" />
         </EntityType>
         <EntityType Name="Reference">
           <Key>
@@ -760,6 +786,10 @@
             <End Role="Professions" EntitySet="Professions" />
             <End Role="Opinion" EntitySet="Opinion" />
           </AssociationSet>
+          <AssociationSet Name="KupotToProf" Association="EzerMitzionModel.KupotToProf">
+            <End Role="Kupot1" EntitySet="Kupot1" />
+            <End Role="Professions" EntitySet="Professions" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FK__Profession__Kupa__4E88ABD41">
           <End Type="EzerMitzionModel.Kupot1" Role="Kupot1" Multiplicity="1" />
@@ -784,6 +814,10 @@
               <PropertyRef Name="ProfPersonid" />
             </Dependent>
           </ReferentialConstraint>
+        </Association>
+        <Association Name="KupotToProf">
+          <End Type="EzerMitzionModel.Kupot1" Role="Kupot1" Multiplicity="*" />
+          <End Type="EzerMitzionModel.Professions" Role="Professions" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -862,7 +896,6 @@
                 <ScalarProperty Name="BornDate" ColumnName="BornDate" />
                 <ScalarProperty Name="IsCare" ColumnName="IsCare" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="AttendantId" ColumnName="AttendantId" />
                 <ScalarProperty Name="ProfId" ColumnName="ProfId" />
                 <ScalarProperty Name="TypeRef" ColumnName="TypeRef" />
                 <ScalarProperty Name="recommendation" ColumnName="recommendation" />
@@ -930,6 +963,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <AssociationSetMapping Name="KupotToProf" TypeName="EzerMitzionModel.KupotToProf" StoreEntitySet="KupotToProf">
+            <EndProperty Name="Professions">
+              <ScalarProperty Name="ProfId" ColumnName="ProfId" />
+            </EndProperty>
+            <EndProperty Name="Kupot1">
+              <ScalarProperty Name="KupaId" ColumnName="KupaId" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

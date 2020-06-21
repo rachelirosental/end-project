@@ -1,5 +1,5 @@
 import {Reference} from 'src/app/Data/Reference'
-export interface  TypeReference{
+export class  TypeReference{
     refId: number;
     refname :string;
     reference:Reference[];
