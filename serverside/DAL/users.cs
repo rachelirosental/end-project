@@ -19,8 +19,7 @@ namespace DAL
         {
             this.Dairy = new HashSet<Dairy>();
             this.Dictionary = new HashSet<Dictionary>();
-            this.Reference = new HashSet<Reference>();
-            this.Reference1 = new HashSet<Reference>();
+            this.References = new HashSet<Reference>();
         }
     
         public int UserId { get; set; }
@@ -35,10 +34,8 @@ namespace DAL
         public virtual ICollection<Dairy> Dairy { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dictionary> Dictionary { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reference> Reference { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reference> Reference1 { get; set; }
         public virtual TypeUser TypeUser1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reference> References { get; set; }
     }
 }

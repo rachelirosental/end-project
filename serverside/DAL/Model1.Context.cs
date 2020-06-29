@@ -30,7 +30,6 @@ namespace DAL
         public virtual DbSet<Kupot1> Kupot1 { get; set; }
         public virtual DbSet<Opinion> Opinion { get; set; }
         public virtual DbSet<Professions> Professions { get; set; }
-        public virtual DbSet<Reference> Reference { get; set; }
         public virtual DbSet<Rooms> Rooms { get; set; }
         public virtual DbSet<Subdomain> Subdomain { get; set; }
         public virtual DbSet<TypeMeeting> TypeMeeting { get; set; }
@@ -38,5 +37,6 @@ namespace DAL
         public virtual DbSet<TypeReference> TypeReference { get; set; }
         public virtual DbSet<TypeUser> TypeUser { get; set; }
         public virtual DbSet<users> users { get; set; }
+        public virtual DbSet<Reference> References { get; set; }
     }
 }
