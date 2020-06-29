@@ -24,6 +24,7 @@ namespace DTO.NewFolder1
         public DTO.NewFolder1.subDomain  Subdomain1 { get; set; }
         public  ICollection<DTO.NewFolder1.Reference> Reference { get; set; }
         public DTO.NewFolder1.Kupot Kupot { get; set; }
+        public  ICollection<DTO.NewFolder1.Kupot> Kupot11 { get; set; }
         public  ICollection<DTO.NewFolder1.Opinion> Opinions { get; set; }
         public static Profession GetProfession1(DAL.Professions p)
         {
@@ -45,7 +46,8 @@ namespace DTO.NewFolder1
                 Subdomain1 = NewFolder1.subDomain.GetSubDomain(p.Subdomain1),
                 Kupot=NewFolder1.Kupot.GetKupot(p.Kupot1),
                 Reference=NewFolder1.Reference.GetListReferenceDTO(p.References as List<DAL.Reference>),
-                Opinions=NewFolder1.Opinion.GetListOpinionDTO(p.Opinions as List<DAL.Opinion>)
+                Opinions=NewFolder1.Opinion.GetListOpinionDTO(p.Opinions as List<DAL.Opinion>),
+                Kupot11=NewFolder1.Kupot.GetListKupaDTO(p.Kupot11 as List<DAL.Kupot1>)
 
             };
             return dto;
@@ -71,8 +73,9 @@ namespace DTO.NewFolder1
                 Subdomain1 = NewFolder1.subDomain.GetSubDomain(Professiondto.Subdomain1),
                 Kupot1=NewFolder1.Kupot.GetKupot(Professiondto.Kupot),
                 References=NewFolder1.Reference.GetListReferenceDAL(Professiondto.Reference as List<Reference>),
-                Opinions = NewFolder1.Opinion.GetListOpinionDAL(Professiondto.Opinions as List<Opinion>)
-          };
+                Opinions = NewFolder1.Opinion.GetListOpinionDAL(Professiondto.Opinions as List<Opinion>),
+                Kupot11 = NewFolder1.Kupot.GetListKupaDAL(Professiondto.Kupot11 as List<Kupot>)
+            };
             return profession;
         }
         //public static ICollection<Profession> GetListProfessinDTO(ICollection<DAL.Professions> Lprofession)
