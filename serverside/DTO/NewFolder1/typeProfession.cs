@@ -37,5 +37,24 @@ namespace DTO.NewFolder1
           };
             return type;
         }
+        public static List<typeProfession> GetListTypeProfDTO(List<DAL.typeProfessions> LtypeProf)
+        {
+            if (LtypeProf == null)
+                return null;
+            List<typeProfession> l = new List<typeProfession>();
+
+            LtypeProf.ForEach(t => l.Add(GetTypeProfession(t)));
+            return l;
+
+        }
+        public static List<DAL.typeProfessions> GetListTypeProfDAL(List<typeProfession> LtypeProf)
+        {
+            if (LtypeProf == null)
+                return null;
+            List<DAL.typeProfessions> l = new List<DAL.typeProfessions>();
+            LtypeProf.ForEach(t => l.Add(GetTypeProfession(t)));
+            return l;
+
+        }
     }
 }

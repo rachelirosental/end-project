@@ -11,22 +11,9 @@ import {TypeProfessions} from 'src/app/Data/TypeProfessions'
 })
 export class FormuserComponent implements OnInit {
 
-  
-//  public user:<user>: {
-//     userId:1,
-//         userFname:" ", 
-//         userLname:" ",
-//         tel:" ",
-//         email:" ", 
-//         password :" ",
-//          typeId:1,
-//          typeName:" "
-       
-        
 
-//   };
 
- public user:user;
+ public user=new user();
   constructor(public router: Router,public UserService:UserService) {
 
    }

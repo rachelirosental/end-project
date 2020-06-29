@@ -18,7 +18,7 @@ export class Profession  {
     typeProfessions:TypeProfessions;
      subdomain1:SubDomain;
      reference :Reference[];
-     
+     Kupot11:Kupot[];
      opinions:opinion[];
 
 

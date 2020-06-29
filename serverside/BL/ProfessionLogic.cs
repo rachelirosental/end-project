@@ -16,6 +16,7 @@ namespace BL
         {
             return Profession.GetListProfessinDTO(db.Professions.ToList());
         }
+
         public static Profession GetProfessionbyId(int id)
         {
             var profession = db.Professions.FirstOrDefault(p => p.ProfId == id);
@@ -58,6 +59,12 @@ namespace BL
 
 
         }
+
+        public static List<typeProfession> GetProfTypeList()
+        {
+            return typeProfession.GetListTypeProfDTO(db.typeProfessions.ToList());
+        }
+
 
 
     }

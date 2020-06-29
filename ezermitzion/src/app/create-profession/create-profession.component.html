@@ -37,11 +37,12 @@
     </form>
   </div> -->
 <div class="container">
+
     <div class="Back">
         <i class="fa fa-arrow-left" onclick="Back()"></i>
     </div>
     <p class="h2 text-center">Form</p>
-    <!-- <form action="" method="post">
+    <form action="" method="post">
         <div class="preview text-center">
             <img class="preview-img" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image"
                 width="200" height="200" />
@@ -64,23 +65,30 @@
             <span class="Error"></span>
         </div>
         <div class="form-group">
-            <label>Type:</label>
-            <input class="form-control" type="number" name="type" required placeholder="Enter Type"
+            <label>Type:</label> 
+            <!-- <input class="form-control" type="number" name="type" required placeholder="Enter Type"
                 [(ngModel)]="profession.type" />
-            <span class="Error"></span>
+            <span class="Error"></span> -->
+              <select  [(ngModel)]="profession.typeProfessions
+              " name="myselect">
+                <option *ngFor="let type of typeprofessions" [ngValue]="type">{{type.nameprofession}}</option>
+              </select>
         </div>
-        <div class="form-group">
+         <div class="form-group">
             <label>Kupa:</label>
-            <select class="form-control" type="text" name="kupot" required placeholder="Enter Kupa"
+          <!-- <select class="form-control" type="text" name="kupot" required placeholder="Enter Kupa"
                 [(ngModel)]="profession.kupot.kupaName">
                 <option>כללית</option>
                 <option>מכבי</option>
                 <option>מאוחדת</option>
                 <option>לאומית</option>
-            </select>
-            <span class="Error"></span>
-        </div>
+            </select> --> --> -->
+            <input class="form-control" type="text" name="kupa" required placeholder="Designation"
+            [(ngModel)]="profession.kupot" />
+             <span class="Error"></span> -->
+        </div> --> -->
         <div class="form-group">
+            
             <label>Tel:</label>
             <input class="form-control" type="text" name="tel" required placeholder="Enter Tel"
                 [(ngModel)]="profession.tel" />
@@ -126,5 +134,5 @@
         <div class="form-group">
             <input class="btn btn-primary btn-block" type="submit" value="Submit" (click)="createnew()" />
         </div>
-    </form> -->
+    </form>
 </div>

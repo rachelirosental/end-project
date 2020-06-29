@@ -40,6 +40,12 @@ namespace API.Controllers
             BL.ProfessionLogic.UpdateProfession(profession);
 
         }
+        [Route("getTypeProfList")]
+        public List<typeProfession> getTypeProfList()
+        {
+            return BL.ProfessionLogic.GetProfTypeList();
+        }
+
 
     }
 }

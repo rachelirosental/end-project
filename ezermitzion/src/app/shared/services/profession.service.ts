@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Profession } from 'src/app/Data/Profession';
+import { TypeProfessions} from 'src/app/Data/typeProfessions';
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +37,8 @@ return this.httpClient.get<Profession>(this.url+"/GetProfessionbyId/" + id)
   update(Profession: Profession) {
     return this.httpClient.put(this.url + "/update",Profession);
   }
-
+  getTypeProfList(): Observable<TypeProfessions[]> {
+    return this.httpClient.get<TypeProfessions[]>(this.url + "/getTypeProfList/" );
+  }
 
 }
