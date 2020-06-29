@@ -20,14 +20,12 @@ namespace DAL
         public Nullable<System.DateTime> BornDate { get; set; }
         public Nullable<bool> IsCare { get; set; }
         public Nullable<int> UserName { get; set; }
-        public Nullable<int> AttendantId { get; set; }
         public Nullable<int> ProfId { get; set; }
         public Nullable<int> TypeRef { get; set; }
         public string recommendation { get; set; }
     
-        public virtual Professions Professions { get; set; }
-        public virtual users users { get; set; }
+        public virtual Professions Profession { get; set; }
         public virtual TypeReference TypeReference { get; set; }
-        public virtual users users1 { get; set; }
+        public virtual users user { get; set; }
     }
 }

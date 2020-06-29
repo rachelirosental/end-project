@@ -33,12 +33,12 @@ namespace DTO.NewFolder1
                 BornDate = r.BornDate.Value,
                 IsCare = r.IsCare.Value,
                 UserName = r.UserName.Value,
-                AttendantId = r.AttendantId.Value,
+                //AttendantId = r..Value,
                 ProfId = r.ProfId.Value,
                 TypeRef = r.TypeRef.Value,
                 recommendation=r.recommendation,
-                Professions= NewFolder1.Profession.GetProfession1(r.Professions),
-                users = NewFolder1.user.GetUser(r.users),
+                Professions= NewFolder1.Profession.GetProfession1(r.Profession),
+                users = NewFolder1.user.GetUser(r.user),
                 TypeReference=NewFolder1.TypeReference.GetTypeReference(r.TypeReference) 
 
             };
@@ -56,12 +56,12 @@ namespace DTO.NewFolder1
                 BornDate = referencedto.BornDate,
                 IsCare = referencedto.IsCare,
                 UserName = referencedto.UserName,
-                AttendantId = referencedto.AttendantId,
+                //AttendantId = referencedto.AttendantId,
                 ProfId = referencedto.ProfId,
                 TypeRef = referencedto.TypeRef,
                 recommendation=referencedto.recommendation,
-                Professions = NewFolder1.Profession.GetProfession1(referencedto.Professions),
-                users = NewFolder1.user.GetUser(referencedto.users),
+                Profession = NewFolder1.Profession.GetProfession1(referencedto.Professions),
+                user = NewFolder1.user.GetUser(referencedto.users),
                 TypeReference = NewFolder1.TypeReference.GetTypeReference(referencedto.TypeReference)
             };
             return reference;
