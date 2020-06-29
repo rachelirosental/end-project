@@ -24,6 +24,7 @@ namespace DTO.NewFolder1
         public DTO.NewFolder1.subDomain  Subdomain1 { get; set; }
         public  ICollection<DTO.NewFolder1.Reference> Reference { get; set; }
         public DTO.NewFolder1.Kupot Kupot { get; set; }
+        public  ICollection<DTO.NewFolder1.Kupot> Kupot11 { get; set; }
         public  ICollection<DTO.NewFolder1.Opinion> Opinions { get; set; }
         public static Profession GetProfession1(DAL.Professions p)
         {

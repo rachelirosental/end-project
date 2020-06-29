@@ -38,22 +38,22 @@ namespace DTO.NewFolder1
             };
             return kupot;
         }
-        public static ICollection<Kupot> GetListKupaDTO(ICollection<DAL.Kupot1> Lkupot)
+        public static List<Kupot> GetListKupaDTO(List<DAL.Kupot1> Lkupot)
         {
             if (Lkupot == null)
                 return null;
             List<Kupot> l = new List<Kupot>();
 
-            (Lkupot as List<DAL.Kupot1>).ForEach(k => l.Add(GetKupot(k)));
+            Lkupot .ForEach(k => l.Add(GetKupot(k)));
             return l;
 
         }
-        public static ICollection<DAL.Kupot1> GetListReferenceDAL(ICollection<Kupot> Lkupot)
+        public static List<DAL.Kupot1> GetListKupaDAL(List<Kupot> Lkupot)
         {
             if (Lkupot== null)
                 return null;
             List<DAL.Kupot1> l = new List<DAL.Kupot1>();
-            (Lkupot as List<Kupot>).ForEach(k => l.Add(GetKupot(k)));
+           Lkupot .ForEach(k => l.Add(GetKupot(k)));
             return l;
 
         }
