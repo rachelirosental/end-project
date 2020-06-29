@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DTO.NewFolder1;
 namespace BL
 {
-    class RoomLogic
+ public   class RoomLogic
     {
         public static DAL.EzerMitzionEntities db = new DAL.EzerMitzionEntities();
 
@@ -49,20 +49,13 @@ namespace BL
             return Room.GetListReferenceDTO(db.Rooms.ToList());
 
         }
-        public static void UpdateReference(Reference reference)
+        public static void UpdateRoom(Room room)
         {
             try
             {
-                var ReferenceDb = db.References.FirstOrDefault(p => p.RefId == reference.RefId);
-                ReferenceDb.Date = reference.Date;
-                ReferenceDb.Description = reference.Description;
-                ReferenceDb.BornDate = reference.BornDate;
-                ReferenceDb.IsCare = reference.IsCare;
-                ReferenceDb.UserName = reference.UserName;
-                //ReferenceDb.AttendantId = reference.AttendantId;
-                ReferenceDb.ProfId = reference.ProfId;
-                ReferenceDb.TypeRef = reference.TypeRef;
-                ReferenceDb.recommendation = reference.recommendation;
+                var RoomDb = db.Rooms.FirstOrDefault(r => r.RoomId == room.RoomId);
+                RoomDb.RoomName = room.RoomName;
+                RoomDb.Dairy = room.Dairy as ICollection<DAL.Dairy>;
                 db.SaveChanges();
 
             }

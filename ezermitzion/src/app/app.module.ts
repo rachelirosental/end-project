@@ -24,6 +24,7 @@ import { SetdetailreferenceComponent } from './setdetailreference/setdetailrefer
 import { ReferencebuttonsComponent } from './referencebuttons/referencebuttons.component';
 import { FormreferenceComponent } from './formreference/formreference.component';
 import { AuthGuard } from './auth.guard';
+import { RoomlistComponent } from './roomlist/roomlist.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AuthGuard } from './auth.guard';
     SetdetailuserComponent,
     SetdetailreferenceComponent,
     ReferencebuttonsComponent,
-    FormreferenceComponent
+    FormreferenceComponent,
+    RoomlistComponent
   ],
   imports: [
     BrowserModule,

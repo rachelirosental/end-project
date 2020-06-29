@@ -37,6 +37,25 @@ namespace DTO.NewFolder1
             };
             return room;
         }
+        public static List<Room> GetListReferenceDTO(List<DAL.Rooms> Lroom)
+        {
+            if (Lroom == null)
+                return null;
+            List<Room> l = new List<Room>();
+
+            Lroom.ForEach(r => l.Add(GetRoom(r)));
+            return l;
+
+        }
+        public static List<DAL.Rooms> GetListReferenceDAL(List<Room> Lroom)
+        {
+            if (Lroom == null)
+                return null;
+            List<DAL.Rooms> l = new List<DAL.Rooms>();
+            Lroom.ForEach(r => l.Add(GetRoom(r)));
+            return l;
+
+        }
 
     }
 }

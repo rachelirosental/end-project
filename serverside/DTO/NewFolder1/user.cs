@@ -51,7 +51,7 @@ namespace DTO.NewFolder1
                 Email = userdto.Email,
                 Password = userdto.Password,
                 TypeUser = userdto.TypeUser,
-                TypeUser1 = DTO.NewFolder1.TypeUser.GetUser(userdto.TypeUser1),
+                TypeUser1 = DTO.NewFolder1.TypeUser.GetTypeUser(userdto.TypeUser1),
                 Dairy = NewFolder1.Dairy.GetListDairyDAL(userdto.Dairy as List<Dairy>),
                 References = NewFolder1.Reference.GetListReferenceDAL(userdto.Reference as List<Reference>),
             };
