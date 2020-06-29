@@ -25,7 +25,13 @@ namespace API.Controllers
         }
 
 
-        
+        [Route("gettypeuser")]
+        public List<TypeUser> gettypeuser()
+        {
+            return BL.UserLogic.GetTypeUser();
+
+        }
+
 
 
         // GET: api/User/5

@@ -55,6 +55,7 @@
     <Compile Include="ProfessionLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="referenceLogic.cs" />
+    <Compile Include="RoomLogic.cs" />
     <Compile Include="UserLogic.cs" />
   </ItemGroup>
   <ItemGroup>

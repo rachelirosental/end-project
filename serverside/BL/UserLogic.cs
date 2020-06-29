@@ -79,6 +79,11 @@ namespace BL
             }
 
         }
+        public static List<DTO.NewFolder1.TypeUser> GetTypeUser()
+        {
+            return DTO.NewFolder1.TypeUser.GetListTypeUseDTO(db.TypeUser.ToList());
+
+        }
 
     }
 }

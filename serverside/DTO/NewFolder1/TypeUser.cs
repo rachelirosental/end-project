@@ -24,7 +24,7 @@ namespace DTO.NewFolder1
             };
             return dto;
         }
-        public static DAL.TypeUser GetUser(DTO.NewFolder1.TypeUser typeuserdto)
+        public static DAL.TypeUser GetTypeUser(DTO.NewFolder1.TypeUser typeuserdto)
         {
             if (typeuserdto == null)
                 return null;
@@ -36,5 +36,25 @@ namespace DTO.NewFolder1
             };
             return type;
         }
+        public static List<TypeUser> GetListTypeUseDTO(List<DAL.TypeUser> LtypeUser)
+        {
+            if (LtypeUser == null)
+                return null;
+            List<TypeUser> l = new List<TypeUser>();
+
+            LtypeUser.ForEach(t => l.Add(GetTypeUser(t)));
+            return l;
+
+        }
+        public static List<DAL.TypeUser> GetListTypeUserfDAL(List<TypeUser> LtypeUser)
+        {
+            if (LtypeUser == null)
+                return null;
+            List<DAL.TypeUser> l = new List<DAL.TypeUser>();
+            LtypeUser.ForEach(t => l.Add(GetTypeUser(t)));
+            return l;
+
+        }
+
     }
 }

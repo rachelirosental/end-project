@@ -36,6 +36,27 @@ namespace DTO.NewFolder1
             };
             return sub;
         }
+
+        public static List<subDomain> GetListKupaDTO(List<DAL.Subdomain> Lsubdomain
+            )
+        {
+            if (Lsubdomain == null)
+                return null;
+            List<subDomain> l = new List<subDomain>();
+
+            Lsubdomain.ForEach(s => l.Add(GetSubDomain(s)));
+            return l;
+
+        }
+        public static List<DAL.Subdomain> GetListKupaDAL(List<subDomain> Lkupot)
+        {
+            if (Lkupot == null)
+                return null;
+            List<DAL.Subdomain> l = new List<DAL.Subdomain>();
+            Lkupot.ForEach(s => l.Add(GetSubDomain(s)));
+            return l;
+
+        }
     }
 }
 
