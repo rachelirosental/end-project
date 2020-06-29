@@ -8,10 +8,9 @@ using DTO.NewFolder1;
 using BL;
 namespace serverside.Controllers
 {
-    public class RoomController : ApiController
-    {
+    
         [RoutePrefix("api/Room")]
-        public class ReferenceController : ApiController
+        public class RoomController : ApiController
         {
             // GET: api/Reference
 
@@ -54,4 +53,4 @@ namespace serverside.Controllers
             }
         }
     }
-}
+

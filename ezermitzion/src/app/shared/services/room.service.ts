@@ -9,13 +9,13 @@ import { Room } from 'src/app/Data/Room';
   export class RoomService{
     url: string;
     constructor(public httpClient: HttpClient) {
-      this.url = environment.url + "room";
+      this.url = environment.url + "Room";
     }
     delete(id:number)  {
         return this.httpClient.delete(this.url + "/delete/" + id);
       }
-      getroom() {
-         return this.httpClient.get(this.url + "/getroom");
+      getrooms() {
+         return this.httpClient.get(this.url + "/getrooms");
       }
       getRoomByid(id:number):Observable<Room>{
         return this.httpClient.get<Room>(this.url+"/getRefByid/" + id);
