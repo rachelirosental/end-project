@@ -41,7 +41,8 @@ const colors: any = {
 @Component({
   selector: 'app-dairy',
   templateUrl: './dairy.component.html',
-  styleUrls: ['./dairy.component.scss']
+  styleUrls: ['./dairy.component.scss'],
+
 })
 export class DairyComponent {
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
