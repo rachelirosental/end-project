@@ -1,6 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SecretaryComponent } from './secretary/secretary.component';
@@ -27,6 +25,12 @@ import { AuthGuard } from './auth.guard';
 import { RoomlistComponent } from './roomlist/roomlist.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+// import { DemoComponent } from './component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     SetdetailreferenceComponent,
     ReferencebuttonsComponent,
     FormreferenceComponent,
-    RoomlistComponent
+    RoomlistComponent,
+    // [DemoComponent],
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,16 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     HttpClientModule,
     BrowserAnimationsModule,
     NgbModule,
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+    CommonModule,
+    FormsModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
+    // CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
