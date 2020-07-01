@@ -58,7 +58,7 @@ namespace API.Controllers
 
         [Route("delete/{id}")]
         // DELETE: api/User/5
-        public static int Delete(int id)
+        public  int Delete(int id)
         {
            return BL.UserLogic.DeleteUser(id);
         }

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SecretaryComponent } from './secretary/secretary.component';
 import { LoginComponent } from './login/login.component';
-import { DairyComponent } from './dairy/dairy.component';
+import {DairyComponent } from './dairy/dairy.component';
 import { ReferenceComponent } from './reference/reference.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { ProfessionsComponent } from './professions/professions.component';
@@ -25,6 +25,8 @@ import { ReferencebuttonsComponent } from './referencebuttons/referencebuttons.c
 import { FormreferenceComponent } from './formreference/formreference.component';
 import { AuthGuard } from './auth.guard';
 import { RoomlistComponent } from './roomlist/roomlist.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,8 @@ import { RoomlistComponent } from './roomlist/roomlist.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [],
   bootstrap: [AppComponent],
