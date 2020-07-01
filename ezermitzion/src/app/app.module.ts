@@ -28,10 +28,9 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { FlatpickrModule } from 'angularx-flatpickr';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap'
 // import { DemoComponent } from './component';
-
+import { FlatpickrModule } from 'angularx-flatpickr';
 @NgModule({
   declarations: [
     AppComponent,
