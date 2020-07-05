@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DTO.NewFolder1;
 namespace BL
 {
- public   class RoomLogic
+ public  class RoomLogic
     {
         public static DAL.EzerMitzionEntities db = new DAL.EzerMitzionEntities();
 

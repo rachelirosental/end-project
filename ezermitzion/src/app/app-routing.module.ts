@@ -15,16 +15,12 @@ import { ProfessionDetialsComponent } from './profession-detials/profession-deti
 import { SetdetailuserComponent } from './setdetailuser/setdetailuser.component';
 import { ReferencebuttonsComponent } from './referencebuttons/referencebuttons.component';
 import { FormreferenceComponent } from './formreference/formreference.component';
-import { RoomlistComponent } from './roomlist/roomlist.component';
-import { ManagerComponent } from './manager/manager.component';
-import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-{path:'entry2',component:SecretaryComponent },
-{path:'entry1',component:ManagerComponent },
-{path:'login',component:LoginComponent },
+  
+{path:'secretary',component:SecretaryComponent},
 {path:'dairy',component:DairyComponent},
-{path:'rooms',component: RoomlistComponent},
+{path:'rooms',component:RoomsComponent},
 {path:'reference',component:ReferenceComponent},
 {path:'professions',component:ProfessionsComponent},
 {path:'user',component:UserComponent},

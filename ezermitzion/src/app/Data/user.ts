@@ -2,7 +2,7 @@ import { TypeUser } from 'src/app/Data/TypeUser';
 import {dairy} from 'src/app/Data/dairy'
 import {Reference} from 'src/app/Data/Reference'
 
-export class user {
+export class user extends TypeUser{
         userId:number;
         userFname:string; 
         userLname:string;
@@ -11,7 +11,7 @@ export class user {
         password :string;
         typeUser:number;
         typeUser1:TypeUser;
-        // dairy:dairy[];
-        // Reference:Reference[];
+       dairy:dairy[];
+      Reference:Reference[];
        
 }
