@@ -14,31 +14,69 @@ namespace API.Controllers
         [Route("getProfList")]
         public List<Profession> GetProfList()
         {
-            return BL.ProfessionLogic.GetProfList();
+            try
+            {
+                return BL.ProfessionLogic.GetProfList();
+            }
+            catch 
+            {
+                return null;
+            }
+
         }
         [Route("GetProfessionbyId/{id}")]
         public Profession GetProfessionbyId(int id)
         {
-            return BL.ProfessionLogic.GetProfessionbyId(id);
+            try
+            {
+                return BL.ProfessionLogic.GetProfessionbyId(id);
+            }
+            catch
+            {
+                return null;
+            }
+           
         }
 
         [Route("create")]
-       public void CreateProfession([FromBody]Profession profession) {
-            BL.ProfessionLogic.CreateProfession(profession);
+       public bool CreateProfession([FromBody]Profession profession) {
+            try
+            {
+                BL.ProfessionLogic.CreateProfession(profession);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
 
         }
         [Route("deleate/{id}")]
-        public void DeleteProfession(int id)
+        public bool DeleteProfession(int id)
         {
-            BL.ProfessionLogic.DeleateProfession(id);
-
+            try
+            {
+                BL.ProfessionLogic.DeleateProfession(id);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         [Route("update")]
-        public void UpdateProfession(Profession profession)
+        public bool UpdateProfession(Profession profession)
         {
-            BL.ProfessionLogic.UpdateProfession(profession);
-
+            try
+            {
+                BL.ProfessionLogic.UpdateProfession(profession);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         [Route("getTypeProfList")]
         public List<typeProfession> getTypeProfList()
