@@ -22,4 +22,10 @@ users:user[];
  next2(){
   this.router.navigateByUrl('/formuser');
 }
+next3(){
+  this.router.navigateByUrl('/entry2');
+}
+next4(){
+  this.router.navigateByUrl('/login');
+}
   }
