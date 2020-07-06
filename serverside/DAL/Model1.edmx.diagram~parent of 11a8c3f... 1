@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="be6441d5d0c242f0905748c0a8d9634a" Name="Diagram1">
+        <EntityTypeShape EntityType="EzerMitzionModel.Dairy" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EzerMitzionModel.Dictionary" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EzerMitzionModel.Kupot1" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EzerMitzionModel.Opinion" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EzerMitzionModel.Professions" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EzerMitzionModel.Rooms" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EzerMitzionModel.Subdomain" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EzerMitzionModel.TypeMeeting" Width="1.5" PointX="3" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="EzerMitzionModel.typeProfessions" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EzerMitzionModel.TypeReference" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EzerMitzionModel.TypeUser" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EzerMitzionModel.users" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Dairy__RoomId__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Dairy__TypeMeeti__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Dairy__UserId__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Dictionar__RoomI__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Dictionar__TypeM__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Dictionar__UserI__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Profession__Kupa__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Profession__Type__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="EzerMitzionModel.FK__users__TypeUser__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Profession__Kupa__4E88ABD41" />
+        <AssociationConnector Association="EzerMitzionModel.FK_Opinion_Professions" />
+        <AssociationConnector Association="EzerMitzionModel.KupotToProf" />
+        <EntityTypeShape EntityType="EzerMitzionModel.Reference" Width="1.5" PointX="5.25" PointY="10.5" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Reference__ProfI__4D94879B" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Reference__TypeR__38996AB5" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Reference__UserN__36B12243" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

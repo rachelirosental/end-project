@@ -24,8 +24,6 @@ import {
 } from 'angular-calendar';
 import {DairyService} from '../shared/services/dairy.service';
 import { dairy } from '../Data/dairy';
-import { Room } from '../Data/Room';
-import { changedairytime,CalendarEventTimesChangedEventType } from '../Data/changedairytime';
 const colors: any = {
   red: {
     primary: '#ad2121',
@@ -47,9 +45,7 @@ const colors: any = {
   styleUrls: ['./dairy.component.scss'],
 
 })
-export class DairyComponent
-
-{
+export class DairyComponent {
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
 
   view: CalendarView = CalendarView.Month;
@@ -60,160 +56,144 @@ export class DairyComponent
 
   modalData: {
     action: string;
-    event: dairy;
+    event: CalendarEvent;
   };
 
-//  actions: CalendarEventAction[] = [
-//    {
-//        label: '<i class="fas fa-fw fa-pencil-alt"></i>',
-//      a11yLabel: 'Edit',
-//      onClick: ({ event }: { event: CalendarEvent }): void => {
-//       this.handleEvent('Edited', event);
-//       },
-//     },
-//   {
-//        label: '<i class="fas fa-fw fa-trash-alt"></i>',
-//       a11yLabel: 'Delete',
-//       onClick: ({ event }: { event: CalendarEvent }): void => {
-//          this.events = this.events
-//         //  .filter((iEvent) => iEvent !== event);
-//          this.handleEvent('Deleted', event);
-//       },
-//    },
-//  ];
- events:dairy[];
+  // actions: CalendarEventAction[] = [
+  //   {
+  //     label: '<i class="fas fa-fw fa-pencil-alt"></i>',
+  //     a11yLabel: 'Edit',
+  //     onClick: ({ event }: { event: CalendarEvent }): void => {
+  //       this.handleEvent('Edited', event);
+  //     },
+  //   },
+  //   {
+  //     label: '<i class="fas fa-fw fa-trash-alt"></i>',
+  //     a11yLabel: 'Delete',
+  //     onClick: ({ event }: { event: CalendarEvent }): void => {
+  //       this.events = this.events.filter((iEvent) => iEvent !== event);
+  //       this.handleEvent('Deleted', event);
+  //     },
+  //   },
+  // ];
+events:dairy[];
   refresh: Subject<any> = new Subject();
 
-//   // events: CalendarEvent[] = [
-//   //   {
-//   //     start: subDays(startOfDay(new Date()), 1),
-//   //     end: addDays(new Date(), 1),
-//   //     title: 'A 3 day event',
-//   //     color: colors.red,
-//   //     actions: this.actions,
-//   //     allDay: true,
-//   //     resizable: {
-//   //       beforeStart: true,
-//   //       afterEnd: true,
-//   //     },
-//   //     draggable: true,
-//   //   },
-//   //   {
-//   //     start: startOfDay(new Date()),
-//   //     title: 'An event with no end date',
-//   //     color: colors.yellow,
-//   //     actions: this.actions,
-//   //   },
-//   //   {
-//   //     start: subDays(endOfMonth(new Date()), 3),
-//   //     end: addDays(endOfMonth(new Date()), 3),
-//   //     title: 'A long event that spans 2 months',
-//   //     color: colors.blue,
-//   //     allDay: true,
-//   //   },
-//   //   {
-//   //     start: addHours(startOfDay(new Date()), 2),
-//   //     end: addHours(new Date(), 2),
-//   //     title: 'A draggable and resizable event',
-//   //     color: colors.yellow,
-//   //     actions: this.actions,
-//   //     resizable: {
-//   //       beforeStart: true,
-//   //       afterEnd: true,
-//   //     },
-//   //     draggable: true,
-//   //   },
-//   // ];
+  // events: CalendarEvent[] = [
+  //   {
+  //     start: subDays(startOfDay(new Date()), 1),
+  //     end: addDays(new Date(), 1),
+  //     title: 'A 3 day event',
+  //     color: colors.red,
+  //     actions: this.actions,
+  //     allDay: true,
+  //     resizable: {
+  //       beforeStart: true,
+  //       afterEnd: true,
+  //     },
+  //     draggable: true,
+  //   },
+  //   {
+  //     start: startOfDay(new Date()),
+  //     title: 'An event with no end date',
+  //     color: colors.yellow,
+  //     actions: this.actions,
+  //   },
+  //   {
+  //     start: subDays(endOfMonth(new Date()), 3),
+  //     end: addDays(endOfMonth(new Date()), 3),
+  //     title: 'A long event that spans 2 months',
+  //     color: colors.blue,
+  //     allDay: true,
+  //   },
+  //   {
+  //     start: addHours(startOfDay(new Date()), 2),
+  //     end: addHours(new Date(), 2),
+  //     title: 'A draggable and resizable event',
+  //     color: colors.yellow,
+  //     actions: this.actions,
+  //     resizable: {
+  //       beforeStart: true,
+  //       afterEnd: true,
+  //     },
+  //     draggable: true,
+  //   },
+  // ];
 
-activeDayIsOpen: boolean = true;
+  // activeDayIsOpen: boolean = true;
 
-constructor(private modal: NgbModal,public DairyService:DairyService) {}
+   constructor(private modal: NgbModal,public DairyService:DairyService) {}
 
-dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
-  if (isSameMonth(date, this.viewDate)) {
-    if (
-      (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
-      events.length === 0
-    ) {
-      this.activeDayIsOpen = false;
-    } else {
-      this.activeDayIsOpen = true;
-    }
-    this.viewDate = date;
-  }
-}
+  // dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
+  //   if (isSameMonth(date, this.viewDate)) {
+  //     if (
+  //       (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
+  //       events.length === 0
+  //     ) {
+  //       this.activeDayIsOpen = false;
+  //     } else {
+  //       this.activeDayIsOpen = true;
+  //     }
+  //     this.viewDate = date;
+  //   }
+  // }
 
-eventTimesChanged({
-  event,
-  newStart,
-  newEnd,
-}: changedairytime): void {
-  this.events = this.events.map((iEvent) => {
-    if (iEvent === event) {
-      return {
-        ...event,
-        start: newStart,
-        end: newEnd,
-       
-      };
-    }
-    return iEvent;
-  });
-  this.handleEvent('Dropped or resized', event);
-}
+  // eventTimesChanged({
+  //   event,
+  //   newStart,
+  //   newEnd,
+  // }: CalendarEventTimesChangedEvent): void {
+  //   this.events = this.events.map((iEvent) => {
+  //     if (iEvent === event) {
+  //       return {
+  //         ...event,
+  //         start: newStart,
+  //         end: newEnd,
+  //       };
+  //     }
+  //     return iEvent;
+  //   });
+  //   this.handleEvent('Dropped or resized', event);
+  // }
 
-handleEvent(action: string, event: dairy): void {
-  this.modalData = { event, action };
-  this.modal.open(this.modalContent, { size: 'lg' });
-}
+  // handleEvent(action: string, event: CalendarEvent): void {
+  //   this.modalData = { event, action };
+  //   this.modal.open(this.modalContent, { size: 'lg' });
+  // }
 
-addEvent(): void {
-  this.events = [
-    ...this.events,
-    
-  ];
-}
+  // addEvent(): void {
+  //   this.events = [
+  //     ...this.events,
+  //     {
+  //       title: 'New event',
+  //       start: startOfDay(new Date()),
+  //       end: endOfDay(new Date()),
+  //       color: colors.red,
+  //       draggable: true,
+  //       resizable: {
+  //         beforeStart: true,
+  //         afterEnd: true,
+  //       },
+  //     },
+  //   ];
+  // }
 
-deleteEvent(eventToDelete: CalendarEvent) {
-  this.events = this.events.filter((event) => event !== eventToDelete);
-}
+  // deleteEvent(eventToDelete: CalendarEvent) {
+  //   this.events = this.events.filter((event) => event !== eventToDelete);
+  // }
 
-setView(view: CalendarView) {
-  this.view = view;
-}
+  // setView(view: CalendarView) {
+  //   this.view = view;
+  // }
 
-closeOpenMonthViewDay() {
-  this.activeDayIsOpen = false;
-}
-  ngOnInit(): void {
-    this.getdaries();
+  // closeOpenMonthViewDay() {
+  //   this.activeDayIsOpen = false;
+  // }
 
-  }
-  getdaries(){
+  getrooms(){
     this.DairyService.getdaries().subscribe((res:dairy[])=>{
       localStorage.setItem("daries",JSON.stringify(res))
       this.events=res,
     console.log(this.events)});
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -75,8 +75,8 @@
 	  [viewDate]="viewDate"
 	  [events]="events"
 	  [refresh]="refresh"
-	  (eventClicked)="handleEvent('Clicked', $event.event)" 
-	 (eventTimesChanged)="eventTimesChanged($event)" -->
+	  (eventClicked)="handleEvent('Clicked', $event.event)"
+	  (eventTimesChanged)="eventTimesChanged($event)"
 	>
 	</mwl-calendar-week-view>
 	<mwl-calendar-day-view
@@ -84,15 +84,15 @@
 	  [viewDate]="viewDate"
 	  [events]="events"
 	  [refresh]="refresh"
-    (eventClicked)="handleEvent('Clicked', $event.event)" 
-	  \\(eventTimesChanged)="eventTimesChanged($event)"
+	  (eventClicked)="handleEvent('Clicked', $event.event)"
+	  (eventTimesChanged)="eventTimesChanged($event)"
 	>
 	</mwl-calendar-day-view>
-  </div> -->
+  </div>
   
-   Everything you see below is just for the demo, you don't need to include it in your app
+  <!-- Everything you see below is just for the demo, you don't need to include it in your app -->
   
-   <br /><br /><br />
+  <br /><br /><br />
   
   <h3>
 	Edit events
@@ -121,21 +121,21 @@
 			<input
 			  type="text"
 			  class="form-control"
-			 // [(ngModel)]="event.title"
+			  [(ngModel)]="event.title"
 			  (keyup)="refresh.next()"
 			/>
 		  </td>
 		  <td>
 			<input
 			  type="color"
-			 // [(ngModel)]="event.color.primary"
+			  [(ngModel)]="event.color.primary"
 			  (change)="refresh.next()"
 			/>
 		  </td>
 		  <td>
 			<input
 			  type="color"
-			 // [(ngModel)]="event.color.secondary"
+			  [(ngModel)]="event.color.secondary"
 			  (change)="refresh.next()"
 			/>
 		  </td>
@@ -144,7 +144,7 @@
 			  class="form-control"
 			  type="text"
 			  mwlFlatpickr
-			//  [(ngModel)]="event.start"
+			  [(ngModel)]="event.start"
 			  (ngModelChange)="refresh.next()"
 			  [altInput]="true"
 			  [convertModelValue]="true"
@@ -159,7 +159,7 @@
 			  class="form-control"
 			  type="text"
 			  mwlFlatpickr
-			//  [(ngModel)]="event.end"
+			  [(ngModel)]="event.end"
 			  (ngModelChange)="refresh.next()"
 			  [altInput]="true"
 			  [convertModelValue]="true"
@@ -170,10 +170,11 @@
 			/>
 		  </td>
 		  <td>
-		//<button class="btn btn-danger" (click)="deleteEvent(event)">
+			<button class="btn btn-danger" (click)="deleteEvent(event)">
 			  Delete
-			</button> 
+			</button>
 		  </td>
+		</tr>
 	  </tbody>
 	</table>
   </div>
