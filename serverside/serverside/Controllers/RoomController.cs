@@ -8,49 +8,85 @@ using DTO.NewFolder1;
 using BL;
 namespace serverside.Controllers
 {
-    
-        [RoutePrefix("api/Room")]
-        public class RoomController : ApiController
-        {
-            // GET: api/Reference
 
-            [Route("getrooms")]
-            public List<Room> GetRooms()
+    [RoutePrefix("api/Room")]
+    public class RoomController : ApiController
+    {
+        // GET: api/Reference
+
+        [Route("getrooms")]
+        public List<Room> GetRooms()
+        {
+            try
             {
                 return BL.RoomLogic.AllRooms();
-
+            }
+            catch
+            {
+                return null;
             }
 
+        }
 
 
-            // GET: api/User/5
-            [Route("getRoomByid/{id}")]
-            public Room GetRoom(int id)
+
+        // GET: api/User/5
+        [Route("getRoomByid/{id}")]
+        public Room GetRoom(int id)
+        {
+            try
             {
                 return BL.RoomLogic.GetRoom(id);
             }
+            catch
+            {
+                return null;
+            }
+        }
 
-            [Route("create")]
-            // POST: api/User
-            public bool CreateRoom([FromBody]Room room)
+        [Route("create")]
+        // POST: api/User
+        public bool CreateRoom([FromBody]Room room)
+        {
+            try
             {
                 return BL.RoomLogic.AddRoom(room);
             }
+            catch
+            {
+                return false;
+            }
+        }
 
-            [Route("update")]
-            // PUT: api/User/5
-            public void UpdateRoom(Room room)
+        [Route("update")]
+        // PUT: api/User/5
+        public bool UpdateRoom(Room room)
+        {
+            try
             {
                 BL.RoomLogic.UpdateRoom(room);
+                return true;
             }
+            catch
+            {
+                return false;
+            }
+        }
 
 
-            [Route("delete/{id}")]
-            // DELETE: api/User/5
-            public static int DeleteRoom(int id)
+        [Route("delete/{id}")]
+        // DELETE: api/User/5
+        public static int DeleteRoom(int id)
+        {
+            try
             {
                 return BL.RoomLogic.DeleteRoom(id);
             }
+            catch
+            {
+                return 0;
+            }
         }
     }
+}
 

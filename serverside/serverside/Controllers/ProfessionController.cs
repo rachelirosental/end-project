@@ -81,7 +81,16 @@ namespace API.Controllers
         [Route("getTypeProfList")]
         public List<typeProfession> getTypeProfList()
         {
-            return BL.ProfessionLogic.GetProfTypeList();
+            try
+            {
+                return BL.ProfessionLogic.GetProfTypeList();
+                
+            }
+            catch
+            {
+                return null;
+            }
+           
         }
 
 

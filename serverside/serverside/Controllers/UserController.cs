@@ -15,12 +15,27 @@ namespace API.Controllers
         [Route("login/{password}/{username}")]
         public user Get(string password,string username)
         {
-            return BL.UserLogic.Login(password, username);
+            try
+            {
+                return BL.UserLogic.Login(password, username);
+            }
+            catch
+            {
+                return null;
+            }
+            
         }
         [Route("getusers")]
         public List<user> Get()
         {
-            return BL.UserLogic.Allusers();
+            try
+            {
+                return BL.UserLogic.Allusers();
+            }
+            catch
+            {
+                return null; 
+            }
 
         }
 
@@ -28,8 +43,14 @@ namespace API.Controllers
         [Route("gettypeuser")]
         public List<TypeUser> gettypeuser()
         {
-            return BL.UserLogic.GetTypeUser();
-
+            try
+            {
+                return BL.UserLogic.GetTypeUser();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
 
@@ -38,21 +59,43 @@ namespace API.Controllers
         [Route("getuserByid/{id}")]
         public user Get(int id)
         {
-            return BL.UserLogic.User(id);
+            try
+            {
+                return BL.UserLogic.User(id);
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         [Route("create")]
         // POST: api/User
         public bool PostUser([FromBody]user user)
         {
-          return BL.UserLogic.AddUser(user);
+            try
+            {
+                return BL.UserLogic.AddUser(user);
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         [Route("update")]
         // PUT: api/User/5
-        public void UpdateUser(user user)
+        public bool UpdateUser(user user)
         {
-            BL.UserLogic.UpdateUser(user);
+            try
+            {
+                BL.UserLogic.UpdateUser(user);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         
 
@@ -60,7 +103,14 @@ namespace API.Controllers
         // DELETE: api/User/5
         public  int Delete(int id)
         {
-           return BL.UserLogic.DeleteUser(id);
+            try
+            {
+                return BL.UserLogic.DeleteUser(id);
+            }
+            catch
+            {
+                return 0;
+            }
         }
     }
 }

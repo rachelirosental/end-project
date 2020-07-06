@@ -40,29 +40,45 @@ namespace BL
         }
         public static Room GetRoom(int id)
         {
-            var q1 = db.Rooms.FirstOrDefault(r => r.RoomId == id);
-            return Room.GetRoom(q1);
+            try
+            {
+                var q1 = db.Rooms.FirstOrDefault(r => r.RoomId == id);
+                return Room.GetRoom(q1);
+            }
+            catch
+            {
+                return null;
+            }
 
         }
         public static List<Room> AllRooms()
         {
-            return Room.GetListReferenceDTO(db.Rooms.ToList());
+            try
+            {
+                return Room.GetListReferenceDTO(db.Rooms.ToList());
+            }
+            catch
+            {
+                return null;
+            }
 
         }
-        public static void UpdateRoom(Room room)
+        public static bool UpdateRoom(Room room)
         {
+
             try
             {
                 var RoomDb = db.Rooms.FirstOrDefault(r => r.RoomId == room.RoomId);
                 RoomDb.RoomName = room.RoomName;
                 RoomDb.Dairy = room.Dairy as ICollection<DAL.Dairy>;
                 db.SaveChanges();
+                return true;
 
             }
             catch (Exception)
             {
 
-
+                return false;
             }
 
         }

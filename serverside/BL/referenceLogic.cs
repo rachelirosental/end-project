@@ -42,16 +42,30 @@ namespace BL
         }
         public static Reference GetReference(int id)
         {
-            var q1 = db.References.FirstOrDefault(w => w.RefId == id);
-            return Reference.GetReference(q1);
+            try
+            {
+                var q1 = db.References.FirstOrDefault(w => w.RefId == id);
+                return Reference.GetReference(q1);
+            }
+            catch
+            {
+                return null;
+            }
 
         }
         public static List<Reference> Allreference()
         {
-            return Reference.GetListReferenceDTO(db.References.ToList());
+            try
+            {
+                return Reference.GetListReferenceDTO(db.References.ToList());
+            }
+            catch
+            {
+                return null;
+            }
 
         }
-        public static void UpdateReference(Reference reference)
+        public static bool UpdateReference(Reference reference)
         {
             try
             {
@@ -66,11 +80,12 @@ namespace BL
                 ReferenceDb.TypeRef = reference.TypeRef;
                 ReferenceDb.recommendation = reference.recommendation;
                 db.SaveChanges();
+                return true;
 
             }
-            catch (Exception)
+            catch 
             {
-
+                return false;
 
             }
 

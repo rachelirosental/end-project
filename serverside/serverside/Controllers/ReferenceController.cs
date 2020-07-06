@@ -16,7 +16,15 @@ namespace API.Controllers
         [Route("getreference")]
         public List<Reference> Get()
         {
-            return BL.referenceLogic.Allreference();
+            try
+            {
+                return BL.referenceLogic.Allreference();
+            }
+            catch
+            {
+                return null;
+            }
+            
 
         }
 
@@ -26,21 +34,44 @@ namespace API.Controllers
         [Route("getRefByid/{id}")]
         public Reference Get(int id)
         {
-            return BL.referenceLogic.GetReference(id);
+            try
+            {
+                return BL.referenceLogic.GetReference(id);
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         [Route("create")]
         // POST: api/User
         public bool PostReference([FromBody]Reference reference)
         {
-            return BL.referenceLogic.AddReference(reference);
+            try
+            {
+                return BL.referenceLogic.AddReference(reference);
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
 
         [Route("update")]
         // PUT: api/User/5
-        public void UpdateReference(Reference reference)
+        public bool UpdateReference(Reference reference)
         {
-            BL.referenceLogic.UpdateReference(reference);
+            try
+            {
+                BL.referenceLogic.UpdateReference(reference);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
 
@@ -48,7 +79,14 @@ namespace API.Controllers
         // DELETE: api/User/5
         public static int Delete(int id)
         {
-            return BL.referenceLogic.DeleteReference(id);
+            try
+            {
+                return BL.referenceLogic.DeleteReference(id);
+            }
+            catch
+            {
+                return 0;
+            }
         }
     }
 }
