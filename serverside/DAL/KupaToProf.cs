@@ -12,12 +12,12 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Opinion
+    public partial class KupaToProf
     {
-        public int OpinionId { get; set; }
-        public Nullable<int> ProfPersonid { get; set; }
-        public string description { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> Mark { get; set; }
+        public string KupaId { get; set; }
+        public int ProfId { get; set; }
+    
+        public virtual KupaToProf KupaToProf1 { get; set; }
+        public virtual KupaToProf KupaToProf2 { get; set; }
     }
 }

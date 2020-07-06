@@ -18,7 +18,6 @@ namespace DAL
         public Kupot1()
         {
             this.Professions = new HashSet<Professions>();
-            this.Professions1 = new HashSet<Professions>();
         }
     
         public int KupaId { get; set; }
@@ -26,7 +25,5 @@ namespace DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Professions> Professions { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Professions> Professions1 { get; set; }
     }
 }

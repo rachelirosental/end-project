@@ -12,12 +12,12 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Opinion
+    public partial class sysdiagrams
     {
-        public int OpinionId { get; set; }
-        public Nullable<int> ProfPersonid { get; set; }
-        public string description { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> Mark { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

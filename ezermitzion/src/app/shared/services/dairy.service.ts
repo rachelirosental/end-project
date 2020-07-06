@@ -9,7 +9,7 @@ import { dairy } from 'src/app/Data/dairy';
   export class DairyService{
     url: string;
     constructor(public httpClient: HttpClient) {
-      this.url = environment.url + "Room";
+      this.url = environment.url + "Dairy";
     }
     delete(id:number)  {
         return this.httpClient.delete(this.url + "/delete/" + id);

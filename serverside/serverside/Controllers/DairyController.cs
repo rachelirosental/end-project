@@ -9,7 +9,7 @@ using BL;
 
 namespace serverside.Controllers
 {
-    [RoutePrefix("api/Room")]
+    [RoutePrefix("api/Dairy")]
     public class DairyController : ApiController
     {
 

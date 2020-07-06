@@ -8,7 +8,7 @@ using DTO.NewFolder1;
 
 namespace BL
 {
-public    class DairyLogic
+public class DairyLogic
     {
 
         public static DAL.EzerMitzionEntities db = new DAL.EzerMitzionEntities();

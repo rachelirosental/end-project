@@ -44,7 +44,7 @@ namespace DTO.NewFolder1
                 description = Opiniondto.description,
                 Date = Opiniondto.Date,
                 Mark = Opiniondto.Mark,
-                Profession = NewFolder1.Profession.GetProfession1(Opiniondto.Profession)
+                Professions = Profession.GetProfession1(Opiniondto.Profession)
             };
             return opinion;
         }
