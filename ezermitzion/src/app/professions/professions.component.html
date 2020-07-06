@@ -1,4 +1,23 @@
 
-  <input type="button" value="לרשימת אנשי קשר" (click)="forlist()">
-  <input type="button" value="להוספת איש רקשר" (click)="createnew()">
-  <button (click)="UserService.return()">return</button>
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+           
+            <!-- Indicates a successful or positive action -->
+            <button type="button" class="btn btn-success" (click)="forlist()">רשימת אנשי מקצוע</button>
+
+            <!-- Contextual button for informational alert messages -->
+            <button type="button" class="btn btn-info" (click)="createnew()">הוספת איש קשר</button>
+
+            <!-- Indicates caution should be taken with this action -->
+            <button type="button" class="btn btn-warning" (click)="UserService.return()">חזרה לתפריט קודם</button>
+
+            <!-- Indicates a dangerous or potentially negative action -->
+            <button type="button" class="btn btn-danger" (click)="next4()">חזרה לעמוד כניסה</button>
+
+
+        </div>
+        
+    </div>
+</div>

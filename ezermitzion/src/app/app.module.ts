@@ -31,6 +31,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap'
 // import { DemoComponent } from './component';
 import { FlatpickrModule } from 'angularx-flatpickr';
+import { FormRefComponent } from './form-ref/form-ref.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
     ReferencebuttonsComponent,
     FormreferenceComponent,
     RoomlistComponent,
+    FormRefComponent,
     // [DemoComponent],
   ],
   imports: [

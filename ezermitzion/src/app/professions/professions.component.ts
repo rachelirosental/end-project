@@ -24,5 +24,8 @@ export class ProfessionsComponent implements OnInit {
   createnew(){
     this.router.navigateByUrl('/createnew');
   }
+  next4(){
+    this.router.navigateByUrl('/login');
+  }
 
 }

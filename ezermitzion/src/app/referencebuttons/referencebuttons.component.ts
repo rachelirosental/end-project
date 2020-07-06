@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'app-referencebuttons',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ReferencebuttonsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,public UserService:UserService) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +19,10 @@ export class ReferencebuttonsComponent implements OnInit {
  }
  next2(){
   this.router.navigateByUrl('/formreference');
+}
+
+next4(){
+  this.router.navigateByUrl('/login');
 }
 
 }

@@ -5,6 +5,7 @@ import { ReferenceService } from '../shared/services/reference.service';
 import { Reference } from '../Data/Reference';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SetdetailreferenceComponent } from '../setdetailreference/setdetailreference.component';
+import { FormRefComponent } from '../form-ref/form-ref.component';
 @Component({
   selector: 'app-reference',
   templateUrl: './reference.component.html',
@@ -36,6 +37,9 @@ export class ReferenceComponent implements OnInit {
   next(r:Reference){
     const modalRef = this.modalService.open(SetdetailreferenceComponent);
     modalRef.componentInstance.reference = r;
+  }
+  next1(){
+    const modalRef = this.modalService.open(FormRefComponent);
   }
   
   search(){
