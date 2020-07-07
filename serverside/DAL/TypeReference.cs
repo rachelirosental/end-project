@@ -17,16 +17,13 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TypeReference()
         {
-            this.Reference = new HashSet<Reference>();
-            this.Reference1 = new HashSet<Reference>();
+            this.References = new HashSet<Reference>();
         }
     
         public int RefId { get; set; }
         public string refname { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reference> Reference { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reference> Reference1 { get; set; }
+        public virtual ICollection<Reference> References { get; set; }
     }
 }

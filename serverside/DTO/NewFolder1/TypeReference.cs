@@ -33,7 +33,7 @@ namespace DTO.NewFolder1
                 RefId = typereferencedto.RefId,
                 refname = typereferencedto.refname,
                 
-                Reference = NewFolder1.Reference.GetListReferenceDAL(typereferencedto.Reference as List<Reference>),
+                References = NewFolder1.Reference.GetListReferenceDAL(typereferencedto.Reference as List<Reference>),
             };
             return type;
         }

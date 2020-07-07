@@ -17,8 +17,9 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Professions()
         {
-            this.Reference = new HashSet<Reference>();
-            this.Reference1 = new HashSet<Reference>();
+            this.Opinions = new HashSet<Opinion>();
+            this.Kupot11 = new HashSet<Kupot1>();
+            this.References = new HashSet<Reference>();
         }
     
         public int ProfId { get; set; }
@@ -33,13 +34,14 @@ namespace DAL
         public Nullable<int> Subdomain { get; set; }
         public string PrivateOpinion { get; set; }
     
-        public virtual Kupot1 Kupot1 { get; set; }
         public virtual Subdomain Subdomain1 { get; set; }
         public virtual typeProfessions typeProfessions { get; set; }
-        public virtual typeProfessions typeProfessions1 { get; set; }
+        public virtual Kupot1 Kupot1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reference> Reference { get; set; }
+        public virtual ICollection<Opinion> Opinions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reference> Reference1 { get; set; }
+        public virtual ICollection<Kupot1> Kupot11 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reference> References { get; set; }
     }
 }

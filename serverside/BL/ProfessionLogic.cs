@@ -14,55 +14,96 @@ namespace BL
       
         public static List<Profession> GetProfList()
         {
-            return Profession.GetListProfessinDTO(db.Professions.ToList());
+            try
+            {
+                return Profession.GetListProfessinDTO(db.Professions.ToList());
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public static Profession GetProfessionbyId(int id)
         {
-            var profession = db.Professions.FirstOrDefault(p => p.ProfId == id);
-            return Profession.GetProfession1(profession);
-
-        }
-        public static void CreateProfession(Profession profession)
-        {
-            db.Professions.Add(Profession.GetProfession1(profession));
-            db.SaveChanges();
-        }
-        public static void DeleateProfession(int id)
-        {
-            var profession = db.Professions.FirstOrDefault(p => p.ProfId==id);
-            db.Professions.Remove(profession);
-            db.SaveChanges();
-
-        }
-        public static void UpdateProfession(Profession profession)
-        {
-           
-            var p = db.Professions.FirstOrDefault(pr => pr.ProfId==Profession.GetProfession1(profession).ProfId);
-
-            if(p!= null)
+            try
             {
-                p.ProfId = profession.ProfId;
-                p.ProfName = profession.ProfName;
-                p.Type = profession.Type;
-                p.Kupa = profession.Kupa;
-                p.Tel = profession.Tel;
-                p.AddTel = profession.AddTel;
-                p.Email = profession.Email;
-                p.PrivateAddres = profession.PrivateAddres;
-                p.ClinicAddres = profession.ClinicAddres;
-                p.Subdomain = profession.Subdomain;
-                p.PrivateOpinion = profession.PrivateOpinion;
-                db.SaveChanges();
-                
+                var profession = db.Professions.FirstOrDefault(p => p.ProfId == id);
+                return Profession.GetProfession1(profession);
+            }
+            catch
+            {
+                return null;
             }
 
+        }
+        public static bool CreateProfession(Profession profession)
+        {
+            try
+            {
+                db.Professions.Add(Profession.GetProfession1(profession));
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public static int DeleateProfession(int id)
+        {
+            
+                var profession = db.Professions.FirstOrDefault(p => p.ProfId == id);
+            if (profession == null)
+                return 0;
+            else {
+                db.Professions.Remove(profession);
+                db.SaveChanges();
+                return 1;
+            }
+           
+        }
+        public static bool UpdateProfession(Profession profession)
+        {
+            try
+            {
+                var p = db.Professions.FirstOrDefault(pr => pr.ProfId == Profession.GetProfession1(profession).ProfId);
+
+                if (p != null)
+                {
+                    p.ProfId = profession.ProfId;
+                    p.ProfName = profession.ProfName;
+                    p.Type = profession.Type;
+                    p.Kupa = profession.Kupa;
+                    p.Tel = profession.Tel;
+                    p.AddTel = profession.AddTel;
+                    p.Email = profession.Email;
+                    p.PrivateAddres = profession.PrivateAddres;
+                    p.ClinicAddres = profession.ClinicAddres;
+                    p.Subdomain = profession.Subdomain;
+                    p.PrivateOpinion = profession.PrivateOpinion;
+                    db.SaveChanges();
+
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
 
         }
 
         public static List<typeProfession> GetProfTypeList()
         {
-            return typeProfession.GetListTypeProfDTO(db.typeProfessions.ToList());
+            try
+            {
+                return typeProfession.GetListTypeProfDTO(db.typeProfessions.ToList());
+            }
+            catch
+            {
+                return null;
+            }
         }
 
 

@@ -19,5 +19,7 @@ namespace DAL
         public string description { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public Nullable<int> Mark { get; set; }
+    
+        public virtual Professions Profession { get; set; }
     }
 }

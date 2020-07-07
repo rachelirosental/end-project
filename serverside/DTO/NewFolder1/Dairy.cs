@@ -10,14 +10,12 @@ namespace DTO.NewFolder1
     public  class Dairy
     {
         public int DairyId { get; set; }
-        public System.DateTime start { get; set; }
-        public System.DateTime end { get; set; }
+        public System.DateTime DateTime { get; set; }
+        public System.TimeSpan DuringTime { get; set; }
         public int RoomId { get; set; }
         public string Description { get; set; }
         public int TypeMeeting { get; set; }
         public int UserId { get; set; }
-        public string color { get; set; }
-        public string title { get; set; }
         public NewFolder1.Room  Rooms { get; set; }
         public NewFolder1.TypeMeeting TypeMeeting1 { get; set; }
         public NewFolder1.user  users { get; set; }
@@ -29,18 +27,15 @@ namespace DTO.NewFolder1
             Dairy dto = new Dairy()
             {
                 DairyId = d.DairyId,
-               start = d.start.Value,
-                end = d.end.Value,
+                DateTime = d.DateTime.Value,
+                DuringTime = d.DuringTime.Value,
                 RoomId = d.RoomId.Value,
                 Description = d.Description,
                 TypeMeeting = Convert.ToInt32(d.TypeMeeting),
                 UserId = d.UserId,
-                title=d.title,
-                color=d.color,
                 Rooms=NewFolder1.Room.GetRoom(d.Rooms),
                 TypeMeeting1=NewFolder1.TypeMeeting.GetTypeMeeting(d.TypeMeeting1),
                 users=NewFolder1.user.GetUser(d.users) 
-                
             };
             return dto;
         }
@@ -51,14 +46,12 @@ namespace DTO.NewFolder1
             DAL.Dairy dairy = new DAL.Dairy()
             {
                 DairyId = Dairydto.DairyId,
-                start = Dairydto.start,
-               end = Dairydto.end,
+                DateTime = Dairydto.DateTime,
+                DuringTime = Dairydto.DuringTime,
                 RoomId = Dairydto.RoomId,
                 Description = Dairydto.Description,
                 TypeMeeting = Dairydto.TypeMeeting,
                 UserId = Dairydto.UserId,
-                title=Dairydto.title,
-                color=Dairydto.color,
                 Rooms = NewFolder1.Room.GetRoom(Dairydto.Rooms),
                 TypeMeeting1 = NewFolder1.TypeMeeting.GetTypeMeeting(Dairydto.TypeMeeting1),
                 users = NewFolder1.user.GetUser(Dairydto.users),

@@ -14,9 +14,6 @@ namespace API.Controllers
         [Route("getProfList")]
         public List<Profession> GetProfList()
         {
-<<<<<<< HEAD
-            return BL.ProfessionLogic.GetProfList();
-=======
             try
             {
                 return BL.ProfessionLogic.GetProfList();
@@ -26,33 +23,10 @@ namespace API.Controllers
                 return null;
             }
 
->>>>>>> 8c8608fb60e16ac9509858ee55f29cb5b45b1143
         }
         [Route("GetProfessionbyId/{id}")]
         public Profession GetProfessionbyId(int id)
         {
-<<<<<<< HEAD
-            return BL.ProfessionLogic.GetProfessionbyId(id);
-        }
-
-        [Route("create")]
-       public void CreateProfession([FromBody]Profession profession) {
-            BL.ProfessionLogic.CreateProfession(profession);
-
-        }
-        [Route("deleate/{id}")]
-        public void DeleteProfession(int id)
-        {
-            BL.ProfessionLogic.DeleateProfession(id);
-
-        }
-
-        [Route("update")]
-        public void UpdateProfession(Profession profession)
-        {
-            BL.ProfessionLogic.UpdateProfession(profession);
-
-=======
             try
             {
                 return BL.ProfessionLogic.GetProfessionbyId(id);
@@ -103,12 +77,20 @@ namespace API.Controllers
             {
                 return false;
             }
->>>>>>> 8c8608fb60e16ac9509858ee55f29cb5b45b1143
         }
         [Route("getTypeProfList")]
         public List<typeProfession> getTypeProfList()
         {
-            return BL.ProfessionLogic.GetProfTypeList();
+            try
+            {
+                return BL.ProfessionLogic.GetProfTypeList();
+                
+            }
+            catch
+            {
+                return null;
+            }
+           
         }
 
 

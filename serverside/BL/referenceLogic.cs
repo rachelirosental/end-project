@@ -16,7 +16,7 @@ namespace BL
         {
             try
             {
-                db.Reference.Add(DTO.NewFolder1.Reference.GetReference(reference));
+                db.References.Add(DTO.NewFolder1.Reference.GetReference(reference));
                 db.SaveChanges();
                 return true;
             }
@@ -30,32 +30,46 @@ namespace BL
 
         public static int DeleteReference(int id)
         {
-            var q1 = db.Reference.FirstOrDefault(w => w.RefId == id);
+            var q1 = db.References.FirstOrDefault(w => w.RefId == id);
             if (q1 == null)
                 return 0;
             else
             {
-                db.Reference.Remove(q1);
+                db.References.Remove(q1);
                 db.SaveChanges();
                 return 1;
             }
         }
         public static Reference GetReference(int id)
         {
-            var q1 = db.Reference.FirstOrDefault(w => w.RefId == id);
-            return Reference.GetReference(q1);
+            try
+            {
+                var q1 = db.References.FirstOrDefault(w => w.RefId == id);
+                return Reference.GetReference(q1);
+            }
+            catch
+            {
+                return null;
+            }
 
         }
         public static List<Reference> Allreference()
         {
-            return Reference.GetListReferenceDTO(db.Reference.ToList());
+            try
+            {
+                return Reference.GetListReferenceDTO(db.References.ToList());
+            }
+            catch
+            {
+                return null;
+            }
 
         }
-        public static void UpdateReference(Reference reference)
+        public static bool UpdateReference(Reference reference)
         {
             try
             {
-                var ReferenceDb = db.Reference.FirstOrDefault(p => p.RefId == reference.RefId);
+                var ReferenceDb = db.References.FirstOrDefault(p => p.RefId == reference.RefId);
                 ReferenceDb.Date = reference.Date;
                 ReferenceDb.Description = reference.Description;
                 ReferenceDb.BornDate = reference.BornDate;
@@ -66,11 +80,12 @@ namespace BL
                 ReferenceDb.TypeRef = reference.TypeRef;
                 ReferenceDb.recommendation = reference.recommendation;
                 db.SaveChanges();
+                return true;
 
             }
-            catch (Exception)
+            catch 
             {
-
+                return false;
 
             }
 
