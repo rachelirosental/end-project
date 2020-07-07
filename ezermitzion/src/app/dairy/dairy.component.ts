@@ -25,6 +25,8 @@ import {
 import {DairyService} from '../shared/services/dairy.service';
 import { dairy } from '../Data/dairy';
 import { dairychangeevent,CalendarEventTimesChangedEventType } from '../Data/dairychangeevent';
+declare var $:any;
+
 const colors: any = {
   red: {
     primary: '#ad2121',
@@ -62,24 +64,24 @@ export class DairyComponent
     event: dairy;
   };
 
-//  actions: CalendarEventAction[] = [
-//    {
-//        label: '<i class="fas fa-fw fa-pencil-alt"></i>',
-//      a11yLabel: 'Edit',
-//      onClick: ({ event }: { event: CalendarEvent }): void => {
-//       this.handleEvent('Edited', event);
-//       },
-//     },
-//   {
-//        label: '<i class="fas fa-fw fa-trash-alt"></i>',
-//       a11yLabel: 'Delete',
-//       onClick: ({ event }: { event: CalendarEvent }): void => {
-//          this.events = this.events
-//         //  .filter((iEvent) => iEvent !== event);
-//          this.handleEvent('Deleted', event);
-//       },
-//    },
-//  ];
+ actions: CalendarEventAction[] = [
+   {
+       label: '<i class="fas fa-fw fa-pencil-alt"></i>',
+     a11yLabel: 'Edit',
+     onClick: ({ event }: { event: dairy}): void => {
+      this.handleEvent('Edited', event);
+      },
+    },
+  {
+       label: '<i class="fas fa-fw fa-trash-alt"></i>',
+      a11yLabel: 'Delete',
+      onClick: ({ event }: { event: dairy }): void => {
+         this.events = this.events
+        //  .filter((iEvent) => iEvent !== event);
+         this.handleEvent('Deleted', event);
+      },
+   },
+ ];
  events:dairy[];
   refresh: Subject<any> = new Subject();
 
@@ -166,6 +168,7 @@ handleEvent(action: string, event: dairy): void {
 addEvent(): void {
   this.events = [
     ...this.events,
+
   
   ];
 }
