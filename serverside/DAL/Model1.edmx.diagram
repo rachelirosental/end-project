@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="be6441d5d0c242f0905748c0a8d9634a" Name="Diagram1">
-        <EntityTypeShape EntityType="EzerMitzionModel.Dairy" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="EzerMitzionModel.Dictionary" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="EzerMitzionModel.Kupot1" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EzerMitzionModel.Opinion" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
@@ -17,9 +16,6 @@
         <EntityTypeShape EntityType="EzerMitzionModel.TypeReference" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EzerMitzionModel.TypeUser" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EzerMitzionModel.users" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <AssociationConnector Association="EzerMitzionModel.FK__Dairy__RoomId__49C3F6B7" ManuallyRouted="false" />
-        <AssociationConnector Association="EzerMitzionModel.FK__Dairy__TypeMeeti__4AB81AF0" ManuallyRouted="false" />
-        <AssociationConnector Association="EzerMitzionModel.FK__Dairy__UserId__4BAC3F29" ManuallyRouted="false" />
         <AssociationConnector Association="EzerMitzionModel.FK__Dictionar__RoomI__44FF419A" ManuallyRouted="false" />
         <AssociationConnector Association="EzerMitzionModel.FK__Dictionar__TypeM__45F365D3" ManuallyRouted="false" />
         <AssociationConnector Association="EzerMitzionModel.FK__Dictionar__UserI__46E78A0C" ManuallyRouted="false" />
@@ -33,6 +29,16 @@
         <AssociationConnector Association="EzerMitzionModel.FK__Reference__ProfI__4D94879B" />
         <AssociationConnector Association="EzerMitzionModel.FK__Reference__TypeR__38996AB5" />
         <AssociationConnector Association="EzerMitzionModel.FK__Reference__UserN__36B12243" />
+        <EntityTypeShape EntityType="EzerMitzionModel.Dairy" Width="1.5" PointX="8.25" PointY="10.25" />
+        <EntityTypeShape EntityType="EzerMitzionModel.sysdiagram" Width="1.5" PointX="5.375" PointY="4.75" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Dairy__RoomId__3F466844" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Dairy__RoomId__571DF1D5" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Dairy__TypeMeeti__403A8C7D" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Dairy__TypeMeeti__5812160E" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Dairy__UserId__412EB0B6" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Dairy__UserId__59063A47" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Reference__Atten__46E78A0C" />
+        <AssociationConnector Association="EzerMitzionModel.FK__Reference__Atten__5EBF139D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

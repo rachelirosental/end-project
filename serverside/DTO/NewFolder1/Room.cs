@@ -20,7 +20,7 @@ namespace DTO.NewFolder1
             {
                 RoomId = r.RoomId,
                 RoomName = r.RoomName,
-                Dairy=NewFolder1.Dairy.GetListDairyDTO(r.Dairy as List<DAL.Dairy>)
+                Dairy=NewFolder1.Dairy.GetListDairyDTO(r.Dairies as List<DAL.Dairy>)
             };
             return dto;
         }
@@ -32,7 +32,7 @@ namespace DTO.NewFolder1
             {
                 RoomId = roomdto.RoomId,
                 RoomName = roomdto.RoomName,
-                Dairy = NewFolder1.Dairy.GetListDairyDAL(roomdto.Dairy as List<Dairy>)
+                Dairies = NewFolder1.Dairy.GetListDairyDAL(roomdto.Dairy as List<Dairy>)
 
             };
             return room;

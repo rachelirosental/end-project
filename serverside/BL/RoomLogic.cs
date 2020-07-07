@@ -70,7 +70,7 @@ namespace BL
             {
                 var RoomDb = db.Rooms.FirstOrDefault(r => r.RoomId == room.RoomId);
                 RoomDb.RoomName = room.RoomName;
-                RoomDb.Dairy = room.Dairy as ICollection<DAL.Dairy>;
+                RoomDb.Dairies= room.Dairy as ICollection<DAL.Dairy>;
                 db.SaveChanges();
                 return true;
 

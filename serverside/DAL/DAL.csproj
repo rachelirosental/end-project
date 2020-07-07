@@ -91,6 +91,9 @@
     <Compile Include="Subdomain.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TypeMeeting.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

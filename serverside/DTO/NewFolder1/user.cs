@@ -32,7 +32,7 @@ namespace DTO.NewFolder1
                 Password = u.Password,
                 TypeUser = u.TypeUser,
                 TypeUser1 = DTO.NewFolder1.TypeUser.GetTypeUser(u.TypeUser1),
-                Dairy = NewFolder1.Dairy.GetListDairyDTO(u.Dairy as List<DAL.Dairy>),
+                Dairy = NewFolder1.Dairy.GetListDairyDTO(u.Dairies as List<DAL.Dairy>),
                 Reference = NewFolder1.Reference.GetListReferenceDTO(u.References as List<DAL.Reference>),
 
             };
@@ -52,7 +52,7 @@ namespace DTO.NewFolder1
                 Password = userdto.Password,
                 TypeUser = userdto.TypeUser,
                 TypeUser1 = DTO.NewFolder1.TypeUser.GetTypeUser(userdto.TypeUser1),
-                Dairy = NewFolder1.Dairy.GetListDairyDAL(userdto.Dairy as List<Dairy>),
+               Dairies = NewFolder1.Dairy.GetListDairyDAL(userdto.Dairy as List<Dairy>),
                 References = NewFolder1.Reference.GetListReferenceDAL(userdto.Reference as List<Reference>),
             };
             return user;

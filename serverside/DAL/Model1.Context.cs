@@ -25,7 +25,6 @@ namespace DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Dairy> Dairy { get; set; }
         public virtual DbSet<Dictionary> Dictionary { get; set; }
         public virtual DbSet<Kupot1> Kupot1 { get; set; }
         public virtual DbSet<Opinion> Opinion { get; set; }
@@ -38,5 +37,7 @@ namespace DAL
         public virtual DbSet<TypeUser> TypeUser { get; set; }
         public virtual DbSet<users> users { get; set; }
         public virtual DbSet<Reference> References { get; set; }
+        public virtual DbSet<Dairy> Dairies { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

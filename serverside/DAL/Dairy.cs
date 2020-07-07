@@ -15,15 +15,20 @@ namespace DAL
     public partial class Dairy
     {
         public int DairyId { get; set; }
-        public Nullable<System.DateTime> DateTime { get; set; }
-        public Nullable<System.TimeSpan> DuringTime { get; set; }
+        public Nullable<System.DateTime> start { get; set; }
+        public Nullable<System.DateTime> end { get; set; }
         public Nullable<int> RoomId { get; set; }
         public string Description { get; set; }
         public Nullable<int> TypeMeeting { get; set; }
         public int UserId { get; set; }
+        public string color { get; set; }
+        public string title { get; set; }
     
-        public virtual Rooms Rooms { get; set; }
+        public virtual Rooms Room { get; set; }
+        public virtual Rooms Room1 { get; set; }
         public virtual TypeMeeting TypeMeeting1 { get; set; }
-        public virtual users users { get; set; }
+        public virtual TypeMeeting TypeMeeting2 { get; set; }
+        public virtual users user { get; set; }
+        public virtual users user1 { get; set; }
     }
 }
