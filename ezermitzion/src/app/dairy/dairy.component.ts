@@ -48,7 +48,7 @@ const colors: any = {
 })
 export class DairyComponent
 
-{
+{ 
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
 
   view: CalendarView = CalendarView.Month;
@@ -128,11 +128,11 @@ activeDayIsOpen: boolean = true;
 
 constructor(private modal: NgbModal,public DairyService:DairyService) {}
 
-dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
+dayClicked({ date, events }: { date: Date; events: dairy }): void {
   if (isSameMonth(date, this.viewDate)) {
     if (
-      (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
-      events.length === 0
+      (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) 
+      
     ) {
       this.activeDayIsOpen = false;
     } else {
@@ -146,14 +146,12 @@ eventTimesChanged({
   event,
   newStart,
   newEnd,
-}: CalendarEventTimesChangedEvent): void {
+}: dairychangeevent): void {
   this.events = this.events.map((iEvent) => {
     if (iEvent === event) {
       return {
         ...event,
-        start: newStart,
-        end: newEnd,
-      };
+              };
     }
     return iEvent;
   });

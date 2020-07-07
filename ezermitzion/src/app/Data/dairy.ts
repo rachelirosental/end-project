@@ -1,7 +1,13 @@
 import {Room} from 'src/app/Data/Room'
 import {TypeMeeting} from 'src/app/Data/TypeMeeting'
 import {user} from 'src/app/Data/user'
-export class dairy  {
+import {
+  CalendarEvent,
+  CalendarEventAction,
+  CalendarEventTimesChangedEvent,
+  CalendarView,
+} from 'angular-calendar';
+export interface dairy extends CalendarEvent{
   dairyId: number;
   dateTime: Date;
   duringTime:Date;
