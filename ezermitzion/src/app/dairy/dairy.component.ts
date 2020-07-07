@@ -64,24 +64,23 @@ export class DairyComponent
     event: dairy;
   };
 
- actions: CalendarEventAction[] = [
-   {
-       label: '<i class="fas fa-fw fa-pencil-alt"></i>',
-     a11yLabel: 'Edit',
-     onClick: ({ event }: { event: dairy}): void => {
-      this.handleEvent('Edited', event);
+  actions: CalendarEventAction[] = [
+    {
+      label: '<i class="fas fa-fw fa-pencil-alt"></i>',
+      a11yLabel: 'Edit',
+      onClick: ({ event }: { event: CalendarEvent }): void => {
+        this.handleEvent('Edited', event);
       },
     },
-  {
-       label: '<i class="fas fa-fw fa-trash-alt"></i>',
+    {
+      label: '<i class="fas fa-fw fa-trash-alt"></i>',
       a11yLabel: 'Delete',
-      onClick: ({ event }: { event: dairy }): void => {
-         this.events = this.events
-        //  .filter((iEvent) => iEvent !== event);
-         this.handleEvent('Deleted', event);
+      onClick: ({ event }: { event: CalendarEvent }): void => {
+        this.events = this.events.filter((iEvent) => iEvent !== event);
+        this.handleEvent('Deleted', event);
       },
-   },
- ];
+    },
+  ];
  events:dairy[];
   refresh: Subject<any> = new Subject();
 
@@ -160,7 +159,7 @@ eventTimesChanged({
   this.handleEvent('Dropped or resized', event);
 }
 
-handleEvent(action: string, event: dairy): void {
+handleEvent(action: string, event): void {
   this.modalData = { event, action };
   this.modal.open(this.modalContent, { size: 'lg' });
 }

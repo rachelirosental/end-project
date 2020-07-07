@@ -7,9 +7,13 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView,
 } from 'angular-calendar';
-export interface dairy extends CalendarEvent,CalendarEventAction{
+export interface dairy extends CalendarEvent{
   dairyId: number;
- 
+  label:string;
+  onClick({ event, sourceEvent, }: {
+    event: dairy;
+    sourceEvent: MouseEvent | KeyboardEvent;
+}): any;
   roomId:number;
   description:string;
   typeMeeting:number;

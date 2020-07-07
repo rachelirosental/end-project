@@ -23,6 +23,7 @@ inputText:any;
   constructor(private httpClient:HttpClient,public UserService:UserService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    debugger;
     this.loadUsers();
   }
   loadUsers(){
