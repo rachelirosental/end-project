@@ -1,0 +1,37 @@
+<p>dairylist works!</p>
+<!-- <input type="text" [(ngModel)]="inputText" (keyup)="search()" >   -->
+<input type="button" value="לחיפוש" >
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8"><h2>Userers </h2></div>
+              
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr >
+                    <th>שם פרטי</th>
+                    <th>שם משפחה</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of users">
+                    <td>{{u.userFname}}</td>
+                    <td>{{u.userLname}}</td>
+                    
+                    <td>
+          <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
+                        <!-- <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"> </i></a>
+                        <a class="delete" title="Delete" data-toggle="tooltip" ><i class="material-icons"></i></a> -->
+                        <img  src="./assets/img/icons8-calendar-48.png" routerLink="/dairy1">
+                    </td>
+                </tr>
+          
+            </tbody>
+        </table>
+    </div>
+  </div>    
+  <button (click)="UserService.return()">return</button>

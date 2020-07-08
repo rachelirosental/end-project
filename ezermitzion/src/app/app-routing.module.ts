@@ -16,11 +16,13 @@ import { SetdetailuserComponent } from './setdetailuser/setdetailuser.component'
 import { ReferencebuttonsComponent } from './referencebuttons/referencebuttons.component';
 import { FormreferenceComponent } from './formreference/formreference.component';
 import { RoomlistComponent } from './roomlist/roomlist.component';
+import { DairylistComponent } from './dairylist/dairylist.component';
 
 const routes: Routes = [
   
 {path:'secretary',component:SecretaryComponent},
-{path:'dairy',component:DairyComponent},
+{path:'dairy',component:DairylistComponent },
+{path:'dairy1',component:DairyComponent },
 {path:'rooms',component:RoomlistComponent},
 {path:'reference',component:ReferenceComponent},
 {path:'professions',component:ProfessionsComponent},

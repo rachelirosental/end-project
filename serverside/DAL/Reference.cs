@@ -20,6 +20,7 @@ namespace DAL
         public Nullable<System.DateTime> BornDate { get; set; }
         public Nullable<bool> IsCare { get; set; }
         public Nullable<int> UserName { get; set; }
+        public Nullable<int> AttendantId { get; set; }
         public Nullable<int> ProfId { get; set; }
         public Nullable<int> TypeRef { get; set; }
         public string recommendation { get; set; }
