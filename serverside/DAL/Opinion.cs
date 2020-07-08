@@ -20,6 +20,6 @@ namespace DAL
         public Nullable<System.DateTime> Date { get; set; }
         public Nullable<int> Mark { get; set; }
     
-        public virtual Professions Profession { get; set; }
+        public virtual Professions Professions { get; set; }
     }
 }

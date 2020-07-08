@@ -14,7 +14,7 @@ namespace BL
         {
             try
             {
-                return Dairy.GetListDairyDTO(db.Dairies.ToList());
+                return Dairy.GetListDairyDTO(db.Dairy.ToList());
             }
             catch
             {

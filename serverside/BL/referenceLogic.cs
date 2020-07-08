@@ -16,7 +16,7 @@ namespace BL
         {
             try
             {
-                db.References.Add(DTO.NewFolder1.Reference.GetReference(reference));
+                db.Reference.Add(DTO.NewFolder1.Reference.GetReference(reference));
                 db.SaveChanges();
                 return true;
             }
@@ -30,12 +30,12 @@ namespace BL
 
         public static int DeleteReference(int id)
         {
-            var q1 = db.References.FirstOrDefault(w => w.RefId == id);
+            var q1 = db.Reference.FirstOrDefault(w => w.RefId == id);
             if (q1 == null)
                 return 0;
             else
             {
-                db.References.Remove(q1);
+                db.Reference.Remove(q1);
                 db.SaveChanges();
                 return 1;
             }
@@ -44,7 +44,7 @@ namespace BL
         {
             try
             {
-                var q1 = db.References.FirstOrDefault(w => w.RefId == id);
+                var q1 = db.Reference.FirstOrDefault(w => w.RefId == id);
                 return Reference.GetReference(q1);
             }
             catch
@@ -57,7 +57,7 @@ namespace BL
         {
             try
             {
-                return Reference.GetListReferenceDTO(db.References.ToList());
+                return Reference.GetListReferenceDTO(db.Reference.ToList());
             }
             catch
             {
@@ -69,7 +69,7 @@ namespace BL
         {
             try
             {
-                var ReferenceDb = db.References.FirstOrDefault(p => p.RefId == reference.RefId);
+                var ReferenceDb = db.Reference.FirstOrDefault(p => p.RefId == reference.RefId);
                 ReferenceDb.Date = reference.Date;
                 ReferenceDb.Description = reference.Description;
                 ReferenceDb.BornDate = reference.BornDate;

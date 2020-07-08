@@ -23,12 +23,9 @@ namespace DAL
         public Nullable<int> ProfId { get; set; }
         public Nullable<int> TypeRef { get; set; }
         public string recommendation { get; set; }
-        public Nullable<int> AttendantId { get; set; }
     
-        public virtual Professions Profession { get; set; }
+        public virtual Professions Professions { get; set; }
         public virtual TypeReference TypeReference { get; set; }
-        public virtual users user { get; set; }
-        public virtual users user1 { get; set; }
-        public virtual users user11 { get; set; }
+        public virtual users users { get; set; }
     }
 }
