@@ -22,6 +22,7 @@ const routes: Routes = [
   
 {path:'secretary',component:SecretaryComponent},
 {path:'dairy',component:DairylistComponent },
+{path:'dairy1',component:DairyComponent },
 {path:'rooms',component:RoomlistComponent},
 {path:'reference',component:ReferenceComponent},
 {path:'professions',component:ProfessionsComponent},
