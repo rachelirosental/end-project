@@ -19,7 +19,7 @@ namespace DTO.NewFolder1
             {
                 MeetingId = t.MeetingId,
                 description = t.description,
-                Dairy = NewFolder1.Dairy.GetListDairyDTO(t.Dairies as List<DAL.Dairy>)
+                Dairy = NewFolder1.Dairy.GetListDairyDTO(t.Dairy as List<DAL.Dairy>)
 
             };
             return dto;
@@ -32,7 +32,7 @@ namespace DTO.NewFolder1
             {
                 MeetingId = typemeetingdto.MeetingId,
                 description = typemeetingdto.description,
-                Dairies = NewFolder1.Dairy.GetListDairyDAL(typemeetingdto.Dairy as List<Dairy>)
+                Dairy = NewFolder1.Dairy.GetListDairyDAL(typemeetingdto.Dairy as List<Dairy>)
             };
             return type;
         }

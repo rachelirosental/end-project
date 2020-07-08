@@ -37,9 +37,9 @@ namespace DTO.NewFolder1
                 UserId = d.UserId,
                 title=d.title,
                 color=d.color,
-                Rooms=NewFolder1.Room.GetRoom(d.Room),
+                Rooms=NewFolder1.Room.GetRoom(d.Rooms),
                 TypeMeeting1=NewFolder1.TypeMeeting.GetTypeMeeting(d.TypeMeeting1),
-                users=NewFolder1.user.GetUser(d.user) 
+                users=NewFolder1.user.GetUser(d.users) 
             };
             return dto;
         }
@@ -58,9 +58,9 @@ namespace DTO.NewFolder1
                 UserId = Dairydto.UserId,
                 title=Dairydto.title,
                 color=Dairydto.color,
-                Room = NewFolder1.Room.GetRoom(Dairydto.Rooms),
+                Rooms = NewFolder1.Room.GetRoom(Dairydto.Rooms),
                 TypeMeeting1 = NewFolder1.TypeMeeting.GetTypeMeeting(Dairydto.TypeMeeting1),
-                user = NewFolder1.user.GetUser(Dairydto.users),
+                users = NewFolder1.user.GetUser(Dairydto.users),
             };
             return dairy;
         }

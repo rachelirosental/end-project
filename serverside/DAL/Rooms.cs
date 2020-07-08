@@ -17,19 +17,22 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Rooms()
         {
+            this.Dairy = new HashSet<Dairy>();
+            this.Dairy1 = new HashSet<Dairy>();
             this.Dictionary = new HashSet<Dictionary>();
-            this.Dairies = new HashSet<Dairy>();
-            this.Dairies1 = new HashSet<Dairy>();
+            this.Dictionary1 = new HashSet<Dictionary>();
         }
     
         public int RoomId { get; set; }
         public string RoomName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Dairy> Dairy { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Dairy> Dairy1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dictionary> Dictionary { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Dairy> Dairies { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Dairy> Dairies1 { get; set; }
+        public virtual ICollection<Dictionary> Dictionary1 { get; set; }
     }
 }

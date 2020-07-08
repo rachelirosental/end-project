@@ -45,8 +45,8 @@ namespace DTO.NewFolder1
                 TypeProfessions = NewFolder1.typeProfession.GetTypeProfession(p.typeProfessions),
                 Subdomain1 = NewFolder1.subDomain.GetSubDomain(p.Subdomain1),
                 Kupot=NewFolder1.Kupot.GetKupot(p.Kupot1),
-                Reference=NewFolder1.Reference.GetListReferenceDTO(p.References as List<DAL.Reference>),
-                Opinions=NewFolder1.Opinion.GetListOpinionDTO(p.Opinions as List<DAL.Opinion>)
+                Reference=NewFolder1.Reference.GetListReferenceDTO(p.Reference as List<DAL.Reference>),
+                Opinions=NewFolder1.Opinion.GetListOpinionDTO(p.Opinion as List<DAL.Opinion>)
 
             };
             return dto;
@@ -71,8 +71,8 @@ namespace DTO.NewFolder1
                 typeProfessions = NewFolder1.typeProfession.GetTypeProfession(Professiondto.TypeProfessions),
                 Subdomain1 = NewFolder1.subDomain.GetSubDomain(Professiondto.Subdomain1),
                 Kupot1=NewFolder1.Kupot.GetKupot(Professiondto.Kupot),
-                References=NewFolder1.Reference.GetListReferenceDAL(Professiondto.Reference as List<Reference>),
-                Opinions = NewFolder1.Opinion.GetListOpinionDAL(Professiondto.Opinions as List<Opinion>)
+                Reference=NewFolder1.Reference.GetListReferenceDAL(Professiondto.Reference as List<Reference>),
+                Opinion = NewFolder1.Opinion.GetListOpinionDAL(Professiondto.Opinions as List<Opinion>)
           };
             return profession;
         }

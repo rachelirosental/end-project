@@ -26,7 +26,7 @@ namespace DTO.NewFolder1
                 description = o.description,
                 Date = o.Date.Value,
                 Mark = Convert.ToInt32(o.Mark),
-                Profession=NewFolder1.Profession.GetProfession1(o.Profession)
+                Profession=NewFolder1.Profession.GetProfession1(o.Professions)
 
 
 
@@ -44,7 +44,7 @@ namespace DTO.NewFolder1
                 description = Opiniondto.description,
                 Date = Opiniondto.Date,
                 Mark = Opiniondto.Mark,
-                Profession = NewFolder1.Profession.GetProfession1(Opiniondto.Profession)
+                Professions = NewFolder1.Profession.GetProfession1(Opiniondto.Profession)
             };
             return opinion;
         }

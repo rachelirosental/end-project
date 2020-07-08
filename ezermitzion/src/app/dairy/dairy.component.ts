@@ -171,7 +171,7 @@ handleEvent(action: string, event): void {
     //   ...this.events,
 
 
-    // ];
+    // ];ng
     const modalRef = this.modal.open(NewdairyComponent);
 // modalRef.componentInstance.user = this.user;
   }

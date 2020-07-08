@@ -33,6 +33,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap'
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { FormRefComponent } from './form-ref/form-ref.component';
 import { NewdairyComponent } from './newdairy/newdairy.component';
+import { DairylistComponent } from './dairylist/dairylist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +57,7 @@ import { NewdairyComponent } from './newdairy/newdairy.component';
     RoomlistComponent,
     FormRefComponent,
     NewdairyComponent,
+    DairylistComponent,
     // [DemoComponent],
   ],
   imports: [
