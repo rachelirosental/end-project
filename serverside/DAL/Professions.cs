@@ -40,8 +40,8 @@ namespace DAL
         public virtual typeProfessions typeProfessions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reference> Reference { get; set; }
+        public virtual Subdomain Subdomain1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Kupot1> Kupot11 { get; set; }
-        public virtual Subdomain Subdomain1 { get; set; }
     }
 }
