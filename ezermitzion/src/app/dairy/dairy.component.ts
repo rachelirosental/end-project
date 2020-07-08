@@ -25,6 +25,8 @@ import {
 import { DairyService } from '../shared/services/dairy.service';
 import { dairy } from '../Data/dairy';
 import { dairychangeevent, CalendarEventTimesChangedEventType } from '../Data/dairychangeevent';
+import { NewdairyComponent } from '../newdairy/newdairy.component';
+
 declare var $: any;
 
 const colors: any = {
@@ -165,11 +167,13 @@ handleEvent(action: string, event): void {
 }
 
   addEvent(): void {
-    this.events = [
-      ...this.events,
+    // this.events = [
+    //   ...this.events,
 
 
-    ];
+    // ];
+    const modalRef = this.modal.open(NewdairyComponent);
+// modalRef.componentInstance.user = this.user;
   }
 
   deleteEvent(eventToDelete: dairy) {
