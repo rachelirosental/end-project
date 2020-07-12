@@ -10,11 +10,14 @@ namespace BL
  public  class DairyLogic
     {
         public static DAL.EzerMitzionEntities db = new DAL.EzerMitzionEntities();
-        public static List<Dairy> AllDaries()
+        public static List<Dairy> AllDaries(int id)
         {
             try
             {
-                return Dairy.GetListDairyDTO(db.Dairy.ToList());
+                
+                List<DAL.Dairy> l = new List<DAL.Dairy>();
+                l = db.Dairy.Where(d => d.UserId == id)as List<DAL.Dairy>;
+                return Dairy.GetListDairyDTO(l);
             }
             catch
             {
