@@ -12,26 +12,28 @@ import { Room } from '../Data/Room';
   styleUrls: ['./newdairy.component.scss']
 })
 export class NewdairyComponent implements OnInit {
-dairy:dairy;  
-// dairy:dairy={
-//   dairyId:1,
-//   description:" ",
-//   start:new Date(),
-//  end:new Date(),
-//  color:{
-//     secondary:"",
-//     primary:"",
-//   },
-//   title:"",
-//   typeMeeting:1,
-//   user:new user(),
-//   typeMeeting1:new TypeMeeting(),
-//   rooms:new Room(),
-//   roomId:1,
-//   label:"",
- 
 
-// };
+dairy:dairy={
+  dairyId:1,
+  description:" ",
+  start:new Date(),
+ end:new Date(),
+ color:{
+    secondary:"",
+    primary:"",
+  },
+  title:"",
+  typeMeeting:1,
+  user:new user(),
+  typeMeeting1:new TypeMeeting(),
+  rooms:new Room(),
+  roomId:1,
+  label:"",
+  onClick: ({ event }: { event: dairy}): void => {
+
+  }
+
+};
   constructor() { }
 
   ngOnInit(): void {

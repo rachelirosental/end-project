@@ -26,7 +26,7 @@ import { DairyService } from '../shared/services/dairy.service';
 import { dairy } from '../Data/dairy';
 import { dairychangeevent, CalendarEventTimesChangedEventType } from '../Data/dairychangeevent';
 import { NewdairyComponent } from '../newdairy/newdairy.component';
-
+import { ActivatedRoute } from '@angular/router';
 declare var $: any;
 
 const colors: any = {
@@ -127,7 +127,7 @@ export class DairyComponent {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal, public DairyService: DairyService) { }
+  constructor(private modal: NgbModal, public DairyService: DairyService,private route :ActivatedRoute) { }
 
 
 
@@ -193,14 +193,16 @@ handleEvent(action: string, event): void {
 
   }
   getdaries() {
-    this.DairyService.getdaries().subscribe((res: dairy[]) => {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.DairyService.getdaries(id).subscribe((res: dairy[]) => {
       localStorage.setItem("daries", JSON.stringify(res))
-      this.events = res,
-        this.events.forEach(e => {
+      this.events = res
+      if(this.events!=null)
+       { this.events.forEach(e => {
           e.start = new Date(e.start);
           e.end = new Date(e.end);
           e.actions = this.actions
-        })
+        })}
       console.log(this.events)
     });
   }

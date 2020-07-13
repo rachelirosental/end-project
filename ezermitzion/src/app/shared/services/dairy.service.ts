@@ -14,7 +14,7 @@ import { dairy } from 'src/app/Data/dairy';
     delete(id:number)  {
         return this.httpClient.delete(this.url + "/delete/" + id);
       }
-      getdaries() {
-         return this.httpClient.get(this.url + "/getdaries");
+      getdaries(id:number) {
+         return this.httpClient.get(this.url + "/getdaries/" + id);
       }
     }

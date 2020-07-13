@@ -11,12 +11,12 @@ namespace serverside.Controllers
     [RoutePrefix("api/Dairy")]
     public class DairyController : ApiController
     {
-        [Route("getdaries")]
-        public List<Dairy> GetRooms()
+        [Route("getdaries/{id}")]
+        public List<Dairy> GetDaries(int id)
         {
             try
             {
-                return BL.DairyLogic.AllDaries();
+                return BL.DairyLogic.AllDaries(id);
             }
             catch
             {
