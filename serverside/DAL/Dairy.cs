@@ -25,7 +25,10 @@ namespace DAL
         public string title { get; set; }
     
         public virtual Rooms Rooms { get; set; }
+        public virtual Rooms Rooms1 { get; set; }
         public virtual TypeMeeting TypeMeeting1 { get; set; }
+        public virtual TypeMeeting TypeMeeting2 { get; set; }
         public virtual users users { get; set; }
+        public virtual users users1 { get; set; }
     }
 }

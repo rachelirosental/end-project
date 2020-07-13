@@ -18,8 +18,11 @@ namespace DAL
         public users()
         {
             this.Dairy = new HashSet<Dairy>();
-            this.Dictionary = new HashSet<Dictionary>();
+            this.Dairy1 = new HashSet<Dairy>();
             this.Reference = new HashSet<Reference>();
+            this.Reference1 = new HashSet<Reference>();
+            this.Reference2 = new HashSet<Reference>();
+            this.Reference3 = new HashSet<Reference>();
         }
     
         public int UserId { get; set; }
@@ -33,9 +36,16 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dairy> Dairy { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Dictionary> Dictionary { get; set; }
+        public virtual ICollection<Dairy> Dairy1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reference> Reference { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reference> Reference1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reference> Reference2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reference> Reference3 { get; set; }
         public virtual TypeUser TypeUser1 { get; set; }
+        public virtual TypeUser TypeUser2 { get; set; }
     }
 }
