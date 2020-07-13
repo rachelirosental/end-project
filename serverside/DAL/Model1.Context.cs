@@ -26,7 +26,6 @@ namespace DAL
         }
     
         public virtual DbSet<Dairy> Dairy { get; set; }
-        public virtual DbSet<Dictionary> Dictionary { get; set; }
         public virtual DbSet<Kupot1> Kupot1 { get; set; }
         public virtual DbSet<Opinion> Opinion { get; set; }
         public virtual DbSet<Professions> Professions { get; set; }

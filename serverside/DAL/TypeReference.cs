@@ -18,6 +18,7 @@ namespace DAL
         public TypeReference()
         {
             this.Reference = new HashSet<Reference>();
+            this.Reference1 = new HashSet<Reference>();
         }
     
         public int RefId { get; set; }
@@ -25,5 +26,7 @@ namespace DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reference> Reference { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reference> Reference1 { get; set; }
     }
 }
