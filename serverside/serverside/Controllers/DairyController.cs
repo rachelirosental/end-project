@@ -11,7 +11,7 @@ namespace serverside.Controllers
     [RoutePrefix("api/Dairy")]
     public class DairyController : ApiController
     {
-        [Route("getdaries /{id}")]
+        [Route("getdaries/{id}")]
         public List<Dairy> GetDaries(int id)
         {
             try
