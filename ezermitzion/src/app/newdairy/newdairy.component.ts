@@ -17,8 +17,8 @@ dairy:dairy={
   dairyId:1,
   description:" ",
   start:new Date(),
- end:new Date(),
- color:{
+  end:new Date(),
+  color:{
     secondary:"",
     primary:"",
   },

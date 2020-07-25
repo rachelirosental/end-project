@@ -83,7 +83,7 @@ openModal(p:Profession) {
 create(){
 console.log(  'rrrrrrrrrrrrr')
     const modalRef = this.modalService.open(CreateProfessionComponent);
-    modalRef.componentInstance.profession = this.profession;
+   // modalRef.componentInstance.profession = this.profession;
 
 
   }

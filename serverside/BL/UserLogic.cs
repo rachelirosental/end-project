@@ -24,11 +24,14 @@ namespace BL
         {
             try
             {
-                db.users.Add(DTO.NewFolder1.user.GetUser(user));
+                var r = DTO.NewFolder1.user.GetUser(user);
+                r.TypeUser1 = db.TypeUser.FirstOrDefault(p => p.TypeId == r.TypeUser);
+                r.TypeUser2 = db.TypeUser.FirstOrDefault(p => p.TypeId == r.TypeUser);
+                db.users.Add(r);
                 db.SaveChanges();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return false;

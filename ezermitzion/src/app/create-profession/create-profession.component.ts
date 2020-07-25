@@ -12,7 +12,7 @@ import { TypeProfessions } from '../Data/TypeProfessions';
 })
 export class CreateProfessionComponent implements OnInit {
 
-   public profession=new Profession();
+  @Input() public profession=new Profession();
    public typeprofessions:TypeProfessions[];
    selectedtype:TypeProfessions;
 

@@ -48,6 +48,6 @@ currentuser() {
   }
   return(){
     console.log('keyy',this.key)
-    this.router.navigateByUrl('/entry'+ JSON.parse(localStorage.getItem(this.key)).typeUser)
+    this.router.navigateByUrl('/entry'+ JSON.parse(localStorage.getItem("user")).typeUser)
   }
 }

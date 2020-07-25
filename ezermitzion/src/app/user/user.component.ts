@@ -45,7 +45,8 @@ next(u:user){
   modalRef.componentInstance.user = u;
 }
 next1(){
-  const modalRef = this.modalService.open(FormuserComponent);
+  const modalRef = this.modalService.open(FormuserComponent);1
+  this.loadUsers();
 }
 
 

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./formreference.component.scss']
 })
 export class FormreferenceComponent implements OnInit {
-public reference:Reference;
+public reference=new Reference();
   constructor(public router: Router,public ReferenceService:ReferenceService) { }
 
   ngOnInit(): void {
