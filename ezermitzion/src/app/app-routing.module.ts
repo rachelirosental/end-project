@@ -17,10 +17,11 @@ import { ReferencebuttonsComponent } from './referencebuttons/referencebuttons.c
 import { FormreferenceComponent } from './formreference/formreference.component';
 import { RoomlistComponent } from './roomlist/roomlist.component';
 import { DairylistComponent } from './dairylist/dairylist.component';
+import { ManagerComponent } from './manager/manager.component';
 
 const routes: Routes = [
-  
-{path:'secretary',component:SecretaryComponent},
+{path:'entry1',component: ManagerComponent}, 
+{path:'entry2',component:SecretaryComponent},
 {path:'dairy',component:DairylistComponent },
 {path:'dairy/:id',component:DairyComponent },
 {path:'rooms',component:RoomlistComponent},
