@@ -90,10 +90,10 @@ namespace serverside.Controllers
 
         [Route("getlistrooms/{start}/{end}")]
         
-        public static List<Room> DeleteRoom(string startDateString,string endDateString)
+        public  List<Room> GetListRoom()
         {
-            var start = Convert.ToDateTime(startDateString);
-            var end = Convert.ToDateTime(endDateString);
+            var start = Convert.ToDateTime("");
+            var end = Convert.ToDateTime("");
             try
             {
                 return BL.RoomLogic.GetListRoom(start,end);

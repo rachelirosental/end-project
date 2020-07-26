@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Room } from 'src/app/Data/Room';
+import { stringify } from 'querystring';
 @Injectable({
     providedIn: 'root'
   })
@@ -27,9 +28,10 @@ import { Room } from 'src/app/Data/Room';
       create(reference: Room) {
         return this.httpClient.post(this.url + "/create", reference);
       }
-      getlistrooms(start,end): Observable<Room[]> {
+      getlistrooms(start,end) {
+      
 
-        return this.httpClient.get<Room[]>(this.url + "/getlistrooms/" + start + "/" + end);
+        return this.httpClient.get(this.url + "/getlistrooms");
       }
 
   }
