@@ -27,6 +27,10 @@ import { Room } from 'src/app/Data/Room';
       create(reference: Room) {
         return this.httpClient.post(this.url + "/create", reference);
       }
+      getlistrooms(start,end): Observable<Room[]> {
+
+        return this.httpClient.get<Room[]>(this.url + "/getlistrooms/" + start + "/" + end);
+      }
 
   }
 

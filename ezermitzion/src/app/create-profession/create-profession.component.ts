@@ -28,7 +28,8 @@ export class CreateProfessionComponent implements OnInit {
     this.ProfessionService.getTypeProfList().subscribe(res=>{
       console.log('jjjjjjjj')
       localStorage.setItem("typeprofessions",JSON.stringify(res)),
-      this.typeprofessions=res,console.log('proffesionstype',this.typeprofessions)
+      this.typeprofessions=res,
+      console.log('proffesionstype',this.typeprofessions)
     
     },err=>{
       alert("error")

@@ -87,6 +87,22 @@ namespace serverside.Controllers
                 return 0;
             }
         }
+
+        [Route("getlistrooms/{start}/{end}")]
+        
+        public static List<Room> DeleteRoom(string startDateString,string endDateString)
+        {
+            var start = Convert.ToDateTime(startDateString);
+            var end = Convert.ToDateTime(endDateString);
+            try
+            {
+                return BL.RoomLogic.GetListRoom(start,end);
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }
 
