@@ -46,11 +46,12 @@ namespace serverside.Controllers
 
         [Route("create")]
         // POST: api/User
-        public bool CreateRoom([FromBody]Room room)
+        public bool CreateRoom([FromBody]Dairy room)
         {
             try
             {
-                return BL.RoomLogic.AddRoom(room);
+                return true;
+                    //BL.RoomLogic.AddRoom(room);
             }
             catch
             {
@@ -88,12 +89,12 @@ namespace serverside.Controllers
             }
         }
 
-        [Route("getlistrooms/{start}/{end}")]
+        [Route("getlistrooms/{dairy}/{ends}")]
         
-        public  List<Room> GetListRoom()
+        public  List<Room> GetListRoom([FromBody]string dairy, [FromUri] string ends)
         {
-            var start = Convert.ToDateTime("");
-            var end = Convert.ToDateTime("");
+            var start = Convert.ToDateTime(dairy);
+            var end = Convert.ToDateTime(ends);
             try
             {
                 return BL.RoomLogic.GetListRoom(start,end);

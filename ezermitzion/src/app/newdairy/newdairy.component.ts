@@ -42,7 +42,7 @@ roomslist:Room[]
   }
   getroomlist(){  
     console.log('hellllll')
-    this. RoomService.getlistrooms(this.dairy.start,this.dairy.end).subscribe((res:Room[])=>{
+    this. RoomService.getlistrooms(this.dairy).subscribe((res:Room[])=>{
       localStorage.setItem("roomslist",JSON.stringify(res))
       this.roomslist=res,
     console.log(this.roomslist)});

@@ -4,6 +4,10 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Room } from 'src/app/Data/Room';
 import { stringify } from 'querystring';
+import { getLocaleDateTimeFormat } from '@angular/common';
+import { dairy } from 'src/app/Data/dairy';
+import { DairyComponent } from 'src/app/dairy/dairy.component';
+
 @Injectable({
     providedIn: 'root'
   })
@@ -28,10 +32,10 @@ import { stringify } from 'querystring';
       create(reference: Room) {
         return this.httpClient.post(this.url + "/create", reference);
       }
-      getlistrooms(start,end) {
-      
-
-        return this.httpClient.get(this.url + "/getlistrooms");
+      getlistrooms(dairy:dairy) {
+      var start=dairy.start.toTimeString;
+        var end = dairy.end.toString;
+        return this.httpClient.get(this.url + "/getlistrooms/" + start + "/" + end);
       }
 
   }

@@ -197,8 +197,10 @@ handleEvent(action: string, event): void {
     this.DairyService.getdaries(id).subscribe((res: dairy[]) => {
       localStorage.setItem("daries", JSON.stringify(res))
       this.events = res
+
       if(this.events!=null)
        { this.events.forEach(e => {
+         console.log('dd',typeof(e.start))
           e.start = new Date(e.start);
           e.end = new Date(e.end);
           e.actions = this.actions
