@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../shared/services/user.service';
 import { user } from '../Data/user';
+import { TypeUser } from '../Data/TypeUser';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-setdetailuser',
@@ -18,6 +19,8 @@ export class SetdetailuserComponent implements OnInit {
   //       typeUser:" "
   // };
   @Input() public user:user;
+
+
   constructor(public userService:UserService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {

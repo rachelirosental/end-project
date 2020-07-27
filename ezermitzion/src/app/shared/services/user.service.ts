@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { user } from 'src/app/Data/user';
 import { Router } from '@angular/router';
+import { TypeUser} from 'src/app/Data/TypeUser';
 
 
 @Injectable({
@@ -16,14 +17,14 @@ public key:any;
     this.url = environment.url + "User";
   }
 
-  login(pass,name,key): Observable<user> {
+  login(pass,email,key): Observable<user> {
     this.key=key;
-    return this.httpClient.get<user>(this.url + "/login/" + pass + "/" + name);
+    return this.httpClient.get<user>(this.url + "/login/" + pass + "/" + email);
   }
 logout(){
   console.log('key',this.key)
 localStorage.removeItem(this.key)
-// this.router.navigateByUrl('/login');
+this.router.navigateByUrl('/login');
 
 }
 currentuser() {
@@ -43,11 +44,15 @@ currentuser() {
     return this.httpClient.get<user>(this.url+"/getuserByid/" + id);
   }
 
+
   update(user: user) {
     return this.httpClient.post(this.url + "/update", user);
   }
   return(){
     console.log('keyy',this.key)
     this.router.navigateByUrl('/entry'+ JSON.parse(localStorage.getItem("user")).typeUser)
+  }
+  getTypeUserList(): Observable<TypeUser[]> {
+    return this.httpClient.get<TypeUser[]>(this.url + "/getTypeUserList/" );
   }
 }

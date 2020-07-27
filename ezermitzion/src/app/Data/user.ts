@@ -4,12 +4,12 @@ import {Reference} from 'src/app/Data/Reference'
 
 export class user extends TypeUser{
         userId:number;
-        userFname:string; 
-        userLname:string;
+        userName:string; 
         tel:string;
         email:string; 
         password :string;
         typeUser:number;
+        isDeleted:boolean;
         typeUser1:TypeUser;
        dairy:dairy[];
       Reference:Reference[];

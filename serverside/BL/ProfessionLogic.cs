@@ -105,6 +105,17 @@ namespace BL
                 return null;
             }
         }
+        public static List<Kupot> GetProfKupotList()
+        {
+            try
+            {
+                return Kupot.GetListKupaDTO(db.Kupot1.ToList());
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
 
 

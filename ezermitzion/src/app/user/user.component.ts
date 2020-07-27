@@ -23,7 +23,7 @@ inputText:any;
   constructor(private httpClient:HttpClient,public UserService:UserService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    debugger;
+    
     this.loadUsers();
   }
   loadUsers(){
@@ -68,9 +68,8 @@ console.log('input',this.inputText)
 
 
   var p = this.users.filter(
-     (val)=> val.userFname.includes(this.inputText)||val.userLname.includes(this.inputText)||val.tel.includes(this.inputText))
-   
-
+     (val)=> val.userName.includes(this.inputText)||val.email.includes(this.inputText)||val.tel.includes(this.inputText))
+  
     this.users=p;
     console.log('user',this.users)
 

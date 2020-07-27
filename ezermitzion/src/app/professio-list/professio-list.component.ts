@@ -19,7 +19,7 @@ export class ProfessioListComponent implements OnInit {
   inputText:any;
   inputdelete:any;
 public professions:Profession[]= [];
-public profession:Profession
+public profession:Profession;
 
 
 

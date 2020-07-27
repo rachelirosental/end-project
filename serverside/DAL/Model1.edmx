@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EzerMitzionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EzerMitzionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Dairy">
           <Key>
             <PropertyRef Name="DairyId" />
@@ -122,12 +122,12 @@
             <PropertyRef Name="UserId" />
           </Key>
           <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserFname" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserLname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Tel" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="200" />
           <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="TypeUser" Type="int" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" />
         </EntityType>
         <Association Name="FK__Dairy__RoomId__412EB0B6">
           <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
@@ -512,8 +512,7 @@
             <End Role="Opinion" EntitySet="Opinion" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EzerMitzionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -534,9 +533,9 @@
           <NavigationProperty Name="Rooms1" Relationship="Self.FK__Dairy__RoomId__4222D4EF" FromRole="Dairy" ToRole="Rooms" />
           <NavigationProperty Name="TypeMeeting1" Relationship="Self.FK__Dairy__TypeMeeti__4316F928" FromRole="Dairy" ToRole="TypeMeeting" />
           <NavigationProperty Name="TypeMeeting2" Relationship="Self.FK__Dairy__TypeMeeti__440B1D61" FromRole="Dairy" ToRole="TypeMeeting" />
-          <NavigationProperty Name="users" Relationship="Self.FK__Dairy__UserId__44FF419A" FromRole="Dairy" ToRole="users" />
-          <NavigationProperty Name="users1" Relationship="Self.FK__Dairy__UserId__45F365D3" FromRole="Dairy" ToRole="users" />
-        </EntityType>
+          <NavigationProperty Name="users" Relationship="EzerMitzionModel.FK__Dairy__UserId__44FF419A" FromRole="Dairy" ToRole="users" />
+          <NavigationProperty Name="users1" Relationship="EzerMitzionModel.FK__Dairy__UserId__45F365D3" FromRole="Dairy" ToRole="users" />
+          </EntityType>
         <EntityType Name="Kupot1">
           <Key>
             <PropertyRef Name="KupaId" />
@@ -597,12 +596,12 @@
           <Property Name="recommendation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Professions" Relationship="Self.FK__Reference__ProfI__4F7CD00D" FromRole="Reference" ToRole="Professions" />
           <NavigationProperty Name="Professions1" Relationship="Self.FK__Reference__ProfI__5070F446" FromRole="Reference" ToRole="Professions" />
-          <NavigationProperty Name="users" Relationship="Self.FK__Reference__Atten__4D94879B" FromRole="Reference" ToRole="users" />
-          <NavigationProperty Name="users1" Relationship="Self.FK__Reference__Atten__4E88ABD4" FromRole="Reference" ToRole="users" />
           <NavigationProperty Name="TypeReference" Relationship="Self.FK__Reference__TypeR__5165187F" FromRole="Reference" ToRole="TypeReference" />
           <NavigationProperty Name="TypeReference1" Relationship="Self.FK__Reference__TypeR__52593CB8" FromRole="Reference" ToRole="TypeReference" />
-          <NavigationProperty Name="users2" Relationship="Self.FK__Reference__UserN__534D60F1" FromRole="Reference" ToRole="users" />
-          <NavigationProperty Name="users3" Relationship="Self.FK__Reference__UserN__5441852A" FromRole="Reference" ToRole="users" />
+          <NavigationProperty Name="users" Relationship="EzerMitzionModel.FK__Reference__Atten__4D94879B" FromRole="Reference" ToRole="users" />
+          <NavigationProperty Name="users1" Relationship="EzerMitzionModel.FK__Reference__Atten__4E88ABD4" FromRole="Reference" ToRole="users" />
+          <NavigationProperty Name="users2" Relationship="EzerMitzionModel.FK__Reference__UserN__534D60F1" FromRole="Reference" ToRole="users" />
+          <NavigationProperty Name="users3" Relationship="EzerMitzionModel.FK__Reference__UserN__5441852A" FromRole="Reference" ToRole="users" />
         </EntityType>
         <EntityType Name="Rooms">
           <Key>
@@ -654,28 +653,8 @@
           </Key>
           <Property Name="TypeId" Type="Int32" Nullable="false" />
           <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="users" Relationship="Self.FK__users__TypeUser__5535A963" FromRole="TypeUser" ToRole="users" />
-          <NavigationProperty Name="users1" Relationship="Self.FK__users__TypeUser__5629CD9C" FromRole="TypeUser" ToRole="users" />
-        </EntityType>
-        <EntityType Name="users">
-          <Key>
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserFname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UserLname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Tel" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="TypeUser" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Dairy" Relationship="Self.FK__Dairy__UserId__44FF419A" FromRole="users" ToRole="Dairy" />
-          <NavigationProperty Name="Dairy1" Relationship="Self.FK__Dairy__UserId__45F365D3" FromRole="users" ToRole="Dairy" />
-          <NavigationProperty Name="Reference" Relationship="Self.FK__Reference__Atten__4D94879B" FromRole="users" ToRole="Reference" />
-          <NavigationProperty Name="Reference1" Relationship="Self.FK__Reference__Atten__4E88ABD4" FromRole="users" ToRole="Reference" />
-          <NavigationProperty Name="Reference2" Relationship="Self.FK__Reference__UserN__534D60F1" FromRole="users" ToRole="Reference" />
-          <NavigationProperty Name="Reference3" Relationship="Self.FK__Reference__UserN__5441852A" FromRole="users" ToRole="Reference" />
-          <NavigationProperty Name="TypeUser1" Relationship="Self.FK__users__TypeUser__5535A963" FromRole="users" ToRole="TypeUser" />
-          <NavigationProperty Name="TypeUser2" Relationship="Self.FK__users__TypeUser__5629CD9C" FromRole="users" ToRole="TypeUser" />
+          <NavigationProperty Name="users" Relationship="EzerMitzionModel.FK__users__TypeUser__5535A963" FromRole="TypeUser" ToRole="users" />
+          <NavigationProperty Name="users1" Relationship="EzerMitzionModel.FK__users__TypeUser__5629CD9C" FromRole="TypeUser" ToRole="users" />
         </EntityType>
         <Association Name="FK__Dairy__RoomId__412EB0B6">
           <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
@@ -722,30 +701,6 @@
             </Principal>
             <Dependent Role="Dairy">
               <PropertyRef Name="TypeMeeting" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Dairy__UserId__44FF419A">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="Dairy" Type="Self.Dairy" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Dairy">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Dairy__UserId__45F365D3">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="Dairy" Type="Self.Dairy" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Dairy">
-              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -833,30 +788,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reference__Atten__4D94879B">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
-          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Reference">
-              <PropertyRef Name="AttendantId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Reference__Atten__4E88ABD4">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
-          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Reference">
-              <PropertyRef Name="AttendantId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Reference__TypeR__5165187F">
           <End Role="TypeReference" Type="Self.TypeReference" Multiplicity="0..1" />
           <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
@@ -881,54 +812,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reference__UserN__534D60F1">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
-          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Reference">
-              <PropertyRef Name="UserName" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Reference__UserN__5441852A">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
-          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Reference">
-              <PropertyRef Name="UserName" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__users__TypeUser__5535A963">
-          <End Role="TypeUser" Type="Self.TypeUser" Multiplicity="1" />
-          <End Role="users" Type="Self.users" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeUser">
-              <PropertyRef Name="TypeId" />
-            </Principal>
-            <Dependent Role="users">
-              <PropertyRef Name="TypeUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__users__TypeUser__5629CD9C">
-          <End Role="TypeUser" Type="Self.TypeUser" Multiplicity="1" />
-          <End Role="users" Type="Self.users" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeUser">
-              <PropertyRef Name="TypeId" />
-            </Principal>
-            <Dependent Role="users">
-              <PropertyRef Name="TypeUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="KupotToProf">
           <End Role="Kupot1" Type="Self.Kupot1" Multiplicity="*" />
           <End Role="Professions" Type="Self.Professions" Multiplicity="*" />
@@ -945,7 +828,6 @@
           <EntitySet Name="typeProfessions" EntityType="Self.typeProfessions" />
           <EntitySet Name="TypeReference" EntityType="Self.TypeReference" />
           <EntitySet Name="TypeUser" EntityType="Self.TypeUser" />
-          <EntitySet Name="users" EntityType="Self.users" />
           <AssociationSet Name="FK__Dairy__RoomId__412EB0B6" Association="Self.FK__Dairy__RoomId__412EB0B6">
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Dairy" EntitySet="Dairy" />
@@ -960,14 +842,6 @@
           </AssociationSet>
           <AssociationSet Name="FK__Dairy__TypeMeeti__440B1D61" Association="Self.FK__Dairy__TypeMeeti__440B1D61">
             <End Role="TypeMeeting" EntitySet="TypeMeeting" />
-            <End Role="Dairy" EntitySet="Dairy" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Dairy__UserId__44FF419A" Association="Self.FK__Dairy__UserId__44FF419A">
-            <End Role="users" EntitySet="users" />
-            <End Role="Dairy" EntitySet="Dairy" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Dairy__UserId__45F365D3" Association="Self.FK__Dairy__UserId__45F365D3">
-            <End Role="users" EntitySet="users" />
             <End Role="Dairy" EntitySet="Dairy" />
           </AssociationSet>
           <AssociationSet Name="FK__Profession__Kupa__4AB81AF0" Association="Self.FK__Profession__Kupa__4AB81AF0">
@@ -998,14 +872,6 @@
             <End Role="Professions" EntitySet="Professions" />
             <End Role="Reference" EntitySet="Reference" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reference__Atten__4D94879B" Association="Self.FK__Reference__Atten__4D94879B">
-            <End Role="users" EntitySet="users" />
-            <End Role="Reference" EntitySet="Reference" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Reference__Atten__4E88ABD4" Association="Self.FK__Reference__Atten__4E88ABD4">
-            <End Role="users" EntitySet="users" />
-            <End Role="Reference" EntitySet="Reference" />
-          </AssociationSet>
           <AssociationSet Name="FK__Reference__TypeR__5165187F" Association="Self.FK__Reference__TypeR__5165187F">
             <End Role="TypeReference" EntitySet="TypeReference" />
             <End Role="Reference" EntitySet="Reference" />
@@ -1014,27 +880,160 @@
             <End Role="TypeReference" EntitySet="TypeReference" />
             <End Role="Reference" EntitySet="Reference" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reference__UserN__534D60F1" Association="Self.FK__Reference__UserN__534D60F1">
-            <End Role="users" EntitySet="users" />
-            <End Role="Reference" EntitySet="Reference" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Reference__UserN__5441852A" Association="Self.FK__Reference__UserN__5441852A">
-            <End Role="users" EntitySet="users" />
-            <End Role="Reference" EntitySet="Reference" />
-          </AssociationSet>
-          <AssociationSet Name="FK__users__TypeUser__5535A963" Association="Self.FK__users__TypeUser__5535A963">
-            <End Role="TypeUser" EntitySet="TypeUser" />
-            <End Role="users" EntitySet="users" />
-          </AssociationSet>
-          <AssociationSet Name="FK__users__TypeUser__5629CD9C" Association="Self.FK__users__TypeUser__5629CD9C">
-            <End Role="TypeUser" EntitySet="TypeUser" />
-            <End Role="users" EntitySet="users" />
-          </AssociationSet>
           <AssociationSet Name="KupotToProf" Association="Self.KupotToProf">
             <End Role="Kupot1" EntitySet="Kupot1" />
             <End Role="Professions" EntitySet="Professions" />
           </AssociationSet>
+          <EntitySet Name="users" EntityType="EzerMitzionModel.users" />
+          <AssociationSet Name="FK__Dairy__UserId__44FF419A" Association="EzerMitzionModel.FK__Dairy__UserId__44FF419A">
+            <End Role="users" EntitySet="users" />
+            <End Role="Dairy" EntitySet="Dairy" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dairy__UserId__45F365D3" Association="EzerMitzionModel.FK__Dairy__UserId__45F365D3">
+            <End Role="users" EntitySet="users" />
+            <End Role="Dairy" EntitySet="Dairy" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reference__Atten__4D94879B" Association="EzerMitzionModel.FK__Reference__Atten__4D94879B">
+            <End Role="users" EntitySet="users" />
+            <End Role="Reference" EntitySet="Reference" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reference__Atten__4E88ABD4" Association="EzerMitzionModel.FK__Reference__Atten__4E88ABD4">
+            <End Role="users" EntitySet="users" />
+            <End Role="Reference" EntitySet="Reference" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reference__UserN__534D60F1" Association="EzerMitzionModel.FK__Reference__UserN__534D60F1">
+            <End Role="users" EntitySet="users" />
+            <End Role="Reference" EntitySet="Reference" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reference__UserN__5441852A" Association="EzerMitzionModel.FK__Reference__UserN__5441852A">
+            <End Role="users" EntitySet="users" />
+            <End Role="Reference" EntitySet="Reference" />
+          </AssociationSet>
+          <AssociationSet Name="FK__users__TypeUser__5535A963" Association="EzerMitzionModel.FK__users__TypeUser__5535A963">
+            <End Role="TypeUser" EntitySet="TypeUser" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__users__TypeUser__5629CD9C" Association="EzerMitzionModel.FK__users__TypeUser__5629CD9C">
+            <End Role="TypeUser" EntitySet="TypeUser" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TypeUser" Type="Int32" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="Dairy" Relationship="EzerMitzionModel.FK__Dairy__UserId__44FF419A" FromRole="users" ToRole="Dairy" />
+          <NavigationProperty Name="Dairy1" Relationship="EzerMitzionModel.FK__Dairy__UserId__45F365D3" FromRole="users" ToRole="Dairy" />
+          <NavigationProperty Name="Reference" Relationship="EzerMitzionModel.FK__Reference__Atten__4D94879B" FromRole="users" ToRole="Reference" />
+          <NavigationProperty Name="Reference1" Relationship="EzerMitzionModel.FK__Reference__Atten__4E88ABD4" FromRole="users" ToRole="Reference" />
+          <NavigationProperty Name="Reference2" Relationship="EzerMitzionModel.FK__Reference__UserN__534D60F1" FromRole="users" ToRole="Reference" />
+          <NavigationProperty Name="Reference3" Relationship="EzerMitzionModel.FK__Reference__UserN__5441852A" FromRole="users" ToRole="Reference" />
+          <NavigationProperty Name="TypeUser1" Relationship="EzerMitzionModel.FK__users__TypeUser__5535A963" FromRole="users" ToRole="TypeUser" />
+          <NavigationProperty Name="TypeUser2" Relationship="EzerMitzionModel.FK__users__TypeUser__5629CD9C" FromRole="users" ToRole="TypeUser" />
+        </EntityType>
+        <Association Name="FK__Dairy__UserId__44FF419A">
+          <End Type="EzerMitzionModel.users" Role="users" Multiplicity="1" />
+          <End Type="EzerMitzionModel.Dairy" Role="Dairy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Dairy">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dairy__UserId__45F365D3">
+          <End Type="EzerMitzionModel.users" Role="users" Multiplicity="1" />
+          <End Type="EzerMitzionModel.Dairy" Role="Dairy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Dairy">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reference__Atten__4D94879B">
+          <End Type="EzerMitzionModel.users" Role="users" Multiplicity="0..1" />
+          <End Type="EzerMitzionModel.Reference" Role="Reference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Reference">
+              <PropertyRef Name="AttendantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reference__Atten__4E88ABD4">
+          <End Type="EzerMitzionModel.users" Role="users" Multiplicity="0..1" />
+          <End Type="EzerMitzionModel.Reference" Role="Reference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Reference">
+              <PropertyRef Name="AttendantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reference__UserN__534D60F1">
+          <End Type="EzerMitzionModel.users" Role="users" Multiplicity="0..1" />
+          <End Type="EzerMitzionModel.Reference" Role="Reference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Reference">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reference__UserN__5441852A">
+          <End Type="EzerMitzionModel.users" Role="users" Multiplicity="0..1" />
+          <End Type="EzerMitzionModel.Reference" Role="Reference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Reference">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__users__TypeUser__5535A963">
+          <End Type="EzerMitzionModel.TypeUser" Role="TypeUser" Multiplicity="1" />
+          <End Type="EzerMitzionModel.users" Role="users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeUser">
+              <PropertyRef Name="TypeId" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="TypeUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__users__TypeUser__5629CD9C">
+          <End Type="EzerMitzionModel.TypeUser" Role="TypeUser" Multiplicity="1" />
+          <End Type="EzerMitzionModel.users" Role="users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeUser">
+              <PropertyRef Name="TypeId" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="TypeUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1156,19 +1155,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="EzerMitzionModel.users">
-              <MappingFragment StoreEntitySet="users">
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="UserFname" ColumnName="UserFname" />
-                <ScalarProperty Name="UserLname" ColumnName="UserLname" />
-                <ScalarProperty Name="Tel" ColumnName="Tel" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="TypeUser" ColumnName="TypeUser" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <AssociationSetMapping Name="KupotToProf" TypeName="EzerMitzionModel.KupotToProf" StoreEntitySet="KupotToProf">
             <EndProperty Name="Kupot1">
               <ScalarProperty Name="KupaId" ColumnName="KupaId" />
@@ -1177,6 +1163,19 @@
               <ScalarProperty Name="ProfId" ColumnName="ProfId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="EzerMitzionModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="TypeUser" ColumnName="TypeUser" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -92,6 +92,20 @@ namespace API.Controllers
             }
            
         }
+        [Route("getProfKupotList")]
+        public List<Kupot> GetProfKupotList()
+        {
+            try
+            {
+                return BL.ProfessionLogic.GetProfKupotList();
+
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
 
 
     }
