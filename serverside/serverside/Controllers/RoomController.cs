@@ -87,6 +87,22 @@ namespace serverside.Controllers
                 return 0;
             }
         }
+
+        [Route("getlistrooms/{start}/{end}")]
+        
+        public  List<Room> GetListRoom()
+        {
+            var start = Convert.ToDateTime("");
+            var end = Convert.ToDateTime("");
+            try
+            {
+                return BL.RoomLogic.GetListRoom(start,end);
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }
 

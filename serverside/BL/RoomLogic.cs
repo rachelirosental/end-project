@@ -55,7 +55,7 @@ namespace BL
         {
             try
             {
-                return Room.GetListReferenceDTO(db.Rooms.ToList());
+                return Room.GetListRoomDTO(db.Rooms.ToList());
             }
             catch
             {
@@ -82,6 +82,32 @@ namespace BL
             }
 
         }
+       public static bool isnotoverloap(DAL.Rooms room, DateTime start, DateTime end)
+        {
+            var list = room.Dairy.FirstOrDefault(e => (e.start < end && start < e.end));
+            if (list == null)
+                return true;
+            return false;
+
+        }
+
+        public static List<Room> GetListRoom(DateTime start,DateTime end)
+        {    
+         
+            try
+            {
+                List<DAL.Rooms> r = db.Rooms.Where(d => isnotoverloap(d, start, end)).ToList();
+                return Room.GetListRoomDTO(r);
+              
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
 
     }
 }

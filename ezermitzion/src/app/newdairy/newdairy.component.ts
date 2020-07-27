@@ -5,6 +5,7 @@ import { title } from 'process';
 import { user } from '../Data/user';
 import { TypeMeeting } from '../Data/TypeMeeting';
 import { Room } from '../Data/Room';
+import { RoomService } from '../shared/services/room.service';
 
 @Component({
   selector: 'app-newdairy',
@@ -34,9 +35,20 @@ dairy:dairy={
   }
 
 };
-  constructor() { }
+roomslist:Room[]
+  constructor(public RoomService :RoomService ) { }
 
   ngOnInit(): void {
   }
+  getroomlist(){  
+    console.log('hellllll')
+    this. RoomService.getlistrooms(this.dairy.start,this.dairy.end).subscribe((res:Room[])=>{
+      localStorage.setItem("roomslist",JSON.stringify(res))
+      this.roomslist=res,
+    console.log(this.roomslist)});
+  }
+    
 
-}
+  }
+
+

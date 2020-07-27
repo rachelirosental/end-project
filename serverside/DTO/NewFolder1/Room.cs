@@ -37,7 +37,7 @@ namespace DTO.NewFolder1
             };
             return room;
         }
-        public static List<Room> GetListReferenceDTO(List<DAL.Rooms> Lroom)
+        public static List<Room> GetListRoomDTO(List<DAL.Rooms> Lroom)
         {
             if (Lroom == null)
                 return null;
@@ -47,7 +47,7 @@ namespace DTO.NewFolder1
             return l;
 
         }
-        public static List<DAL.Rooms> GetListReferenceDAL(List<Room> Lroom)
+        public static List<DAL.Rooms> GetListRoomDAL(List<Room> Lroom)
         {
             if (Lroom == null)
                 return null;

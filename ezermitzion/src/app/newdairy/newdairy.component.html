@@ -14,8 +14,11 @@
     <label for="password" >שם עובד</label>
     <input type="text" id="userName" name="userName"  [(ngModel)]="dairy.user.userName">
 
-    <label for="tuser" >חדר</label>
-    <input type="text" id="profId" name="profId"  [(ngModel)]="dairy.rooms.roomName">
+    <label for="tuser" (click)="getroomlist()">חדר</label>
+    <select  [(ngModel)]="dairy.rooms
+              "name="myselect" >
+                <option *ngFor="let room of roomslist" [ngValue]="room"  >{{room.roomName}} </option>
+              </select>
 
     <label for="tuser" >תאור הפניה</label>
     <input type="text" id="typeRef" name="typeRef"  [(ngModel)]="dairy.description">
