@@ -13,8 +13,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr >
-                    <th>שם פרטי</th>
-                    <th>שם משפחה</th>
+                    <th>שם</th>
                     <th>טלפון</th>
                     <th>מייל</th>
                     <th>סוג משתמש</th> 
@@ -22,8 +21,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let u of users">
-                    <td>{{u.userFname}}</td>
-                    <td>{{u.userLname}}</td>
+                    <td>{{u.userName}}</td>
                     <td>{{u.tel}}</td>
                     <td>{{u.email}}</td>
                     <td>{{u.typeUser1.typeName}}</td>

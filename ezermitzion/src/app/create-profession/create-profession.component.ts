@@ -4,6 +4,8 @@ import { SubDomain } from 'src/app/Data/SubDomain';
 import {ProfessionService } from '../shared/services/profession.service';
 import { ActivatedRoute } from '@angular/router';
 import { TypeProfessions } from '../Data/TypeProfessions';
+import { Kupot } from '../Data/Kupot';
+
 
 @Component({
   selector: 'app-create-profession',
@@ -14,6 +16,7 @@ export class CreateProfessionComponent implements OnInit {
 
   @Input() public profession=new Profession();
    public typeprofessions:TypeProfessions[];
+   public Kupot11:Kupot[];
    selectedtype:TypeProfessions;
 
   constructor(public ProfessionService:ProfessionService,private route: ActivatedRoute) { }
@@ -21,16 +24,25 @@ export class CreateProfessionComponent implements OnInit {
   ngOnInit(): void {
    
     this.getTypeProfList();
+    this.getProfKupotList();
 
   }
   getTypeProfList(){
-    console.log('jjjjjjjj')
-    this.ProfessionService.getTypeProfList().subscribe(res=>{
-      console.log('jjjjjjjj')
-      localStorage.setItem("typeprofessions",JSON.stringify(res)),
-      this.typeprofessions=res,
-      console.log('proffesionstype',this.typeprofessions)
     
+    this.ProfessionService.getTypeProfList().subscribe(res=>{
+      localStorage.setItem("typeprofessions",JSON.stringify(res)),
+      this.typeprofessions=res,console.log('proffesionstype',this.typeprofessions)
+      
+    },err=>{
+      alert("error")
+    })
+  }
+  getProfKupotList(){
+    
+    this.ProfessionService.getProfKupotList().subscribe(res=>{
+      localStorage.setItem("Kupot",JSON.stringify(res)),
+      this.Kupot11=res,console.log('Kupot',this.Kupot11)
+      
     },err=>{
       alert("error")
     })

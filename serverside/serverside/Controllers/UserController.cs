@@ -13,12 +13,12 @@ namespace API.Controllers
     public class UserController : ApiController
     {
         // GET: api/User
-        [Route("login/{password}/{username}")]
-        public user Get(string password,string username)
+        [Route("login/{password}/{email}")]
+        public user Get(string password,string email)
         {
             try
             {
-                return BL.UserLogic.Login(password, username);
+                return BL.UserLogic.Login(password, email);
             }
             catch
             {
@@ -41,18 +41,18 @@ namespace API.Controllers
         }
 
 
-        [Route("gettypeuser")]
-        public List<TypeUser> gettypeuser()
-        {
-            try
-            {
-                return BL.UserLogic.GetTypeUser();
-            }
-            catch
-            {
-                return null;
-            }
-        }
+        //[Route("gettypeuser")]
+        //public List<TypeUser> gettypeuser()
+        //{
+        //    try
+        //    {
+        //        return BL.UserLogic.GetTypeUser();
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
+        //}
 
 
 
@@ -112,6 +112,20 @@ namespace API.Controllers
             {
                 return 0;
             }
+        }
+        [Route("getTypeUserList")]
+        public List<TypeUser> getTypeUserList()
+        {
+            try
+            {
+                return UserLogic.getTypeUserList1();
+
+            }
+            catch
+            {
+                return null;
+            }
+
         }
     }
 }

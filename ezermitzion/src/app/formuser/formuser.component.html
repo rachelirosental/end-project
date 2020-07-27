@@ -1,28 +1,4 @@
-<!-- 
-<div>
-    
-      <label for="lname" >שם פרטי</label>
-      <input type="text" id="lname" name="lname"  [(ngModel)]="user.userFname">
 
-      <label for="fname" >שם משפחה</label>
-      <input type="text" id="fname" name="fname"  [(ngModel)]="user.userLname">
-
-      <label for="Tel" >טלפון</label>
-      <input type="text" id="tel" name="tel"  [(ngModel)]="user.tel">
-
-      <label for="mail" >כתובת מייל</label>
-      <input type="text" id="mail" name="mail"  [(ngModel)]="user.email">
-
-      <label for="password" >סיסמא</label>
-      <input type="text" id="password" name="password"  [(ngModel)]="user.password">
-
-      <label for="tuser" >סוג משתמש</label>
-      <input type="text" id="lname" name="password"  [(ngModel)]="user.typeUser">
-
-    
-      <input type="submit" value="אישור" (click)="add()">
-    
-  </div> -->
   <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,13 +23,8 @@
                 <span class="Error"></span>
             </div>
             <div class="form-group">
-                <label>First Name:</label>
-                <input class="form-control" type="text" name="fname" required placeholder="Enter First Name" [(ngModel)]="user.userFname"/>
-                <span class="Error"></span>
-            </div>
-            <div class="form-group">
-                <label>Last Name:</label>
-                <input class="form-control" type="text" name="fullname" required placeholder="Enter Last Name" [(ngModel)]="user.userLname"/>
+                <label>Name:</label>
+                <input class="form-control" type="text" name="fname" required placeholder="Enter First Name" [(ngModel)]="user.userName"/>
                 <span class="Error"></span>
             </div>
             <div class="form-group">
@@ -73,8 +44,12 @@
             </div>
             <div class="form-group">
                 <label>Type User:</label>
-                <input class="form-control" type="number" name="typeuser" required placeholder="Type User" [(ngModel)]="user.typeUser"/>
-                <span class="Error"></span>
+                <!-- <input class="form-control" type="text" name="typeuser" required placeholder="Type User" [(ngModel)]="user.typeUser1.typeName"/>
+                <span class="Error"></span> -->
+                <select  class="form-control" type="text" name="kupa" required placeholder="Enter Type User" [(ngModel)]="user.typeUser1.typeName
+                "name="myselect">
+                  <option *ngFor="let type of typeUser" [ngValue]="type">{{type.typeName}}</option>
+                </select>
             </div>
             <div class="form-group">
                 <label>Gender:</label><br/>

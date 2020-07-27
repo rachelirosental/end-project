@@ -11,9 +11,9 @@ namespace BL
     public class UserLogic
     {
         public static DAL.EzerMitzionEntities db = new DAL.EzerMitzionEntities();
-        public static user Login(string password, string username)
+        public static  user Login(string password, string email)
         {
-            var user = db.users.FirstOrDefault(p => p.Password == password && p.UserFname == username);
+            var user = db.users.FirstOrDefault(p => p.Password == password && p.UserName == email);
             if (user == null)
                 return null;
             return DTO.NewFolder1.user.GetUser(user);
@@ -67,11 +67,11 @@ namespace BL
             try
             {
                 var userDb = db.users.FirstOrDefault(p => p.UserId == user.UserId);
-                userDb.UserFname = user.UserFname;
-                userDb.UserLname = user.UserLname;
+                userDb.UserName = user.UserName;
                 userDb.Tel = user.Tel;
                 userDb.Email = user.Email;
                 userDb.TypeUser = user.TypeUser;
+                userDb.IsDeleted = user.IsDeleted;
                 db.SaveChanges();
                
             }
@@ -86,6 +86,17 @@ namespace BL
         {
             return DTO.NewFolder1.TypeUser.GetListTypeUseDTO(db.TypeUser.ToList());
 
+        }
+        public static List<DTO.NewFolder1.TypeUser> getTypeUserList1()
+        {
+            try
+            {
+                return DTO.NewFolder1.TypeUser.GetListTypeUseDTO(db.TypeUser.ToList());
+            }
+            catch
+            {
+                return null;
+            }
         }
 
     }

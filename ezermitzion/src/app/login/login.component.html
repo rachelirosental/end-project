@@ -1,14 +1,4 @@
-<!-- <div>
-    <form >
-      <label for="fname" >שם</label>
-      <input type="text" id="fname" name="name"  [(ngModel)]="name">
-  
-      <label for="lname" >סיסמא</label>
-      <input type="text" id="lname" name="password"  [(ngModel)]="password">
-    
-      <input type="submit" value="אישור" (click)="validation()">
-    </form>
-  </div> -->
+
   <head><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/></head>
 <div class="container">
 	<div class="row">
@@ -21,19 +11,20 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-user-tie"></i></span>
 								</div>
-								<input type="text" name="" class="form-control"  [(ngModel)]="name" placeholder="username or email"/>
+								<input type="text" name="" class="form-control"  [(ngModel)]="email" placeholder="username or email"/>
 							</div><br />
          
                 	<div class="input-group">
 								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fa fa-key icon"></i></span>
+									<span class="input-group-text" ><i class="fa fa-eye icon" (mouseover)="password1()"></i></span>
 								</div>
-									<input type="Password" name="" class="form-control" [(ngModel)]="password" placeholder="password"/>
+                  <input [type]="show ? 'text' : 'password'"  class="form-control" [(ngModel)]="password" placeholder="password"/>
+                  <!-- <input [type]="show ? 'text' : 'password'" /> -->
 							</div><br />
             <div class="checkbox">
               <label><input type="checkbox" value=""/> Remember me</label>
             </div><br />
-              <button type="submit" class="btn btn-success" (click)="validation()"><span class="glyphicon glyphicon-off"></span> Login</button>
+              <button type="submit" class="btn btn-success" (click)="validation()"><span class="glyphicon glyphicon-off"></span>Login</button>
          
 
                <br /> <div style="border:1px solid black;height:1px;width:300px;"></div><br />

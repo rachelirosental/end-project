@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Profession } from 'src/app/Data/Profession';
 import { TypeProfessions} from 'src/app/Data/typeProfessions';
+import { Kupot} from 'src/app/Data/Kupot';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +40,9 @@ return this.httpClient.get<Profession>(this.url+"/GetProfessionbyId/" + id)
   }
   getTypeProfList(): Observable<TypeProfessions[]> {
     return this.httpClient.get<TypeProfessions[]>(this.url + "/getTypeProfList/" );
+  }
+  getProfKupotList(): Observable<Kupot[]> {
+    return this.httpClient.get<Kupot[]>(this.url + "/getProfKupotList/" );
   }
 
 }

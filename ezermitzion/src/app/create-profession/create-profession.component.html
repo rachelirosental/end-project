@@ -1,41 +1,4 @@
-<!-- <p>create-profession works!</p>
-<div>
-    <form >
-      <label for="fname" >שם</label>
-      <input type="text" id="fname" name="name"  [(ngModel)]="profession.profName">
-  
-      <label for="type" >תואר</label>
-      <input type="text" id="lname" name= "Subdomain"  [(ngModel)]="profession.subdomain">
 
-    
-      <label for="type" >תחום</label>
-      <input type="text" id="lname" name=" Type"  [(ngModel)]="profession.type">
-      
-      <label for="type" >קופה</label>
-      <input type="text" id="lname" name=" Kupa"  [(ngModel)]="profession.kupa">
-      
-      
-      <label for="type" >טלפון</label>
-      <input type="text" id="lname" name=" Tel"  [(ngModel)]="profession.tel">
-      
-      <label for="type" >טלפון נוסף</label>
-      <input type="text" id="lname" name=" AddTel"  [(ngModel)]="profession.addTel">
-      
-      <label for="type" >מייל</label>
-      <input type="text" id="lname" name="Email"  [(ngModel)]="profession.email">
-      
-      <label for="type" >כתובת אישית</label>
-      <input type="text" id="lname" name="PrivateAddres"  [(ngModel)]="profession.privateAddres">
-      
-      <label for="ClinicAddres" >כתובת מרפאה</label>
-      <input type="text" id="lname" name="ClinicAddres"  [(ngModel)]="profession.clinicAddres">
-      
-      <label for="PrivateOpinion" >חוות דעת</label>
-      <input type="text" id="lname" name="PrivateOpinion"  [(ngModel)]="profession.privateOpinion">
-      
-      <input type="submit" value="אישור" (click)="createnew()">
-    </form>
-  </div> -->
 <div class="container">
 
     <div class="Back">
@@ -69,7 +32,7 @@
             <!-- <input class="form-control" type="number" name="type" required placeholder="Enter Type"
                 [(ngModel)]="profession.type" />
             <span class="Error"></span> -->
-              <select  [(ngModel)]="profession.typeProfessions
+              <select  class="form-control"  placeholder="Enter Type" [(ngModel)]="profession.typeProfessions
               "name="myselect">
                 <option *ngFor="let type of typeprofessions" [ngValue]="type">{{type.nameprofession}}</option>
               </select>
@@ -77,16 +40,14 @@
         
          <div class="form-group">
             <label>Kupa:</label>
-          <!-- <select class="form-control" type="text" name="kupot" required placeholder="Enter Kupa"
-                [(ngModel)]="profession.kupot.kupaName">
-                <option>כללית</option>
-                <option>מכבי</option>
-                <option>מאוחדת</option>
-                <option>לאומית</option>
-            </select> -->
-            <input class="form-control" type="text" name="kupa" required placeholder="Kupa"
+         
+            <!-- <input class="form-control" type="text" name="kupa" required placeholder="Kupa"
             [(ngModel)]="profession.kupot" />
-             <span class="Error"></span>
+             <span class="Error"></span> -->
+             <select  class="form-control" type="text" name="kupa" required placeholder="Enter Kupa" [(ngModel)]="profession.kupot
+              "name="myselect">
+                <option *ngFor="let type of Kupot11" [ngValue]="type">{{type.kupaName}}</option>
+              </select>
         </div> 
         <div class="form-group">
             

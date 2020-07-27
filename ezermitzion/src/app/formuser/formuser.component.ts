@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../shared/services/user.service';
 import { user } from '../Data/user';
-import {TypeProfessions} from 'src/app/Data/TypeProfessions'
+import {TypeUser} from 'src/app/Data/TypeUser'
 
 @Component({
   selector: 'app-formuser',
@@ -10,7 +10,7 @@ import {TypeProfessions} from 'src/app/Data/TypeProfessions'
   styleUrls: ['./formuser.component.scss']
 })
 export class FormuserComponent implements OnInit {
-
+public typeUser:TypeUser[];
 
 
  public user=new user();
@@ -19,6 +19,7 @@ export class FormuserComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.getTypeUserList();
   }
   add(){
  console.log(this.user);
@@ -31,6 +32,16 @@ export class FormuserComponent implements OnInit {
       alert("error")
     })
     
+  }
+  getTypeUserList(){
+    
+    this.UserService.getTypeUserList().subscribe(res=>{
+      localStorage.setItem("typeuser",JSON.stringify(res)),
+      this.typeUser=res,console.log('typeuser',this.typeUser)
+      
+    },err=>{
+      alert("error")
+    })
   }
 
 }
