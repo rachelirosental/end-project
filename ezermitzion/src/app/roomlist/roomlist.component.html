@@ -6,24 +6,20 @@
             <div class="row">
                 <div class="col-sm-8"><h2>Rooms</h2></div>
                 <div class="col-sm-4">
-                    <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i>Add New</button>
+                    <button type="button" class="btn btn-info add-new" (click)="addnewroom()"><i class="fa fa-plus"></i>Add New</button>
                 </div>
             </div>
         </div>
         <table class="table table-bordered">
             <thead>
-                <tr >
-                   
-                    <th>שם</th>
-                 
-                    
+                <tr>
+                    <th>שם חדר</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let r of rooms">
-                   
                     <td>{{r.roomName}}</td>
-                    <td>
+                    <td style="width: 0px !important;">
           <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
                         <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons" > </i></a>
                         <a class="delete" title="Delete" data-toggle="tooltip" ><i class="material-icons"></i></a>

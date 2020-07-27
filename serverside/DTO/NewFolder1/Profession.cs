@@ -20,6 +20,8 @@ namespace DTO.NewFolder1
         public string ClinicAddres { get; set; }
         public   int Subdomain { get; set; }
         public string PrivateOpinion { get; set; }
+        public bool IsDeleted { get; set; }
+        
         public DTO.NewFolder1.typeProfession TypeProfessions { get; set; }
         public DTO.NewFolder1.subDomain  Subdomain1 { get; set; }
         public  ICollection<DTO.NewFolder1.Reference> Reference { get; set; }
@@ -34,7 +36,6 @@ namespace DTO.NewFolder1
                 ProfId = p.ProfId,
                 ProfName = p.ProfName,
                 Type = p.Type,
-                Kupa = p.Kupa,
                 Tel = p.Tel,
                 AddTel = p.AddTel,
                 Email = p.Email,
@@ -42,9 +43,9 @@ namespace DTO.NewFolder1
                 ClinicAddres = p.ClinicAddres,
                 Subdomain = p.Subdomain.Value,
                 PrivateOpinion = p.PrivateOpinion,
+                //IsDeleted=p.IsDeleted,
                 TypeProfessions = NewFolder1.typeProfession.GetTypeProfession(p.typeProfessions),
                 Subdomain1 = NewFolder1.subDomain.GetSubDomain(p.Subdomain1),
-                Kupot=NewFolder1.Kupot.GetKupot(p.Kupot1),
                 Reference=NewFolder1.Reference.GetListReferenceDTO(p.Reference as List<DAL.Reference>),
                 Opinions=NewFolder1.Opinion.GetListOpinionDTO(p.Opinion as List<DAL.Opinion>)
 
@@ -60,7 +61,6 @@ namespace DTO.NewFolder1
                ProfId = Professiondto.ProfId,
                 ProfName = Professiondto.ProfName,
                 Type = Professiondto.Type,
-                Kupa = Professiondto.Kupa,
                 Tel = Professiondto.Tel,
                 AddTel = Professiondto.AddTel,
                 Email = Professiondto.Email,
@@ -68,9 +68,10 @@ namespace DTO.NewFolder1
                 ClinicAddres = Professiondto.ClinicAddres,
                 Subdomain=Professiondto.Subdomain,
                 PrivateOpinion=Professiondto.PrivateOpinion,
+                //IsDeleted=Professiondto.IsDeleted,
                 typeProfessions = NewFolder1.typeProfession.GetTypeProfession(Professiondto.TypeProfessions),
                 Subdomain1 = NewFolder1.subDomain.GetSubDomain(Professiondto.Subdomain1),
-                Kupot1=NewFolder1.Kupot.GetKupot(Professiondto.Kupot),
+                
                 Reference=NewFolder1.Reference.GetListReferenceDAL(Professiondto.Reference as List<Reference>),
                 Opinion = NewFolder1.Opinion.GetListOpinionDAL(Professiondto.Opinions as List<Opinion>)
           };
@@ -102,5 +103,9 @@ namespace DTO.NewFolder1
 
         }
 
+        //public static implicit operator Profession(Profession v)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

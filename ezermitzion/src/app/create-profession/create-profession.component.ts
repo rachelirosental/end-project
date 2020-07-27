@@ -54,6 +54,7 @@ export class CreateProfessionComponent implements OnInit {
       alert("error")
     })
     
+    
   }
 
 }

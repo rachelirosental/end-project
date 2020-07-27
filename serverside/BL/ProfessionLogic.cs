@@ -74,7 +74,7 @@ namespace BL
                     p.ProfId = profession.ProfId;
                     p.ProfName = profession.ProfName;
                     p.Type = profession.Type;
-                    p.Kupa = profession.Kupa;
+         
                     p.Tel = profession.Tel;
                     p.AddTel = profession.AddTel;
                     p.Email = profession.Email;

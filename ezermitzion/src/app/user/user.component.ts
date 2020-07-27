@@ -44,8 +44,8 @@ next(u:user){
   const modalRef = this.modalService.open(SetdetailuserComponent);
   modalRef.componentInstance.user = u;
 }
-next1(){
-  const modalRef = this.modalService.open(FormuserComponent);1
+addnewuser(){
+  const modalRef = this.modalService.open(FormuserComponent);
   this.loadUsers();
 }
 

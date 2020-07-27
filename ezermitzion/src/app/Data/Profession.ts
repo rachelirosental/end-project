@@ -7,7 +7,7 @@ export class Profession  {
     profId  : number;
     profName:string;
     type : number;
-    kupot:Kupot;
+    
     tel:string;
     addTel:string;
     email:string;

@@ -79,12 +79,12 @@ console.log('input',this.inputText)
 openModal(p:Profession) {
   const modalRef = this.modalService.open(ProfessionDetialsComponent);
   modalRef.componentInstance.profession = p;
+  
   }
 create(){
-console.log(  'rrrrrrrrrrrrr')
     const modalRef = this.modalService.open(CreateProfessionComponent);
    // modalRef.componentInstance.profession = this.profession;
-
+   this.getProfList();
 
   }
 

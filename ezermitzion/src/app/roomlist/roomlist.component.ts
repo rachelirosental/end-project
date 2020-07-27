@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RoomService } from '../shared/services/room.service';
 import { Room } from '../Data/Room';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { RoomsComponent } from '../rooms/rooms.component';
 import { SetdetailreferenceComponent } from '../setdetailreference/setdetailreference.component';
 @Component({
   selector: 'app-roomlist',
@@ -12,7 +13,7 @@ import { SetdetailreferenceComponent } from '../setdetailreference/setdetailrefe
 })
 export class RoomlistComponent implements OnInit {
 rooms:Room[];
-  constructor(public RoomService:RoomService ) { }
+  constructor(public RoomService:RoomService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.getrooms();
@@ -23,6 +24,11 @@ rooms:Room[];
       localStorage.setItem("rooms",JSON.stringify(res))
       this.rooms=res,
     console.log(this.rooms)});
+  }
+  addnewroom(){
+    const modalRef = this.modalService.open(RoomsComponent);
+    
+  this.getrooms();
   }
 
 }

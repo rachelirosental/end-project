@@ -14,35 +14,34 @@
       <table class="table table-bordered">
           <thead>
               <tr >
-                  <th>שם</th>
-                  <th>סוג מטופלים</th>
-                  <th>קופות</th>
-                  <th>טלפון</th>
-                  <th> טלפון נוסף</th>
-                  <th>מייל</th>
-                  <th>כתובת אישית</th>
-                  <th>כתובת מרפאה</th>
-                  <th>תואר</th>
-                  <th>חוות דעת פרטית</th>
+                  <th style="width: 100px !important;">שם</th>
+                  <th style="width: 70px !important;">סוג מטופלים</th>
+                  
+                  <th style="width: 110px !important;">טלפון</th>
+                  <th style="width: 110px !important;"> טלפון נוסף</th>
+                  <th style="width: 160px !important;">מייל</th>
+                  <th style="width: 100px !important;">כתובת אישית</th>
+                  <th style="width: 100px !important;">כתובת מרפאה</th>
+                  <th style="width: 60px !important;">תואר</th>
+                  <th style="width: 160px !important;">חוות דעת פרטית</th>
               </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let p of professions" style="width: 160px !important;">
-                  <td style="width: 160px !important;">{{p.profName}}</td>
-                  <td style="width: 160px !important;">{{p.typeProfessions.nameprofession}}</td>
-                  <td style="width: 160px !important;">{{p.kupot.kupaName}}</td>
-                  <td style="width: 160px !important;">{{p.tel}}</td>
-                  <td style="width: 160px !important;">{{p.addTel}}</td>
-                  <td style="width: 160px !important;">{{p.email}}</td>
-                  <td style="width: 160px !important;">{{p.privateAddres}}</td>
-                  <td style="width: 160px !important;">{{p.clinicAddres}}</td>
-                  <td style="width: 160px !important;">{{p.subdomain1.subdomainName}}</td>
-                  <td style="width: 160px !important;">{{p.privateOpinion}}</td>
+              <tr *ngFor="let p of professions" >
+                  <td >{{p.profName}}</td>
+                  <td >{{p.typeProfessions.nameprofession}}</td>
+                  <td >{{p.tel}}</td>
+                  <td >{{p.addTel}}</td>
+                  <td >{{p.email}}</td>
+                  <td >{{p.privateAddres}}</td>
+                  <td >{{p.clinicAddres}}</td>
+                  <td >{{p.subdomain1.subdomainName}}</td>
+                  <td >{{p.privateOpinion}}</td>
                   <!-- <td *ngIf="p.typeProfessions">{{p.typeProfessions.nameprofession}}</td> -->
                   
-                 <td style="width: max-content !important;">
-        <a class="add" title="Add" data-toggle="tooltip" ><i class="material-icons" ></i></a>
-                      <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons" (click)="openModal(p)"> </i></a>
+                 <td>
+        <a  class="add" title="Add" data-toggle="tooltip" ><i class="material-icons" ></i></a>
+                      <a class="edit" title="Edit" data-toggle="tooltip" ><i class="material-icons" (click)="openModal(p)"> </i></a>
                       <a class="delete" title="Delete" data-toggle="tooltip" (click)="deleteprofession(p.profId)"><i class="material-icons"></i></a>
                  </td>
               </tr>

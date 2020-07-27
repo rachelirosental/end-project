@@ -25,5 +25,7 @@ namespace DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Professions> Professions { get; set; }
+        public virtual Subdomain Subdomain1 { get; set; }
+        public virtual Subdomain Subdomain2 { get; set; }
     }
 }

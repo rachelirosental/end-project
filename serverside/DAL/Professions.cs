@@ -20,13 +20,12 @@ namespace DAL
             this.Opinion = new HashSet<Opinion>();
             this.Reference = new HashSet<Reference>();
             this.Reference1 = new HashSet<Reference>();
-            this.Kupot11 = new HashSet<Kupot1>();
+            this.Kupot1 = new HashSet<Kupot1>();
         }
     
         public int ProfId { get; set; }
         public string ProfName { get; set; }
         public int Type { get; set; }
-        public int Kupa { get; set; }
         public string Tel { get; set; }
         public string AddTel { get; set; }
         public string Email { get; set; }
@@ -34,18 +33,17 @@ namespace DAL
         public string ClinicAddres { get; set; }
         public Nullable<int> Subdomain { get; set; }
         public string PrivateOpinion { get; set; }
+        public string IsDeleted { get; set; }
     
-        public virtual Kupot1 Kupot1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Opinion> Opinion { get; set; }
-        public virtual Subdomain Subdomain1 { get; set; }
-        public virtual typeProfessions typeProfessions { get; set; }
-        public virtual typeProfessions typeProfessions1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reference> Reference { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reference> Reference1 { get; set; }
+        public virtual Subdomain Subdomain1 { get; set; }
+        public virtual typeProfessions typeProfessions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Kupot1> Kupot11 { get; set; }
+        public virtual ICollection<Kupot1> Kupot1 { get; set; }
     }
 }

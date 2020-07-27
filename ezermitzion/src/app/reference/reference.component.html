@@ -11,28 +11,25 @@
         </div>
         <table class="table table-bordered">
             <thead>
-                <tr >
-                    <th style="width: 160px !important;">תאריך</th>
-                    <th>תאור הפניה</th>
-                    <th>תאריך לידה</th>
-                    <th>האם טופל</th>
-                    <th>סוג משתמש</th> 
-                    <th>attendant</th> 
-                    <th>סוג איש מקצוע</th> 
-                    <th>סוג פניה</th> 
-                    <th>סוג משתמש</th>
-                    <th>המלצות</th> 
+                <tr>
+                    <th style="width: 160px !important;">תאריך הפניה</th>
+                    <th style="width: 120px !important;">תאור הפניה</th>
+                    <th style="width: 160px !important;">תאריך לידה</th>
+                    <th style="width: 50px !important;">האם טופל</th>
+                    <th style="width: 70px !important;">משתמש</th> 
+                    <th style="width: 50px !important;">איש מקצוע</th> 
+                    <th style="width: 50px !important;">סוג פניה</th> 
+                    <th style="width: 160px !important;">המלצות</th> 
                     
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let r of reference">
-                    <td style="width: 160px;">{{r.date}}</td>
+                    <td >{{r.date}}</td>
                     <td>{{r.description}}</td>
                     <td>{{r.bornDate}}</td>
                     <td>{{r.isCare}}</td>
                     <td>{{r.userName}}</td>
-                    <td>{{r.attendantId}}</td>
                     <td>{{r.profId}}</td>
                     <td>{{r.typeRef}}</td>
                     <td>{{r.recommendation}}</td>

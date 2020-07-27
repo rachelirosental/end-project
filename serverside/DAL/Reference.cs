@@ -20,7 +20,6 @@ namespace DAL
         public Nullable<System.DateTime> BornDate { get; set; }
         public Nullable<bool> IsCare { get; set; }
         public Nullable<int> UserName { get; set; }
-        public Nullable<int> AttendantId { get; set; }
         public Nullable<int> ProfId { get; set; }
         public Nullable<int> TypeRef { get; set; }
         public string recommendation { get; set; }
@@ -30,8 +29,5 @@ namespace DAL
         public virtual TypeReference TypeReference { get; set; }
         public virtual TypeReference TypeReference1 { get; set; }
         public virtual users users { get; set; }
-        public virtual users users1 { get; set; }
-        public virtual users users2 { get; set; }
-        public virtual users users3 { get; set; }
     }
 }
