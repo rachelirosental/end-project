@@ -86,6 +86,7 @@ import { SetdetailRoomComponent } from './setdetail-room/setdetail-room.componen
     ProfessionDetialsComponent,
     CreateProfessionComponent,
     NewdairyComponent,
+    ReferenceComponent,
 
   ]
 })

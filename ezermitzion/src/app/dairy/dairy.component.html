@@ -185,14 +185,45 @@
 	  </button>
 	</div>
 	<div class="modal-body">
-	  <div>
+	  <!-- <div>
 		Action:
 		<pre>{{ modalData?.action }}</pre>
 	  </div>
 	  <div>
 		Event:
 		<pre>{{ modalData?.event | json }}</pre>
-	  </div>
+	  </div> -->
+	  <div>
+		<label for="lname" >כותרת</label>
+		<input class="form-control" type="text" id="date" name="date"  [(ngModel)]="modalData.event.title">
+	
+		<label for="fname" >שעת התחלה</label>
+		<input type="text" id="description" name="description"  [(ngModel)]="modalData.event.start">
+	
+		<label for="Tel" >שעת סיום</label>
+		<input type="text" id="bornDate" name="bornDate"  [(ngModel)]="modalData.event.end">
+	
+		<label for="mail" >סוג פגישה</label>
+		<input type="text" id="isCare" name="isCare"  [(ngModel)]="modalData.event.typeMeeting1.description">
+	
+		<label for="password" >שם עובד</label>
+		<input type="text" id="userName" name="userName"  [(ngModel)]="modalData.event.users.userName">
+<!-- 	
+		<label for="tuser" (click)="getroomlist()">חדר</label>
+		<select  [(ngModel)]="dairy.rooms
+				  "name="myselect" >
+					<option *ngFor="let room of roomslist" [ngValue]="room"  >{{room.roomName}} </option>
+				  </select>
+	 -->
+		<label for="tuser" >תאור הפניה</label>
+		<input type="text" id="typeRef" name="typeRef"  [(ngModel)]="modalData.event.description">
+	
+	   
+	
+		<input type="submit" value="אישור" >
+	  
+	</div>
+	
 	</div>
 	<div class="modal-footer">
 	  <button type="button" class="btn btn-outline-secondary" (click)="close()">

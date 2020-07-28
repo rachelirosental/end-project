@@ -15,9 +15,10 @@ export interface dairy extends CalendarEvent{
     sourceEvent: MouseEvent | KeyboardEvent;
 }): any;
   roomId:number;
+  userId:number;
   description:string;
   typeMeeting:number;
   rooms:Room;
   typeMeeting1:TypeMeeting;
-  user:user;
+  users:user;
   }
