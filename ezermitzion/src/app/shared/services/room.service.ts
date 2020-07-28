@@ -34,7 +34,7 @@ import { DairyComponent } from 'src/app/dairy/dairy.component';
         return this.httpClient.post(this.url + "/create", reference);
       }
       getlistrooms(dairy:dairy) {
-
+        debugger;
         return this.httpClient.post(this.url + "/getlistrooms" ,dairy );
       }
 

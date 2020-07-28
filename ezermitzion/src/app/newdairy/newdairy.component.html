@@ -12,12 +12,12 @@
     <input type="text" id="isCare" name="isCare"  [(ngModel)]="dairy.typeMeeting1.description">
 
     <label for="password" >שם עובד</label>
-    <input type="text" id="userName" name="userName"  [(ngModel)]="dairy.users.userName">
+    <input type="text" id="userName" name="userName"  [(ngModel)]="dairy.userId">
 
     <label for="tuser" (click)="getroomlist()">חדר</label>
-    <select  [(ngModel)]="dairy.rooms
+    <select  [(ngModel)]="dairy.roomId
               "name="myselect" >
-                <option *ngFor="let room of roomslist" [ngValue]="room"  >{{room.roomName}} </option>
+                <option *ngFor="let room of roomslist" [ngValue]="room.roomId"  >{{room.roomName}} </option>
               </select>
 
     <label for="tuser" >תאור הפניה</label>
