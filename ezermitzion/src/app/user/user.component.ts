@@ -42,11 +42,16 @@ deleteUser(id:number){
 }
 next(u:user){
   const modalRef = this.modalService.open(SetdetailuserComponent);
-  modalRef.componentInstance.user = u;
+  modalRef.componentInstance.user ={...u} ;
 }
 addnewuser(){
   const modalRef = this.modalService.open(FormuserComponent);
-  this.loadUsers();
+  modalRef.result.then(res=>{
+    this.loadUsers();
+  },err=>{
+    this.loadUsers();
+  })
+ 
 }
 
 

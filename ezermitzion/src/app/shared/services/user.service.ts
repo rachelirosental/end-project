@@ -32,6 +32,7 @@ currentuser() {
 
 }
   create(user: user) {
+    debugger;
     return this.httpClient.post(this.url + "/create", user);
   }
   delete(id:number)  {

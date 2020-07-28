@@ -45,6 +45,7 @@ namespace API.Controllers
         }
 
         [Route("create")]
+        [HttpPost]
         // POST: api/User
         public bool PostReference([FromBody]Reference reference)
         {
@@ -77,7 +78,7 @@ namespace API.Controllers
 
         [Route("delete/{id}")]
         // DELETE: api/User/5
-        public static int Delete(int id)
+        public int Delete(int id)
         {
             try
             {

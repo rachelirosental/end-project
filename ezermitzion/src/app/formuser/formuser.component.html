@@ -46,9 +46,9 @@
                 <label>Type User:</label>
                 <!-- <input class="form-control" type="text" name="typeuser" required placeholder="Type User" [(ngModel)]="user.typeUser1.typeName"/>
                 <span class="Error"></span> -->
-                <select  class="form-control" type="text" name="kupa" required placeholder="Enter Type User" [(ngModel)]="user.typeUser1.typeName
+                <select  class="form-control" type="text" name="kupa" required placeholder="Enter Type User" [(ngModel)]="user.typeUser
                 "name="myselect">
-                  <option *ngFor="let type of typeUser" [ngValue]="type">{{type.typeName}}</option>
+                  <option *ngFor="let type of typeUser" [ngValue]="type.typeId">{{type.typeName}}</option>
                 </select>
             </div>
             <div class="form-group">
