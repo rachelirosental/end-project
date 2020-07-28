@@ -34,9 +34,8 @@ import { DairyComponent } from 'src/app/dairy/dairy.component';
         return this.httpClient.post(this.url + "/create", reference);
       }
       getlistrooms(dairy:dairy) {
-      var start=dairy.start.toTimeString;
-        var end = dairy.end.toString;
-        return this.httpClient.get(this.url + "/getlistrooms/" + start + "/" + end);
+        debugger;
+        return this.httpClient.post(this.url + "/getlistrooms" ,dairy );
       }
 
   }

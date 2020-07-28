@@ -89,15 +89,14 @@ namespace serverside.Controllers
             }
         }
 
-        [Route("getlistrooms/{dairy}/{ends}")]
-        
-        public  List<Room> GetListRoom([FromBody]string dairy, [FromUri] string ends)
+        [Route("getlistrooms")]
+        [HttpPost]
+        public  List<Room> GetListRoom([FromBody]Dairy dairy)
         {
-            var start = Convert.ToDateTime(dairy);
-            var end = Convert.ToDateTime(ends);
+           
             try
             {
-                return BL.RoomLogic.GetListRoom(start,end);
+                return BL.RoomLogic.GetListRoom(dairy.start,dairy.end);
             }
             catch
             {
