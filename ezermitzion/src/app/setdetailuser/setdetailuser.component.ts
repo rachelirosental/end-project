@@ -9,33 +9,26 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./setdetailuser.component.scss']
 })
 export class SetdetailuserComponent implements OnInit {
-  // public user: user = {
-  //   userId:1,
-  //       userFname:" ", 
-  //       userLname:" ",
-  //       tel:" ",
-  //       email:" ", 
-  //       password :" ",
-  //       typeUser:" "
-  // };
+  
   @Input() public user:user;
 
 
   constructor(public userService:UserService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getUserById();
+    // this.getUserById();
+    console.log(this.user);
   }
   updateuser(){
 
     this.userService.update(this.user).subscribe(res=>console.log('res',this.user))
   }
-  getUserById(){
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.userService.getuserByid(id).subscribe(res=>{
-      this.user=res,console.log('user',this.user)
-    },err=>{
-      alert("error")
-    })
-  }
+  // getUserById(){
+  //   const id = +this.route.snapshot.paramMap.get('id');
+  //   this.userService.getuserByid(id).subscribe(res=>{
+  //     this.user=res,console.log('user',this.user)
+  //   },err=>{
+  //     alert("error")
+  //   })
+  // }
 }

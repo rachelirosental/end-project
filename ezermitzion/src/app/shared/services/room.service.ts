@@ -16,6 +16,7 @@ import { DairyComponent } from 'src/app/dairy/dairy.component';
     constructor(public httpClient: HttpClient) {
       this.url = environment.url + "Room";
     }
+    
     delete(id:number)  {
         return this.httpClient.delete(this.url + "/delete/" + id);
       }
