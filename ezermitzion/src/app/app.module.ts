@@ -84,6 +84,7 @@ import { DairylistComponent } from './dairylist/dairylist.component';
     ProfessionDetialsComponent,
     CreateProfessionComponent,
     NewdairyComponent,
+    ReferenceComponent,
 
   ]
 })
