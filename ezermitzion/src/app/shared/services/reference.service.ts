@@ -23,9 +23,12 @@ import { Reference } from 'src/app/Data/Reference';
     
       update(reference: Reference) {
         return this.httpClient.post(this.url + "/update", reference);
+
       }
       create(reference: Reference) {
+        console.log(reference);
         return this.httpClient.post(this.url + "/create", reference);
+        
       }
 
   }

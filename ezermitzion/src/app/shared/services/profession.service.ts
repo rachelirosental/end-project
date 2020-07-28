@@ -36,7 +36,7 @@ return this.httpClient.get<Profession>(this.url+"/GetProfessionbyId/" + id)
 
 
   update(Profession: Profession) {
-    return this.httpClient.put(this.url + "/update",Profession);
+    return this.httpClient.post(this.url + "/update",Profession);
   }
   getTypeProfList(): Observable<TypeProfessions[]> {
     return this.httpClient.get<TypeProfessions[]>(this.url + "/getTypeProfList/" );

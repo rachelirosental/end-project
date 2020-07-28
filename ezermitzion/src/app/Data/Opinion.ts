@@ -5,5 +5,5 @@ export class opinion {
     description:string;
     date:Date;
     mark:number;
-    profession:Profession
+    profession:Profession=new Profession();
     }

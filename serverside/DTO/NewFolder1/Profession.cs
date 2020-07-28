@@ -68,7 +68,7 @@ namespace DTO.NewFolder1
                 ClinicAddres = Professiondto.ClinicAddres,
                 Subdomain=Professiondto.Subdomain,
                 PrivateOpinion=Professiondto.PrivateOpinion,
-                //IsDeleted=Professiondto.IsDeleted,
+                IsDeleted=false,
                 typeProfessions = NewFolder1.typeProfession.GetTypeProfession(Professiondto.TypeProfessions),
                 Subdomain1 = NewFolder1.subDomain.GetSubDomain(Professiondto.Subdomain1),
                 

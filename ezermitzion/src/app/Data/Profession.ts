@@ -15,8 +15,9 @@ export class Profession  {
     clinicAddres:string;
     subdomain:number;
     privateOpinion:string;
-    typeProfessions:TypeProfessions;
-     subdomain1:SubDomain;
+    IsDeleted:boolean=false;
+    typeProfessions:TypeProfessions=new TypeProfessions() ;
+     subdomain1:SubDomain=new SubDomain();
      reference :Reference[];
      Kupot11:Kupot[];
      opinions:opinion[];

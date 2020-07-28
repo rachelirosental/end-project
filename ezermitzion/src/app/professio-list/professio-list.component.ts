@@ -50,6 +50,7 @@ public profession:Profession;
 
 deleteprofession(id:number){
   this.ProfessionService.delete(id).subscribe(res=>{
+    this.getProfList();
     console.log(res)
   },err=>{
     alert("error")
@@ -78,14 +79,22 @@ console.log('input',this.inputText)
 }
 openModal(p:Profession) {
   const modalRef = this.modalService.open(ProfessionDetialsComponent);
-  modalRef.componentInstance.profession = p;
+  modalRef.componentInstance.profession = {...p};
+  modalRef.result.then(res=>{
+    this.getProfList();
+  },err=>{
+    this.getProfList();
+  })
   
   }
 create(){
     const modalRef = this.modalService.open(CreateProfessionComponent);
-   // modalRef.componentInstance.profession = this.profession;
-   this.getProfList();
-
+    modalRef.result.then(res=>{
+      this.getProfList();
+    },err=>{
+      this.getProfList();
+    })
+   
   }
 
  }

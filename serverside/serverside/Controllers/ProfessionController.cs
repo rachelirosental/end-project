@@ -42,8 +42,8 @@ namespace API.Controllers
        public bool CreateProfession([FromBody]Profession profession) {
             try
             {
-                BL.ProfessionLogic.CreateProfession(profession);
-                return true;
+               return BL.ProfessionLogic.CreateProfession(profession);
+                
             }
             catch
             {

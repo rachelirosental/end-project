@@ -1,32 +1,30 @@
 <div>
     
   
-    <label for="lname" >תאריך</label>
-    <input type="date" id="date" name="date"  [(ngModel)]="reference.date" >
+    <label for="lname" >תאריך</label><br>
+    <input  class="form-control" type="date" id="date" name="date"  [(ngModel)]="reference.date"><br>
 
     <label for="lname" >תיאור הפניה</label>
-    <input type="date" id="description" name="description"  [(ngModel)]="reference.description" >
+    <input  class="form-control" type="text" id="description" name="description"  [(ngModel)]="reference.description" >
 
-    <label for="fname" >תאריך לידה</label>
-    <input type="text" id="bornDate" name="bornDate"  [(ngModel)]="reference.bornDate">
+    <label for="fname" >תאריך לידה</label><br>
+    <input  class="form-control" type="date" id="bornDate" name="bornDate"  [(ngModel)]="reference.bornDate"><br>
 
-    <label for="Tel" >האם טופל</label>
-    <input type="text" id="isCare" name="isCare"  [(ngModel)]="reference.isCare">
+    <label for="isCare" >האם טופל</label>
+    <input  class="form-control" type="text" id="isCare" name="isCare"  [(ngModel)]="reference.isCare">
 
-    <label for="mail" >סוג משתמש</label>
-    <input type="text" id="userName" name="userName"  [(ngModel)]="reference.userName">
+    <label for="userName" >סוג משתמש</label>
+    <input  class="form-control" type="text" id="userName" name="userName"  [(ngModel)]="reference.users.userName">
     
-    <label for="mail" >attendant</label>
-    <input type="text" id="attendant" name="attendant"  [(ngModel)]="reference.attendantId">
+    
+    <label for="profId" >איש מקצוע</label>
+    <input class="form-control" type="text" id="profId" name="profId"  [(ngModel)]="reference.professions.profName">
 
-    <label for="tuser" >איש מקצוע</label>
-    <input type="text" id="profId" name="profId"  [(ngModel)]="reference.profId">
+    <label for="typeRef" >סוג פניה</label>
+    <input class="form-control" type="text" id="typeRef" name="typeRef"  [(ngModel)]="reference.typeReference.refname">
 
-    <label for="tuser" >סוג פניה</label>
-    <input type="text" id="typeRef" name="typeRef"  [(ngModel)]="reference.typeRef">
-
-    <label for="tuser">המלצות</label>
-    <input type="text" id="recommendation" name="recommendation"  [(ngModel)]="reference.recommendation">
+    <label for="recommendation">המלצות</label>
+    <input class="form-control" type="text" id="recommendation" name="recommendation"  [(ngModel)]="reference.recommendation">
 
     <input type="submit" value="אישור" (click)="updateuser()">
 </div>

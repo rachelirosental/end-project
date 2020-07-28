@@ -41,11 +41,14 @@ namespace BL
         {
             try
             {
-                db.Professions.Add(Profession.GetProfession1(profession));
+                var p = DTO.NewFolder1.Profession.GetProfession1(profession);
+                p.typeProfessions = db.typeProfessions.FirstOrDefault(x => x.ProfessionId == p.Type);
+                p.Subdomain1 = db.Subdomain.FirstOrDefault(x => x.Subdomainid == p.Subdomain);
+                db.Professions.Add(p);
                 db.SaveChanges();
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
                 return false;
             }
@@ -67,21 +70,21 @@ namespace BL
         {
             try
             {
-                var p = db.Professions.FirstOrDefault(pr => pr.ProfId == Profession.GetProfession1(profession).ProfId);
+                var p = db.Professions.FirstOrDefault(pr => pr.ProfId == profession.ProfId);
 
                 if (p != null)
                 {
-                    p.ProfId = profession.ProfId;
+                    
                     p.ProfName = profession.ProfName;
+                    p.Subdomain = profession.Subdomain;
                     p.Type = profession.Type;
-         
                     p.Tel = profession.Tel;
                     p.AddTel = profession.AddTel;
                     p.Email = profession.Email;
                     p.PrivateAddres = profession.PrivateAddres;
                     p.ClinicAddres = profession.ClinicAddres;
-                    p.Subdomain = profession.Subdomain;
                     p.PrivateOpinion = profession.PrivateOpinion;
+                    p.IsDeleted = profession.IsDeleted;
                     db.SaveChanges();
 
                 }

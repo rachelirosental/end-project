@@ -19,7 +19,6 @@ namespace DAL
         {
             this.Opinion = new HashSet<Opinion>();
             this.Reference = new HashSet<Reference>();
-            this.Reference1 = new HashSet<Reference>();
             this.Kupot1 = new HashSet<Kupot1>();
         }
     
@@ -33,14 +32,12 @@ namespace DAL
         public string ClinicAddres { get; set; }
         public Nullable<int> Subdomain { get; set; }
         public string PrivateOpinion { get; set; }
-        public string IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Opinion> Opinion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reference> Reference { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reference> Reference1 { get; set; }
         public virtual Subdomain Subdomain1 { get; set; }
         public virtual typeProfessions typeProfessions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -3,16 +3,16 @@ import {user} from 'src/app/Data/user'
 import {TypeReference} from 'src/app/Data/TypeReference'
 export class Reference {
     refId : number;
-    date:Date;
+    date:Date=new Date();
     description :string;
-    bornDate:Date;
+    bornDate:Date=new Date();
     isCare:boolean;
    userName:number;
-    attendantId:number;
+    
     profId:number;
     typeRef:number;
     recommendation:string;
-    professions:Profession;
-    users:user;
-   typeReference:TypeReference;
+    professions:Profession=new Profession();
+    users:user=new user();
+   typeReference:TypeReference=new TypeReference();
     }
