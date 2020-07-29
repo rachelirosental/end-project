@@ -90,6 +90,17 @@ namespace BL
             }
 
         }
+        public static List<TypeReference> getTypeRefList()
+        {
+            try
+            {
+                return TypeReference.GetListTypeRefDTO(db.TypeReference.ToList());
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
     }
 }

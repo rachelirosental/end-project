@@ -37,5 +37,15 @@ namespace DTO.NewFolder1
             };
             return type;
         }
+        public static List<TypeReference> GetListTypeRefDTO(List<DAL.TypeReference> TRef)
+        {
+            if (TRef == null)
+                return null;
+            List<TypeReference> l = new List<TypeReference>();
+
+            TRef.ForEach(k => l.Add(GetTypeReference(k)));
+            return l;
+
+        }
     }
 }

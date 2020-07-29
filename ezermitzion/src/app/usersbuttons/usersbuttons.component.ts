@@ -11,7 +11,7 @@ import { user } from '../Data/user';
 export class UsersbuttonsComponent implements OnInit {
 user:user;
 users:user[];
-  constructor(private router: Router,public userService:UserService) { }
+  constructor(private router: Router,public UserService:UserService) { }
 
   ngOnInit(): void {
   }
@@ -21,9 +21,6 @@ users:user[];
  }
  next2(){
   this.router.navigateByUrl('/formuser');
-}
-next3(){
-  this.router.navigateByUrl('/entry2');
 }
 next4(){
   this.router.navigateByUrl('/login');
