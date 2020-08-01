@@ -12,6 +12,6 @@ export class user {
         isDeleted:boolean;
         typeUser1:TypeUser=new TypeUser();
        dairy:dairy[];
-      Reference:Reference[];
+      reference:Reference[];
        
 }

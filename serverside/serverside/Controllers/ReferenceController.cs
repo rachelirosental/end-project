@@ -13,20 +13,20 @@ namespace API.Controllers
     {
         // GET: api/Reference
 
-        [Route("getreference")]
-        public List<Reference> Get()
-        {
-            try
-            {
-                return BL.referenceLogic.Allreference();
-            }
-            catch
-            {
-                return null;
-            }
+        //[Route("getreference")]
+        //public List<Reference> Get()
+        //{
+        //    try
+        //    {
+        //        return BL.referenceLogic.Allreference();
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
             
 
-        }
+        //}
         [Route("getTypeRefList")]
         public List<TypeReference> getTypeRefList()
         {

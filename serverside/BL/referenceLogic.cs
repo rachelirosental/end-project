@@ -53,18 +53,18 @@ namespace BL
             }
 
         }
-        public static List<Reference> Allreference()
-        {
-            try
-            {
-                return Reference.GetListReferenceDTO(db.Reference.ToList());
-            }
-            catch
-            {
-                return null;
-            }
+        //public static List<Reference> Allreference()
+        //{
+        //    try
+        //    {
+        //        return Reference.GetListReferenceDTO(db.Reference.ToList());
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
 
-        }
+        //}
         public static bool UpdateReference(Reference reference)
         {
             try
