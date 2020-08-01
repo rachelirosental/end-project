@@ -22,4 +22,3 @@ export interface dairy extends CalendarEvent{
   typeMeeting1:TypeMeeting;
   users:user;
   }
-  

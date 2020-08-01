@@ -44,8 +44,5 @@ return this.httpClient.get<Profession>(this.url+"/GetProfessionbyId/" + id)
   getProfKupotList(): Observable<Kupot[]> {
     return this.httpClient.get<Kupot[]>(this.url + "/getProfKupotList/" );
   }
-  // getNameProfList():Observable<Profession[]> {
-  //   return this.httpClient.get<Profession[]>(this.url + "/getNameProfList/" );
-  // }
 
 }

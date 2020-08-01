@@ -53,18 +53,18 @@ namespace BL
             }
 
         }
-        //public static List<Reference> Allreference()
-        //{
-        //    try
-        //    {
-        //        return Reference.GetListReferenceDTO(db.Reference.ToList());
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
+        public static List<Reference> Allreference()
+        {
+            try
+            {
+                return Reference.GetListReferenceDTO(db.Reference.ToList());
+            }
+            catch
+            {
+                return null;
+            }
 
-        //}
+        }
         public static bool UpdateReference(Reference reference)
         {
             try
@@ -89,17 +89,6 @@ namespace BL
 
             }
 
-        }
-        public static List<TypeReference> getTypeRefList()
-        {
-            try
-            {
-                return TypeReference.GetListTypeRefDTO(db.TypeReference.ToList());
-            }
-            catch
-            {
-                return null;
-            }
         }
 
     }

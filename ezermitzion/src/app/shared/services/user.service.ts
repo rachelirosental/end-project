@@ -38,8 +38,8 @@ currentuser() {
   delete(id:number)  {
     return this.httpClient.delete(this.url + "/delete/" + id);
   }
-  getusers() : Observable<user[]> {
-    return this.httpClient.get<user[]>(this.url + "/getusers/" );
+  getusers() {
+     return this.httpClient.get(this.url + "/getusers");
   }
   getuserByid(id:number):Observable<user>{
     return this.httpClient.get<user>(this.url+"/getuserByid/" + id);
@@ -56,5 +56,4 @@ currentuser() {
   getTypeUserList(): Observable<TypeUser[]> {
     return this.httpClient.get<TypeUser[]>(this.url + "/getTypeUserList/" );
   }
-  
 }

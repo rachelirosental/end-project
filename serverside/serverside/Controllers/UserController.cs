@@ -118,7 +118,7 @@ namespace API.Controllers
         {
             try
             {
-                return UserLogic.GetTypeUser();
+                return UserLogic.getTypeUserList1();
 
             }
             catch

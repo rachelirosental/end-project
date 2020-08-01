@@ -87,18 +87,17 @@ namespace BL
             return DTO.NewFolder1.TypeUser.GetListTypeUseDTO(db.TypeUser.ToList());
 
         }
-        //public static List<DTO.NewFolder1.TypeUser> getTypeUserList1()
-        //{
-        //    try
-        //    {
-        //        return DTO.NewFolder1.TypeUser.GetListTypeUseDTO(db.TypeUser.ToList());
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
-        //}
-        
+        public static List<DTO.NewFolder1.TypeUser> getTypeUserList1()
+        {
+            try
+            {
+                return DTO.NewFolder1.TypeUser.GetListTypeUseDTO(db.TypeUser.ToList());
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
     }
 }
