@@ -11,9 +11,9 @@ namespace API.Controllers
     [RoutePrefix("api/Reference")]
     public class ReferenceController:ApiController
     {
-        GET: api/Reference
+        // GET: api/Reference
 
-       [Route("getreference")]
+        [Route("getreference")]
         public List<Reference> Get()
         {
             try
@@ -24,12 +24,9 @@ namespace API.Controllers
             {
                 return null;
             }
-
-
+            
 
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
         [Route("getTypeRefList")]
         public List<TypeReference> getTypeRefList()
         {
@@ -45,13 +42,6 @@ namespace API.Controllers
 
         }
 
-=======
-     
->>>>>>> parent of da4ba72... Merge branch 'master' of https://github.com/rachelirosental/end-project
-=======
->>>>>>> parent of da4ba72... Merge branch 'master' of https://github.com/rachelirosental/end-project
-=======
->>>>>>> parent of da4ba72... Merge branch 'master' of https://github.com/rachelirosental/end-project
 
 
 

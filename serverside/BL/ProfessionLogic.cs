@@ -16,7 +16,6 @@ namespace BL
         {
             try
             {
-              
                 return Profession.GetListProfessinDTO(db.Professions.ToList());
             }
             catch

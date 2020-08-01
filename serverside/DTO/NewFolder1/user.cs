@@ -33,7 +33,7 @@ namespace DTO.NewFolder1
                 //IsDeleted=u.IsDeleted,
                 TypeUser1 = DTO.NewFolder1.TypeUser.GetTypeUser(u.TypeUser1),
                 Dairy = NewFolder1.Dairy.GetListDairyDTO(u.Dairy as List<DAL.Dairy>),
-                Reference = NewFolder1.Reference.GetListReferenceDTO(u.Reference ),
+                Reference = NewFolder1.Reference.GetListReferenceDTO(u.Reference as List<DAL.Reference>),
 
             };
             return dto;
