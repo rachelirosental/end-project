@@ -12,18 +12,32 @@
       <input class="form-control" type="date" id="bornDate" name="bornDate"  [(ngModel)]="reference.bornDate"><br>
       
       <label for="type" >האם טופל</label>
-      <input  class="form-control" type="text" id="isCare" name="isCare"  [(ngModel)]="reference.isCare">
+      <select  type="text" id="isCare" name="isCare" [(ngModel)]="reference.isCare">
+        <option value="">true</option>
+        <option value="1">false</option>
+        </select>
+      
+      <label for="type" > משתמש</label>
+      <select    placeholder="Enter Name" [(ngModel)]="reference.userName
+              "name="myselect">
+                <option *ngFor="let type of user" [ngValue]="type.userId">{{type.userName}}</option>
+              </select>
+      <!-- <input  class="form-control" type="text" id="userFname" name="userFname"  [(ngModel)]="reference.users.userName"> -->
       
       
-      <label for="type" >שם משתמש</label>
-      <input  class="form-control" type="text" id="userFname" name="userFname"  [(ngModel)]="reference.users.userName">
-      
-      
-      <label for="type" >סוג בעל מקצוע</label>
-      <input  class="form-control" type="text" id="profName" name="profName"  [(ngModel)]="reference.professions.profName">
+      <label for="type" >איש מקצוע</label>
+      <select    placeholder="Enter ProfName" [(ngModel)]="reference.profId
+              "name="myselect">
+                <option *ngFor="let type of profession" [ngValue]="type.profId">{{type.profName}}</option>
+              </select>
+      <!-- <input  class="form-control" type="text" id="profName" name="profName"  [(ngModel)]="reference.professions.profName"> -->
       
       <label for="type" >סוג הפניה</label>
-      <input class="form-control" type="text" id="refname" name="refname"  [(ngModel)]="reference.typeReference.refname">
+      <select placeholder="Enter Type Reference" [(ngModel)]="reference.typeRef
+              "name="myselect">
+                <option *ngFor="let type of typereference" [ngValue]="type.refId">{{type.refname}}</option>
+              </select>
+      <!-- <input class="form-control" type="text" id="refname" name="refname"  [(ngModel)]="reference.typeReference.refname"> -->
       
       <label for="ClinicAddres" >המלצות</label>
       <input class="form-control" type="text" id="recommendation" name="recommendation"  [(ngModel)]="reference.recommendation">

@@ -27,6 +27,21 @@ namespace API.Controllers
             
 
         }
+        [Route("getTypeRefList")]
+        public List<TypeReference> getTypeRefList()
+        {
+            try
+            {
+                return BL.referenceLogic.getTypeRefList();
+
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
 
 
 

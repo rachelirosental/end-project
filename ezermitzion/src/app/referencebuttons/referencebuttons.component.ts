@@ -18,7 +18,7 @@ export class ReferencebuttonsComponent implements OnInit {
     this.router.navigateByUrl('/reference');
  }
  next2(){
-  this.router.navigateByUrl('/formreference');
+  this.router.navigateByUrl('/form-ref');
 }
 
 next4(){
