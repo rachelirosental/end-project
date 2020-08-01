@@ -30,7 +30,6 @@ namespace API.Controllers
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
         [Route("getTypeRefList")]
         public List<TypeReference> getTypeRefList()
         {
@@ -48,8 +47,6 @@ namespace API.Controllers
 
 =======
      
->>>>>>> parent of da4ba72... Merge branch 'master' of https://github.com/rachelirosental/end-project
-=======
 >>>>>>> parent of da4ba72... Merge branch 'master' of https://github.com/rachelirosental/end-project
 =======
 >>>>>>> parent of da4ba72... Merge branch 'master' of https://github.com/rachelirosental/end-project
