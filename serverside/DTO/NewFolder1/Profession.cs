@@ -104,9 +104,4 @@ namespace DTO.NewFolder1
 
         }
 
-        //public static implicit operator Profession(Profession v)
-        //{
-        //    throw new NotImplementedException();
-        //}
-    }
 }
