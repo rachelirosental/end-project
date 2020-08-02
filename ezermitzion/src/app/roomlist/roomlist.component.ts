@@ -29,8 +29,12 @@ room:Room;
   }
   addnewroom(){
     const modalRef = this.modalService.open(RoomsComponent);
-    
-  this.getrooms();
+    modalRef.result.then(res=>{
+      this.getrooms();
+    },err=>{
+      this.getrooms();
+    })
+ 
   }
   deleteRoom(id:number){
     this.RoomService.delete(id).subscribe(res=>{
@@ -43,7 +47,11 @@ room:Room;
   }
   next(r:Room){
     const modalRef = this.modalService.open(SetdetailRoomComponent);
-    modalRef.componentInstance.Room = r;
-  
+    modalRef.componentInstance.Room = {...r};
+    modalRef.result.then(res=>{
+      this.getrooms();
+    },err=>{
+      this.getrooms();
+    })
   }
 }

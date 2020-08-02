@@ -16,7 +16,11 @@ namespace BL
         {
             try
             {
-                db.Reference.Add(DTO.NewFolder1.Reference.GetReference(reference));
+                var r=DTO.NewFolder1.Reference.GetReference(reference);
+                r.users = db.users.FirstOrDefault(x => x.UserId == r.UserName);
+                r.Professions = db.Professions.FirstOrDefault(y=>y.ProfId==r.ProfId);
+                r.TypeReference = db.TypeReference.FirstOrDefault(z => z.RefId == r.TypeRef);
+                db.Reference.Add(r);
                 db.SaveChanges();
                 return true;
             }
@@ -70,16 +74,19 @@ namespace BL
             try
             {
                 var ReferenceDb = db.Reference.FirstOrDefault(p => p.RefId == reference.RefId);
-                ReferenceDb.Date = reference.Date;
-                ReferenceDb.Description = reference.Description;
-                ReferenceDb.BornDate = reference.BornDate;
-                ReferenceDb.IsCare = reference.IsCare;
-                ReferenceDb.UserName = reference.UserName;
-                //ReferenceDb.AttendantId = reference.AttendantId;
-                ReferenceDb.ProfId = reference.ProfId;
-                ReferenceDb.TypeRef = reference.TypeRef;
-                ReferenceDb.recommendation = reference.recommendation;
-                db.SaveChanges();
+
+                if (ReferenceDb != null)
+                {
+                    ReferenceDb.Date = reference.Date;
+                    ReferenceDb.Description = reference.Description;
+                    ReferenceDb.BornDate = reference.BornDate;
+                    ReferenceDb.IsCare = reference.IsCare;
+                    ReferenceDb.UserName = reference.UserName;
+                    ReferenceDb.ProfId = reference.ProfId;
+                    ReferenceDb.TypeRef = reference.TypeRef;
+                    ReferenceDb.recommendation = reference.recommendation;
+                    db.SaveChanges();
+                }
                 return true;
 
             }

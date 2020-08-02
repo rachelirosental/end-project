@@ -10,16 +10,17 @@
 <body>
     <div class="container">
        <div class="Back">
-            <i class="fa fa-arrow-left" onclick="Back()"></i>
+            <i class="fa fa-arrow-left" (click)="UserService.return()"></i>
         </div>
         <p class="h2 text-center">Form</p>
         <form action="" method="post">
             <div class="preview text-center">
-                <img class="preview-img" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image" width="200" height="200"/>
+                <img class="preview-img" [src]="imgURL"  *ngIf="imgURL"width="200" height="200" alt="Preview Image"/>
                 <div class="browse-button">
                     <i class="fa fa-pencil-alt"></i>
-                    <input class="browse-input" type="file" required name="UploadedFile" id="UploadedFile"/>
+                    <input class="browse-input" #file type="file" accept='image/*' required name="UploadedFile" id="UploadedFile" (change)="preview(file.files)"/>
                 </div>
+                
                 <span class="Error"></span>
             </div>
             <div class="form-group">
@@ -68,5 +69,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
-<button (click)="UserService.return()">return</button>
+
 

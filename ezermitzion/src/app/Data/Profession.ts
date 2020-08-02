@@ -7,7 +7,6 @@ export class Profession  {
     profId  : number;
     profName:string;
     type : number;
-    
     tel:string;
     addTel:string;
     email:string;
@@ -17,10 +16,10 @@ export class Profession  {
     privateOpinion:string;
     IsDeleted:boolean=false;
     typeProfessions:TypeProfessions=new TypeProfessions() ;
-     subdomain1:SubDomain=new SubDomain();
-     reference :Reference[];
-     Kupot11:Kupot[];
-     opinions:opinion[];
+    subdomain1:SubDomain=new SubDomain();
+    reference :Reference[];
+    Kupot11:Kupot[];
+    opinions:opinion[];
 
 
 }

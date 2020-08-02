@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { Profession } from 'src/app/Data/Profession';
 import { SubDomain } from 'src/app/Data/SubDomain';
 import {ProfessionService } from '../shared/services/profession.service';
+import {UserService } from '../shared/services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { TypeProfessions } from '../Data/TypeProfessions';
 import { Kupot } from '../Data/Kupot';
@@ -19,8 +20,28 @@ export class CreateProfessionComponent implements OnInit {
    public Kupot11:Kupot[];
    selectedtype:TypeProfessions;
 
-  constructor(public ProfessionService:ProfessionService,private route: ActivatedRoute) { }
-
+  constructor(public ProfessionService:ProfessionService,public UserService:UserService,private route: ActivatedRoute) { }
+  public imagePath;
+  imgURL="http://simpleicon.com/wp-content/uploads/account.png";
+  public message: string;
+ 
+  preview(files) {
+    if (files.length === 0)
+      return;
+ 
+    var mimeType = files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.message = "Only images are supported.";
+      return;
+    }
+ 
+    var reader = new FileReader();
+    this.imagePath = files;
+    reader.readAsDataURL(files[0]); 
+    reader.onload = (_event) => { 
+      this.imgURL = String(reader.result); 
+    }
+  }
   ngOnInit(): void {
    
     this.getTypeProfList();

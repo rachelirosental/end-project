@@ -1,17 +1,25 @@
 
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>PHP Form</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+  </head>
+  <body>
 <div class="container">
-
-    <div class="Back">
-        <i class="fa fa-arrow-left" onclick="Back()"></i>
-    </div>
+    <div class="container">
+        <div class="Back">
+             <i class="fa fa-arrow-left" (click)="UserService.return()"></i>
+         </div>
     <p class="h2 text-center">Form</p>
     <form action="" method="post">
         <div class="preview text-center">
-            <img class="preview-img" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image"
-                width="200" height="200" />
+            <img class="preview-img" [src]="imgURL"  *ngIf="imgURL"width="200" height="200" alt="Preview Image"/>
             <div class="browse-button">
                 <i class="fa fa-pencil-alt"></i>
-                <input class="browse-input" type="file" required name="UploadedFile" id="UploadedFile" />
+                <input class="browse-input" #file type="file" accept='image/*' required name="UploadedFile" id="UploadedFile" (change)="preview(file.files)"/>
             </div>
             <span class="Error"></span>
         </div>

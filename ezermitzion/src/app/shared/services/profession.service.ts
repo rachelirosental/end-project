@@ -5,14 +5,15 @@ import { Observable } from 'rxjs';
 import { Profession } from 'src/app/Data/Profession';
 import { TypeProfessions} from 'src/app/Data/typeProfessions';
 import { Kupot} from 'src/app/Data/Kupot';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfessionService {
-
+  public key:any;
   url: string;
-  constructor(public httpClient: HttpClient) {
+  constructor(public httpClient: HttpClient,public router:Router) {
     this.url = environment.url + "Profession";
   }
 
@@ -44,8 +45,6 @@ return this.httpClient.get<Profession>(this.url+"/GetProfessionbyId/" + id)
   getProfKupotList(): Observable<Kupot[]> {
     return this.httpClient.get<Kupot[]>(this.url + "/getProfKupotList/" );
   }
-  // getNameProfList():Observable<Profession[]> {
-  //   return this.httpClient.get<Profession[]>(this.url + "/getNameProfList/" );
-  // }
+ 
 
 }

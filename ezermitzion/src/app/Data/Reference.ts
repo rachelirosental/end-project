@@ -7,12 +7,11 @@ export class Reference {
     description :string;
     bornDate:Date=new Date();
     isCare:boolean;
-   userName:number;
-    
+    userName:number;
     profId:number;
     typeRef:number;
     recommendation:string;
     professions:Profession=new Profession();
     users:user=new user();
-   typeReference:TypeReference=new TypeReference();
+    typeReference:TypeReference=new TypeReference();
     }
