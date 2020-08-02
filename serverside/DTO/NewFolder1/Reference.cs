@@ -67,13 +67,16 @@ namespace DTO.NewFolder1
             return reference;
         }
 
-        public static List<Reference> GetListReferenceDTO(List<DAL.Reference> Lreference)
+        public static List<Reference> GetListReferenceDTO(ICollection<DAL.Reference> Lreference)
         {
-            if (Lreference == null)
+            if (Lreference  == null)
                 return null;
             List<Reference> l = new List<Reference>();
-            
-            Lreference.ForEach(r => l.Add(GetReference(r)));
+            foreach(var item in Lreference)
+            {
+                l.Add(GetReference(item));
+            }
+      
             return l;
 
         }

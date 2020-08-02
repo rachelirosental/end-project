@@ -10,7 +10,7 @@ namespace DTO.NewFolder1
     {
         public int RefId { get; set; }
         public string refname { get; set; }
-        public ICollection<DTO.NewFolder1.Reference> Reference { get; set; }
+        public List<DTO.NewFolder1.Reference> Reference { get; set; }
         public static TypeReference GetTypeReference(DAL.TypeReference t)
         {
             if (t == null)

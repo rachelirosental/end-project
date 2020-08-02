@@ -25,7 +25,6 @@ namespace DAL
         public string recommendation { get; set; }
     
         public virtual TypeReference TypeReference { get; set; }
-        public virtual TypeReference TypeReference1 { get; set; }
         public virtual users users { get; set; }
         public virtual Professions Professions { get; set; }
     }

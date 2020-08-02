@@ -24,14 +24,15 @@ namespace DTO.NewFolder1
         
         public DTO.NewFolder1.typeProfession TypeProfessions { get; set; }
         public DTO.NewFolder1.subDomain  Subdomain1 { get; set; }
-        public  ICollection<DTO.NewFolder1.Reference> Reference { get; set; }
+        public List<DTO.NewFolder1.Reference> Reference { get; set; }
         public DTO.NewFolder1.Kupot Kupot { get; set; }
         public  ICollection<DTO.NewFolder1.Kupot> Kupot11 { get; set; }
         public  ICollection<DTO.NewFolder1.Opinion> Opinions { get; set; }
         public static Profession GetProfession1(DAL.Professions p)
         {
             if (p == null)
-                return null; Profession dto = new Profession()
+                return null;
+            Profession dto = new Profession()
             {
                 ProfId = p.ProfId,
                 ProfName = p.ProfName,
@@ -43,11 +44,11 @@ namespace DTO.NewFolder1
                 ClinicAddres = p.ClinicAddres,
                 Subdomain = p.Subdomain.Value,
                 PrivateOpinion = p.PrivateOpinion,
-                //IsDeleted=p.IsDeleted,
+                IsDeleted = p.IsDeleted,
                 TypeProfessions = NewFolder1.typeProfession.GetTypeProfession(p.typeProfessions),
                 Subdomain1 = NewFolder1.subDomain.GetSubDomain(p.Subdomain1),
-                Reference=NewFolder1.Reference.GetListReferenceDTO(p.Reference as List<DAL.Reference>),
-                Opinions=NewFolder1.Opinion.GetListOpinionDTO(p.Opinion as List<DAL.Opinion>)
+                Reference = NewFolder1.Reference.GetListReferenceDTO(p.Reference),
+                Opinions = NewFolder1.Opinion.GetListOpinionDTO(p.Opinion as List<DAL.Opinion>)
 
             };
             return dto;

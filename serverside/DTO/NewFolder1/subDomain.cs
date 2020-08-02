@@ -19,7 +19,7 @@ namespace DTO.NewFolder1
             {
                 Subdomainid = s.Subdomainid,
                 SubdomainName = s.SubdomainName,
-                Professions = NewFolder1.Profession.GetListProfessinDTO(s.Professions as List<DAL.Professions>)
+                Professions = null/*NewFolder1.Profession.GetListProfessinDTO(s.Professions as List<DAL.Professions>)*/
 
             };
             return dto;
