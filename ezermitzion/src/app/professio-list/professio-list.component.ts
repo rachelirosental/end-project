@@ -6,7 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProfessionDetialsComponent } from '../profession-detials/profession-detials.component';
 import {TypeProfessions } from 'src/app/Data/TypeProfessions';
 import { CreateProfessionComponent } from '../create-profession/create-profession.component';
-import { ModalreferenceComponent } from '../modalreference/modalreference.component';
+import { ReferenceComponent } from '../reference/reference.component';
 import { Router } from '@angular/router';
 import {UserService } from '../shared/services/user.service';
 
@@ -97,10 +97,9 @@ create(){
     })
    
   }
-  openModalref(p:Profession){
+  openModalref(){
 
-    const modalRef = this.modalService.open(ModalreferenceComponent);
-    modalRef.componentInstance.referenes=p.reference
+
   }
 
  }

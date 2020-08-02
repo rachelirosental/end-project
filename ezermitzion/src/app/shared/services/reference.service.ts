@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Reference } from 'src/app/Data/Reference';
+import { TypeReference } from 'src/app/Data/TypeReference';
 @Injectable({
     providedIn: 'root'
   })
@@ -30,7 +31,12 @@ import { Reference } from 'src/app/Data/Reference';
         return this.httpClient.post(this.url + "/create", reference);
         
       }
+      getTypeRefList(): Observable<TypeReference[]> {
+        return this.httpClient.get<TypeReference[]>(this.url + "/getTypeRefList/" );
+      }
+  
+    }
+   
 
-  }
 
   

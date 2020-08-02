@@ -35,7 +35,6 @@ import { FormRefComponent } from './form-ref/form-ref.component';
 import { NewdairyComponent } from './newdairy/newdairy.component';
 import { DairylistComponent } from './dairylist/dairylist.component';
 import { SetdetailRoomComponent } from './setdetail-room/setdetail-room.component';
-import { ModalreferenceComponent } from './modalreference/modalreference.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +60,6 @@ import { ModalreferenceComponent } from './modalreference/modalreference.compone
     NewdairyComponent,
     DairylistComponent,
     SetdetailRoomComponent,
-    ModalreferenceComponent,
     // [DemoComponent],
   ],
   imports: [

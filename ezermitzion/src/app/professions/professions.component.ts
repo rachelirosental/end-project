@@ -27,5 +27,5 @@ export class ProfessionsComponent implements OnInit {
   next4(){
     this.router.navigateByUrl('/login');
   }
-
+ 
 }
