@@ -30,10 +30,10 @@ namespace DTO.NewFolder1
                 Email = u.Email,
                 Password = u.Password,
                 TypeUser = u.TypeUser,
-                //IsDeleted=u.IsDeleted,
+                IsDeleted=false,
                 TypeUser1 = DTO.NewFolder1.TypeUser.GetTypeUser(u.TypeUser1),
                 Dairy = NewFolder1.Dairy.GetListDairyDTO(u.Dairy as List<DAL.Dairy>),
-                Reference = NewFolder1.Reference.GetListReferenceDTO(u.Reference as List<DAL.Reference>),
+                Reference = NewFolder1.Reference.GetListReferenceDTO(u.Reference .ToList() ),
 
             };
             return dto;

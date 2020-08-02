@@ -128,18 +128,6 @@
           <Property Name="TypeUser" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Dairy__RoomId__412EB0B6">
-          <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
-          <End Role="Dairy" Type="Self.Dairy" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Rooms">
-              <PropertyRef Name="RoomId" />
-            </Principal>
-            <Dependent Role="Dairy">
-              <PropertyRef Name="RoomId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Dairy__RoomId__4222D4EF">
           <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
           <End Role="Dairy" Type="Self.Dairy" Multiplicity="*" />
@@ -152,18 +140,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Dairy__TypeMeeti__4316F928">
-          <End Role="TypeMeeting" Type="Self.TypeMeeting" Multiplicity="0..1" />
-          <End Role="Dairy" Type="Self.Dairy" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeMeeting">
-              <PropertyRef Name="MeetingId" />
-            </Principal>
-            <Dependent Role="Dairy">
-              <PropertyRef Name="TypeMeeting" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Dairy__TypeMeeti__440B1D61">
           <End Role="TypeMeeting" Type="Self.TypeMeeting" Multiplicity="0..1" />
           <End Role="Dairy" Type="Self.Dairy" Multiplicity="*" />
@@ -173,18 +149,6 @@
             </Principal>
             <Dependent Role="Dairy">
               <PropertyRef Name="TypeMeeting" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Dairy__UserId__44FF419A">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="Dairy" Type="Self.Dairy" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Dairy">
-              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -209,18 +173,6 @@
             </Principal>
             <Dependent Role="Reference">
               <PropertyRef Name="ProfId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Reference__TypeR__5165187F">
-          <End Role="TypeReference" Type="Self.TypeReference" Multiplicity="0..1" />
-          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeReference">
-              <PropertyRef Name="RefId" />
-            </Principal>
-            <Dependent Role="Reference">
-              <PropertyRef Name="TypeRef" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -334,24 +286,12 @@
           <EntitySet Name="TypeReference" EntityType="Self.TypeReference" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeUser" EntityType="Self.TypeUser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Dairy__RoomId__412EB0B6" Association="Self.FK__Dairy__RoomId__412EB0B6">
-            <End Role="Rooms" EntitySet="Rooms" />
-            <End Role="Dairy" EntitySet="Dairy" />
-          </AssociationSet>
           <AssociationSet Name="FK__Dairy__RoomId__4222D4EF" Association="Self.FK__Dairy__RoomId__4222D4EF">
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Dairy" EntitySet="Dairy" />
           </AssociationSet>
-          <AssociationSet Name="FK__Dairy__TypeMeeti__4316F928" Association="Self.FK__Dairy__TypeMeeti__4316F928">
-            <End Role="TypeMeeting" EntitySet="TypeMeeting" />
-            <End Role="Dairy" EntitySet="Dairy" />
-          </AssociationSet>
           <AssociationSet Name="FK__Dairy__TypeMeeti__440B1D61" Association="Self.FK__Dairy__TypeMeeti__440B1D61">
             <End Role="TypeMeeting" EntitySet="TypeMeeting" />
-            <End Role="Dairy" EntitySet="Dairy" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Dairy__UserId__44FF419A" Association="Self.FK__Dairy__UserId__44FF419A">
-            <End Role="users" EntitySet="users" />
             <End Role="Dairy" EntitySet="Dairy" />
           </AssociationSet>
           <AssociationSet Name="FK__Dairy__UserId__45F365D3" Association="Self.FK__Dairy__UserId__45F365D3">
@@ -360,10 +300,6 @@
           </AssociationSet>
           <AssociationSet Name="FK__Reference__ProfI__4F7CD00D" Association="Self.FK__Reference__ProfI__4F7CD00D">
             <End Role="Professions" EntitySet="Professions" />
-            <End Role="Reference" EntitySet="Reference" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Reference__TypeR__5165187F" Association="Self.FK__Reference__TypeR__5165187F">
-            <End Role="TypeReference" EntitySet="TypeReference" />
             <End Role="Reference" EntitySet="Reference" />
           </AssociationSet>
           <AssociationSet Name="FK__Reference__TypeR__52593CB8" Association="Self.FK__Reference__TypeR__52593CB8">
@@ -418,10 +354,8 @@
           <Property Name="title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Rooms" Relationship="Self.FK__Dairy__RoomId__412EB0B6" FromRole="Dairy" ToRole="Rooms" />
           <NavigationProperty Name="Rooms1" Relationship="Self.FK__Dairy__RoomId__4222D4EF" FromRole="Dairy" ToRole="Rooms" />
-          <NavigationProperty Name="TypeMeeting1" Relationship="Self.FK__Dairy__TypeMeeti__4316F928" FromRole="Dairy" ToRole="TypeMeeting" />
-          <NavigationProperty Name="TypeMeeting2" Relationship="Self.FK__Dairy__TypeMeeti__440B1D61" FromRole="Dairy" ToRole="TypeMeeting" />
-          <NavigationProperty Name="users" Relationship="Self.FK__Dairy__UserId__44FF419A" FromRole="Dairy" ToRole="users" />
-          <NavigationProperty Name="users1" Relationship="Self.FK__Dairy__UserId__45F365D3" FromRole="Dairy" ToRole="users" />
+          <NavigationProperty Name="TypeMeeting1" Relationship="Self.FK__Dairy__TypeMeeti__440B1D61" FromRole="Dairy" ToRole="TypeMeeting" />
+          <NavigationProperty Name="users" Relationship="Self.FK__Dairy__UserId__45F365D3" FromRole="Dairy" ToRole="users" />
         </EntityType>
         <EntityType Name="Kupot1">
           <Key>
@@ -455,11 +389,10 @@
           <Property Name="ProfId" Type="Int32" />
           <Property Name="TypeRef" Type="Int32" />
           <Property Name="recommendation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="TypeReference" Relationship="Self.FK__Reference__TypeR__5165187F" FromRole="Reference" ToRole="TypeReference" />
-          <NavigationProperty Name="TypeReference1" Relationship="Self.FK__Reference__TypeR__52593CB8" FromRole="Reference" ToRole="TypeReference" />
+          <NavigationProperty Name="TypeReference" Relationship="Self.FK__Reference__TypeR__52593CB8" FromRole="Reference" ToRole="TypeReference" />
           <NavigationProperty Name="users" Relationship="Self.FK__Reference__UserN__5441852A" FromRole="Reference" ToRole="users" />
           <NavigationProperty Name="Professions" Relationship="EzerMitzionModel.FK__Reference__ProfI__4F7CD00D" FromRole="Reference" ToRole="Professions" />
-          </EntityType>
+        </EntityType>
         <EntityType Name="Rooms">
           <Key>
             <PropertyRef Name="RoomId" />
@@ -475,8 +408,6 @@
           </Key>
           <Property Name="Subdomainid" Type="Int32" Nullable="false" />
           <Property Name="SubdomainName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Subdomain1" Relationship="Self.FK_Subdomain_Subdomain" FromRole="Subdomain" ToRole="Subdomain1" />
-          <NavigationProperty Name="Subdomain2" Relationship="Self.FK_Subdomain_Subdomain" FromRole="Subdomain1" ToRole="Subdomain" />
           <NavigationProperty Name="Professions" Relationship="EzerMitzionModel.FK_Professions_Subdomain" FromRole="Subdomain" ToRole="Professions" />
         </EntityType>
         <EntityType Name="TypeMeeting">
@@ -485,8 +416,7 @@
           </Key>
           <Property Name="MeetingId" Type="Int32" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Dairy" Relationship="Self.FK__Dairy__TypeMeeti__4316F928" FromRole="TypeMeeting" ToRole="Dairy" />
-          <NavigationProperty Name="Dairy1" Relationship="Self.FK__Dairy__TypeMeeti__440B1D61" FromRole="TypeMeeting" ToRole="Dairy" />
+          <NavigationProperty Name="Dairy" Relationship="Self.FK__Dairy__TypeMeeti__440B1D61" FromRole="TypeMeeting" ToRole="Dairy" />
         </EntityType>
         <EntityType Name="typeProfessions">
           <Key>
@@ -502,8 +432,7 @@
           </Key>
           <Property Name="RefId" Type="Int32" Nullable="false" />
           <Property Name="refname" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Reference" Relationship="Self.FK__Reference__TypeR__5165187F" FromRole="TypeReference" ToRole="Reference" />
-          <NavigationProperty Name="Reference1" Relationship="Self.FK__Reference__TypeR__52593CB8" FromRole="TypeReference" ToRole="Reference" />
+          <NavigationProperty Name="Reference" Relationship="Self.FK__Reference__TypeR__52593CB8" FromRole="TypeReference" ToRole="Reference" />
         </EntityType>
         <EntityType Name="TypeUser">
           <Key>
@@ -524,8 +453,7 @@
           <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="TypeUser" Type="Int32" Nullable="false" />
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Dairy" Relationship="Self.FK__Dairy__UserId__44FF419A" FromRole="users" ToRole="Dairy" />
-          <NavigationProperty Name="Dairy1" Relationship="Self.FK__Dairy__UserId__45F365D3" FromRole="users" ToRole="Dairy" />
+          <NavigationProperty Name="Dairy" Relationship="Self.FK__Dairy__UserId__45F365D3" FromRole="users" ToRole="Dairy" />
           <NavigationProperty Name="Reference" Relationship="Self.FK__Reference__UserN__5441852A" FromRole="users" ToRole="Reference" />
           <NavigationProperty Name="TypeUser1" Relationship="Self.FK_users_TypeUser" FromRole="users" ToRole="TypeUser" />
         </EntityType>
@@ -553,18 +481,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Dairy__TypeMeeti__4316F928">
-          <End Role="TypeMeeting" Type="Self.TypeMeeting" Multiplicity="0..1" />
-          <End Role="Dairy" Type="Self.Dairy" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeMeeting">
-              <PropertyRef Name="MeetingId" />
-            </Principal>
-            <Dependent Role="Dairy">
-              <PropertyRef Name="TypeMeeting" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Dairy__TypeMeeti__440B1D61">
           <End Role="TypeMeeting" Type="Self.TypeMeeting" Multiplicity="0..1" />
           <End Role="Dairy" Type="Self.Dairy" Multiplicity="*" />
@@ -577,18 +493,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Dairy__UserId__44FF419A">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="Dairy" Type="Self.Dairy" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Dairy">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Dairy__UserId__45F365D3">
           <End Role="users" Type="Self.users" Multiplicity="1" />
           <End Role="Dairy" Type="Self.Dairy" Multiplicity="*" />
@@ -598,18 +502,6 @@
             </Principal>
             <Dependent Role="Dairy">
               <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Reference__TypeR__5165187F">
-          <End Role="TypeReference" Type="Self.TypeReference" Multiplicity="0..1" />
-          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeReference">
-              <PropertyRef Name="RefId" />
-            </Principal>
-            <Dependent Role="Reference">
-              <PropertyRef Name="TypeRef" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -634,18 +526,6 @@
             </Principal>
             <Dependent Role="Reference">
               <PropertyRef Name="UserName" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Subdomain_Subdomain">
-          <End Role="Subdomain" Type="Self.Subdomain" Multiplicity="1" />
-          <End Role="Subdomain1" Type="Self.Subdomain" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Subdomain">
-              <PropertyRef Name="Subdomainid" />
-            </Principal>
-            <Dependent Role="Subdomain1">
-              <PropertyRef Name="Subdomainid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -681,25 +561,13 @@
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Dairy" EntitySet="Dairy" />
           </AssociationSet>
-          <AssociationSet Name="FK__Dairy__TypeMeeti__4316F928" Association="Self.FK__Dairy__TypeMeeti__4316F928">
-            <End Role="TypeMeeting" EntitySet="TypeMeeting" />
-            <End Role="Dairy" EntitySet="Dairy" />
-          </AssociationSet>
           <AssociationSet Name="FK__Dairy__TypeMeeti__440B1D61" Association="Self.FK__Dairy__TypeMeeti__440B1D61">
             <End Role="TypeMeeting" EntitySet="TypeMeeting" />
-            <End Role="Dairy" EntitySet="Dairy" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Dairy__UserId__44FF419A" Association="Self.FK__Dairy__UserId__44FF419A">
-            <End Role="users" EntitySet="users" />
             <End Role="Dairy" EntitySet="Dairy" />
           </AssociationSet>
           <AssociationSet Name="FK__Dairy__UserId__45F365D3" Association="Self.FK__Dairy__UserId__45F365D3">
             <End Role="users" EntitySet="users" />
             <End Role="Dairy" EntitySet="Dairy" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Reference__TypeR__5165187F" Association="Self.FK__Reference__TypeR__5165187F">
-            <End Role="TypeReference" EntitySet="TypeReference" />
-            <End Role="Reference" EntitySet="Reference" />
           </AssociationSet>
           <AssociationSet Name="FK__Reference__TypeR__52593CB8" Association="Self.FK__Reference__TypeR__52593CB8">
             <End Role="TypeReference" EntitySet="TypeReference" />
@@ -708,10 +576,6 @@
           <AssociationSet Name="FK__Reference__UserN__5441852A" Association="Self.FK__Reference__UserN__5441852A">
             <End Role="users" EntitySet="users" />
             <End Role="Reference" EntitySet="Reference" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Subdomain_Subdomain" Association="Self.FK_Subdomain_Subdomain">
-            <End Role="Subdomain" EntitySet="Subdomain" />
-            <End Role="Subdomain1" EntitySet="Subdomain" />
           </AssociationSet>
           <AssociationSet Name="FK_users_TypeUser" Association="Self.FK_users_TypeUser">
             <End Role="TypeUser" EntitySet="TypeUser" />

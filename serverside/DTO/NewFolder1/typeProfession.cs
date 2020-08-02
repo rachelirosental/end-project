@@ -20,7 +20,7 @@ namespace DTO.NewFolder1
             {
                 ProfessionId = p.ProfessionId,
                 Nameprofession = p.Nameprofession,
-                Professions = NewFolder1.Profession.GetListProfessinDTO(p.Professions as List<DAL.Professions>)
+                //Professions = Profession.GetListProfessinDTO(p.Professions as List<DAL.Professions>)
 
             };
             return dto;

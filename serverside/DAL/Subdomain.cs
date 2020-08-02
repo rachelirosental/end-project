@@ -23,8 +23,6 @@ namespace DAL
         public int Subdomainid { get; set; }
         public string SubdomainName { get; set; }
     
-        public virtual Subdomain Subdomain1 { get; set; }
-        public virtual Subdomain Subdomain2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Professions> Professions { get; set; }
     }
