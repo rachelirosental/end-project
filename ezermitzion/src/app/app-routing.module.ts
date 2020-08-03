@@ -19,7 +19,8 @@ import { RoomlistComponent } from './roomlist/roomlist.component';
 import { DairylistComponent } from './dairylist/dairylist.component';
 import { ManagerComponent } from './manager/manager.component';
 import { FormRefComponent } from './form-ref/form-ref.component';
-
+import { ChartComponent } from './chart/chart.component';
+import { GragchartComponent } from './gragchart/gragchart.component';
 
 const routes: Routes = [
 {path:'entry1',component: ManagerComponent}, 
@@ -40,7 +41,7 @@ const routes: Routes = [
 {path:'referencebuttons',component:ReferencebuttonsComponent},
 {path:'formreference',component:FormreferenceComponent},
 {path:'login',component:LoginComponent},
-{path:'',component:LoginComponent },
+{path:'',component:GragchartComponent },
 ];
 
 @NgModule({

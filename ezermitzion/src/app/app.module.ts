@@ -25,16 +25,40 @@ import { AuthGuard } from './auth.guard';
 import { RoomlistComponent } from './roomlist/roomlist.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { NgModule } from '@angular/core';
+import { NgModule,enableProdMode  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap'
+import { FusionChartsModule } from 'angular-fusioncharts';
+ 
+// Import FusionCharts library and chart modules
+import * as FusionCharts from 'fusioncharts';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+
+import * as chartspower from "fusioncharts/fusioncharts.powercharts";
+import * as charts from 'fusioncharts/fusioncharts.charts';
+import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import * as ExcelExport from "fusioncharts/fusioncharts.excelexport";
+
+// import * as FusionMaps from "fusioncharts/fusioncharts.maps";
+// import * as Israel from "fusionmaps/maps/fusioncharts.israel";
+// import World from 'fusioncharts/maps/es/fusioncharts.world';
+
+FusionChartsModule.fcRoot(FusionCharts, charts, FusionTheme, chartspower, ExcelExport);
 // import { DemoComponent } from './component';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { FormRefComponent } from './form-ref/form-ref.component';
 import { NewdairyComponent } from './newdairy/newdairy.component';
 import { DairylistComponent } from './dairylist/dairylist.component';
 import { SetdetailRoomComponent } from './setdetail-room/setdetail-room.component';
+import { ChartComponent } from './chart/chart.component';
+import { GragchartComponent } from './gragchart/gragchart.component';
+
+FusionChartsModule.fcRoot(
+  FusionCharts,
+  Charts,
+  FusionTheme
+)
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +84,9 @@ import { SetdetailRoomComponent } from './setdetail-room/setdetail-room.componen
     NewdairyComponent,
     DairylistComponent,
     SetdetailRoomComponent,
+    ChartComponent,
+    GragchartComponent,
+
     // [DemoComponent],
   ],
   imports: [
@@ -71,7 +98,8 @@ import { SetdetailRoomComponent } from './setdetail-room/setdetail-room.componen
     NgbModule,
     CommonModule,
     FormsModule,
-    NgbModalModule,
+    NgbModalModule
+    ,FusionChartsModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
