@@ -22,8 +22,8 @@ export class GragchartComponent{
             "chart": {
               "caption": "התפלגות על פי נתונים סטטיסטים של עובדים",
               "subCaption": "In MMbbl = One Million barrels",
-              "xAxisName": "Country",
-              "yAxisName": "Reserves (MMbbl)",
+              "xAxisName": "עובדים",
+              "yAxisName": "כמות הפניות",
               "numberSuffix": "K",
               "theme": "fusion",
             },
