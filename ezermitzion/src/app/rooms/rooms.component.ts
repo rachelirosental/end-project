@@ -8,7 +8,7 @@ import { RoomService } from '../shared/services/room.service';
   styleUrls: ['./rooms.component.scss']
 })
 export class RoomsComponent implements OnInit {
-public room:Room;
+public room:Room=new Room();
   constructor(public RoomService:RoomService) { }
 
   ngOnInit(): void {

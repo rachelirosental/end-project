@@ -46,12 +46,12 @@ namespace serverside.Controllers
 
         [Route("create")]
         // POST: api/User
-        public bool CreateRoom([FromBody]Dairy room)
+        public bool CreateRoom([FromBody]Room room)
         {
             try
             {
-                return true;
-                    //BL.RoomLogic.AddRoom(room);
+                
+                    return BL.RoomLogic.AddRoom(room);
             }
             catch
             {
@@ -77,7 +77,7 @@ namespace serverside.Controllers
 
         [Route("delete/{id}")]
         // DELETE: api/User/5
-        public static int DeleteRoom(int id)
+        public  int DeleteRoom(int id)
         {
             try
             {
@@ -100,7 +100,7 @@ namespace serverside.Controllers
             }
             catch
             {
-                return null;
+                return new List<Room>();
             }
         }
     }

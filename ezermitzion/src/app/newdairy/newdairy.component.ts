@@ -14,42 +14,46 @@ import { RoomService } from '../shared/services/room.service';
 })
 export class NewdairyComponent implements OnInit {
 
-dairy:dairy={
-  dairyId:1,
-  description:" ",
-  start:new Date(),
-  end:new Date(),
-  color:{
-    secondary:"",
-    primary:"",
-  },
-  userId:1,
-  title:"",
-  typeMeeting:1,
-  users:new user(),
-  typeMeeting1:new TypeMeeting(),
-  rooms:new Room(),
-  roomId:1,
-  label:"",
-  onClick: ({ event }: { event: dairy}): void => {
+  dairy: dairy = {
+    dairyId: 1,
+    description: " ",
+    start: new Date(),
+    end: new Date(),
+    color: {
+      secondary: "",
+      primary: "",
+    },
+    userId: 1,
+    title: "",
+    typeMeeting: 1,
+    users: new user(),
+    typeMeeting1: new TypeMeeting(),
+    rooms: new Room(),
+    roomId: 1,
+    label: "",
+    onClick: ({ event }: { event: dairy }): void => {
 
-  }
+    }
 
-};
-roomslist:Room[]
-  constructor(public RoomService :RoomService ) { }
+  };
+  roomslist: Room[]
+  constructor(public RoomService: RoomService) { }
 
   ngOnInit(): void {
   }
-  getroomlist(){  
-    console.log('hellllll')
-    this. RoomService.getlistrooms(this.dairy).subscribe((res:Room[])=>{
-      localStorage.setItem("roomslist",JSON.stringify(res))
-      this.roomslist=res,
-    console.log(this.roomslist)});
+  getroomlist() {
+    debugger;
+    console.log('hellllll');
+    this.dairy.end=new Date(this.dairy.end);
+    this.dairy.start=new Date(this.dairy.start);
+    this.RoomService.getlistrooms(this.dairy).subscribe((res: Room[]) => {
+      localStorage.setItem("roomslist", JSON.stringify(res))
+      this.roomslist = res,
+        console.log(this.roomslist)
+    });
   }
-    
 
-  }
+
+}
 
 

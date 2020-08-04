@@ -6,7 +6,7 @@
     <input type="text" id="description" name="description"  [(ngModel)]="dairy.start">
 
     <label for="Tel" >שעת סיום</label>
-    <input type="text" id="bornDate" name="bornDate"  [(ngModel)]="dairy.end">
+    <input type="text" id="bornDate" name="bornDate" (mouseup)="getroomlist()" [(ngModel)]="dairy.end">
 
     <label for="mail" >סוג פגישה</label>
     <input type="text" id="isCare" name="isCare"  [(ngModel)]="dairy.typeMeeting1.description">

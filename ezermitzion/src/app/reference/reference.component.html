@@ -24,7 +24,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let r of reference">
+                <tr *ngFor="let r of references">
                     <td >{{r.date}}</td>
                     <td>{{r.description}}</td>
                     <td>{{r.bornDate}}</td>
@@ -46,3 +46,4 @@
   </div>  
   
 <button (click)="UserService.return()">return</button>
+<p><a  class="btn btn-block btn-primary" (click)="chart()">סטטיסטיקות</a></p>

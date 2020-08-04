@@ -17,14 +17,18 @@ export class ReferenceComponent implements OnInit {
   reference:any;
   inputText:any;
  
-  constructor(private httpClient:HttpClient,public ReferenceService:ReferenceService,public UserService:UserService,private modalService: NgbModal) { }
+  constructor(private router: Router,private httpClient:HttpClient,public ReferenceService:ReferenceService,public UserService:UserService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.loadReferences();
   }
   loadReferences(){
-    this.ReferenceService.getreference().subscribe((references:Reference[])=>{this.reference=references;
-    console.log(this.reference)});
+    this.ReferenceService.getreference().subscribe((references:Reference[])=>{this.references=references;
+    console.log(this.references);
+  this.references.forEach(element => {
+    element.bornDate=new Date( element.bornDate);
+    element.bornDate=new Date( element.date);
+  });});
   }
   deleteReference(id:number){
     this.ReferenceService.delete(id).subscribe(res=>{
@@ -37,6 +41,7 @@ export class ReferenceComponent implements OnInit {
   }
   next(r:Reference){
     const modalRef = this.modalService.open(SetdetailreferenceComponent);
+    debugger;
     modalRef.componentInstance.reference = {...r};
     modalRef.result.then(res=>{
       this.loadReferences();
@@ -61,6 +66,9 @@ export class ReferenceComponent implements OnInit {
      } 
   console.log('input',this.inputText)
   
+  }
+  chart(){
+    this.router.navigateByUrl('/piechart');
   }
   
 

@@ -14,7 +14,7 @@ export class SetdetailreferenceComponent implements OnInit {
   constructor(public ReferenceService:ReferenceService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getRefById();
+    //this.getRefById();
   }
   updateuser(){
 

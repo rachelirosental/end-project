@@ -10,7 +10,7 @@ import { Room } from '../Data/Room';
 export class SetdetailRoomComponent implements OnInit {
 
   constructor(public roomService:RoomService) { }
-  @Input() public room:Room;
+  @Input() public room:Room=new Room();
   
   ngOnInit(): void {
   }

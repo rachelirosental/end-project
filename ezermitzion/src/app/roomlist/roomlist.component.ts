@@ -47,7 +47,7 @@ room:Room;
   }
   next(r:Room){
     const modalRef = this.modalService.open(SetdetailRoomComponent);
-    modalRef.componentInstance.Room = {...r};
+    modalRef.componentInstance.room = {...r};
     modalRef.result.then(res=>{
       this.getrooms();
     },err=>{

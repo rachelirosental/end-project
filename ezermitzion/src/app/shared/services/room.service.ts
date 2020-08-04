@@ -35,6 +35,7 @@ import { DairyComponent } from 'src/app/dairy/dairy.component';
       }
       getlistrooms(dairy:dairy) {
         debugger;
+        dairy.onClick=null;
         return this.httpClient.post(this.url + "/getlistrooms" ,dairy );
       }
 

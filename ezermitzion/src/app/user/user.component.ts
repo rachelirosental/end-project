@@ -19,8 +19,9 @@ user:any;
 
 inputText:any;
   inputdelete:any;
+  
 
-  constructor(private httpClient:HttpClient,public UserService:UserService,private modalService: NgbModal) { }
+  constructor(private router: Router,private httpClient:HttpClient,public UserService:UserService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     
@@ -84,6 +85,9 @@ console.log('input',this.inputText)
     this.users=p;
     console.log('user',this.users)
 
+}
+chart(){
+  this.router.navigateByUrl('/grafchart');
 }
 
 }
