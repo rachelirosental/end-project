@@ -13,6 +13,7 @@ export class ChartComponent implements OnInit {
   chart: any;
   "data":Charters[]=[]
   constructor(private zone: NgZone ,public ChartService:ChartService) {
+    this.getCountTypeRef();
     this.dataSource = {
       "chart": {
           "caption": "התפלגות על פי נתונים סטטיסטים של פניות מטופלות לפי תחומים",
@@ -25,20 +26,20 @@ export class ChartComponent implements OnInit {
           "showlegend": "0",
           "theme": "fusion",
       },
-      "data":this.getCountTypeRef()
-      // [{
-      //     "label": "Apache",
-      //     "value": "32647479"
-      // }, {
-      //     "label": "Microsoft",
-      //     "value": "22100932"
-      // }, {
-      //     "label": "Zeus",
-      //     "value": "14376"
-      // }, {
-      //     "label": "Other",
-      //     "value": "18674221"
-      // }]
+      "data":
+      [{
+          "label": "Apache",
+          "value": "32647479"
+      }, {
+          "label": "Microsoft",
+          "value": "22100932"
+      }, {
+          "label": "Zeus",
+          "value": "14376"
+      }, {
+          "label": "Other",
+          "value": "18674221"
+      }]
     };
    
   }
