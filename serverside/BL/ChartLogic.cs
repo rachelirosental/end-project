@@ -9,13 +9,13 @@ namespace BL
 public    class ChartLogic
     {
         public static DAL.EzerMitzionEntities db = new DAL.EzerMitzionEntities();
-       public Dictionary<string, int> counttype()
+       public static Dictionary<string, string> CounttypeRef()
         {
             int count = 0;
-            Dictionary<string, int> typerefCount = new Dictionary<string, int>();
+            Dictionary<string, string> typerefCount = new Dictionary<string, string>();
             foreach(var type in db.TypeReference)
             { count = db.Reference.Count(r => r.TypeRef == type.RefId);
-                typerefCount.Add(type.refname, count);
+                typerefCount.Add(type.refname,Convert.ToString( count));
 
 
             }

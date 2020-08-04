@@ -1,5 +1,6 @@
 import { Component, OnInit,NgZone } from '@angular/core';
-
+import { ChartService } from '../shared/services/chart.service';
+import {Charters} from 'src/app/Data/chart'
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
@@ -10,7 +11,8 @@ export class ChartComponent implements OnInit {
   dataSource: any;
   selectedSlice = 'none';
   chart: any;
-  constructor(private zone: NgZone) {
+  "data":Charters[]=[]
+  constructor(private zone: NgZone ,public ChartService:ChartService) {
     this.dataSource = {
       "chart": {
           "caption": "התפלגות על פי נתונים סטטיסטים של פניות מטופלות לפי תחומים",
@@ -23,20 +25,22 @@ export class ChartComponent implements OnInit {
           "showlegend": "0",
           "theme": "fusion",
       },
-      "data": [{
-          "label": "Apache",
-          "value": "32647479"
-      }, {
-          "label": "Microsoft",
-          "value": "22100932"
-      }, {
-          "label": "Zeus",
-          "value": "14376"
-      }, {
-          "label": "Other",
-          "value": "18674221"
-      }]
+      "data":this.getCountTypeRef()
+      // [{
+      //     "label": "Apache",
+      //     "value": "32647479"
+      // }, {
+      //     "label": "Microsoft",
+      //     "value": "22100932"
+      // }, {
+      //     "label": "Zeus",
+      //     "value": "14376"
+      // }, {
+      //     "label": "Other",
+      //     "value": "18674221"
+      // }]
     };
+   
   }
 
   // FusionCharts initialized listener to get the chart instance
@@ -70,10 +74,21 @@ export class ChartComponent implements OnInit {
       this.selectedSlice = isSliced ? 'none' : this.getLabel(dataIndex).toLowerCase();
     })
   }
-
+  getCountTypeRef(){
+   return this.ChartService.getCountTypeRef().subscribe(res=>{
+    localStorage.setItem("counttyperef",JSON.stringify(res)) ,
+    this.dataSource.data=res,
+    console.log(typeof(this.dataSource.data))});
+    
+  
+  
+ 
+}
   ngOnInit() {
+
     // setTimeout(() => {
     //   SelectedSingleton.change(this.sampleCode['ex24'].title);
     // })
   }
+
 }
