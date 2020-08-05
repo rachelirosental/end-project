@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using DTO.NewFolder1;
+using DAL;
 
 namespace BL
 {
@@ -12,7 +13,7 @@ namespace BL
     {
         public static DAL.EzerMitzionEntities db = new DAL.EzerMitzionEntities();
        
-        public static bool AddReference(Reference reference)
+        public static bool AddReference(DTO.NewFolder1.Reference reference)
         {
             try
             {
@@ -44,12 +45,12 @@ namespace BL
                 return 1;
             }
         }
-        public static Reference GetReference(int id)
+        public static DTO.NewFolder1.Reference GetReference(int id)
         {
             try
             {
                 var q1 = db.Reference.FirstOrDefault(w => w.RefId == id);
-                return Reference.GetReference(q1);
+                return DTO.NewFolder1.Reference.GetReference(q1);
             }
             catch
             {
@@ -57,11 +58,11 @@ namespace BL
             }
 
         }
-        public static List<Reference> Allreference()
+        public static List<DTO.NewFolder1.Reference> Allreference()
         {
             try
             {
-                return Reference.GetListReferenceDTO(db.Reference.ToList());
+                return DTO.NewFolder1.Reference.GetListReferenceDTO(db.Reference.ToList());
             }
             catch
             {
@@ -69,7 +70,7 @@ namespace BL
             }
 
         }
-        public static bool UpdateReference(Reference reference)
+        public static bool UpdateReference(DTO.NewFolder1.Reference reference)
         {
             try
             {
@@ -97,11 +98,11 @@ namespace BL
             }
 
         }
-        public static List<TypeReference> getTypeRefList()
+        public static List<DTO.NewFolder1.TypeReference> getTypeRefList()
         {
             try
             {
-                return TypeReference.GetListTypeRefDTO(db.TypeReference.ToList());
+                return DTO.NewFolder1.TypeReference.GetListTypeRefDTO(db.TypeReference.ToList());
             }
             catch
             {
@@ -109,5 +110,20 @@ namespace BL
             }
         }
 
+        public static List<DTO.NewFolder1.Reference> getrefbyprofid(int id)
+        {
+            try
+            {
+               var references = db.Professions.FirstOrDefault(p => p.ProfId == id).Reference ;
+                if (references == null)
+                    return null;
+                return DTO.NewFolder1.Reference.GetListReferenceDTO(references);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
     }
 }

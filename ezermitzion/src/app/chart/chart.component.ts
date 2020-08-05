@@ -13,7 +13,7 @@ export class ChartComponent implements OnInit {
   chart: any;
   "data":Charters[]=[]
   constructor(private zone: NgZone ,public ChartService:ChartService) {
-    this.getCountTypeRef();
+
     this.dataSource = {
       "chart": {
           "caption": "התפלגות על פי נתונים סטטיסטים של פניות מטופלות לפי תחומים",

@@ -37,9 +37,9 @@ namespace DTO.NewFolder1
                 ProfId = r.ProfId.Value,
                 TypeRef = r.TypeRef.Value,
                 recommendation=r.recommendation,
-               // Professions= NewFolder1.Profession.GetProfession1(r.Professions),
-                //users = NewFolder1.user.GetUser(r.users),
-                TypeReference=NewFolder1.TypeReference.GetTypeReference(r.TypeReference) 
+               Professions= NewFolder1.Profession.GetProfession1(r.Professions),
+               users = NewFolder1.user.GetUser(r.users),
+               TypeReference=NewFolder1.TypeReference.GetTypeReference(r.TypeReference) 
 
             };
             return dto;

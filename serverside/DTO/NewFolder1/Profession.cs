@@ -47,7 +47,7 @@ namespace DTO.NewFolder1
                 IsDeleted = p.IsDeleted,
                 TypeProfessions = NewFolder1.typeProfession.GetTypeProfession(p.typeProfessions),
                 Subdomain1 = NewFolder1.subDomain.GetSubDomain(p.Subdomain1),
-                Reference = NewFolder1.Reference.GetListReferenceDTO(p.Reference.ToList()),
+                //Reference = NewFolder1.Reference.GetListReferenceDTO(p.Reference.ToList()),
                 Opinions = NewFolder1.Opinion.GetListOpinionDTO(p.Opinion as List<DAL.Opinion>)
 
             };

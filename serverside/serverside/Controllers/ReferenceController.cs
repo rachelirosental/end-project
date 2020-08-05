@@ -9,7 +9,7 @@ using BL;
 namespace API.Controllers
 {
     [RoutePrefix("api/Reference")]
-    public class ReferenceController:ApiController
+    public class ReferenceController : ApiController
     {
         // GET: api/Reference
 
@@ -24,7 +24,7 @@ namespace API.Controllers
             {
                 return null;
             }
-            
+
 
         }
         [Route("getTypeRefList")]
@@ -72,7 +72,7 @@ namespace API.Controllers
             {
                 return false;
             }
-            
+
         }
 
         [Route("update")]
@@ -103,6 +103,20 @@ namespace API.Controllers
             {
                 return 0;
             }
+        }
+
+        [Route("getrefbyprofid/{id}")]
+        public List<Reference> getrefbyprofid(int id)
+        {
+            try
+            {
+                return BL.referenceLogic.getrefbyprofid(id);
+            }
+            catch
+            {
+                return null;
+            }
+
         }
     }
 }

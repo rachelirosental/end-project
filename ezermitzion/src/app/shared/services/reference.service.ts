@@ -34,7 +34,10 @@ import { TypeReference } from 'src/app/Data/TypeReference';
       getTypeRefList(): Observable<TypeReference[]> {
         return this.httpClient.get<TypeReference[]>(this.url + "/getTypeRefList/" );
       }
-  
+      getrefbyprofid(id:number):Observable<Reference[]>{
+        return this.httpClient.get<Reference[]>(this.url+"/getrefbyprofid/"+ id );
+      }
+    
     }
    
 

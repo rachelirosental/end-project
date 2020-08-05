@@ -53,6 +53,7 @@ import { DairylistComponent } from './dairylist/dairylist.component';
 import { SetdetailRoomComponent } from './setdetail-room/setdetail-room.component';
 import { ChartComponent } from './chart/chart.component';
 import { GragchartComponent } from './gragchart/gragchart.component';
+import { ReferencemodalComponent } from './referencemodal/referencemodal.component';
 
 FusionChartsModule.fcRoot(
   FusionCharts,
@@ -86,6 +87,7 @@ FusionChartsModule.fcRoot(
     SetdetailRoomComponent,
     ChartComponent,
     GragchartComponent,
+    ReferencemodalComponent,
 
     // [DemoComponent],
   ],
