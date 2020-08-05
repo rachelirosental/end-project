@@ -117,6 +117,8 @@ FusionChartsModule.fcRoot(
     CreateProfessionComponent,
     NewdairyComponent,
     ReferenceComponent,
+    RoomsComponent,
+    SetdetailRoomComponent
 
   ]
 })
