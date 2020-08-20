@@ -5,8 +5,10 @@ import { Observable } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProfessionDetialsComponent } from '../profession-detials/profession-detials.component';
 import {TypeProfessions } from 'src/app/Data/TypeProfessions';
+import {opinion } from 'src/app/Data/Opinion';
 import { CreateProfessionComponent } from '../create-profession/create-profession.component';
 import { ReferencemodalComponent } from '../referencemodal/referencemodal.component';
+import { OpinionmaodalComponent } from '../opinionmaodal/opinionmaodal.component';
 import { Router } from '@angular/router';
 import {UserService } from '../shared/services/user.service';
 
@@ -21,6 +23,8 @@ export class ProfessioListComponent implements OnInit {
   inputdelete:any;
 public professions:Profession[]= [];
 public profession:Profession;
+public opinion:opinion;
+public opinions:opinion[]=[];
 
 
 
@@ -107,6 +111,11 @@ create(){
     })
     
 
+  }
+  openModalopinion(p:Profession){
+    const modalRef = this.modalService.open(OpinionmaodalComponent);
+    modalRef.componentInstance.profession ={...p} ;
+    
   }
 
  }

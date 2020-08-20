@@ -54,6 +54,8 @@ import { SetdetailRoomComponent } from './setdetail-room/setdetail-room.componen
 import { ChartComponent } from './chart/chart.component';
 import { GragchartComponent } from './gragchart/gragchart.component';
 import { ReferencemodalComponent } from './referencemodal/referencemodal.component';
+import { OpinionmaodalComponent } from './opinionmaodal/opinionmaodal.component';
+import { OpinionlistmodalComponent } from './opinionlistmodal/opinionlistmodal.component';
 
 FusionChartsModule.fcRoot(
   FusionCharts,
@@ -88,6 +90,8 @@ FusionChartsModule.fcRoot(
     ChartComponent,
     GragchartComponent,
     ReferencemodalComponent,
+    OpinionmaodalComponent,
+    OpinionlistmodalComponent,
 
     // [DemoComponent],
   ],
@@ -118,8 +122,10 @@ FusionChartsModule.fcRoot(
     NewdairyComponent,
     ReferenceComponent,
     RoomsComponent,
-    SetdetailRoomComponent
-
+    SetdetailRoomComponent,
+    OpinionmaodalComponent,
+    OpinionlistmodalComponent,
+    ReferencemodalComponent
   ]
 })
 export class AppModule { }

@@ -118,5 +118,20 @@ namespace API.Controllers
             }
 
         }
+        
+
+        [Route("getrefbyuserid/{id}")]
+        public List<Reference> getrefbyuserid(int id)
+        {
+            try
+            {
+                return BL.referenceLogic.getrefbyuserfid(id);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
     }
 }

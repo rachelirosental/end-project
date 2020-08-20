@@ -240,6 +240,7 @@
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\DairyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OpinionController.cs" />
     <Compile Include="Controllers\ProfessionController.cs" />
     <Compile Include="Controllers\ReferenceController.cs" />
     <Compile Include="Controllers\RoomController.cs" />

@@ -125,5 +125,20 @@ namespace BL
             }
 
         }
+        public static List<DTO.NewFolder1.Reference> getrefbyuserfid(int id)
+        {
+            try
+            {
+                var references = db.users.FirstOrDefault(u => u.UserId == id).Reference;
+                if (references == null)
+                    return null;
+                return DTO.NewFolder1.Reference.GetListReferenceDTO(references);
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
     }
 }

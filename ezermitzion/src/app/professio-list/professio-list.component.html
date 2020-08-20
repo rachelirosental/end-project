@@ -23,7 +23,7 @@
                   <th style="width: 100px !important;">כתובת אישית</th>
                   <th style="width: 100px !important;">כתובת מרפאה</th>
                   <th style="width: 60px !important;">תואר</th>
-                  <th style="width: 160px !important;">חוות דעת פרטית</th>
+                  
               </tr>
           </thead>
           <tbody>
@@ -36,14 +36,15 @@
                   <td >{{p.privateAddres}}</td>
                   <td >{{p.clinicAddres}}</td>
                   <td >{{p.subdomain1.subdomainName}}</td>
-                  <td >{{p.privateOpinion}}</td>
+                  
                   <!-- <td *ngIf="p.typeProfessions">{{p.typeProfessions.nameprofession}}</td> -->
                   
                  <td>
         <a  class="add" title="Add" data-toggle="tooltip" ><i class="material-icons" ></i></a>
                       <a class="edit" title="Edit" data-toggle="tooltip" ><i class="material-icons" (click)="openModal(p)"> </i></a>
                       <a class="delete" title="Delete" data-toggle="tooltip" (click)="deleteprofession(p.profId)"><i class="material-icons"></i></a>
-                      <img  src="./assets/img/iconlist.png" (click)="openModalref(p)"> 
+                      <img id="a" title="List Reference" src="./assets/img/iconlist.png" (click)="openModalref(p)"> 
+                      <img id="a"  title="opinion" src="./assets/img/opinion.svg" (click)="openModalopinion(p)"> 
                  </td>
               </tr>
             

@@ -7,6 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SetdetailuserComponent } from '../setdetailuser/setdetailuser.component';
 import { TypeUser } from '../Data/TypeUser';
 import { FormuserComponent } from '../formuser/formuser.component';
+import { ReferencemodalComponent } from '../referencemodal/referencemodal.component';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -89,5 +90,13 @@ console.log('input',this.inputText)
 chart(){
   this.router.navigateByUrl('/grafchart');
 }
+openModalref(u:user){
+  const modalRef = this.modalService.open(ReferencemodalComponent);
+  modalRef.componentInstance.user = {...u};
+  modalRef.result.then(res=>{
+    this.loadUsers();
+  },err=>{
+    this.loadUsers();
+  })
 
-}
+}}

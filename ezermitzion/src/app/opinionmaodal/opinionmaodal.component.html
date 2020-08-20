@@ -1,0 +1,20 @@
+
+<div>
+    
+  
+    <label for="profPersonid" >שם בעל מקצוע</label>
+    <input type="text" id="profPersonid" name="profPersonid"  [(ngModel)]="profession.profName" >
+
+    <label for="description">חוות דעת</label>
+    <input type="text" id="description" name="description"  [(ngModel)]="opinion.description">
+
+    <label for="date" > תאריך</label>
+    <input type="text" id="date" name="date"  [(ngModel)]="opinion.date">
+
+    <label for="mark" >ציון</label>
+    <input type="text" id="mark" name="mark"  [(ngModel)]="opinion.mark">
+
+    <input type="submit" value="אישור" (click)="addopinion()">
+    
+    <input type="submit" value="צפיה ברשימת חוות דעת קודמות" (click)="listopinion(profession)">
+</div>

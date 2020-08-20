@@ -37,7 +37,9 @@ import { TypeReference } from 'src/app/Data/TypeReference';
       getrefbyprofid(id:number):Observable<Reference[]>{
         return this.httpClient.get<Reference[]>(this.url+"/getrefbyprofid/"+ id );
       }
-    
+      getrefbyuserid(id:number):Observable<Reference[]>{
+        return this.httpClient.get<Reference[]>(this.url+"/getrefbyuserid/"+ id );
+      }
     }
    
 

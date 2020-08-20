@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8"><h2>Opinion <b>Details</b></h2></div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 160px !important;">איש מקצוע</th>
+                    <th style="width: 120px !important;">חוות דעת</th>
+                    <th style="width: 160px !important;">תאריך</th>
+                    <th style="width: 50px !important;">ציון</th>
+                  
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let o of opinions">
+                    <td >{{o.profPersonid}}</td>
+                    <td>{{o.description}}</td>
+                    <td>{{o.date}}</td>
+                    <td>{{o.mark}}</td>
+                    <td>
+          <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
+                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"> </i></a>
+                        <a class="delete" title="Delete" data-toggle="tooltip" ><i class="material-icons"></i></a>
+                    </td>
+                </tr>
+          
+            </tbody>
+        </table>
+    </div>
+  </div>  
+  
+<!-- <button (click)="UserService.return()">return</button>
+<p><a  class="btn btn-block btn-primary" (click)="chart()">סטטיסטיקות</a></p> -->
