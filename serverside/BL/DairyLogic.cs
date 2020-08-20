@@ -25,5 +25,30 @@ namespace BL
             }
 
         }
+
+        public static bool AddDairy(Dairy dairy)
+        {
+            try
+            {
+                var r = DTO.NewFolder1.Dairy.GetDairy(dairy);
+            
+                r.Rooms = db.Rooms.FirstOrDefault(p => p.RoomId == r.RoomId);
+                db.Dairy.Add(r);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+
+
+        }
+        public static List<DTO.NewFolder1.TypeMeeting> GetTypeMeeting()
+        {
+            return DTO.NewFolder1.TypeMeeting.GetListTypeMeetingDTO(db.TypeMeeting.ToList());
+
+        }
     }
 }

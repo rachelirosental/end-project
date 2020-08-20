@@ -36,6 +36,16 @@ namespace DTO.NewFolder1
             };
             return type;
         }
+        public static List<TypeMeeting> GetListTypeMeetingDTO(List<DAL.TypeMeeting> LtypeMeeting)
+        {
+            if (LtypeMeeting == null)
+                return null;
+            List<TypeMeeting> l = new List<TypeMeeting>();
+
+            LtypeMeeting.ForEach(t => l.Add(GetTypeMeeting(t)));
+            return l;
+
+        }
 
     }
 }

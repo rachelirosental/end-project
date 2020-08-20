@@ -92,11 +92,19 @@ namespace BL
         }
 
         public static List<Room> GetListRoom(DateTime start,DateTime end)
-        {    
-         
+        {
+            
+            
             try
             {
-                List<DAL.Rooms> r = db.Rooms.Where(d => isnotoverloap(d, start, end)).ToList();
+                List<DAL.Rooms> r = new List<DAL.Rooms>();
+                foreach (var room in db.Rooms)
+                {
+                    if (isnotoverloap(room, start, end) == true)
+                        r.Add(room);
+
+                }
+              
                 if (r == null)
                     return null;
                 return Room.GetListRoomDTO(r);
