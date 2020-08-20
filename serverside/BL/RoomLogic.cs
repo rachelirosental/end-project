@@ -97,6 +97,8 @@ namespace BL
             try
             {
                 List<DAL.Rooms> r = db.Rooms.Where(d => isnotoverloap(d, start, end)).ToList();
+                if (r == null)
+                    return null;
                 return Room.GetListRoomDTO(r);
               
             }
