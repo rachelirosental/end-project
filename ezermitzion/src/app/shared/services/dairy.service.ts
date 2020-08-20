@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { dairy } from 'src/app/Data/dairy';
+import { TypeMeeting } from 'src/app/Data/TypeMeeting';
 @Injectable({
     providedIn: 'root'
   })
@@ -16,5 +17,12 @@ import { dairy } from 'src/app/Data/dairy';
       }
       getdaries(id:number) {
          return this.httpClient.get(this.url + "/getdaries/" + id);
+      }
+      create(dairy: dairy) {
+        debugger;
+        return this.httpClient.post(this.url + "/create", dairy);
+      }
+      getTypeMeetList(): Observable<TypeMeeting[]> {
+        return this.httpClient.get<TypeMeeting[]>(this.url + "/getTypeMeetingList" );
       }
     }

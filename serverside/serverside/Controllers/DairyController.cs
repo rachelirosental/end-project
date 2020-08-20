@@ -1,4 +1,5 @@
-﻿using DTO.NewFolder1;
+﻿using BL;
+using DTO.NewFolder1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,33 @@ namespace serverside.Controllers
 
         }
 
+        [Route("create")]
+        // POST: api/User
+        public bool PostUser([FromBody]Dairy dairy)
+        {
+            try
+            {
+                return BL.DairyLogic.AddDairy(dairy);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        [Route("getTypeMeetingList")]
+        public List<TypeMeeting> getTypeUserList()
+        {
+            try
+            {
+                return DairyLogic.GetTypeMeeting();
+
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
 
     }
 }

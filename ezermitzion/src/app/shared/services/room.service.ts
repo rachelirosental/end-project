@@ -7,6 +7,8 @@ import { stringify } from 'querystring';
 import { getLocaleDateTimeFormat } from '@angular/common';
 import { dairy } from 'src/app/Data/dairy';
 import { DairyComponent } from 'src/app/dairy/dairy.component';
+import { MyDate } from 'src/app/Data/mydate';
+import { user } from 'src/app/Data/user';
 
 @Injectable({
     providedIn: 'root'
@@ -16,7 +18,7 @@ import { DairyComponent } from 'src/app/dairy/dairy.component';
     constructor(public httpClient: HttpClient) {
       this.url = environment.url + "Room";
     }
-    
+         public  mydate =new MyDate();
     delete(id:number)  {
         return this.httpClient.delete(this.url + "/delete/" + id);
       }
@@ -35,8 +37,10 @@ import { DairyComponent } from 'src/app/dairy/dairy.component';
       }
       getlistrooms(dairy:dairy) {
         debugger;
-        dairy.onClick=null;
-        return this.httpClient.post(this.url + "/getlistrooms" ,dairy );
+    this.mydate.start=dairy.start;
+    this.mydate.end=dairy.end;
+
+        return this.httpClient.post(this.url + "/getlistrooms" ,this.mydate );
       }
 
   }

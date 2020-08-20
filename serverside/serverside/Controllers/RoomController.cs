@@ -91,12 +91,12 @@ namespace serverside.Controllers
 
         [Route("getlistrooms")]
         [HttpPost]
-        public  List<Room> GetListRoom([FromBody]Dairy dairy)
+        public  List<Room> GetListRoom([FromBody]MyDate dairy)
         {
            
             try
             {
-                return BL.RoomLogic.GetListRoom(dairy.start,dairy.end);
+                return BL.RoomLogic.GetListRoom(dairy.Start,dairy.End);
             }
             catch
             {
