@@ -57,6 +57,12 @@ typeMeeting:TypeMeeting[];
     });
   }
   addNew(){
+    this.DairyService.create(this.dairy).subscribe(res=>{
+      localStorage.setItem("dairy",JSON.stringify(res));
+      
+    },err=>{
+      alert("error")
+    })
     
   }
 
