@@ -6,7 +6,8 @@ import { user } from '../Data/user';
 import { TypeMeeting } from '../Data/TypeMeeting';
 import { Room } from '../Data/Room';
 import { RoomService } from '../shared/services/room.service';
-
+import { UserService} from '../shared/services/user.service';
+import {DairyService} from '../shared/services/dairy.service';
 @Component({
   selector: 'app-newdairy',
   templateUrl: './newdairy.component.html',
@@ -36,10 +37,13 @@ export class NewdairyComponent implements OnInit {
     }
 
   };
-  roomslist: Room[]
-  constructor(public RoomService: RoomService) { }
+  user:user[];
+  roomslist: Room[];
+typeMeeting:TypeMeeting[];
+  constructor(public RoomService: RoomService,public UserService:UserService,public DairyService:DairyService) { }
 
   ngOnInit(): void {
+    this.getNameUserList()
   }
   getroomlist() {
     debugger;
@@ -52,8 +56,31 @@ export class NewdairyComponent implements OnInit {
         console.log(this.roomslist)
     });
   }
+  addNew(){
+    
+  }
 
-
+  getNameUserList(){
+    
+    this.UserService.getusers().subscribe(res=>{
+      localStorage.setItem("user",JSON.stringify(res)),
+      this.user=res,console.log('user',this.user)
+      
+    },err=>{
+      alert("error")
+    })
+  }
+  getTypeRefList(){
+    
+    this.DairyService.getTypeMeetList().subscribe(res=>{
+      localStorage.setItem("typereference",JSON.stringify(res)),
+      this.typeMeeting=res,console.log('typereference',this.typeMeeting)
+      
+    },err=>{
+      alert("error")
+    })
+  }
+ 
 }
 
 

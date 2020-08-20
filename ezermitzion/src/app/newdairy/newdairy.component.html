@@ -9,10 +9,16 @@
     <input type="text" id="bornDate" name="bornDate" (mouseup)="getroomlist()" [(ngModel)]="dairy.end">
 
     <label for="mail" >סוג פגישה</label>
-    <input type="text" id="isCare" name="isCare"  [(ngModel)]="dairy.typeMeeting1.description">
+    <select placeholder="Enter Type Reference" [(ngModel)]="dairy.typeMeeting
+    "name="myselect">
+      <option *ngFor="let type of typeMeeting" [ngValue]="type.meetingId">{{type.description}}</option>
+    </select>
 
-    <label for="password" >שם עובד</label>
-    <input type="text" id="userName" name="userName"  [(ngModel)]="dairy.userId">
+    <label for="user" >שם עובד</label>
+    <select    placeholder="Enter Name" [(ngModel)]="dairy.userId
+    "name="myselect">
+      <option *ngFor="let type of user" [ngValue]="type.userId">{{type.userName}}</option>
+    </select>
 
     <label for="tuser" (click)="getroomlist()">חדר</label>
     <select  [(ngModel)]="dairy.roomId
@@ -25,6 +31,6 @@
 
    
 
-    <input type="submit" value="אישור" >
+    <input type="submit" value="אישור" (click)="addNew()">
   
 </div>
