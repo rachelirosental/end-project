@@ -8,6 +8,8 @@ import { Room } from '../Data/Room';
 import { RoomService } from '../shared/services/room.service';
 import { UserService} from '../shared/services/user.service';
 import {DairyService} from '../shared/services/dairy.service';
+
+
 @Component({
   selector: 'app-newdairy',
   templateUrl: './newdairy.component.html',
@@ -44,6 +46,7 @@ typeMeeting:TypeMeeting[];
 
   ngOnInit(): void {
     this.getNameUserList()
+    this.getTypemeetList()
   }
   getroomlist() {
     debugger;
@@ -57,6 +60,9 @@ typeMeeting:TypeMeeting[];
     });
   }
   addNew(){
+    this.dairy.end=new Date(this.dairy.end);
+    this.dairy.start=new Date(this.dairy.start);
+console.log(this.dairy);
     this.DairyService.create(this.dairy).subscribe(res=>{
       localStorage.setItem("dairy",JSON.stringify(res));
       
@@ -76,7 +82,7 @@ typeMeeting:TypeMeeting[];
       alert("error")
     })
   }
-  getTypeRefList(){
+  getTypemeetList(){
     
     this.DairyService.getTypeMeetList().subscribe(res=>{
       localStorage.setItem("typereference",JSON.stringify(res)),
