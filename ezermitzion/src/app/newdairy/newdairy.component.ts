@@ -43,7 +43,8 @@ typeMeeting:TypeMeeting[];
   constructor(public RoomService: RoomService,public UserService:UserService,public DairyService:DairyService) { }
 
   ngOnInit(): void {
-    this.getNameUserList()
+    this.getNameUserList();
+    this.getTypemeetList();
   }
   getroomlist() {
     debugger;
@@ -70,7 +71,7 @@ typeMeeting:TypeMeeting[];
       alert("error")
     })
   }
-  getTypeRefList(){
+  getTypemeetList(){
     
     this.DairyService.getTypeMeetList().subscribe(res=>{
       localStorage.setItem("typereference",JSON.stringify(res)),

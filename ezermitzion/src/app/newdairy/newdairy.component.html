@@ -1,33 +1,33 @@
 <div>
-    <label for="lname" >כותרת</label>
-    <input class="form-control" type="text" id="date" name="date"  [(ngModel)]="dairy.title">
+    <label for="title" >כותרת</label>
+    <input class="form-control" type="text" id="title" name="title"  [(ngModel)]="dairy.title">
 
-    <label for="fname" >שעת התחלה</label>
-    <input type="text" id="description" name="description"  [(ngModel)]="dairy.start">
+    <label for="start" >שעת התחלה</label>
+    <input type="text" id="start" name="start"  [(ngModel)]="dairy.start">
 
-    <label for="Tel" >שעת סיום</label>
-    <input type="text" id="bornDate" name="bornDate" (mouseup)="getroomlist()" [(ngModel)]="dairy.end">
+    <label for="end" >שעת סיום</label>
+    <input type="text" id="end" name="end" (mouseup)="getroomlist()" [(ngModel)]="dairy.end">
 
-    <label for="mail" >סוג פגישה</label>
+    <label for="typeMeeting" >סוג פגישה</label>
     <select placeholder="Enter Type Reference" [(ngModel)]="dairy.typeMeeting
     "name="myselect">
       <option *ngFor="let type of typeMeeting" [ngValue]="type.meetingId">{{type.description}}</option>
     </select>
 
-    <label for="user" >שם עובד</label>
+    <label for="userId" >שם עובד</label>
     <select    placeholder="Enter Name" [(ngModel)]="dairy.userId
     "name="myselect">
       <option *ngFor="let type of user" [ngValue]="type.userId">{{type.userName}}</option>
     </select>
 
-    <label for="tuser" (click)="getroomlist()">חדר</label>
+    <label for="roomId" (click)="getroomlist()">חדר</label>
     <select  [(ngModel)]="dairy.roomId
               "name="myselect" >
                 <option *ngFor="let room of roomslist" [ngValue]="room.roomId"  >{{room.roomName}} </option>
               </select>
 
-    <label for="tuser" >תאור הפניה</label>
-    <input type="text" id="typeRef" name="typeRef"  [(ngModel)]="dairy.description">
+    <label for="description" >תאור הפניה</label>
+    <input type="text" id="description" name="description"  [(ngModel)]="dairy.description">
 
    
 
