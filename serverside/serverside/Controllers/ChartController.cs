@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using BL;
+using DTO.NewFolder1;
 
 namespace serverside.Controllers
 {
@@ -13,7 +14,7 @@ namespace serverside.Controllers
     {
        
          [Route("getCountTypeRef")]
-        public Dictionary<string, string> GetCountTypeRef()
+        public List<ChartData> GetCountTypeRef()
         {
             try
             {

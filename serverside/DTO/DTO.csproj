@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="NewFolder1\ChartData.cs" />
     <Compile Include="NewFolder1\Dairy.cs" />
+    <Compile Include="NewFolder1\DairyColor.cs" />
     <Compile Include="NewFolder1\Kupot.cs" />
     <Compile Include="NewFolder1\MyDate.cs" />
     <Compile Include="NewFolder1\Opinion.cs" />
