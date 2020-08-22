@@ -45,8 +45,8 @@ typeMeeting:TypeMeeting[];
   constructor(public RoomService: RoomService,public UserService:UserService,public DairyService:DairyService) { }
 
   ngOnInit(): void {
-    this.getNameUserList()
-    this.getTypemeetList()
+    this.getNameUserList();
+    this.getTypemeetList();
   }
   getroomlist() {
     debugger;
