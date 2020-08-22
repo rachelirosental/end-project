@@ -33,6 +33,10 @@ namespace BL
                 var r = DTO.NewFolder1.Dairy.GetDairy(dairy);
             
                 r.Rooms = db.Rooms.FirstOrDefault(p => p.RoomId == r.RoomId);
+                r.color = "g";
+                r.Rooms1=db.Rooms.FirstOrDefault(p => p.RoomId == r.RoomId);
+                r.users = db.users.FirstOrDefault(x => x.UserId == r.UserId);
+                r.TypeMeeting1 = db.TypeMeeting.FirstOrDefault(x => x.MeetingId == r.TypeMeeting);
                 db.Dairy.Add(r);
                 db.SaveChanges();
                 return true;
