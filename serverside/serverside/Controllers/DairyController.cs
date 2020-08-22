@@ -53,6 +53,19 @@ namespace serverside.Controllers
             }
 
         }
+        
+             [Route("getdairybyuserid/{id}")]
+        public List<Dairy> getdairybyuserid(int id)
+        {
+            try
+            {
+                return BL.DairyLogic.getdairybyuserid(id);
+            }
+            catch
+            {
+                return null;
+            }
 
+        }
     }
 }

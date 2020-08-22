@@ -25,4 +25,8 @@ import { TypeMeeting } from 'src/app/Data/TypeMeeting';
       getTypeMeetList(): Observable<TypeMeeting[]> {
         return this.httpClient.get<TypeMeeting[]>(this.url + "/getTypeMeetingList" );
       }
+      
+      getdairybyuserid(id:number):Observable<dairy[]>{
+        return this.httpClient.get<dairy[]>(this.url+"/getdairybyuserid/"+ id );
+      }
     }

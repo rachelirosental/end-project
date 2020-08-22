@@ -7,6 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RoomsComponent } from '../rooms/rooms.component';
 import { SetdetailRoomComponent } from '../setdetail-room/setdetail-room.component';
 import { SetdetailreferenceComponent } from '../setdetailreference/setdetailreference.component';
+import { MeetmodalComponent } from '../meetmodal/meetmodal.component';
 @Component({
   selector: 'app-roomlist',
   templateUrl: './roomlist.component.html',
@@ -53,5 +54,16 @@ room:Room;
     },err=>{
       this.getrooms();
     })
+  }
+  openModalref(r:Room){
+    const modalRef = this.modalService.open(MeetmodalComponent);
+    modalRef.componentInstance.user = {...r};
+    // modalRef.result.then(res=>{
+    //   this.getProfList();
+    // },err=>{
+    //   this.getProfList();
+    // })
+    
+
   }
 }

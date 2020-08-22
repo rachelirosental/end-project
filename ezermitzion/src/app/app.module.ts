@@ -56,6 +56,7 @@ import { GragchartComponent } from './gragchart/gragchart.component';
 import { ReferencemodalComponent } from './referencemodal/referencemodal.component';
 import { OpinionmaodalComponent } from './opinionmaodal/opinionmaodal.component';
 import { OpinionlistmodalComponent } from './opinionlistmodal/opinionlistmodal.component';
+import { MeetmodalComponent } from './meetmodal/meetmodal.component';
 
 FusionChartsModule.fcRoot(
   FusionCharts,
@@ -92,6 +93,7 @@ FusionChartsModule.fcRoot(
     ReferencemodalComponent,
     OpinionmaodalComponent,
     OpinionlistmodalComponent,
+    MeetmodalComponent,
 
     // [DemoComponent],
   ],
@@ -125,7 +127,8 @@ FusionChartsModule.fcRoot(
     SetdetailRoomComponent,
     OpinionmaodalComponent,
     OpinionlistmodalComponent,
-    ReferencemodalComponent
+    ReferencemodalComponent,
+    MeetmodalComponent
   ]
 })
 export class AppModule { }
