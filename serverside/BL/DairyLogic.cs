@@ -14,9 +14,10 @@ namespace BL
         {
             try
             {
-                
+
                 //List<DAL.Dairy> l = new List<DAL.Dairy>();
                 List<DAL.Dairy> l = db.Dairy.Where(d => d.UserId == id).ToList();
+              
                 return Dairy.GetListDairyDTO(l);
             }
             catch

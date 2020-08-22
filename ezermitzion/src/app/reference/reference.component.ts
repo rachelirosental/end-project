@@ -23,7 +23,7 @@ export class ReferenceComponent implements OnInit {
     this.loadReferences();
   }
   loadReferences(){
-    this.ReferenceService.getreference().subscribe((references:Reference[])=>{this.references=references;
+    this.ReferenceService.getrefbyuserid(JSON.parse(localStorage.getItem("user")).userId).subscribe((references:Reference[])=>{this.references=references;
     console.log(this.references);
   this.references.forEach(element => {
     element.bornDate=new Date( element.bornDate);

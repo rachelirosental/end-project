@@ -57,6 +57,7 @@ import { ReferencemodalComponent } from './referencemodal/referencemodal.compone
 import { OpinionmaodalComponent } from './opinionmaodal/opinionmaodal.component';
 import { OpinionlistmodalComponent } from './opinionlistmodal/opinionlistmodal.component';
 import { MeetmodalComponent } from './meetmodal/meetmodal.component';
+import { CounselorComponent } from './counselor/counselor.component';
 
 FusionChartsModule.fcRoot(
   FusionCharts,
@@ -94,6 +95,7 @@ FusionChartsModule.fcRoot(
     OpinionmaodalComponent,
     OpinionlistmodalComponent,
     MeetmodalComponent,
+    CounselorComponent,
 
     // [DemoComponent],
   ],

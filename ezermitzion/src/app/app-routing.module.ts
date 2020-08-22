@@ -21,9 +21,11 @@ import { ManagerComponent } from './manager/manager.component';
 import { FormRefComponent } from './form-ref/form-ref.component';
 import { ChartComponent } from './chart/chart.component';
 import { GragchartComponent } from './gragchart/gragchart.component';
+import { CounselorComponent } from './counselor/counselor.component';
 
 const routes: Routes = [
 {path:'entry1',component: ManagerComponent}, 
+{path:'entry3',component:CounselorComponent},
 {path:'entry2',component:SecretaryComponent},
 {path:'dairy',component:DairylistComponent },
 {path:'form-ref',component:FormRefComponent },

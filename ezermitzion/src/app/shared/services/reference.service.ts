@@ -15,7 +15,7 @@ import { TypeReference } from 'src/app/Data/TypeReference';
     delete(id:number)  {
         return this.httpClient.delete(this.url + "/delete/" + id);
       }
-      getreference() {
+      getreference(id:number) {
          return this.httpClient.get(this.url + "/getreference");
       }
       getRefByid(id:number):Observable<Reference>{
