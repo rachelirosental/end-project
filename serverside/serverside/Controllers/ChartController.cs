@@ -25,6 +25,23 @@ namespace serverside.Controllers
                 return null;
             }
 
-        } 
+        }
+
+
+        [Route("getCountOpenRef")]
+        public List<ChartData> getCountOpenRef()
+        {
+            try
+            {
+                return BL.ChartLogic.CountopenRef();
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
     }
 }

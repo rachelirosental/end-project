@@ -43,7 +43,7 @@ const routes: Routes = [
 {path:'referencebuttons',component:ReferencebuttonsComponent},
 {path:'formreference',component:FormreferenceComponent},
 {path:'login',component:LoginComponent},
-{path:'',component:ChartComponent },
+{path:'',component:GragchartComponent},
 ];
 
 @NgModule({

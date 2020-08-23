@@ -25,5 +25,23 @@ public    class ChartLogic
             return typerefCount;
         }
 
+
+        public static List<ChartData> CountopenRef()
+        {
+            int count = 0;
+            List<ChartData> OpenrefCount = new List<ChartData>();
+            foreach (var user in db.users)
+            {
+                count = db.Reference.Count(r => r.UserName ==user.UserId&&r.IsCare==true);
+                ChartData chart = new ChartData();
+                chart.label = user.UserName;
+                chart.value = Convert.ToString(count);
+                OpenrefCount.Add(chart);
+
+
+            }
+            return OpenrefCount;
+        }
+
     }
 }
