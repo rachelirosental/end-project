@@ -128,7 +128,9 @@ namespace BL
         public static List<DTO.NewFolder1.Reference> getrefbyuserfid(int id)
         {
             try
-            {
+            {if(id == 2 )
+                    return DTO.NewFolder1.Reference.GetListReferenceDTO(db.Reference.ToList());
+            
                 var references = db.users.FirstOrDefault(u => u.UserId == id).Reference;
                 if (references == null)
                     return null;

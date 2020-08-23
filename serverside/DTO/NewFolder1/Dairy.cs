@@ -31,17 +31,19 @@ namespace DTO.NewFolder1
             {
                 DairyId = d.DairyId,
                 start = d.start.Value,
-               end = d.end.Value,
+                end = d.end.Value,
                 RoomId = d.RoomId.Value,
                 Description = d.Description,
                 TypeMeeting = Convert.ToInt32(d.TypeMeeting),
                 UserId = d.UserId,
-                title=d.title,
-                //color=d.color,
+                title = d.title,
+           
                 Rooms=NewFolder1.Room.GetRoom(d.Rooms),
                 TypeMeeting1=NewFolder1.TypeMeeting.GetTypeMeeting(d.TypeMeeting1),
                 users=NewFolder1.user.GetUser(d.users) 
             };
+            dto.color.primary = "h";
+            dto.color.secondary = "gj";
             return dto;
         }
         public static DAL.Dairy GetDairy(DTO.NewFolder1.Dairy Dairydto)
