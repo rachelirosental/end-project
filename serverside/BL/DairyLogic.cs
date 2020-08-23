@@ -50,6 +50,40 @@ namespace BL
 
 
         }
+        public static void UpdateDairy(Dairy dairy)
+        {
+            try
+            {
+                var dairyDb = db.Dairy.FirstOrDefault(p => p.DairyId == dairy.DairyId);
+                dairy.RoomId = dairy.RoomId;
+                dairyDb.start = dairy.start;
+                dairyDb.end = dairy.end;
+                dairyDb.Description = dairy.Description;
+                dairyDb.TypeMeeting = dairy.TypeMeeting;
+                dairyDb.UserId = dairy.UserId;
+           
+                db.SaveChanges();
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+
+        }
+        public static int DeleteDairy(int id)
+        {
+            var q1 = db.Dairy.FirstOrDefault(d => d.DairyId == id);
+            if (q1 == null)
+                return 0;
+            else
+            {
+                db.Dairy.Remove(q1);
+                db.SaveChanges();
+                return 1;
+            }
+        }
         public static List<DTO.NewFolder1.TypeMeeting> GetTypeMeeting()
         {
             return DTO.NewFolder1.TypeMeeting.GetListTypeMeetingDTO(db.TypeMeeting.ToList());
