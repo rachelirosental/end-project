@@ -27,6 +27,7 @@ import { TypeMeeting } from 'src/app/Data/TypeMeeting';
       }
       
       getdairybyuserid(id:number):Observable<dairy[]>{
-        return this.httpClient.get<dairy[]>(this.url+"/getdairybyuserid/"+ id );
+        debugger;
+        return this.httpClient.get<dairy[]>(this.url+"/getdairybyroomid/"+ id );
       }
     }

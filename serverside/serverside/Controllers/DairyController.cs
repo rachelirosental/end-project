@@ -54,12 +54,12 @@ namespace serverside.Controllers
 
         }
         
-             [Route("getdairybyuserid/{id}")]
+             [Route("getdairybyroomid/{id}")]
         public List<Dairy> getdairybyuserid(int id)
         {
             try
             {
-                return BL.DairyLogic.getdairybyuserid(id);
+                return BL.DairyLogic.getdairybyroomid(id);
             }
             catch
             {

@@ -55,9 +55,9 @@ room:Room;
       this.getrooms();
     })
   }
-  openModalref(r:Room){
+  openModalmeet(r:Room){
     const modalRef = this.modalService.open(MeetmodalComponent);
-    modalRef.componentInstance.user = {...r};
+    modalRef.componentInstance.room = {...r};
     // modalRef.result.then(res=>{
     //   this.getProfList();
     // },err=>{

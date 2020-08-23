@@ -55,11 +55,11 @@ namespace BL
 
         }
         
-                public static List<DTO.NewFolder1.Dairy> getdairybyuserid(int id)
+                public static List<DTO.NewFolder1.Dairy> getdairybyroomid(int id)
         {
             try
             {
-                var dairy = db.users.FirstOrDefault(u => u.UserId == id).Dairy;
+                var dairy = db.Rooms.FirstOrDefault(u => u.RoomId == id).Dairy;
                 if (dairy == null)
                     return null;
                 return DTO.NewFolder1.Dairy.GetListDairyDTO(dairy.ToList());
