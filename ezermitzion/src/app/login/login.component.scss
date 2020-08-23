@@ -1,12 +1,13 @@
 .container{
   border:2px solid blue;
   text-align:center;
-  
+  background-color:white;
   height:500px;
   width:400px;
 }
 body{
   padding:70px;
+  background-color: paleturquoise;
 }
 h1{
   margin:auto;
@@ -15,4 +16,10 @@ h1{
   height:90px;
   width:396px;
   background-color:paleturquoise;
+}
+#a{
+  width: 250px;
+  height: 250px;
+  position:absolute;
+  bottom:0px;
 }
