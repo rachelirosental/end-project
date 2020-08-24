@@ -12,9 +12,7 @@ namespace serverside.Controllers
     [RoutePrefix("api/Room")]
     public class RoomController : ApiController
     {
-        // GET: api/Reference
-
-        [Route("getrooms")]
+      [Route("getrooms")]
         public List<Room> GetRooms()
         {
             try
@@ -28,9 +26,6 @@ namespace serverside.Controllers
 
         }
 
-
-
-        // GET: api/User/5
         [Route("getRoomByid/{id}")]
         public Room GetRoom(int id)
         {
@@ -45,7 +40,6 @@ namespace serverside.Controllers
         }
 
         [Route("create")]
-        // POST: api/User
         public bool CreateRoom([FromBody]Room room)
         {
             try
@@ -60,7 +54,6 @@ namespace serverside.Controllers
         }
 
         [Route("update")]
-        // PUT: api/User/5
         public bool UpdateRoom(Room room)
         {
             try
@@ -76,8 +69,7 @@ namespace serverside.Controllers
 
 
         [Route("delete/{id}")]
-        // DELETE: api/User/5
-        public  int DeleteRoom(int id)
+         public  int DeleteRoom(int id)
         {
             try
             {

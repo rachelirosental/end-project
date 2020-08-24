@@ -12,7 +12,6 @@ namespace API.Controllers
     [RoutePrefix("api/User")]
     public class UserController : ApiController
     {
-        // GET: api/User
         [Route("login/{password}/{email}")]
         public user Get(string password,string email)
         {
@@ -24,7 +23,7 @@ namespace API.Controllers
             {
                 return null;
             }
-            
+      
         }
         [Route("getusers")]
         public List<user> Get()
@@ -40,23 +39,6 @@ namespace API.Controllers
 
         }
 
-
-        //[Route("gettypeuser")]
-        //public List<TypeUser> gettypeuser()
-        //{
-        //    try
-        //    {
-        //        return BL.UserLogic.GetTypeUser();
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
-        //}
-
-
-
-        // GET: api/User/5
         [Route("getuserByid/{id}")]
         public user Get(int id)
         {
@@ -71,7 +53,6 @@ namespace API.Controllers
         }
 
         [Route("create")]
-        // POST: api/User
         public bool PostUser([FromBody]user user)
         {
             try
@@ -85,7 +66,6 @@ namespace API.Controllers
         }
 
         [Route("update")]
-        // PUT: api/User/5
         public bool UpdateUser(user user)
         {
             try
@@ -101,7 +81,6 @@ namespace API.Controllers
         
 
         [Route("delete/{id}")]
-        // DELETE: api/User/5
         public  int Delete(int id)
         {
             try

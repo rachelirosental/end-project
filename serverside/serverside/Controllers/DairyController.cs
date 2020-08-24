@@ -27,7 +27,6 @@ namespace serverside.Controllers
         }
 
         [Route("create")]
-        // POST: api/User
         public bool PostUser([FromBody]Dairy dairy)
         {
             try
@@ -40,7 +39,6 @@ namespace serverside.Controllers
             }
         }
         [Route("update")]
-        // PUT: api/User/5
         public bool UpdateUser(Dairy dairy)
         {
             try
@@ -54,7 +52,6 @@ namespace serverside.Controllers
             }
         }
         [Route("delete/{id}")]
-        // DELETE: api/User/5
         public int Delete(int id)
         {
             try
@@ -66,8 +63,6 @@ namespace serverside.Controllers
                 return 0;
             }
         }
-
-
         [Route("getTypeMeetingList")]
         public List<TypeMeeting> getTypeUserList()
         {
@@ -82,8 +77,7 @@ namespace serverside.Controllers
             }
 
         }
-        
-             [Route("getdairybyroomid/{id}")]
+        [Route("getdairybyroomid/{id}")]
         public List<Dairy> getdairybyuserid(int id)
         {
             try
