@@ -10,7 +10,7 @@ namespace API.Controllers
 {
     [RoutePrefix("api/Opinion")]
     public class OpinionController : ApiController
-    {
+    { 
         [Route("getProfList")]
         public List<Opinion> GetOpinionList()
         {
@@ -25,8 +25,7 @@ namespace API.Controllers
 
         }
         [Route("create")]
-        // POST: api/User
-        public bool PostUser([FromBody]Opinion opinion)
+         public bool PostUser([FromBody]Opinion opinion)
         {
             try
             {

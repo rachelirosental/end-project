@@ -11,8 +11,6 @@ namespace API.Controllers
     [RoutePrefix("api/Reference")]
     public class ReferenceController : ApiController
     {
-        // GET: api/Reference
-
         [Route("getreference")]
         public List<Reference> Get()
         {
@@ -25,8 +23,7 @@ namespace API.Controllers
                 return null;
             }
 
-
-        }
+       }
         [Route("getTypeRefList")]
         public List<TypeReference> getTypeRefList()
         {
@@ -41,11 +38,6 @@ namespace API.Controllers
             }
 
         }
-
-
-
-
-        // GET: api/User/5
         [Route("getRefByid/{id}")]
         public Reference Get(int id)
         {
@@ -61,7 +53,6 @@ namespace API.Controllers
 
         [Route("create")]
         [HttpPost]
-        // POST: api/User
         public bool PostReference([FromBody]Reference reference)
         {
             try
@@ -76,8 +67,7 @@ namespace API.Controllers
         }
 
         [Route("update")]
-        // PUT: api/User/5
-        public bool UpdateReference(Reference reference)
+         public bool UpdateReference(Reference reference)
         {
             try
             {
@@ -92,7 +82,6 @@ namespace API.Controllers
 
 
         [Route("delete/{id}")]
-        // DELETE: api/User/5
         public int Delete(int id)
         {
             try
@@ -119,7 +108,6 @@ namespace API.Controllers
 
         }
         
-
         [Route("getrefbyuserid/{id}")]
         public List<Reference> getrefbyuserid(int id)
         {

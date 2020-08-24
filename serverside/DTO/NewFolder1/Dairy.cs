@@ -42,8 +42,7 @@ namespace DTO.NewFolder1
                 TypeMeeting1=NewFolder1.TypeMeeting.GetTypeMeeting(d.TypeMeeting1),
                 users=NewFolder1.user.GetUser(d.users) 
             };
-            dto.color.primary = "h";
-            dto.color.secondary = "gj";
+          
             return dto;
         }
         public static DAL.Dairy GetDairy(DTO.NewFolder1.Dairy Dairydto)
