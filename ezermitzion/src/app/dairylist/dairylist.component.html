@@ -1,7 +1,14 @@
 
-<!-- <input type="text" [(ngModel)]="inputText" (keyup)="search()" >   -->
-<input type="text" [(ngModel)]="inputText" (keyup)="search()" >  
-<input type="button" value="לחיפוש" >
+
+<div class="container">
+	<div class="row">
+        <div class="search">
+<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" [(ngModel)]="inputText"/>
+ <button type="submit" class="btn btn-primary btn-sm" (click)="search()">Search</button>
+</div>
+	</div>
+</div> 
+
 <div class="container">
     <div class="table-wrapper">
         <div class="table-title">
