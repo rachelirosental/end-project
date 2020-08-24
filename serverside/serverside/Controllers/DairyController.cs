@@ -39,6 +39,35 @@ namespace serverside.Controllers
                 return false;
             }
         }
+        [Route("update")]
+        // PUT: api/User/5
+        public bool UpdateUser(Dairy dairy)
+        {
+            try
+            {
+                BL.DairyLogic.UpdateDairy(dairy);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        [Route("delete/{id}")]
+        // DELETE: api/User/5
+        public int Delete(int id)
+        {
+            try
+            {
+                return BL.DairyLogic.DeleteDairy(id);
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+
         [Route("getTypeMeetingList")]
         public List<TypeMeeting> getTypeUserList()
         {
