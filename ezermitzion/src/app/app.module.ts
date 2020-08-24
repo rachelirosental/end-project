@@ -58,6 +58,7 @@ import { OpinionmaodalComponent } from './opinionmaodal/opinionmaodal.component'
 import { OpinionlistmodalComponent } from './opinionlistmodal/opinionlistmodal.component';
 import { MeetmodalComponent } from './meetmodal/meetmodal.component';
 import { CounselorComponent } from './counselor/counselor.component';
+import { MeetcounselerComponent } from './meetcounseler/meetcounseler.component';
 
 FusionChartsModule.fcRoot(
   FusionCharts,
@@ -96,6 +97,7 @@ FusionChartsModule.fcRoot(
     OpinionlistmodalComponent,
     MeetmodalComponent,
     CounselorComponent,
+    MeetcounselerComponent,
 
     // [DemoComponent],
   ],
@@ -130,7 +132,8 @@ FusionChartsModule.fcRoot(
     OpinionmaodalComponent,
     OpinionlistmodalComponent,
     ReferencemodalComponent,
-    MeetmodalComponent
+    MeetmodalComponent,
+    MeetcounselerComponent
   ]
 })
 export class AppModule { }
