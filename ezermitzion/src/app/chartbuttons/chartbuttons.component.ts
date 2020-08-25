@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from '../shared/services/user.service';
 @Component({
   selector: 'app-chartbuttons',
   templateUrl: './chartbuttons.component.html',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChartbuttonsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public UserService:UserService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
