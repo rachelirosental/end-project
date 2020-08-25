@@ -12,7 +12,7 @@ export class SecretaryComponent implements OnInit {
   constructor(public Userservice:UserService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.openModal()
+    this.openModal();
   }
   openModal(){
     const modalRef = this.modalService.open(ModalmeetsComponent);
