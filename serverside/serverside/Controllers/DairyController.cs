@@ -49,10 +49,7 @@ namespace serverside.Controllers
             catch
             {
                 return false;
-<<<<<<< HEAD
-=======
                 
->>>>>>> 644ea8a1cd5358919806d330acdfc98b3ff83e10
             }
         }
         [Route("delete/{id}")]

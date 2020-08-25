@@ -60,6 +60,7 @@ import { MeetmodalComponent } from './meetmodal/meetmodal.component';
 import { CounselorComponent } from './counselor/counselor.component';
 import { MeetcounselerComponent } from './meetcounseler/meetcounseler.component';
 import { ModalmeetsComponent } from './modalmeets/modalmeets.component';
+import { ChartbuttonsComponent } from './chartbuttons/chartbuttons.component';
 
 FusionChartsModule.fcRoot(
   FusionCharts,
@@ -100,6 +101,7 @@ FusionChartsModule.fcRoot(
     CounselorComponent,
     MeetcounselerComponent,
     ModalmeetsComponent,
+    ChartbuttonsComponent,
 
     // [DemoComponent],
   ],

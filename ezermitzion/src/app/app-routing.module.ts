@@ -22,7 +22,7 @@ import { FormRefComponent } from './form-ref/form-ref.component';
 import { ChartComponent } from './chart/chart.component';
 import { GragchartComponent } from './gragchart/gragchart.component';
 import { CounselorComponent } from './counselor/counselor.component';
-
+import { ChartbuttonsComponent } from './chartbuttons/chartbuttons.component';
 const routes: Routes = [
 {path:'entry1',component: ManagerComponent}, 
 {path:'entry3',component:CounselorComponent},
@@ -32,18 +32,21 @@ const routes: Routes = [
 {path:'dairy/:id',component:DairyComponent },
 {path:'rooms',component:RoomlistComponent},
 {path:'reference',component:ReferenceComponent},
-{path:'professions',component:ProfessionsComponent},
+{path:'professions',component:ProfessioListComponent},
 {path:'user',component:UserComponent},
 {path:'formuser',component:FormuserComponent},
-{path:'usersbuttons',component:UsersbuttonsComponent},
+{path:'usersbuttons',component:UserComponent},
 {path:'proflist',component:ProfessioListComponent},
 {path:'createnew',component: CreateProfessionComponent},
 {path:'detail/:id',component: ProfessionDetialsComponent},
 {path:'setdetailuser/:id',component:SetdetailuserComponent},
-{path:'referencebuttons',component:ReferencebuttonsComponent},
+{path:'referencebuttons',component:ReferenceComponent},
 {path:'formreference',component:FormreferenceComponent},
+{path:'chart',component:ChartbuttonsComponent},
+{path:'subchart',component:ChartComponent},
+{path:'gracchart',component:GragchartComponent},
 {path:'login',component:LoginComponent},
-{path:'',component:GragchartComponent},
+{path:'',component:LoginComponent},
 ];
 
 @NgModule({
