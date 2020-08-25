@@ -23,6 +23,7 @@ import { ChartComponent } from './chart/chart.component';
 import { GragchartComponent } from './gragchart/gragchart.component';
 import { CounselorComponent } from './counselor/counselor.component';
 import { ChartbuttonsComponent } from './chartbuttons/chartbuttons.component';
+import { HomepageComponent } from './homepage/homepage.component';
 const routes: Routes = [
 {path:'entry1',component: ManagerComponent}, 
 {path:'entry3',component:CounselorComponent},
@@ -46,7 +47,8 @@ const routes: Routes = [
 {path:'subchart',component:ChartComponent},
 {path:'gracchart',component:GragchartComponent},
 {path:'login',component:LoginComponent},
-{path:'',component:LoginComponent},
+{path:'',component:HomepageComponent},
+{path:'home',component:HomepageComponent},
 ];
 
 @NgModule({

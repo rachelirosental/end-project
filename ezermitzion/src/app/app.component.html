@@ -1,2 +1,24 @@
-<img id="a" src="./assets/img/logo1.png" > 
+<img id="a" src="./assets/img/logo1.png" >
+<nav  style="background-color:rgb(68, 134, 255) !important; direction: rtl !important;" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-right">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home">דף הבית<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">כניסה</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)="UserService.logout()">יציאה</a>
+          </li>
+      </ul>
+      <form style="margin-right: 0px !important" class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-danger"  type="submit" (click)="UserService.return()">חזרה</button>
+      </form>
+    </div>
+  </nav>
 <router-outlet></router-outlet>
