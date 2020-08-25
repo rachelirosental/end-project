@@ -48,6 +48,7 @@ namespace serverside.Controllers
             }
             catch
             {
+                return false;
                 
             }
         }

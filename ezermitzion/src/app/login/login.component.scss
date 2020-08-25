@@ -1,5 +1,5 @@
 .container{
-  border:2px solid blue;
+  border:2px solid rgb(0, 0, 0);
   text-align:center;
   background-color:white;
   height:500px;
@@ -7,7 +7,6 @@
 }
 body{
   padding:70px;
-  background-color: paleturquoise;
 }
 h1{
   margin:auto;
@@ -15,7 +14,7 @@ h1{
 .row{
   height:90px;
   width:396px;
-  background-color:paleturquoise;
+  background-color:rgb(68, 134, 255);
 }
 #a{
   width: 250px;
