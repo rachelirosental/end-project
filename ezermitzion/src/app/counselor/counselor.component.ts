@@ -3,6 +3,7 @@ import { MeetcounselerComponent } from '../meetcounseler/meetcounseler.component
 import { Room } from '../Data/Room';
 import { user } from '../Data/user';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalmeetsComponent } from '../modalmeets/modalmeets.component';
 
 @Component({
   selector: 'app-counselor',
@@ -17,18 +18,10 @@ user:user;
     this.userid=JSON.parse(localStorage.getItem("user")).userId }
 
   ngOnInit(): void {
-    // this.openModalmeetcounselor(this.user);
+    this.openModal();
   }
-  openModalmeetcounselor(u:user){
-    const modalRef = this.modalService.open(MeetcounselerComponent);
-    modalRef.componentInstance.user = {...u};
-    // modalRef.result.then(res=>{
-    //   this.getProfList();
-    // },err=>{
-    //   this.getProfList();
-    // })
-    
+  openModal(){
+    const modalRef = this.modalService.open(ModalmeetsComponent);
 
-  }
-
+}
 }

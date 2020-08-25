@@ -135,8 +135,7 @@ FusionChartsModule.fcRoot(
     OpinionlistmodalComponent,
     ReferencemodalComponent,
     MeetmodalComponent,
-    MeetcounselerComponent,
-    ModalmeetsComponent
+    ModalmeetsComponent,
   ]
 })
 export class AppModule { }
