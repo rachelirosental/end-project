@@ -2,9 +2,9 @@
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
-                <div class="col-sm-8"><h2>Opinion <b>Details</b></h2></div>
+                <div class="col-sm-8"><h2>חוות דעת</h2></div>
                 <div class="col-sm-4">
-                    <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+
                 </div>
             </div>
         </div>
@@ -21,15 +21,10 @@
             </thead>
             <tbody>
                 <tr *ngFor="let o of opinions">
-                    <td >{{o.profPersonid}}</td>
+                    <td >{{o.profession.profName}}</td>
                     <td>{{o.description}}</td>
                     <td>{{o.date}}</td>
                     <td>{{o.mark}}</td>
-                    <td>
-          <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
-                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"> </i></a>
-                        <a class="delete" title="Delete" data-toggle="tooltip" ><i class="material-icons"></i></a>
-                    </td>
                 </tr>
           
             </tbody>

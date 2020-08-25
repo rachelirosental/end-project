@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';;
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { RoomService } from '../shared/services/room.service';
+import { UserService } from '../shared/services/user.service';
 import { Room } from '../Data/Room';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RoomsComponent } from '../rooms/rooms.component';
@@ -16,7 +17,7 @@ import { MeetmodalComponent } from '../meetmodal/meetmodal.component';
 export class RoomlistComponent implements OnInit {
 rooms:Room[];
 room:Room;
-  constructor(public RoomService:RoomService,private modalService: NgbModal) { }
+  constructor(public RoomService:RoomService,public Userservice:UserService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.getrooms();
