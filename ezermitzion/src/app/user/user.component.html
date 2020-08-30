@@ -1,8 +1,8 @@
 <div class="container">
 	<div class="row">
         <div class="search">
-<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" [(ngModel)]="inputText"/>
- <button type="submit" class="btn btn-primary btn-sm" (click)="search()">Search</button>
+<input type="text" class="form-control input-sm" maxlength="64" placeholder="חיפוש" [(ngModel)]="inputText"/>
+ <button type="submit" class="btn btn-primary btn-sm" (click)="search()">חיפוש</button>
 </div>
 
 <div class="container">
@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-sm-8"><h2>משתמשים</h2></div>
                 <div class="col-sm-4">
-                    <button type="button" class="btn btn-info add-new" (click)="addnewuser()"><i class="fa fa-plus"></i> Add New</button>
+                    <button type="button" class="btn btn-info add-new" (click)="addnewuser()"><i class="fa fa-plus"></i>הוסף חדש</button>
                 </div>
             </div>
         </div>
@@ -42,6 +42,4 @@
         </table>
     </div>
   </div>    
-  <button style="position:absolute !important; top:0% !important; right: 0% !important;" class="btn btn-primary float-right" (click)="UserService.return()">
-    return
-  </button>
+ 

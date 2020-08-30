@@ -14,6 +14,6 @@ export class ManagerComponent implements OnInit {
     this.openModal();
   }
   openModal(){
-    const modalRef = this.modalService.open(ModalmeetsComponent);
+    const modalRef = this.modalService.open(ModalmeetsComponent,{size: 'lg', windowClass: 'modal-xl'});
 }
 }

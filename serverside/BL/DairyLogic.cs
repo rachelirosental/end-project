@@ -20,7 +20,7 @@ namespace BL
               
                 return Dairy.GetListDairyDTO(l);
             }
-            catch
+            catch (Exception ex)
             {
                 return null;
             }

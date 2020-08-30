@@ -3,22 +3,22 @@
  <div class="container">
 	<div class="row">
         <div class="search">
-<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" [(ngModel)]="inputText"/>
- <button type="submit" class="btn btn-primary btn-sm" (click)="search()">Search</button>
+<input type="text" style="direction: ltr !important;" class="form-control input-sm" maxlength="64" placeholder="חיפוש" [(ngModel)]="inputText"/>
+ <button type="submit"  class="btn btn-primary btn-sm" (click)="search()">חיפוש</button>
 </div>
 	</div>
 </div> 
- <div class="container">
-  <div class="table-wrapper">
-      <div class="table-title">
+ <div style="direction:rtl !important" class="">
+  <div class="">
+      <div class="">
           <div class="row">
               <div class="col-sm-8"><h2>אנשי מקצוע</h2></div>
-              <div class="col-sm-4">
-                  <button type="button" class="btn btn-info add-new" (click)="create()"><i class="fa fa-plus" ></i> Add New</button>
+              <div style="direction:rtl !important" class="col-sm-4">
+                  <button type="button" class="btn btn-info add-new" (click)="create()"><i class="fa fa-plus" ></i> הוסף חדש</button>
               </div>
           </div>
       </div>
-      <table class="table table-bordered">
+      <table  class="table table-bordered">
           <thead>
               <tr >
                   <th style="width: 100px !important;">שם</th>
@@ -30,7 +30,7 @@
                   <th style="width: 100px !important;">כתובת אישית</th>
                   <th style="width: 100px !important;">כתובת מרפאה</th>
                   <th style="width: 60px !important;">תואר</th>
-                  
+                  <th style="width: 60px !important;"></th>
               </tr>
           </thead>
           <tbody>

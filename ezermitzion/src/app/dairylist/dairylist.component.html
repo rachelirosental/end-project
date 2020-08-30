@@ -3,8 +3,8 @@
 <div class="container">
 	<div class="row">
         <div class="search">
-<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" [(ngModel)]="inputText"/>
- <button type="submit" class="btn btn-primary btn-sm" (click)="search()">Search</button>
+<input type="text" class="form-control input-sm" maxlength="64" placeholder="חיפוש" [(ngModel)]="inputText"/>
+ <button type="submit" class="btn btn-primary btn-sm" (click)="search()">חיפוש</button>
 </div>
 	</div>
 </div> 
@@ -42,6 +42,4 @@
         </table>
     </div>
   </div>    
-  <button style="position:absolute !important; top:0% !important; right: 0% !important;" class="btn btn-primary float-right" (click)="UserService.return()">
-    return
-  </button> 
+
