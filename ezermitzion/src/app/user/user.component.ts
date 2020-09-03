@@ -91,7 +91,7 @@ chart(){
   this.router.navigateByUrl('/grafchart');
 }
 openModalref(u:user){
-  const modalRef = this.modalService.open(ReferencemodalComponent);
+  const modalRef = this.modalService.open(ReferencemodalComponent,{size: 'lg', windowClass: 'modal-xl'});
   modalRef.componentInstance.user = {...u};
   modalRef.result.then(res=>{
     this.loadUsers();

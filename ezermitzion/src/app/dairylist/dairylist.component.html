@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="row">
         <div class="search">
-<input type="text" class="form-control input-sm" maxlength="64" placeholder="חיפוש" [(ngModel)]="inputText"/>
+<input type="text" style="direction: ltr !important;" class="form-control input-sm" maxlength="64" placeholder="חיפוש" [(ngModel)]="inputText">
  <button type="submit" class="btn btn-primary btn-sm" (click)="search()">חיפוש</button>
 </div>
 	</div>
@@ -29,7 +29,7 @@
                     <td>{{u.userName}}</td>
                     
                     
-                    <td>
+                    <td  >
           <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
                         <!-- <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"> </i></a>
                         <a class="delete" title="Delete" data-toggle="tooltip" ><i class="material-icons"></i></a> -->
