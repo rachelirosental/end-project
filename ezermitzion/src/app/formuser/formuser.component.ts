@@ -41,6 +41,7 @@ public imagePath;
 
   ngOnInit(): void {
     this.getTypeUserList();
+    
   }
   add(){
  console.log(this.user);
@@ -54,6 +55,7 @@ public imagePath;
     })
     
   }
+  
   getTypeUserList(){
     
     this.UserService.getTypeUserList().subscribe(res=>{

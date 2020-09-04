@@ -46,6 +46,9 @@ export class GragchartComponent{
      return this.ChartService.getCountTypeRef().subscribe(res=>{
       localStorage.setItem("counttyperef",JSON.stringify(res)) ,
       data.data=res,
+      data.data.forEach(element => {
+        element['color']='#5665F0';
+      });
       console.log(typeof(this.dataSource.data))});
   
   }

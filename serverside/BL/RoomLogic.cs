@@ -82,7 +82,9 @@ namespace BL
             }
 
         }
-       public static bool isnotoverloap(DAL.Rooms room, DateTime start, DateTime end)
+        //הפונקציה מחזירה האם יש בחדר שנשלח לפונקציה
+        // לשעות שנשלחו לפונקציה  פגישה חופפת
+        public static bool isnotoverloap(DAL.Rooms room, DateTime start, DateTime end)
         {
             var list = room.Dairy.FirstOrDefault(e => (e.start < end && start < e.end));
             if (list == null)
@@ -90,19 +92,19 @@ namespace BL
             return false;
 
         }
-
+        //הפונקציה מחזירה רשימה של חדרים
+        //בהם אין פגישה חופפת לשעות שנשלחו לפונקציה
         public static List<Room> GetListRoom(DateTime start,DateTime end)
-        {
-            
-            
+        { 
             try
             {
                 List<DAL.Rooms> r = new List<DAL.Rooms>();
+                //הפונקציה עוברת על כל רשימת החדרים
+                //ושולחת לפונקציה שבודקת האם יש פגישה חופפת
                 foreach (var room in db.Rooms)
                 {
                     if (isnotoverloap(room, start, end) == true)
                         r.Add(room);
-
                 }
               
                 if (r == null)

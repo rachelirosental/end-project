@@ -13,8 +13,11 @@ public    class ChartLogic
         {
             int count = 0;
             List<ChartData> typerefCount = new List<ChartData>();
+            //לולאה שעוברת על כל סוגי הפניות
             foreach(var type in db.TypeReference)
-            { count = db.Reference.Count(r => r.TypeRef == type.RefId);
+            {    
+              //מונה את כמות הפניות לכל סוג
+             count = db.Reference.Count(r => r.TypeRef == type.RefId);
                 ChartData chart = new ChartData();
                 chart.label = type.refname;
                 chart.value = Convert.ToString(count);

@@ -1,11 +1,13 @@
 
-<div class="container">
-    <div class="table-wrapper">
-        <div class="table-title">
+<div class="container" style="left:10% !important">
             <div class="row">
-                <div class="col-sm-8"><h2>פניות</h2></div>
-                <div class="col-sm-4">
-                    <button type="button" class="btn btn-info add-new" (click)="next1()"><i class="fa fa-plus"></i> Add New</button>
+                <div class="container">
+                    <div class="table-wrapper">
+                        <div class="table-title">
+                            <div class="row">
+                <div class="col-sm-8" style="right: 30% !important;"><h2>פניות</h2></div>
+                <div class="col-sm-4" style="right:40% !important;">
+                    <button type="button" class="btn btn-info add-new" (click)="next1()"><i class="fa fa-plus"></i>הוסף חדש</button>
                 </div>
             </div>
         </div>
@@ -16,18 +18,18 @@
                     <th style="width: 120px !important;">תאור הפניה</th>
                     <th style="width: 160px !important;">תאריך לידה</th>
                     <th style="width: 50px !important;">האם טופל</th>
-                    <th style="width: 70px !important;">משתמש</th> 
-                    <th style="width: 50px !important;">איש מקצוע</th> 
-                    <th style="width: 50px !important;">סוג פניה</th> 
+                    <th style="width: 80px !important;">משתמש</th> 
+                    <th style="width: 60px !important;">איש מקצוע</th> 
+                    <th style="width: 65px !important;">סוג פניה</th> 
                     <th style="width: 160px !important;">המלצות</th> 
-                    
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let r of references">
-                    <td >{{r.date}}</td>
+                    <td >{{r.date|date:"MM/dd/yyyy 'בשעה' h:mma"}}</td>
                     <td>{{r.description}}</td>
-                    <td>{{r.bornDate}}</td>
+                    <td>{{r.bornDate|date:"MM/dd/yyyy"}}</td>
                     <td>{{r.isCare}}</td>
                     <td>{{r.users.userName}}</td>
                     <td>{{r.professions.profName}}</td>
@@ -42,8 +44,4 @@
           
             </tbody>
         </table>
-    </div>
-  </div>  
-  <button style="position:absolute !important; top:0% !important; right: 0% !important;" class="btn btn-primary float-right" (click)="UserService.return()">
-    return
-  </button>
+    
