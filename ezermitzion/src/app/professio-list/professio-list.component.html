@@ -18,7 +18,7 @@
                                 <div class="col-sm-8" style="right: 3% !important;">
                                     <h2>אנשי מקצוע</h2>
                                 </div>
-                                <div style="right:6% !important;" class="col-sm-4">
+                                <div style="right:20% !important;" class="col-sm-4">
                                     <button type="button" style="border-radius: 30px;" class="btn btn-info add-new" (click)="create()"><i
                                             class="fa fa-plus"></i> הוסף חדש</button>
                                 </div>
@@ -27,15 +27,15 @@
                         <table style="margin-right: 44px;" class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th style="width: 100px !important;">שם</th>
-                                    <th style="width: 70px !important;">סוג מטופל</th>
-                                    <th style="width: 110px !important;">טלפון</th>
-                                    <th style="width: 110px !important;"> טלפון נוסף</th>
-                                    <th style="width: 160px !important;">מייל</th>
-                                    <th style="width: 100px !important;">כתובת אישית</th>
-                                    <th style="width: 100px !important;">כתובת מרפאה</th>
-                                    <th style="width: 70px !important;">תואר</th>
-                                    <th style="width: 100px !important;"></th>
+                                    <th style="width: 50px !important;">שם</th>
+                                    <th style="width: 50px !important;">סוג מטופל</th>
+                                    <th style="width: 60px !important;">טלפון</th>
+                                    <th style="width: 60px !important;"> טלפון נוסף</th>
+                                    <th style="width: 90px !important;">מייל</th>
+                                    <th style="width: 70px !important;">כתובת אישית</th>
+                                    <th style="width: 70px !important;">כתובת מרפאה</th>
+                                    <th style="width: 50px !important;">תואר</th>
+                                    <th style="width: 40px !important;"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,8 +58,8 @@
                                                 (click)="openModal(p)"> </i></a>
                                         <a class="delete" title="Delete" data-toggle="tooltip"
                                             (click)="deleteprofession(p.profId)"><i class="material-icons"></i></a>
-                                        <img id="a" title="List Reference" src="./assets/img/iconlist.png"
-                                            (click)="openModalref(p)">
+                                        <!-- <img id="a" title="List Reference" src="./assets/img/iconlist.png"
+                                            (click)="openModalref(p)"> -->
                                         <img id="a" title="opinion" src="./assets/img/opinion.svg"
                                             (click)="openModalopinion(p)">
                                     </td>

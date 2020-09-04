@@ -62,6 +62,7 @@ import { MeetcounselerComponent } from './meetcounseler/meetcounseler.component'
 import { ModalmeetsComponent } from './modalmeets/modalmeets.component';
 import { ChartbuttonsComponent } from './chartbuttons/chartbuttons.component';
 import { HomepageComponent } from './homepage/homepage.component';
+// import { Referencemodal1Component } from './referencemodal1/referencemodal1.component';
 
 FusionChartsModule.fcRoot(
   FusionCharts,
@@ -104,6 +105,7 @@ FusionChartsModule.fcRoot(
     ModalmeetsComponent,
     ChartbuttonsComponent,
     HomepageComponent,
+    // Referencemodal1Component,
 
     // [DemoComponent],
   ],
@@ -140,6 +142,7 @@ FusionChartsModule.fcRoot(
     ReferencemodalComponent,
     MeetmodalComponent,
     ModalmeetsComponent,
+    // Referencemodal1Component
   ]
 })
 export class AppModule { }

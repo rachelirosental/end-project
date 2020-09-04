@@ -3,7 +3,7 @@
        <div class="Back">
             <i class="fa fa-arrow-left" (click)="UserService.return()"></i>
         </div>
-        <p class="h2 text-center">Form</p>
+        <p class="h2 text-center">טופס משתמש חדש:</p>
         <form action="" method="post">
             <div class="preview text-center">
                 <img class="preview-img" [src]="imgURL"  *ngIf="imgURL"width="200" height="200" alt="Preview Image"/>
@@ -13,47 +13,62 @@
                 </div>
                 
                 <span class="Error"></span>
+
             </div>
-            <div class="form-group">
-                <label style="direction: ltr !important;">Name:</label>
-                <input class="form-control" type="text" name="fname" required placeholder="Enter First Name" [(ngModel)]="user.userName"/>
+            <div style="direction: rtl !important;" class="form-group">
+                <label>שם:</label>
+                <input class="form-control" type="text" name="fname" required placeholder="הכנס שם" [(ngModel)]="user.userName" #firstName="ngModel" [ngClass]="{ 'is-invalid': firstName.invalid }" required />
                 <span class="Error"></span>
+                <div *ngIf="firstName.invalid&& (firstName.dirty || firstName.touched)" class="invalid-feedback">
+                    <div *ngIf="firstName.errors.required">זהו שדה נדרש</div>
             </div>
+            
             <div class="form-group">
-                <label>Tel:</label>
-                <input class="form-control" type="text" name="tel" required placeholder="Enter Tel" [(ngModel)]="user.tel"/>
+                <label>טלפון:</label>
+                <input class="form-control" type="text" name="tel" required placeholder="הקש מספר טלפון" [(ngModel)]="user.tel"#tel="ngModel" [ngClass]="{ 'is-invalid': tel.invalid }" required />
                 <span class="Error"></span>
+                <div *ngIf="tel.invalid&& (tel.dirty || tel.touched)" class="invalid-feedback">
+                    <div *ngIf="password.errors.required">זהו שדה נדרש</div>
             </div>
             <div class="form-group">
-                <label>Email:</label>
-                <input class="form-control" type="email" name="email" required placeholder="Enter Email" [(ngModel)]="user.email"/>
+                <label>אימייל:</label>
+                <input class="form-control" type="email" name="email" required placeholder="הכנס כתובת מייל" [(ngModel)]="user.email" #email="ngModel" [ngClass]="{ 'is-invalid': email.invalid }" required email />
                 <span class="Error"></span>
+                <div *ngIf=" email.invalid&& (email.dirty || email.touched)" class="invalid-feedback">
+                    <div *ngIf="email.errors.required">זהו שדה נדרש</div>
+                    <div *ngIf="email.errors.email">כתובת מייל חיבת להיות תקפה</div>
             </div>
             <div class="form-group">
-                <label>Password:</label>
-                <input class="form-control" type="password" name="password" required placeholder="Enter Password" [(ngModel)]="user.password"/>
+                <label>סיסמא:</label>
+                <input class="form-control" type="password" name="password" required placeholder="הקש סיסמא" [(ngModel)]="user.password"  #password="ngModel" [ngClass]="{ 'is-invalid': password.invalid }" required minlength="6"/>
                 <span class="Error"></span>
+                <div *ngIf="password.invalid&& (password.dirty || password.touched)" class="invalid-feedback">
+                    <div *ngIf="password.errors.required">זהו שדה נדרש</div>
+                    <div *ngIf="password.errors.minlength">סיסמא חיבת להכיל לפחות 6 תוים</div>
+                    
             </div>
             <div class="form-group">
-                <label>Type User:</label>
+                <label>סוג משתמש:</label>
                 <!-- <input class="form-control" type="text" name="typeuser" required placeholder="Type User" [(ngModel)]="user.typeUser1.typeName"/>
                 <span class="Error"></span> -->
-                <select  class="form-control" type="text" name="kupa" required placeholder="Enter Type User" [(ngModel)]="user.typeUser
+                <select  #firstName="ngModel" [ngClass]="{ 'is-invalid': firstName.invalid }" required  class="form-control" type="text" name="kupa" required placeholder="Enter Type User" [(ngModel)]="user.typeUser
                 "name="myselect">
                   <option *ngFor="let type of typeUser" [ngValue]="type.typeId">{{type.typeName}}</option>
                 </select>
+                <div *ngIf="firstName.invalid&& (firstName.dirty || firstName.touched)" class="invalid-feedback">
+                    <div *ngIf="firstName.errors.required">זהו שדה נדרש</div>
             </div>
             <div class="form-group">
-                <label>Gender:</label><br/>
-                <label><input type="radio" name="gender" required value="Male" checked /> Male</label>
-                <label><input type="radio" name="gender" required value="Female" /> Female</label>
-                <label><input type="radio" name="gender" required value="Other" /> Other</label>
+                <label>מין:</label><br/>
+                <label><input type="radio" name="gender" required value="male" checked /> זכר</label>
+                <label><input type="radio" name="gender" required value="female" />נקבה </label>
+                <label><input type="radio" name="gender" required value="other" /> אחר</label>
                 <span class="Error"></span>
             </div>
             <div class="form-group">
                 <input class="btn btn-primary btn-block" type="submit" value="Submit" (click)="add()"/>
             </div>
-        </form>
+     
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
