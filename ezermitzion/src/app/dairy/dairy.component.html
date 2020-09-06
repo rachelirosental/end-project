@@ -202,17 +202,23 @@
 	
 		<label for="Tel" >שעת סיום</label>
 		<input type="text" id="bornDate" name="bornDate"  [(ngModel)]="modalData.event.end">
+
+		<label for="typeMeeting" >סוג פגישה</label>
+		<select placeholder="Enter Type Reference" [(ngModel)]="modalData.event.typeMeeting
+		"name="myselect">
+		  <option *ngFor="let type of typeMeeting" [ngValue]="type.meetingId">{{type.description}}</option>
+		</select>
 	
-		<label for="mail" >סוג פגישה</label>
-		<input type="text" id="isCare" name="isCare"  [(ngModel)]="modalData.event.typeMeeting1.description">
+		<label for="userId" >שם עובד</label>
+		<select    placeholder="Enter Name" [(ngModel)]="modalData.event.userId
+		"name="myselect">
+		  <option *ngFor="let type of user" [ngValue]="type.userId">{{type.userName}}</option>
+		</select>
 	
-		<label for="password" >שם עובד</label>
-		<input type="text" id="userName" name="userName"  [(ngModel)]="modalData.event.users.userName">
-<!-- 	
-		<label for="tuser" (click)="getroomlist()">חדר</label>
-		<select  [(ngModel)]="dairy.rooms
+		<label for="roomId" (click)="getroomlist()">חדר</label>
+		<select  [(ngModel)]="modalData.event.roomId
 				  "name="myselect" >
-					<option *ngFor="let room of roomslist" [ngValue]="room"  >{{room.roomName}} </option>
+					<option *ngFor="let room of roomlist" [ngValue]="room.roomId"  >{{room.roomName}} </option>
 				  </select>
 	 -->
 		<label for="tuser" >תאור הפניה</label>
@@ -220,7 +226,7 @@
 	
 	   
 	
-		<input type="submit" value="אישור" >
+		<input type="submit" value="אישור" (click)="edit()">
 	  
 	</div>
 	

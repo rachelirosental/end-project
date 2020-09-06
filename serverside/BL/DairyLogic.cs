@@ -61,6 +61,7 @@ namespace BL
                 dairyDb.Description = dairy.Description;
                 dairyDb.TypeMeeting = dairy.TypeMeeting;
                 dairyDb.UserId = dairy.UserId;
+                dairyDb.title = dairy.title;
            
                 db.SaveChanges();
 
