@@ -13,7 +13,7 @@ export enum CalendarEventTimesChangedEventType {
 export interface dairychangeevent<MetaType = any> {
   type: CalendarEventTimesChangedEventType;
   event: dairy;
-  newStart: Date;
-  newEnd?: Date;
+  newStart: Date|"MM/dd/yyyy 'בשעה' h:mma";
+  newEnd?: Date|"MM/dd/yyyy 'בשעה' h:mma";
   allDay?: boolean;
 }

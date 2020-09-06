@@ -55,6 +55,7 @@ public opinions:opinion[]=[];
     }
 
 deleteprofession(id:number){
+  alert("האם אתה בטוח שברצונך למחוק איש מקצוע זה?");
   this.ProfessionService.delete(id).subscribe(res=>{
     this.getProfList();
     console.log(res)

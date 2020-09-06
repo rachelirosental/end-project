@@ -34,6 +34,7 @@ inputText:any;
   }
 
 deleteUser(id:number){
+  alert("האם אתה בטוח שברצונך למחוק משתמש זה?");
   this.UserService.delete(id).subscribe(res=>{
    this.loadUsers();
     console.log(res)
