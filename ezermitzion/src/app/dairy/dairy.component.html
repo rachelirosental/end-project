@@ -179,8 +179,8 @@
   
   <ng-template #modalContent let-close="close">
 	<div class="modal-header">
-	  <h5 class="modal-title">Event action occurred</h5>
-	  <button type="button" class="close" (click)="close()">
+	 
+	  <button  type="button" class="close" (click)="close()">
 		<span aria-hidden="true">&times;</span>
 	  </button>
 	</div>
@@ -194,12 +194,13 @@
 		<pre>{{ modalData?.event | json }}</pre>
 	  </div> -->
 	  <div>
-		<label for="lname" >כותרת</label>
-		<input class="form-control" type="text" id="date" name="date"  [(ngModel)]="modalData.event.title">
+		<label for="title" >כותרת</label>
+		<input class="form-control" type="text" id="title" name="title"  [(ngModel)]="modalData.event.title">
 	
-		<label for="fname" >שעת התחלה</label>
-		<input type="text" id="description" name="description"  [(ngModel)]="modalData.event.start">
+		<label for="start" >תאריך ושעת התחלה</label>
+		<input type="text" id="start" name="start"  [(ngModel)]="modalData.event.start">
 	
+<<<<<<< HEAD
 		<label for="Tel" >שעת סיום</label>
 		<input type="text" id="bornDate" name="bornDate"  [(ngModel)]="modalData.event.end">
 
@@ -217,12 +218,25 @@
 	
 		<label for="roomId" (click)="getroomlist()">חדר</label>
 		<select  [(ngModel)]="modalData.event.roomId
+=======
+		<label for="end" >תאריך ושעת סיום</label>
+		<input type="text" id="end" name="end"  [(ngModel)]="modalData.event.end">
+	
+		<label for="description" >סוג פגישה</label>
+		<input type="text" id="description" name="description"  [(ngModel)]="modalData.event.typeMeeting1.description">
+	
+		<label for="userName" >שם עובד</label>
+		<input type="text" id="userName" name="userName"  [(ngModel)]="modalData.event.users.userName">
+<!-- 	
+		<label for="tuser" (click)="getroomlist()">חדר</label>
+		<select  [(ngModel)]="dairy.rooms
+>>>>>>> 467072dddb9be107e31ed133a2ca07315f09d2f4
 				  "name="myselect" >
 					<option *ngFor="let room of roomlist" [ngValue]="room.roomId"  >{{room.roomName}} </option>
 				  </select>
 	 -->
-		<label for="tuser" >תאור הפניה</label>
-		<input type="text" id="typeRef" name="typeRef"  [(ngModel)]="modalData.event.description">
+		<label for="description" >תאור הפניה</label>
+		<input type="text" id="description" name="description"  [(ngModel)]="modalData.event.description">
 	
 	   
 	

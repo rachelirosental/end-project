@@ -62,10 +62,8 @@ typeMeeting:TypeMeeting[];
   addNew(){
     this.dairy.end=new Date(this.dairy.end);
     this.dairy.start=new Date(this.dairy.start);
-console.log(this.dairy);
     this.DairyService.create(this.dairy).subscribe(res=>{
       localStorage.setItem("dairy",JSON.stringify(res));
-      
     },err=>{
       alert("error")
     })

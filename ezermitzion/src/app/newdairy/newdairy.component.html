@@ -2,11 +2,11 @@
     <label for="title" >כותרת</label>
     <input class="form-control" type="text" id="title" name="title"  [(ngModel)]="dairy.title">
 
-    <label for="start" >שעת התחלה</label>
-    <input type="text" id="start" name="start"  [(ngModel)]="dairy.start">
+    <label for="start" >תאריך ושעת התחלה</label><br>
+    <input type="datetime" id="start" name="start"  [(ngModel)]="dairy.start"><br>
 
-    <label for="end" >שעת סיום</label>
-    <input type="text" id="end" name="end" (mouseup)="getroomlist()" [(ngModel)]="dairy.end">
+    <label for="end" >תאריך ושעת סיום</label><br>
+    <input type="datetime" id="end" name="end" (mouseup)="getroomlist()" [(ngModel)]="dairy.end"><br>
 
     <label for="typeMeeting" >סוג פגישה</label>
     <select placeholder="Enter Type Reference" [(ngModel)]="dairy.typeMeeting
