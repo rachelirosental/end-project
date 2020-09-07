@@ -34,4 +34,7 @@ import { TypeMeeting } from 'src/app/Data/TypeMeeting';
         
         return this.httpClient.get<dairy[]>(this.url+"/getdaries/"+ id );
       }
+      update(dairy: dairy) {
+        return this.httpClient.post(this.url + "/update",dairy )  
+      }
     }

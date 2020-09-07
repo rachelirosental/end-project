@@ -27,6 +27,11 @@ import { dairy } from '../Data/dairy';
 import { dairychangeevent, CalendarEventTimesChangedEventType } from '../Data/dairychangeevent';
 import { NewdairyComponent } from '../newdairy/newdairy.component';
 import { ActivatedRoute } from '@angular/router';
+import { Room } from '../Data/Room';
+import { TypeMeeting } from '../Data/TypeMeeting';
+import { user } from '../Data/user';
+import { RoomService } from '../shared/services/room.service';
+import { UserService } from '../shared/services/user.service';
 declare var $: any;
 
 const colors: any = {
@@ -83,6 +88,9 @@ export class DairyComponent {
   ];
  events:dairy[];
   refresh: Subject<any> = new Subject();
+  roomlist:Room[]=[]
+typeMeeting:TypeMeeting[]=[]
+user:user[]=[]
 
   //   // events: CalendarEvent[] = [
   //   //   {
@@ -127,11 +135,13 @@ export class DairyComponent {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal, public DairyService: DairyService,private route :ActivatedRoute) { }
+  constructor(private modal: NgbModal, public DairyService: DairyService,private route :ActivatedRoute ,private RoomService:RoomService,private UserService:UserService)  { }
 
 
 
   dayClicked({ date, events }: { date: Date; events: dairy }): void {
+    this.getroomlist();
+
     if (isSameMonth(date, this.viewDate)) {
       if (
         (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true)
@@ -190,6 +200,10 @@ handleEvent(action: string, event): void {
 
   ngOnInit(): void {
     this.getdaries();
+   
+    this.getNameUserList();
+    this.getTypemeetList();
+
 
   }
   getdaries() {
@@ -208,6 +222,43 @@ handleEvent(action: string, event): void {
       console.log(this.events)
     });
   }
+  edit(){
+  
+    debugger;
+    this.DairyService.update(this.modalData.event).subscribe(res=>console.log(res))
+
+  } getroomlist() {
+    debugger;
+    console.log('hellllll');
+    this.modalData.event.end=new Date(this.modalData.event.end);
+    this.modalData.event.start=new Date(this.modalData.event.start);
+    this.RoomService.getlistrooms(this.modalData.event).subscribe((res: Room[]) => {
+      localStorage.setItem("roomslist", JSON.stringify(res))
+      this.roomlist = res,
+        console.log(this.roomlist)
+    });
+  }
+  getNameUserList(){
+  
+    this.UserService.getusers().subscribe(res=>{
+      localStorage.setItem("user",JSON.stringify(res)),
+      this.user=res,console.log('user',this.user)
+      
+    },err=>{
+      alert("error")
+    })
+  }
+  getTypemeetList(){
+    
+    this.DairyService.getTypeMeetList().subscribe(res=>{
+      localStorage.setItem("typereference",JSON.stringify(res)),
+      this.typeMeeting=res,console.log('typereference',this.typeMeeting)
+      
+    },err=>{
+      alert("error")
+    })
+  }
+ 
 }
 
 
