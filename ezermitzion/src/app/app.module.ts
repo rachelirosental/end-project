@@ -63,6 +63,7 @@ import { ModalmeetsComponent } from './modalmeets/modalmeets.component';
 import { ChartbuttonsComponent } from './chartbuttons/chartbuttons.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import {DpDatePickerModule} from 'ng2-date-picker';
+import { NewmodalrefComponent } from './newmodalref/newmodalref.component';
 
 FusionChartsModule.fcRoot(
   FusionCharts,
@@ -105,6 +106,7 @@ FusionChartsModule.fcRoot(
     ModalmeetsComponent,
     ChartbuttonsComponent,
     HomepageComponent,
+    NewmodalrefComponent,
     // Referencemodal1Component,
 
     // [DemoComponent],
@@ -143,6 +145,7 @@ FusionChartsModule.fcRoot(
     ReferencemodalComponent,
     MeetmodalComponent,
     ModalmeetsComponent,
+    NewmodalrefComponent
       ]
 })
 export class AppModule { }

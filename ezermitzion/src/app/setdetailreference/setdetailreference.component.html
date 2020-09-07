@@ -1,14 +1,14 @@
 <div>
     
   
-    <label for="lname" >תאריך</label><br>
+    <label for="date" >תאריך</label><br>
 
-    <input  class="form-control" [ngModel]="reference.date | date:'yyyy-MM-dd'" type="datetime" id="date" name="date"  ><br>
+    <input  class="form-control" [ngModel]="reference.date | date:'dd/MM/yyyy hh:mm'" type="datetime" id="date" name="date"  ><br>
     <!-- <dp-date-picker placeholder="reference.date" [ngModel]="reference.date | date:'yyyy-MM-dd'"  id="date" name="date" type="datetime" ></dp-date-picker>  -->
-    <label for="lname" >תיאור הפניה</label>
+    <label for="description" >תיאור הפניה</label>
     <input  class="form-control" type="text" id="description" name="description"  [(ngModel)]="reference.description" >
-    <label for="fname" >תאריך לידה</label><br>
-    <input  class="form-control" type="datetime" id="bornDate" name="bornDate"  [(ngModel)]="reference.bornDate"><br>
+    <label for="bornDate" >תאריך לידה</label><br>
+    <input  class="form-control" [ngModel]="reference.bornDate | date:'dd/MM/yyyy'" type="datetime" id="bornDate" name="bornDate"  ><br>
 
     <label for="isCare" >האם טופל</label>
     <input  class="form-control" type="text" id="isCare" name="isCare"  [(ngModel)]="reference.isCare">

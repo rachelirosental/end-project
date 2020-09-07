@@ -10,7 +10,7 @@ import { CreateProfessionComponent } from '../create-profession/create-professio
 import { OpinionmaodalComponent } from '../opinionmaodal/opinionmaodal.component';
 import { Router } from '@angular/router';
 import {UserService } from '../shared/services/user.service';
-
+import { NewmodalrefComponent } from '../newmodalref/newmodalref.component';
 
 
 @Component({
@@ -109,13 +109,13 @@ create(){
    
   }
   openModalref(p:Profession){
-    // const modalRef = this.modalService.open(ReferencemodalComponent);
-    // modalRef.componentInstance.profession = {...p};
-    // modalRef.result.then(res=>{
-    //   this.getProfList();
-    // },err=>{
-    //   this.getProfList();
-    // })
+    const modalRef = this.modalService.open(NewmodalrefComponent,{size: 'lg', windowClass: 'modal-xl'});
+    modalRef.componentInstance.profession = {...p};
+    modalRef.result.then(res=>{
+      this.getProfList();
+    },err=>{
+      this.getProfList();
+    })
     
 
   }
