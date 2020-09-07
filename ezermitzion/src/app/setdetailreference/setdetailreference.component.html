@@ -2,9 +2,9 @@
     
   
     <label for="lname" >תאריך</label><br>
-    
-    <input  class="form-control" type="datetime" id="date" name="date"  [(ngModel)]="reference.date"><br>
 
+    <input  class="form-control" [ngModel]="reference.date | date:'yyyy-MM-dd'" type="datetime" id="date" name="date"  ><br>
+    <!-- <dp-date-picker placeholder="reference.date" [ngModel]="reference.date | date:'yyyy-MM-dd'"  id="date" name="date" type="datetime" ></dp-date-picker>  -->
     <label for="lname" >תיאור הפניה</label>
     <input  class="form-control" type="text" id="description" name="description"  [(ngModel)]="reference.description" >
 

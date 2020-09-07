@@ -62,7 +62,7 @@ import { MeetcounselerComponent } from './meetcounseler/meetcounseler.component'
 import { ModalmeetsComponent } from './modalmeets/modalmeets.component';
 import { ChartbuttonsComponent } from './chartbuttons/chartbuttons.component';
 import { HomepageComponent } from './homepage/homepage.component';
-// import { Referencemodal1Component } from './referencemodal1/referencemodal1.component';
+import {DpDatePickerModule} from 'ng2-date-picker';
 
 FusionChartsModule.fcRoot(
   FusionCharts,
@@ -120,6 +120,7 @@ FusionChartsModule.fcRoot(
     FormsModule,
     NgbModalModule
     ,FusionChartsModule,
+    DpDatePickerModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
@@ -142,7 +143,6 @@ FusionChartsModule.fcRoot(
     ReferencemodalComponent,
     MeetmodalComponent,
     ModalmeetsComponent,
-    // Referencemodal1Component
-  ]
+      ]
 })
 export class AppModule { }

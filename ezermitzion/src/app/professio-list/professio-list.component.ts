@@ -7,7 +7,6 @@ import { ProfessionDetialsComponent } from '../profession-detials/profession-det
 import {TypeProfessions } from 'src/app/Data/TypeProfessions';
 import {opinion } from 'src/app/Data/Opinion';
 import { CreateProfessionComponent } from '../create-profession/create-profession.component';
-// import { Referencemodal1Component } from '../referencemodal1/referencemodal1.component';
 import { OpinionmaodalComponent } from '../opinionmaodal/opinionmaodal.component';
 import { Router } from '@angular/router';
 import {UserService } from '../shared/services/user.service';
@@ -109,17 +108,17 @@ create(){
     })
    
   }
-  // openModalref(p:Profession){
-  //   const modalRef = this.modalService.open(Referencemodal1Component);
-  //   modalRef.componentInstance.profession = {...p};
-  //   modalRef.result.then(res=>{
-  //     this.getProfList();
-  //   },err=>{
-  //     this.getProfList();
-  //   })
+  openModalref(p:Profession){
+    // const modalRef = this.modalService.open(ReferencemodalComponent);
+    // modalRef.componentInstance.profession = {...p};
+    // modalRef.result.then(res=>{
+    //   this.getProfList();
+    // },err=>{
+    //   this.getProfList();
+    // })
     
 
-  // }
+  }
   openModalopinion(p:Profession){
     const modalRef = this.modalService.open(OpinionmaodalComponent);
     modalRef.componentInstance.profession ={...p} ;

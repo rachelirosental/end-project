@@ -173,6 +173,8 @@ user:user[]=[]
 
 handleEvent(action: string, event): void {
   this.modalData = { event, action };
+//click to open model
+this.getroomlist()
   this.modal.open(this.modalContent, { size: 'lg' });
 }
 
