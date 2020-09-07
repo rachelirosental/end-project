@@ -198,7 +198,7 @@
 		<input class="form-control" type="text" id="title" name="title"  [(ngModel)]="modalData.event.title">
 	
 		<label for="end" >תאריך ושעת סיום</label><br>
-		<input type="datetime" id="end" name="end" (mouseup)="getroomlist()" [(ngModel)]="modalData.event.end"><br>
+		<input type="datetime" id="end" name="end"  [(ngModel)]="modalData.event.end"><br>
 	
 		<label for="Tel" >שעת סיום</label>
 		<input type="text" id="bornDate" name="bornDate"  [(ngModel)]="modalData.event.end">
@@ -215,12 +215,12 @@
 		  <option *ngFor="let type of user" [ngValue]="type.userId">{{type.userName}}</option>
 		</select>
 	
-		<label for="roomId" (click)="getroomlist()">חדר</label>
+		<label for="roomId" >חדר</label>
 		<select  [(ngModel)]="modalData.event.roomId
 				  "name="myselect" >
 					<option *ngFor="let room of roomlist" [ngValue]="room.roomId"  >{{room.roomName}} </option>
 				  </select>
-	 -->
+
 		<label for="description" >תאור הפניה</label>
 		<input type="text" id="description" name="description"  [(ngModel)]="modalData.event.description">
 	

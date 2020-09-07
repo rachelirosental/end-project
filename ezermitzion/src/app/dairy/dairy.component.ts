@@ -140,6 +140,8 @@ user:user[]=[]
 
 
   dayClicked({ date, events }: { date: Date; events: dairy }): void {
+    this.getroomlist();
+
     if (isSameMonth(date, this.viewDate)) {
       if (
         (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true)
@@ -198,6 +200,10 @@ handleEvent(action: string, event): void {
 
   ngOnInit(): void {
     this.getdaries();
+   
+    this.getNameUserList();
+    this.getTypemeetList();
+
 
   }
   getdaries() {
@@ -218,6 +224,7 @@ handleEvent(action: string, event): void {
   }
   edit(){
   
+    debugger;
     this.DairyService.update(this.modalData.event).subscribe(res=>console.log(res))
 
   } getroomlist() {
