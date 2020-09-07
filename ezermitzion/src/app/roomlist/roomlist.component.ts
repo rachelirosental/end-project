@@ -39,12 +39,19 @@ room:Room;
  
   }
   deleteRoom(id:number){
-    this.RoomService.delete(id).subscribe(res=>{
-     this.getrooms();
-      console.log(res)
-    },err=>{
-      alert("error")
-    })
+    var answer = window.confirm("האם אתה בטוח שברצונך למחוק חדר זה?");
+if (answer) {
+  this.RoomService.delete(id).subscribe(res=>{
+    this.getrooms();
+     console.log(res)
+   },err=>{
+     alert("error")
+   })
+}
+else {
+  
+}
+    
     
   }
   next(r:Room){

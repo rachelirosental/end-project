@@ -6,6 +6,7 @@ import { user } from '../Data/user';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SetdetailuserComponent } from '../setdetailuser/setdetailuser.component';
 import { TypeUser } from '../Data/TypeUser';
+import { FormGroup } from '@angular/forms';
 import { FormuserComponent } from '../formuser/formuser.component';
 import { ReferencemodalComponent } from '../referencemodal/referencemodal.component';
 @Component({
@@ -27,20 +28,54 @@ inputText:any;
   ngOnInit(): void {
     
     this.loadUsers();
+    // this.MustMatch();
   }
+
+
+// custom validator to check that two fields match
+  MustMatch(controlName: string, matchingControlName: string) {
+    return (formGroup: FormGroup) => {
+        const control = formGroup.controls[controlName];
+        const matchingControl = formGroup.controls[matchingControlName];
+
+        // return null if controls haven't initialised yet
+        if (!control || !matchingControl) {
+          return null;
+        }
+
+        // return null if another validator has already found an error on the matchingControl
+        if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+            return null;
+        }
+
+        // set error on matchingControl if validation fails
+        if (control.value !== matchingControl.value) {
+            matchingControl.setErrors({ mustMatch: true });
+        } else {
+            matchingControl.setErrors(null);
+        }
+    
+      }}
   loadUsers(){
     this.UserService.getusers().subscribe((users:user[])=>{this.users=users;
     console.log(this.users)});
   }
 
 deleteUser(id:number){
-  alert("האם אתה בטוח שברצונך למחוק משתמש זה?");
+  // alert("האם אתה בטוח שברצונך למחוק משתמש זה?");
+  var answer = window.confirm("האם אתה בטוח שברצונך למחוק משתמש זה?");
+if (answer) {
   this.UserService.delete(id).subscribe(res=>{
-   this.loadUsers();
-    console.log(res)
-  },err=>{
-    alert("error")
-  })
+    this.loadUsers();
+     console.log(res)
+   },err=>{
+     alert("error")
+   })
+}
+else {
+    
+}
+ 
   
 }
 next(u:user){

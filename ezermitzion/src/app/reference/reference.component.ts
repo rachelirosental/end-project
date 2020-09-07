@@ -31,12 +31,19 @@ export class ReferenceComponent implements OnInit {
   });});
   }
   deleteReference(id:number){
-    this.ReferenceService.delete(id).subscribe(res=>{
-     this.loadReferences();
-      console.log(res)
-    },err=>{
-      alert("error")
-    })
+    var answer = window.confirm("האם אתה בטוח שברצונך למחוק פניה זו?");
+if (answer) {
+  this.ReferenceService.delete(id).subscribe(res=>{
+    this.loadReferences();
+     console.log(res)
+   },err=>{
+     alert("error")
+   })
+}
+else {
+    //some code
+}
+    
     
   }
   next(r:Reference){

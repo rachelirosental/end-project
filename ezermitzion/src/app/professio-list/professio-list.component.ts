@@ -55,13 +55,19 @@ public opinions:opinion[]=[];
     }
 
 deleteprofession(id:number){
-  alert("האם אתה בטוח שברצונך למחוק איש מקצוע זה?");
+  var answer = window.confirm("האם אתה בטוח שברצונך למחוק איש מקצוע זה?");
+if (answer) {
   this.ProfessionService.delete(id).subscribe(res=>{
     this.getProfList();
     console.log(res)
   },err=>{
     alert("error")
   })
+}
+else {
+    
+}
+  
 }
 search(){
  
