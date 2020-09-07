@@ -197,10 +197,9 @@
 		<label for="title" >כותרת</label>
 		<input class="form-control" type="text" id="title" name="title"  [(ngModel)]="modalData.event.title">
 	
-		<label for="start" >תאריך ושעת התחלה</label>
-		<input type="text" id="start" name="start"  [(ngModel)]="modalData.event.start">
+		<label for="end" >תאריך ושעת סיום</label><br>
+		<input type="datetime" id="end" name="end" (mouseup)="getroomlist()" [(ngModel)]="modalData.event.end"><br>
 	
-<<<<<<< HEAD
 		<label for="Tel" >שעת סיום</label>
 		<input type="text" id="bornDate" name="bornDate"  [(ngModel)]="modalData.event.end">
 
@@ -218,19 +217,6 @@
 	
 		<label for="roomId" (click)="getroomlist()">חדר</label>
 		<select  [(ngModel)]="modalData.event.roomId
-=======
-		<label for="end" >תאריך ושעת סיום</label>
-		<input type="text" id="end" name="end"  [(ngModel)]="modalData.event.end">
-	
-		<label for="description" >סוג פגישה</label>
-		<input type="text" id="description" name="description"  [(ngModel)]="modalData.event.typeMeeting1.description">
-	
-		<label for="userName" >שם עובד</label>
-		<input type="text" id="userName" name="userName"  [(ngModel)]="modalData.event.users.userName">
-<!-- 	
-		<label for="tuser" (click)="getroomlist()">חדר</label>
-		<select  [(ngModel)]="dairy.rooms
->>>>>>> 467072dddb9be107e31ed133a2ca07315f09d2f4
 				  "name="myselect" >
 					<option *ngFor="let room of roomlist" [ngValue]="room.roomId"  >{{room.roomName}} </option>
 				  </select>

@@ -1,18 +1,18 @@
 
 
-<div class="container" style="float:right !important">
-    <div  class="row row-flex"  style="float:right !important" *ngFor="let m of meets">
+<div class="row " >
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" *ngFor="let m of meets">
 
-        <div  class="col-xs-12 col-sm-6 col-md-3 col-lg-3" >
-            <div class="price-table pt-bg-black" >
-                        <div >
-                    <span style="background-color:rgb(68, 134, 255) !important;float:right !important">{{m.title}}</span>
+        <div >
+            <div  class="price-table pt-bg-black">
+                        <div>
+                    <span style="background-color:rgb(68, 134, 255) !important;">{{m.title}}</span>
                 </div>
                 <ul>
-                        <li><h3>:התחלה</h3>{{m.start}}</li>
-                        <li><h3>:סיום</h3>{{m.end}}</li>
-                        <li><h3>:חדר</h3>{{m.rooms.roomName}}</li>
-                        <li><h3>:תיאור</h3>{{m.description}}</li>
+                        <li><h3>התחלה:</h3>{{m.start | date:"MM/dd/yyyy 'בשעה' h:mma"}}</li>
+                        <li><h3>סיום:</h3>{{m.end | date:"MM/dd/yyyy 'בשעה' h:mma"}}</li>
+                        <li><h3>חדר:</h3>{{m.rooms.roomName}}</li>
+                        <li><h3>תיאור:</h3>{{m.description}}</li>
                 </ul>
 
             </div>
