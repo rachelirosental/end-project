@@ -202,6 +202,7 @@
 		<label for="Tel" >שעת סיום</label>
 		<input type="text" id="bornDate" name="bornDate"  [(ngModel)]="modalData.event.end">
 
+
 		<label for="typeMeeting" >סוג פגישה</label>
 		<select placeholder="Enter Type Reference" [(ngModel)]="modalData.event.typeMeeting
 		"name="myselect">
@@ -226,13 +227,15 @@
 	   
 	
 		<input type="submit" style="background-color: #4577a0 !important;"value="אישור" (click)="edit()">
-		<a class="delete" title="Delete" data-toggle="tooltip"
-		(click)="deletedairy(modalData.event.id)"><i class="material-icons"></i></a>deletedairy
+	
 	</div>
 	
 	</div>
+	<a class="delete" title="Delete" data-toggle="tooltip"
+	(click)="deletedairy(modalData.event.dairyId)"><i class="material-icons" style="color:blue !important ;size: 5vh;width: 50px;"></i></a>
 	<div class="modal-footer">
 	  <button type="button" class="btn btn-outline-secondary" (click)="close()">
+
 		OK
 	  </button>
 	</div>

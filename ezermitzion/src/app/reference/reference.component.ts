@@ -7,6 +7,7 @@ import { Reference } from '../Data/Reference';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SetdetailreferenceComponent } from '../setdetailreference/setdetailreference.component';
 import { FormRefComponent } from '../form-ref/form-ref.component';
+
 @Component({
   selector: 'app-reference',
   templateUrl: './reference.component.html',
@@ -23,6 +24,8 @@ export class ReferenceComponent implements OnInit {
     this.loadReferences();
   }
   loadReferences(){
+    debugger;
+    console.log(JSON.parse(localStorage.getItem("user")).userId)
     this.ReferenceService.getrefbyuserid(JSON.parse(localStorage.getItem("user")).userId).subscribe((references:Reference[])=>{this.references=references;
     console.log(this.references);
   this.references.forEach(element => {

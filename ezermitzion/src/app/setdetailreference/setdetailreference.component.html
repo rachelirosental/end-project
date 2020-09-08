@@ -11,8 +11,11 @@
     <input  class="form-control" [ngModel]="reference.bornDate | date:'dd/MM/yyyy'" type="datetime" id="bornDate" name="bornDate"  ><br>
 
     <label for="isCare" >האם טופל</label>
-    <input  class="form-control" type="text" id="isCare" name="isCare"  [(ngModel)]="reference.isCare">
-
+ 
+    <select  class="form-control" type="text" id="isCare"  placeholder="Enter Name" [(ngModel)]="reference.isCare
+    "name="myselect">
+      <option *ngFor="let i of iscare" [ngValue]="i.namee">{{i.name}}</option>
+    </select>
     <label for="userName" >סוג משתמש</label>
     <input  class="form-control" type="text" id="userName" name="userName"  [(ngModel)]="reference.users.userName">
     

@@ -11,6 +11,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SetdetailreferenceComponent implements OnInit {
   @Input() public reference:Reference;
+iscare= [
+    { namee: true, name: "כן" },
+    { namee: true, name: "לא" },
+  
+  ]
   constructor(public ReferenceService:ReferenceService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
