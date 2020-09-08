@@ -17,15 +17,22 @@
       <option *ngFor="let i of iscare" [ngValue]="i.namee">{{i.name}}</option>
     </select>
     <label for="userName" >סוג משתמש</label>
-    <input  class="form-control" type="text" id="userName" name="userName"  [(ngModel)]="reference.users.userName">
-    
+    <select    placeholder="Enter Name" [(ngModel)]="reference.userName
+    "name="myselect">
+      <option *ngFor="let type of user" [ngValue]="type.userId">{{type.userName}}</option>
+    </select>
     
     <label for="profId" >איש מקצוע</label>
-    <input class="form-control" type="text" id="profId" name="profId"  [(ngModel)]="reference.professions.profName">
+    <select placeholder="Enter Type Reference" [(ngModel)]="reference.typeRef
+              "name="myselect">
+                <option *ngFor="let type of typereference" [ngValue]="type.refId">{{type.refname}}</option>
+              </select>
 
     <label for="typeRef" >סוג פניה</label>
-    <input class="form-control" type="text" id="typeRef" name="typeRef"  [(ngModel)]="reference.typeReference.refname">
-
+    <select placeholder="Enter Type Reference" [(ngModel)]="reference.typeRef
+              "name="myselect">
+                <option *ngFor="let type of typereference" [ngValue]="type.refId">{{type.refname}}</option>
+              </select>
     <label for="recommendation">המלצות</label>
     <input class="form-control" type="text" id="recommendation" name="recommendation"  [(ngModel)]="reference.recommendation">
 
