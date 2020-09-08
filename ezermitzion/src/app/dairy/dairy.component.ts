@@ -140,7 +140,7 @@ user:user[]=[]
 
 
   dayClicked({ date, events }: { date: Date; events: dairy }): void {
-    this.getroomlist();
+
 
     if (isSameMonth(date, this.viewDate)) {
       if (
@@ -230,7 +230,7 @@ this.getroomlist()
     this.DairyService.update(this.modalData.event).subscribe(res=>console.log(res))
 
   } getroomlist() {
-    debugger;
+   
     console.log('hellllll');
     this.modalData.event.end=new Date(this.modalData.event.end);
     this.modalData.event.start=new Date(this.modalData.event.start);
@@ -259,6 +259,21 @@ this.getroomlist()
     },err=>{
       alert("error")
     })
+  }
+  deletedairy(id){
+    var answer = window.confirm("האם אתה בטוח שברצונך למחוק איש מקצוע זה?");
+    if (answer) {
+      this.DairyService.delete(id).subscribe(res=>{
+        this.getdaries();
+        console.log(res)
+      },err=>{
+        alert("error")
+      })
+    }
+    else {
+        
+    }
+
   }
  
 }
