@@ -20,6 +20,9 @@ import { DairyComponent } from 'src/app/dairy/dairy.component';
         return this.httpClient.get<Charters[]>(this.url + "/getCountTypeRef");
      }
    
+     getCountOpenRef(): Observable<Charters[]> {
+      return this.httpClient.get<Charters[]>(this.url + "/getCountOpenRef");
+   }
 
   }
 

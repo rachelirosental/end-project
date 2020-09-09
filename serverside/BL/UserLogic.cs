@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO.NewFolder1;
 using DAL;
+using System.Net.Mail;
+using System.Net;
 
 namespace BL
 {
@@ -99,6 +101,43 @@ namespace BL
         //    }
         //}
         
+        public static int SendMail(ChartData user)
+        {
+            try
+            {
 
+                var userDb = db.users.FirstOrDefault(p => p.UserName == user.label);
+                var fromAddress = new MailAddress("keshev.ezer@gmail.com", "ezer mitzion");
+                var toAddress = new MailAddress(userDb.Email, userDb.UserName);
+                const string fromPassword = "keshev12";
+                const string subject = "עובד מצטיין";
+                const string body = "את העובדת המצטיינת כל הכבוד!!";
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword),
+                    Timeout = 20000
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+                }
+                return 1;
+
+            }
+            catch
+            {
+
+                return 0;
+            }
+        }
     }
 }

@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { TypeUser} from 'src/app/Data/TypeUser';
 
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,7 +25,7 @@ public key:any;
   }
 logout(){
   console.log('key',this.key)
-localStorage.removeItem(this.key)
+localStorage.removeItem("user")
 this.router.navigateByUrl('/login');
 
 }
@@ -55,6 +57,10 @@ currentuser() {
   }
   getTypeUserList(): Observable<TypeUser[]> {
     return this.httpClient.get<TypeUser[]>(this.url + "/getTypeUserList/" );
+  }
+  sendmail(max){
+    debugger;
+    return this.httpClient.post(this.url + "/sendMail",max);
   }
   
 }

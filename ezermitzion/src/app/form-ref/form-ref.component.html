@@ -38,10 +38,10 @@
       <input class="form-control" type="date" id="bornDate" name="bornDate"  [(ngModel)]="reference.bornDate"><br>
       
       <label for="type" >האם טופל</label>
-      <select  type="text" id="isCare" name="isCare" [(ngModel)]="reference.isCare">
-        <option value="">true</option>
-        <option value="1">false</option>
-        </select>
+      <select  class="form-control" type="text" id="isCare"  placeholder="Enter Name" [(ngModel)]="reference.isCare
+    "name="myselect">
+      <option *ngFor="let i of iscare" [ngValue]="i.namee">{{i.name}}</option>
+    </select>
       
       <label for="type" > משתמש</label>
       <select    placeholder="Enter Name" [(ngModel)]="reference.userName

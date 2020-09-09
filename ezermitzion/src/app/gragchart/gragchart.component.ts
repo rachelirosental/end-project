@@ -1,5 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { ChartService } from '../shared/services/chart.service';
+import {UserService } from '../shared/services/user.service';
+
 const data = {
   chart: {
     theme: "fusion",
@@ -32,19 +34,19 @@ export class GragchartComponent{
     type = "pie2d";
     dataFormat = "json";
     dataSource = data;
-    constructor(private zone: NgZone ,public ChartService:ChartService) {
+    constructor(private zone: NgZone ,public ChartService:ChartService,public UserService:UserService) {
       this.chartConfig = {
                 width: '700',
                 height: '400',
                 type: 'column2d',
                 dataFormat: 'json',
             };
-     this.getCountTypeRef();
+     this.getCountOpenRef();
     }
   
-    getCountTypeRef(){
-     return this.ChartService.getCountTypeRef().subscribe(res=>{
-      localStorage.setItem("counttyperef",JSON.stringify(res)) ,
+    getCountOpenRef(){
+     return this.ChartService.getCountOpenRef().subscribe(res=>{
+      localStorage.setItem("getCountOpenRef",JSON.stringify(res)) ,
       data.data=res,
       data.data.forEach(element => {
         element['color']='#5665F0';
@@ -52,7 +54,23 @@ export class GragchartComponent{
       console.log(typeof(this.dataSource.data))});
   
   }
+  sendmail(){
+
+  // var result=  data.data.map((arr) => arr.reduce((a, b) => a.value < b.value ? b : a).value)
+  const max = data.data.reduce((p, c) => p.value > c.value ? p : c);
+
+  console.log(max);
+    
+debugger;
+    return this.UserService.sendmail(max).subscribe(res=>{
+     localStorage.setItem("res",JSON.stringify(res)) ,
+
+    
+     console.log('ress',res)});
+ 
+ }
     ngOnInit() {
+    
   
       // setTimeout(() => {
       //   SelectedSingleton.change(this.sampleCode['ex24'].title);

@@ -106,5 +106,21 @@ namespace API.Controllers
             }
 
         }
+
+        [Route("sendMail")]
+        public int SendMail([FromBody]ChartData chart)
+        {
+            try
+            {
+                return UserLogic.SendMail(chart);
+
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
+
     }
 }

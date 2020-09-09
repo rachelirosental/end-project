@@ -19,6 +19,11 @@ export class FormRefComponent implements OnInit {
   public user:user[];
   public profession:Profession[];
   public typereference:TypeReference[];
+  iscare= [
+    { namee: true, name: "כן" },
+    { namee: true, name: "לא" },
+  
+  ]
   constructor(public router: Router,public UserService:UserService,public ReferenceService:ReferenceService,public ProfessionService:ProfessionService) { }
 
   ngOnInit(): void {
