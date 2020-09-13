@@ -3,16 +3,17 @@
   
     <label for="date" >תאריך</label><br>
 
-    <input  class="form-control" [ngModel]="reference.date | date:'dd/MM/yyyy hh:mm'" type="datetime" id="date" name="date"  ><br>
-    <!-- <dp-date-picker placeholder="reference.date" [ngModel]="reference.date | date:'yyyy-MM-dd'"  id="date" name="date" type="datetime" ></dp-date-picker>  -->
+    <input class="form-control" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" [(ngModel)]="reference.date  ">
+    <owl-date-time #dt1 style="z-index: 5000000 !important;"></owl-date-time><br>
     <label for="description" >תיאור הפניה</label>
     <input  class="form-control" type="text" id="description" name="description"  [(ngModel)]="reference.description" >
     <label for="bornDate" >תאריך לידה</label><br>
-    <input  class="form-control" [ngModel]="reference.bornDate | date:'dd/MM/yyyy'" type="datetime" id="bornDate" name="bornDate"  ><br>
+    <input class="form-control" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" [(ngModel)]="reference.bornDate">
+    <owl-date-time #dt1 style="z-index: 5000000 !important;"></owl-date-time><br>
 
     <label for="isCare" >האם טופל</label>
  
-    <select  class="form-control" type="text" id="isCare"  placeholder="Enter Name" [(ngModel)]="reference.isCare
+    <select style="padding-top: 6px !important" class="form-control" type="text" id="isCare"  placeholder="Enter Name" [(ngModel)]="reference.isCare
     "name="myselect">
       <option *ngFor="let i of iscare" [ngValue]="i.namee">{{i.name}}</option>
     </select>

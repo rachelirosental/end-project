@@ -17,7 +17,7 @@
                     <th style="width: 160px !important;">תאריך הפניה</th>
                     <th style="width: 120px !important;">תאור הפניה</th>
                     <th style="width: 160px !important;">תאריך לידה</th>
-                    <th style="width: 50px !important;">האם טופל</th>
+                    <th style="width: 50px !important; ">האם טופל</th>
                     <th style="width: 80px !important;">משתמש</th> 
                     <th style="width: 60px !important;">איש מקצוע</th> 
                     <th style="width: 65px !important;">סוג פניה</th> 
@@ -30,7 +30,8 @@
                     <td >{{r.date|date:"dd/MM/yyyy  hh:mm"}}</td>
                     <td>{{r.description}}</td>
                     <td>{{r.bornDate|date:"dd/MM/yyyy"}}</td>
-                    <td>{{r.isCare}}</td>
+                    <td  *ngIf="r.isCare===true">כן</td>
+                    <td  *ngIf="r.isCare===false">לא</td>
                     <td>{{r.users.userName}}</td>
                     <td>{{r.professions.profName}}</td>
                     <td>{{r.typeReference.refname}}</td>

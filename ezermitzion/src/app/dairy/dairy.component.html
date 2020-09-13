@@ -1,107 +1,65 @@
 <div class="row text-center">
 	<div class="col-md-4">
-	  <div class="btn-group">
-		<div
-		  class="btn btn-primary"
-		  mwlCalendarPreviousView
-		  [view]="view"
-		  [(viewDate)]="viewDate"
-		  (viewDateChange)="closeOpenMonthViewDay()"
-		>
-		  Previous
+		<div class="btn-group">
+			<div class="btn btn-primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
+				(viewDateChange)="closeOpenMonthViewDay()">
+				Previous
+			</div>
+			<div class="btn btn-outline-secondary" mwlCalendarToday [(viewDate)]="viewDate">
+				Today
+			</div>
+			<div class="btn btn-primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"
+				(viewDateChange)="closeOpenMonthViewDay()">
+				Next
+			</div>
 		</div>
-		<div
-		  class="btn btn-outline-secondary"
-		  mwlCalendarToday
-		  [(viewDate)]="viewDate"
-		>
-		  Today
-		</div>
-		<div
-		  class="btn btn-primary"
-		  mwlCalendarNextView
-		  [view]="view"
-		  [(viewDate)]="viewDate"
-		  (viewDateChange)="closeOpenMonthViewDay()"
-		>
-		  Next
-		</div>
-	  </div>
 	</div>
 	<div class="col-md-4">
-	  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+		<h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
 	</div>
 	<div class="col-md-4">
-	  <div class="btn-group">
-		<div
-		  class="btn btn-primary"
-		  (click)="setView(CalendarView.Month)"
-		  [class.active]="view === CalendarView.Month"
-		>
-		  Month
+		<div class="btn-group">
+			<div class="btn btn-primary" (click)="setView(CalendarView.Month)"
+				[class.active]="view === CalendarView.Month">
+				Month
+			</div>
+			<div class="btn btn-primary" (click)="setView(CalendarView.Week)"
+				[class.active]="view === CalendarView.Week">
+				Week
+			</div>
+			<div class="btn btn-primary" (click)="setView(CalendarView.Day)" [class.active]="view === CalendarView.Day">
+				Day
+			</div>
 		</div>
-		<div
-		  class="btn btn-primary"
-		  (click)="setView(CalendarView.Week)"
-		  [class.active]="view === CalendarView.Week"
-		>
-		  Week
-		</div>
-		<div
-		  class="btn btn-primary"
-		  (click)="setView(CalendarView.Day)"
-		  [class.active]="view === CalendarView.Day"
-		>
-		  Day
-		</div>
-	  </div>
 	</div>
-  </div>
-  <br />
-  <div [ngSwitch]="view">
-	<mwl-calendar-month-view
-	  *ngSwitchCase="CalendarView.Month"
-	  [viewDate]="viewDate"
-	  [events]="events"
-	  [refresh]="refresh"
-	  [activeDayIsOpen]="activeDayIsOpen"
-	  (dayClicked)="dayClicked($event.day)"
-	  (eventClicked)="handleEvent('Clicked', $event.event)"
-	  (eventTimesChanged)="eventTimesChanged($event)"
-	>
+</div>
+<br />
+<div [ngSwitch]="view">
+	<mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events"
+		[refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+		(eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
 	</mwl-calendar-month-view>
-	<mwl-calendar-week-view
-	  *ngSwitchCase="CalendarView.Week"
-	  [viewDate]="viewDate"
-	  [events]="events"
-	  [refresh]="refresh"
-	  (eventClicked)="handleEvent('Clicked', $event.event)" 
-	 (eventTimesChanged)="eventTimesChanged($event)"
-	>
+	<mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="events"
+		[refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
+		(eventTimesChanged)="eventTimesChanged($event)">
 	</mwl-calendar-week-view>
-	<mwl-calendar-day-view
-	  *ngSwitchCase="CalendarView.Day"
-	  [viewDate]="viewDate"
-	  [events]="events"
-	  [refresh]="refresh"
-    (eventClicked)="handleEvent('Clicked', $event.event)" 
-	  \\(eventTimesChanged)="eventTimesChanged($event)"
-	>
+	<mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="events" [refresh]="refresh"
+		(eventClicked)="handleEvent('Clicked', $event.event)" \\(eventTimesChanged)="eventTimesChanged($event)">
 	</mwl-calendar-day-view>
-  </div> 
- 
-  
-   <br /><br /><br />
-  
-  <h3>
+</div>
+
+
+<br /><br /><br />
+
+<h3>
 	Edit events
 	<button class="btn btn-primary float-right" (click)="addEvent()">
-	  Add new
+		Add new
 	</button>
 	<div class="clearfix"></div>
-  </h3>
-  
-  <!-- <div class="table-responsive">
+</h3>
+
+<!-- <div class="table-responsive">
 	<table class="table table-bordered">
 	  <thead>
 		<tr>
@@ -176,15 +134,15 @@
 	  </tbody>
 	</table>
   </div> -->
-  
-  <ng-template #modalContent let-close="close">
+
+<ng-template #modalContent let-close="close">
 	<div class="modal-header">
-	  <button  type="button" class="close" (click)="close()">
-		<span aria-hidden="true">&times;</span>
-	  </button>
+		<button type="button" class="close" (click)="close()">
+			<span aria-hidden="true">&times;</span>
+		</button>
 	</div>
 	<div class="modal-body">
-	  <!-- <div>
+		<!-- <div>
 		Action:
 		<pre>{{ modalData?.action }}</pre>
 	  </div>
@@ -192,51 +150,51 @@
 		Event:
 		<pre>{{ modalData?.event | json }}</pre>
 	  </div> -->
-	  <div>
-		<label for="title" >כותרת</label>
-		<input class="form-control" type="text" id="title" name="title"  [(ngModel)]="modalData.event.title">
-	
-		<label for="end" >תאריך ושעת התחלה</label><br>
-		<input type="text" id="end" name="end"  [(ngModel)]="modalData.event.end"><br>
-	
-		<label for="Tel" >תאריך ושעת סיום</label>
-		<input type="text" id="bornDate" name="bornDate"  [(ngModel)]="modalData.event.end  ">
-		
+		<div style="text-align: right;">
+			<label for="title">כותרת</label>
+			<input class="form-control" type="text" id="title" name="title" [(ngModel)]="modalData.event.title">
 
-		<label for="typeMeeting" >סוג פגישה</label>
-		<select placeholder="Enter Type Reference" [(ngModel)]="modalData.event.typeMeeting
-		"name="myselect">
-		  <option *ngFor="let type of typeMeeting" [ngValue]="type.meetingId">{{type.description}}</option>
-		</select>
-	
-		<label for="userId" >שם עובד</label>
-		<select    placeholder="Enter Name" [(ngModel)]="modalData.event.userId
-		"name="myselect">
-		  <option *ngFor="let type of user" [ngValue]="type.userId">{{type.userName}}</option>
-		</select>
-	
-		<label for="roomId" >חדר</label>
-		<select  [(ngModel)]="modalData.event.roomId
-				  "name="myselect" >
-					<option *ngFor="let room of roomlist" [ngValue]="room.roomId"  >{{room.roomName}} </option>
-				  </select>
+			<label for="end">תאריך ושעת התחלה</label><br>
+			<!-- <input type="text" id="end" name="end" [(ngModel)]="modalData.event.end"><br> -->
+			<input class="form-control" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" [(ngModel)]="modalData.event.start  ">
+			<owl-date-time #dt1 style="z-index: 5000000 !important;"></owl-date-time><br>
+			<label for="Tel">תאריך ושעת סיום</label><br>
+			<!-- <input type="text" id="bornDate" name="bornDate" [(ngModel)]="modalData.event.end  "> -->
+			<input class="form-control" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" [(ngModel)]="modalData.event.end  ">
+			<owl-date-time #dt1 style="z-index: 5000000 !important;"></owl-date-time><br>
 
-		<label for="description" >תאור הפניה</label>
-		<input type="text" id="description" name="description"  [(ngModel)]="modalData.event.description">
-	
-	   
-	
-		<input type="submit" style="background-color: #4577a0 !important;"value="אישור" (click)="edit()">
-	
+			<label for="typeMeeting">סוג פגישה</label>
+			<select placeholder="Enter Type Reference" [(ngModel)]="modalData.event.typeMeeting
+		" name="myselect">
+				<option *ngFor="let type of typeMeeting" [ngValue]="type.meetingId">{{type.description}}</option>
+			</select>
+
+			<label for="userId">שם עובד</label>
+			<select placeholder="Enter Name" [(ngModel)]="modalData.event.userId
+		" name="myselect">
+				<option *ngFor="let type of user" [ngValue]="type.userId">{{type.userName}}</option>
+			</select>
+
+			<label for="roomId">חדר</label>
+			<select [(ngModel)]="modalData.event.roomId
+				  " name="myselect">
+				<option *ngFor="let room of roomlist" [ngValue]="room.roomId">{{room.roomName}} </option>
+			</select>
+
+			<label for="description">תאור הפניה</label>
+			<input type="text" id="description" name="description" [(ngModel)]="modalData.event.description">
+
+
+
+			<input type="submit" style="background-color: #4577a0 !important;" value="אישור" (click)="edit()">
+
+		</div>
+
 	</div>
 	
-	</div>
-	<a class="delete" title="Delete" data-toggle="tooltip"
-	(click)="deletedairy(modalData.event.dairyId)"><i class="material-icons" style="color:blue !important ;size: 5vh;width: 50px;"></i></a>
 	<div class="modal-footer">
-	  <button type="button" class="btn btn-outline-secondary" (click)="close()">
-
-		OK
-	  </button>
+		
+		<a  class="delete" title="Delete" data-toggle="tooltip" (click)="deletedairy(modalData.event.dairyId)"><i
+			class="material-icons" style="color:blue !important ;width: 200px !important; height: 200 !important; "></i>מחיקה</a>
 	</div>
-  </ng-template>
+</ng-template>

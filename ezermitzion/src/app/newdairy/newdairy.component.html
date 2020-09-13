@@ -2,11 +2,14 @@
     <label for="title" >כותרת</label>
     <input class="form-control" type="text" id="title" name="title"  [(ngModel)]="dairy.title">
 
-    <label for="start" >תאריך ושעת התחלה</label><br>
-    <input type="datetime" id="start" name="start"  [(ngModel)]="dairy.start"><br>
-
-    <label for="end" >תאריך ושעת סיום</label><br>
-    <input type="datetime" id="end" name="end" (mouseup)="getroomlist()" [(ngModel)]="dairy.end"><br>
+    <label for="end">תאריך ושעת התחלה</label><br>
+    <!-- <input type="text" id="end" name="end" [(ngModel)]="modalData.event.end"><br> -->
+    <input class="form-control" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" [(ngModel)]="dairy.start  ">
+    <owl-date-time #dt1 style="z-index: 5000000 !important;"></owl-date-time><br>
+    <label for="Tel">תאריך ושעת סיום</label><br>
+    <!-- <input type="text" id="bornDate" name="bornDate" [(ngModel)]="modalData.event.end  "> -->
+    <input class="form-control" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" [(ngModel)]="dairy.end  ">
+    <owl-date-time #dt1 style="z-index: 5000000 !important;"></owl-date-time><br>
 
     <label for="typeMeeting" >סוג פגישה</label>
     <select placeholder="Enter Type Reference" [(ngModel)]="dairy.typeMeeting

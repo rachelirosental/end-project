@@ -3,7 +3,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SecretaryComponent } from './secretary/secretary.component';
 import { LoginComponent } from './login/login.component';
-import {DairyComponent } from './dairy/dairy.component';
+import { DairyComponent } from './dairy/dairy.component';
 import { ReferenceComponent } from './reference/reference.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { ProfessionsComponent } from './professions/professions.component';
@@ -25,12 +25,12 @@ import { AuthGuard } from './auth.guard';
 import { RoomlistComponent } from './roomlist/roomlist.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { NgModule,enableProdMode  } from '@angular/core';
+import { NgModule, enableProdMode } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap'
 import { FusionChartsModule } from 'angular-fusioncharts';
- 
+
 // Import FusionCharts library and chart modules
 import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
@@ -64,6 +64,7 @@ import { ChartbuttonsComponent } from './chartbuttons/chartbuttons.component';
 import { HomepageComponent } from './homepage/homepage.component';
 // import {DpDatePickerModule} from 'ng2-date-picker';
 import { NewmodalrefComponent } from './newmodalref/newmodalref.component';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 FusionChartsModule.fcRoot(
   FusionCharts,
@@ -121,7 +122,10 @@ FusionChartsModule.fcRoot(
     CommonModule,
     FormsModule,
     NgbModalModule
-    ,FusionChartsModule,
+    , FusionChartsModule,
+    OwlDateTimeModule,
+
+    OwlNativeDateTimeModule,
     // DpDatePickerModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
@@ -129,7 +133,7 @@ FusionChartsModule.fcRoot(
       useFactory: adapterFactory,
     }),
     // CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -146,6 +150,6 @@ FusionChartsModule.fcRoot(
     MeetmodalComponent,
     ModalmeetsComponent,
     NewmodalrefComponent
-      ]
+  ]
 })
 export class AppModule { }

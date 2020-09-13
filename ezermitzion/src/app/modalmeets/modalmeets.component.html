@@ -9,8 +9,8 @@
                     <span style="background-color:rgb(68, 134, 255) !important;">{{m.title}}</span>
                 </div>
                 <ul>
-                        <li><h3>התחלה:</h3>{{m.start | date:"MM/dd/yyyy 'בשעה' h:mma"}}</li>
-                        <li><h3>סיום:</h3>{{m.end | date:"MM/dd/yyyy 'בשעה' h:mma"}}</li>
+                        <li><h3>התחלה:</h3>{{m.start|date:'dd/MM/yy hh:mm'}}</li>
+                        <li><h3>סיום:</h3>{{m.end|date:'dd/MM/yy hh:mm' }}</li>
                         <li><h3>חדר:</h3>{{m.rooms.roomName}}</li>
                         <li><h3>תיאור:</h3>{{m.description}}</li>
                 </ul>

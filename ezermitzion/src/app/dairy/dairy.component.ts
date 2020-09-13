@@ -71,20 +71,15 @@ export class DairyComponent {
 
   actions: CalendarEventAction[] = [
     {
-      label: '<i class="fas fa-fw fa-pencil-alt"></i>',
+      label: '<p ></p>',
       a11yLabel: 'Edit',
       onClick: ({ event }: { event: CalendarEvent }): void => {
+        
+        this.deletedairy(event);
         this.handleEvent('Edited', event);
       },
     },
-    {
-      label: '<i class="fas fa-fw fa-trash-alt"></i>',
-      a11yLabel: 'Delete',
-      onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.events = this.events.filter((iEvent) => iEvent !== event);
-        this.handleEvent('Deleted', event);
-      },
-    },
+  
   ];
  events:dairy[];
   refresh: Subject<any> = new Subject();
@@ -261,7 +256,8 @@ this.getroomlist()
     })
   }
   deletedairy(id){
-    var answer = window.confirm("האם אתה בטוח שברצונך למחוק איש מקצוע זה?");
+    debugger;
+    var answer = window.confirm("האם אתה בטוח שברצונך למחוק פגישה זה?");
     if (answer) {
       this.DairyService.delete(id).subscribe(res=>{
         this.getdaries();

@@ -1,8 +1,9 @@
 
-<div>
+<div style="text-align: right !important;">
     <form >
       <label for="fname" >תאריך</label><br>
-      <input  class="form-control" type="date" id="date" name="date"  [(ngModel)]="reference.date"><br>
+      <input class="form-control" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" [(ngModel)]="reference.date">
+			<owl-date-time #dt1 style="z-index: 5000000 !important;"></owl-date-time><br>
   
       <label for="type" >תאור הפניה</label>
       <textarea  class="form-control" type="button" id="description" name= "description"    [(ngModel)]="reference.description"></textarea>
@@ -35,8 +36,8 @@
       </div>
     
       <label for="type" >תאריך לידה</label><br>
-      <input class="form-control" type="date" id="bornDate" name="bornDate"  [(ngModel)]="reference.bornDate"><br>
-      
+      <input class="form-control" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" [(ngModel)]="reference.bornDate">
+			<owl-date-time #dt1 style="z-index: 5000000 !important;"></owl-date-time><br>
       <label for="type" >האם טופל</label>
       <select  class="form-control" type="text" id="isCare"  placeholder="Enter Name" [(ngModel)]="reference.isCare
     "name="myselect">

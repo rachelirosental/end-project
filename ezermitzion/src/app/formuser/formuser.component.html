@@ -15,7 +15,7 @@
                 <span class="Error"></span>
 
             </div>
-            <div style="direction: rtl !important;" class="form-group">
+            <div style="direction: rtl !important;text-align: right;" class="form-group">
                 <label>שם:</label>
                 <input class="form-control" type="text" name="fname" required placeholder="הכנס שם" [(ngModel)]="user.userName" #firstName="ngModel" [ngClass]="{ 'is-invalid': firstName.invalid&&firstName.touched }" required />
                 <span class="Error"></span>
