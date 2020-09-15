@@ -24,13 +24,14 @@
             <tbody>
                 <tr *ngFor="let r of references">
                     <td >{{r.date|date:"MM/dd/yyyy 'בשעה' h:mma"}}</td>
-                    <td>{{r.description}}</td>
+                    <textarea>{{r.description}}</textarea>
                     <td>{{r.bornDate|date:"MM/dd/yyyy"}}</td>
-                    <td>{{r.isCare}}</td>
+                    <td  *ngIf="r.isCare===true">כן</td>
+                    <td  *ngIf="r.isCare===false">לא</td>
                     <td>{{r.users.userName}}</td>
                     <td>{{r.professions.profName}}</td>
                     <td>{{r.typeReference.refname}}</td>
-                    <td>{{r.recommendation}}</td>
+                    <textarea>{{r.recommendation}}</textarea>
                 </tr>
           
             </tbody>

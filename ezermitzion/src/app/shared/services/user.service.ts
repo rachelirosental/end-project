@@ -9,6 +9,7 @@ import { TypeUser} from 'src/app/Data/TypeUser';
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -52,14 +53,15 @@ currentuser() {
     return this.httpClient.post(this.url + "/update", user);
   }
   return(){
-    console.log('keyy',this.key)
+    console.log('return',JSON.parse(localStorage.getItem("user")))
+    debugger;
     this.router.navigateByUrl('/entry'+ JSON.parse(localStorage.getItem("user")).typeUser)
   }
   getTypeUserList(): Observable<TypeUser[]> {
     return this.httpClient.get<TypeUser[]>(this.url + "/getTypeUserList/" );
   }
   sendmail(max){
-    debugger;
+  
     return this.httpClient.post(this.url + "/sendMail",max);
   }
   

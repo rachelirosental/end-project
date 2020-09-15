@@ -48,7 +48,7 @@ public imagePath;
 
 
     this.UserService.create(this.user).subscribe(res=>{
-      localStorage.setItem("user",JSON.stringify(res));
+      localStorage.setItem("user2",JSON.stringify(res));
       
     },err=>{
       alert("error")

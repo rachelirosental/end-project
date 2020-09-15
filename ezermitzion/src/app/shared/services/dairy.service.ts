@@ -14,7 +14,7 @@ import { TypeMeeting } from 'src/app/Data/TypeMeeting';
       this.url = environment.url + "Dairy";
     }
     delete(id:number)  {
-      debugger;
+ 
         return this.httpClient.delete(this.url + "/delete/" + id);
       }
       getdaries(id:number) {

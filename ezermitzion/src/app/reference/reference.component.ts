@@ -24,7 +24,7 @@ export class ReferenceComponent implements OnInit {
     this.loadReferences();
   }
   loadReferences(){
-    debugger;
+ 
     console.log(JSON.parse(localStorage.getItem("user")).userId)
     this.ReferenceService.getrefbyuserid(JSON.parse(localStorage.getItem("user")).userId).subscribe((references:Reference[])=>{this.references=references;
     console.log(this.references);
@@ -51,7 +51,7 @@ else {
   }
   next(r:Reference){
     const modalRef = this.modalService.open(SetdetailreferenceComponent);
-    debugger;
+ 
     modalRef.componentInstance.reference = {...r};
     modalRef.result.then(res=>{
       this.loadReferences();

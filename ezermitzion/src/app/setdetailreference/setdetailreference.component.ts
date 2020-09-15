@@ -47,8 +47,8 @@ iscare= [
   getNameUserList(){
     
     this.UserService.getusers().subscribe(res=>{
-      localStorage.setItem("user",JSON.stringify(res)),
-      this.user=res,console.log('user',this.user)
+      localStorage.setItem("users",JSON.stringify(res)),
+      this.user=res,console.log('users',this.user)
       
     },err=>{
       alert("error")

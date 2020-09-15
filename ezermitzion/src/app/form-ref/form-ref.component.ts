@@ -45,18 +45,18 @@ export class FormRefComponent implements OnInit {
      getNameUserList(){
     
       this.UserService.getusers().subscribe(res=>{
-        localStorage.setItem("user",JSON.stringify(res)),
-        this.user=res,console.log('user',this.user)
+        localStorage.setItem("users",JSON.stringify(res)),
+        this.user=res,console.log('users',this.user)
         
       },err=>{
         alert("error")
       })
     }
     getNameProfList(){
-    
+    debugger;
       this.ProfessionService.getProfList().subscribe(res=>{
         localStorage.setItem("profession",JSON.stringify(res)),
-        this.profession=res,console.log('profession',this.profession)
+        this.profession=res,console.log('professionnn',this.profession)
         
       },err=>{
         alert("error")

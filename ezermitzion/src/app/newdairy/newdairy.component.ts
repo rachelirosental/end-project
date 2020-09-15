@@ -49,7 +49,7 @@ typeMeeting:TypeMeeting[];
     this.getTypemeetList();
   }
   getroomlist() {
-    debugger;
+   
     console.log('hellllll');
     this.dairy.end=new Date(this.dairy.end);
     this.dairy.start=new Date(this.dairy.start);
@@ -73,8 +73,8 @@ typeMeeting:TypeMeeting[];
   getNameUserList(){
     
     this.UserService.getusers().subscribe(res=>{
-      localStorage.setItem("user",JSON.stringify(res)),
-      this.user=res,console.log('user',this.user)
+      localStorage.setItem("users",JSON.stringify(res)),
+      this.user=res,console.log('users',this.user)
       
     },err=>{
       alert("error")

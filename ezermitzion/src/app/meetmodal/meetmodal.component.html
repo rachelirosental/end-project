@@ -22,9 +22,9 @@
             </thead>
             <tbody>
                 <tr *ngFor="let d of dairy">
-                    <td >{{d.start}}</td>
-                    <td>{{d.end}}</td>
-                    <td>{{d.roomId}}</td>
+                    <td >{{d.start|date:'dd/MM/yy hh:mm'}}</td>
+                    <td>{{d.end|date:'dd/MM/yy hh:mm'}}</td>
+                    <td>{{d.rooms.roomName}}</td>
                     <td>{{d.description}}</td>
                     <td>{{d.typeMeeting1.description}}</td>
                     

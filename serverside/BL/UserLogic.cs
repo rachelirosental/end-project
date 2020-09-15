@@ -48,7 +48,7 @@ namespace BL
                 return 0;
             else
             {
-                db.users.Remove(q1);
+                q1.IsDeleted = true;
                 db.SaveChanges();
                 return 1;
             }
@@ -61,7 +61,8 @@ namespace BL
         }
         public static List<user> Allusers()
         {
-            return user.GetListUserDTO(db.users.ToList());
+            var list = db.users.Where(u => u.IsDeleted == false);
+            return user.GetListUserDTO(list.ToList());
 
         }
         public static void UpdateUser(user user)

@@ -23,7 +23,7 @@
                 <tr *ngFor="let o of opinions">
                     <td >{{o.profession.profName}}</td>
                     <td>{{o.description}}</td>
-                    <td>{{o.date}}</td>
+                    <td>{{o.date|date:'dd/MM/yy'}}</td>
                     <td>{{o.mark}}</td>
                 </tr>
           

@@ -13,6 +13,7 @@ import {UserService } from '../shared/services/user.service';
 import { NewmodalrefComponent } from '../newmodalref/newmodalref.component';
 
 
+
 @Component({
   selector: 'app-professio-list',
   templateUrl: './professio-list.component.html',
@@ -54,12 +55,15 @@ public opinions:opinion[]=[];
     }
 
 deleteprofession(id:number){
+  
   var answer = window.confirm("האם אתה בטוח שברצונך למחוק איש מקצוע זה?");
 if (answer) {
   this.ProfessionService.delete(id).subscribe(res=>{
+    debugger;
     this.getProfList();
     console.log(res)
   },err=>{
+    this.getProfList();
     alert("error")
   })
 }

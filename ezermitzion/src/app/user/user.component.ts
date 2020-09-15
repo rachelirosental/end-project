@@ -69,6 +69,8 @@ if (answer) {
     this.loadUsers();
      console.log(res)
    },err=>{
+     this.loadUsers();
+
      alert("error")
    })
 }

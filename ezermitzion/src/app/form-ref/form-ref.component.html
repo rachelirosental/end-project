@@ -24,7 +24,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <label for="type" >תאור הפניה</label>
+              <label for="type" ></label>
       <input style="width:100%;font-size:80pt" class="form-control" type="text" id="description" name= "description"  [(ngModel)]="reference.description">
             </div>
             <div class="modal-footer">
@@ -67,9 +67,9 @@
       <!-- <input class="form-control" type="text" id="refname" name="refname"  [(ngModel)]="reference.typeReference.refname"> -->
       
       <label for="ClinicAddres" >המלצות</label>
-      <input class="form-control" type="text" id="recommendation" name="recommendation"  [(ngModel)]="reference.recommendation">
+      <textarea class="form-control" type="text" id="recommendation" name="recommendation"  [(ngModel)]="reference.recommendation"></textarea>
       
-      <input type="submit" value="להוספה"  value="Submit" (click)="add()">
+      <input type="submit" value="להוספה"  value="אישור" (click)="add()">
     </form>
   </div>
   

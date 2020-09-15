@@ -32,7 +32,7 @@ show: boolean;
         Swal.fire('Oops...', 'Something went wrong!', 'error');
         return;
       }
-      localStorage.setItem(this.key,JSON.stringify(res));
+      localStorage.setItem("user",JSON.stringify(res));
       console.log(res)
        this.router.navigateByUrl('/entry'+res.typeUser);
     },err=>{

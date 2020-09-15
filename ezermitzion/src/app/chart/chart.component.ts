@@ -12,7 +12,7 @@ const data = {
     showvalues: "0",
     legenditemfontsize: "15",
     legenditemfontbold: "1",
-    palettecolors: "DBE0FF"
+    palettecolors: "#5665F0"
   },
   data: [
   ]

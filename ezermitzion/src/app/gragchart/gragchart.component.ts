@@ -60,8 +60,7 @@ export class GragchartComponent{
   const max = data.data.reduce((p, c) => p.value > c.value ? p : c);
 
   console.log(max);
-    
-debugger;
+
     return this.UserService.sendmail(max).subscribe(res=>{
      localStorage.setItem("res",JSON.stringify(res)) ,
 

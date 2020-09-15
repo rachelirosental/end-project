@@ -238,8 +238,8 @@ this.getroomlist()
   getNameUserList(){
   
     this.UserService.getusers().subscribe(res=>{
-      localStorage.setItem("user",JSON.stringify(res)),
-      this.user=res,console.log('user',this.user)
+      localStorage.setItem("users",JSON.stringify(res)),
+      this.user=res,console.log('users',this.user)
       
     },err=>{
       alert("error")
@@ -248,16 +248,15 @@ this.getroomlist()
   getTypemeetList(){
     
     this.DairyService.getTypeMeetList().subscribe(res=>{
-      localStorage.setItem("typereference",JSON.stringify(res)),
-      this.typeMeeting=res,console.log('typereference',this.typeMeeting)
+      localStorage.setItem("typemeeting",JSON.stringify(res)),
+      this.typeMeeting=res,console.log('typemeeting',this.typeMeeting)
       
     },err=>{
       alert("error")
     })
   }
   deletedairy(id){
-    debugger;
-    var answer = window.confirm("האם אתה בטוח שברצונך למחוק פגישה זה?");
+       var answer = window.confirm("האם אתה בטוח שברצונך למחוק פגישה זה?");
     if (answer) {
       this.DairyService.delete(id).subscribe(res=>{
         this.getdaries();

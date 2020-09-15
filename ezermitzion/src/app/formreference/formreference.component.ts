@@ -15,7 +15,7 @@ public reference=new Reference();
   }
   add(){
     this.ReferenceService.create(this.reference).subscribe(res=>{
-      localStorage.setItem("user",JSON.stringify(res));
+      localStorage.setItem("user1",JSON.stringify(res));
       
     },err=>{
       alert("error")

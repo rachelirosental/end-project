@@ -15,7 +15,7 @@ public room:Room=new Room();
   }
   addroom(){
     this.RoomService.create(this.room).subscribe(res=>{
-      localStorage.setItem("user",JSON.stringify(res));
+      localStorage.setItem("room",JSON.stringify(res));
     },err=>{
       alert("error")
     })

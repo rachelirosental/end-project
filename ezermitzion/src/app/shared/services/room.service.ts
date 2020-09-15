@@ -36,7 +36,7 @@ import { user } from 'src/app/Data/user';
         return this.httpClient.post(this.url + "/create", reference);
       }
       getlistrooms(dairy:dairy) {
-        debugger;
+      
     this.mydate.start=dairy.start;
     this.mydate.end=dairy.end;
 

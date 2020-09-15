@@ -16,7 +16,8 @@ namespace BL
         {
             try
             {
-                return Profession.GetListProfessinDTO(db.Professions.ToList());
+                var list = db.Professions.Where(p=>p.IsDeleted==false);
+                return Profession.GetListProfessinDTO(list.ToList());
             }
             catch
             {
@@ -60,7 +61,7 @@ namespace BL
             if (profession == null)
                 return 0;
             else {
-                db.Professions.Remove(profession);
+                profession.IsDeleted = true;
                 db.SaveChanges();
                 return 1;
             }

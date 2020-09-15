@@ -1,4 +1,4 @@
-<div>
+<div style="text-align: right !important;">
     <label for="title" >כותרת</label>
     <input class="form-control" type="text" id="title" name="title"  [(ngModel)]="dairy.title">
 
@@ -8,7 +8,7 @@
     <owl-date-time #dt1 style="z-index: 5000000 !important;"></owl-date-time><br>
     <label for="Tel">תאריך ושעת סיום</label><br>
     <!-- <input type="text" id="bornDate" name="bornDate" [(ngModel)]="modalData.event.end  "> -->
-    <input class="form-control" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" [(ngModel)]="dairy.end  ">
+    <input class="form-control" (mousemove)="getroomlist()" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" [(ngModel)]="dairy.end  ">
     <owl-date-time #dt1 style="z-index: 5000000 !important;"></owl-date-time><br>
 
     <label for="typeMeeting" >סוג פגישה</label>
